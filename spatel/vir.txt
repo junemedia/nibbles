@@ -1,0 +1,569 @@
+### stg.silvercarrot.com ###
+<VirtualHost *:80>
+ServerName      stg.silvercarrot.com
+DocumentRoot    /var/www/html/stg.silvercarrot.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.silvercarrot.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.silvercarrot.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+
+### fitandfabliving.com ###
+<VirtualHost *:80>
+ServerName	fitandfabliving.com
+ServerAlias 	www.fitandfabliving.com
+DocumentRoot 	/var/www/html/fitandfabliving.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/fitandfabliving.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/fitandfabliving.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### pics.fitandfabliving.com ###
+<VirtualHost *:80>
+ServerName 	pics.fitandfabliving.com
+DocumentRoot 	/var/www/html/pics.fitandfabliving.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/pics.fitandfabliving.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/pics.fitandfabliving.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### stg.fitandfabliving.com ###
+<VirtualHost *:80>
+ServerName 	stg.fitandfabliving.com
+DocumentRoot 	/var/www/html/stg.fitandfabliving.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.fitandfabliving.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.fitandfabliving.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### chineserecipe4living.com ###
+<VirtualHost *:80>
+ServerName 	chineserecipe4living.com
+ServerAlias 	www.chineserecipe4living.com
+DocumentRoot 	/var/www/html/chineserecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/chineserecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/chineserecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### spanishrecipe4living.com ###
+<VirtualHost *:80>
+ServerName 	spanishrecipe4living.com
+ServerAlias 	www.spanishrecipe4living.com
+DocumentRoot 	/var/www/html/spanishrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/spanishrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/spanishrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### frenchrecipe4living.com ###
+<VirtualHost *:80>
+ServerName 	frenchrecipe4living.com
+ServerAlias 	www.frenchrecipe4living.com
+DocumentRoot 	/var/www/html/frenchrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/frenchrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/frenchrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### greekrecipe4living.com ###
+<VirtualHost *:80>
+ServerName 	greekrecipe4living.com
+ServerAlias 	www.greekrecipe4living.com
+DocumentRoot 	/var/www/html/greekrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/greekrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/greekrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### runningwithmascara.com ###
+<VirtualHost *:80>
+ServerName 	runningwithmascara.com
+ServerAlias 	www.runningwithmascara.com
+DocumentRoot 	/var/www/html/runningwithmascara.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/runningwithmascara.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/runningwithmascara.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### stg.runningwithmascara.com ###
+<VirtualHost *:80>
+ServerName      stg.runningwithmascara.com
+DocumentRoot    /var/www/html/stg.runningwithmascara.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.runningwithmascara.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.runningwithmascara.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### mybeautyinsider.com ###
+<VirtualHost *:80>
+ServerName 	mybeautyinsider.com
+ServerAlias 	www.mybeautyinsider.com
+DocumentRoot 	/var/www/html/mybeautyinsider.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/mybeautyinsider.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/mybeautyinsider.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### indianrecipe4living.com ###
+<VirtualHost *:80>
+ServerName 	indianrecipe4living.com
+ServerAlias 	www.indianrecipe4living.com
+DocumentRoot 	/var/www/html/indianrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/indianrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/indianrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### stg.indianrecipe4living.com ###
+<VirtualHost *:80>
+ServerName      stg.indianrecipe4living.com
+DocumentRoot    /var/www/html/stg.indianrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.indianrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.indianrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### italianrecipe4living.com ###
+<VirtualHost *:80>
+ServerName 	italianrecipe4living.com
+ServerAlias 	www.italianrecipe4living.com
+DocumentRoot 	/var/www/html/italianrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/italianrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/italianrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### stg.italianrecipe4living.com ###
+<VirtualHost *:80>
+ServerName      stg.italianrecipe4living.com
+DocumentRoot    /var/www/html/stg.italianrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.italianrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.italianrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### mexicanrecipe4living.com ###
+<VirtualHost *:80>
+ServerName 	mexicanrecipe4living.com
+ServerAlias 	www.mexicanrecipe4living.com
+DocumentRoot 	/var/www/html/mexicanrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/mexicanrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/mexicanrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### stg.mexicanrecipe4living.com ###
+<VirtualHost *:80>
+ServerName      stg.mexicanrecipe4living.com
+DocumentRoot    /var/www/html/stg.mexicanrecipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.mexicanrecipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.mexicanrecipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+
+### mybeautyinsider.com ###
+<VirtualHost *:80>
+ServerName 	mybeautyinsider.com
+ServerAlias 	www.mybeautyinsider.com
+DocumentRoot 	/var/www/html/mybeautyinsider.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/mybeautyinsider.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/mybeautyinsider.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### myfashioninsider.com ###
+<VirtualHost *:80>
+ServerName 	myfashioninsider.com
+ServerAlias 	wwwewonthatblog.commyfashioninsider.com
+ServerAlias	www.myfashioninsider.com
+ServerAlias	*.myfashioninsider.com
+DocumentRoot 	/var/www/html/myfashioninsider.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/myfashioninsider.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/myfashioninsider.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### mydietinsider.com ###
+<VirtualHost *:80>
+ServerName 	mydietinsider.com
+ServerAlias 	www.mydietinsider.com
+DocumentRoot 	/var/www/html/mydietinsider.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/mydietinsider.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/mydietinsider.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### chewonthatblog.com ###
+<VirtualHost *:80>
+ServerName 	chewonthatblog.com
+ServerAlias 	www.chewonthatblog.com
+DocumentRoot 	/var/www/html/chewonthatblog.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/chewonthatblog.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/chewonthatblog.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### stg.chewonthatblog.com ###
+<VirtualHost *:80>
+ServerName      stg.chewonthatblog.com
+DocumentRoot    /var/www/html/stg.chewonthatblog.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.chewonthatblog.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/stg.chewonthatblog.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### pics.recipe4living.com ###
+<VirtualHost *:80>
+ServerName 	pics.recipe4living.com
+DocumentRoot 	/var/www/html/pics.recipe4living.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/pics.recipe4living.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/pics.recipe4living.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### myhealthinsider.com ###
+<VirtualHost *:80>
+ServerName 	myhealthinsider.com
+ServerAlias 	www.myhealthinsider.com
+DocumentRoot 	/var/www/html/myhealthinsider.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/myhealthinsider.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/myhealthinsider.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### mysohoinsider.com ###
+<VirtualHost *:80>
+ServerName 	mysohoinsider.com
+ServerAlias 	www.mysohoinsider.com
+DocumentRoot 	/var/www/html/mysohoinsider.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/mysohoinsider.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/mysohoinsider.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### biz-op-for-you.com ###
+<VirtualHost *:80>
+ServerName 	biz-op-for-you.com
+ServerAlias 	www.biz-op-for-you.com
+DocumentRoot 	/var/www/html/biz-op-for-you.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/biz-op-for-you.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/biz-op-for-you.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### freestuffdaily.com ###
+<VirtualHost *:80>
+ServerName 	freestuffdaily.com
+ServerAlias 	www.freestuffdaily.com
+DocumentRoot 	/var/www/html/freestuffdaily.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/freestuffdaily.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/freestuffdaily.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### milesource.com ###
+<VirtualHost *:80>
+ServerName 	milesource.com
+ServerAlias 	www.milesource.com
+Redirect 	/ http://www.freestuffdaily.com/
+</VirtualHost>
+
+### best-home-business-reviews.com ###
+<VirtualHost *:80>
+ServerName 	best-home-business-reviews.com
+ServerAlias 	www.best-home-business-reviews.com
+DocumentRoot 	/var/www/html/best-home-business-reviews.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/best-home-business-reviews.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/best-home-business-reviews.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### biz-op-comparisons.com ###
+<VirtualHost *:80>
+ServerName 	biz-op-comparisons.com
+ServerAlias 	www.biz-op-comparisons.com
+DocumentRoot 	/var/www/html/biz-op-comparisons.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/biz-op-comparisons.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/biz-op-comparisons.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### myfree.com ###
+<VirtualHost *:80>
+ServerName   	myfree.com
+ServerAlias	www.myfree.com
+ServerAlias  	admin.myfree.com
+ServerAlias  	test.myfree.com
+ServerAlias  	pc.myfree.com
+ServerAlias  	ppi-free.com
+ServerAlias	www.ppi-free.com
+ServerAdmin  	spatel@amperemedia.com
+DocumentRoot 	/var/www/html/myfree.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/myfree.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/myfree.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### admin.popularliving.com ###
+<VirtualHost *:80>
+ServerName 	admin.popularliving.com
+DocumentRoot 	/var/www/html/admin.popularliving.com/html
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/admin.popularliving.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/admin.popularliving.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### content.popularliving.com ###
+<VirtualHost *:80>
+ServerName 	content.popularliving.com
+DocumentRoot 	/var/www/html/content.popularliving.com/html
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/content.popularliving.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/content.popularliving.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### funpages.myfree.com ###
+<VirtualHost *:80>
+ServerName 	funpages.myfree.com
+ServerAlias 	www.funpages.myfree.com
+DocumentRoot 	/var/www/html/funpages.myfree.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/funpages.myfree.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/funpages.myfree.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### subctr.popularliving.com ###
+<VirtualHost *:80>
+ServerName 	subctr.popularliving.com
+ServerAlias 	r4l.popularliving.com
+ServerAlias 	fitfab.popularliving.com
+DocumentRoot 	/var/www/html/subctr.popularliving.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/subctr.popularliving.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/subctr.popularliving.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### popularliving.com ###
+<VirtualHost *:80>
+ServerName 	popularliving.com
+ServerAlias 	www.popularliving.com
+ServerAlias 	fitfab.popularliving.com
+ServerAlias 	r4l.popularliving.com
+ServerAlias 	bannerfarm.popularliving.com
+ServerAlias 	editors.myfree.com
+ServerAlias 	images.popularliving.com
+ServerAlias 	popularliving.com
+ServerAlias 	ed.myfree.com
+ServerAlias 	bd.myfree.com
+ServerAlias 	bb.myfree.com
+ServerAlias 	ebook.myfree.com
+ServerAlias	*.popularliving.com
+DocumentRoot 	/var/www/html/popularliving.com/html
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/popularliving.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/popularliving.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### adbundles.com ###
+<VirtualHost *:80>
+ServerName      adbundles.com
+ServerAlias     www.adbundles.com
+DocumentRoot    /var/www/html/adbundles.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/adbundles.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/adbundles.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### iflipittech.com ###
+<VirtualHost *:80>
+ServerName      iflipittech.com
+ServerAlias     www.iflipittech.com
+ServerAlias	iflipitech.com
+ServerAlias	www.iflipitech.com
+DocumentRoot    /var/www/html/iflipittech.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/iflipittech.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/iflipittech.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### iflipittechnologies.com ###
+<VirtualHost *:80>
+ServerName      iflipittechnologies.com
+ServerAlias     www.iflipittechnologies.com
+ServerAlias	iflipitechnologies.com
+ServerAlias	www.iflipitechnologies.com
+DocumentRoot    /var/www/html/iflipittechnologies.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/iflipittechnologies.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/iflipittechnologies.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### demo.iflipitnetwork.com ###
+<VirtualHost *:80>
+ServerName      demo.iflipitnetwork.com
+DocumentRoot    /var/www/html/demo.iflipitnetwork.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/demo.iflipitnetwork.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/demo.iflipitnetwork.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### edu.amperemedia.com ###
+<VirtualHost *:80>
+ServerName      edu.amperemedia.com
+DocumentRoot    /var/www/html/edu.amperemedia.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/edu.amperemedia.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/edu.amperemedia.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### global.amperemedia.com ###
+<VirtualHost *:80>
+ServerName      global.amperemedia.com
+DocumentRoot    /var/www/html/global.amperemedia.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/global.amperemedia.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/global.amperemedia.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### review.iflipitnetwork.com ###
+<VirtualHost *:80>
+ServerName      review.iflipitnetwork.com
+DocumentRoot    /var/www/html/review.iflipitnetwork.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/review.iflipitnetwork.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/review.iflipitnetwork.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### syndication.surveysonus.com ###
+<VirtualHost *:80>
+ServerName      syndication.surveysonus.com
+DocumentRoot    /var/www/html/syndication.surveysonus.com/html
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/syndication.surveysonus.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/syndication.surveysonus.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### amperemedia.com ###
+<VirtualHost *:80>
+ServerName      amperemedia.com
+ServerAlias	www.amperemedia.com
+DocumentRoot    /var/www/html/amperemedia.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/amperemedia.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/amperemedia.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### ads.amperemedia.com ###
+<VirtualHost *:80>
+ServerName      ads.amperemedia.com
+Redirect 	/ http://www.myfree.com
+</VirtualHost>
+
+### finance.amperemedia.com ###
+<VirtualHost *:80>
+ServerName      finance.amperemedia.com
+Redirect	/ http://www.popularliving.com/p/finance.php
+</VirtualHost>
+
+### edu.amperemedia.com ###
+<VirtualHost *:80>
+ServerName      edu.amperemedia.com
+Redirect 	/ http://www.popularliving.com/p/education.php
+</VirtualHost>
+
+### pic3400.com ###
+<VirtualHost *:80>
+ServerName      pic3400.com
+ServerAlias     www.pic3400.com
+ServerAlias	newpic3400.com
+ServerAlias	www.newpic3400.com
+DocumentRoot    /var/www/html/pic3400.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/pic3400.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/pic3400.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### postcards.myfree.com ###
+<VirtualHost *:80>
+ServerName	postcards.myfree.com
+ServerAdmin 	jr@amperemedia.com
+Redirect 	/ http://pc.myfree.com/pc/
+</VirtualHost>
+
+### join.myfree.com ###
+<VirtualHost *:80>
+ServerName   	join.myfree.com
+ServerAdmin  	jr@amperemedia.com
+Redirect 	/index.asp http://www.popularliving.com/j/index.php
+Redirect 	/myfsub7.asp http://www.popularliving.com/j/index7.php
+Redirect 	/myfsub2.asp http://www.popularliving.com/j/index2.php
+Redirect 	/cp/c.asp http://www.popularliving.com/j/cp/cp.php
+Redirect 	/ http://www.popularliving.com/j/index.php
+</VirtualHost>
+
+### couponliving.com ###
+<VirtualHost *:80>
+ServerName   	www.couponliving.com
+ServerAlias  	admin.couponliving.com
+ServerAlias  	test.couponliving.com
+ServerAlias  	couponliving.com
+ServerAdmin  	spatel@amperemedia.com
+DocumentRoot 	/var/www/html/couponliving.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/couponliving.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/couponliving.com-error.%Y%m%d.log 86400"
+ServerSignature On
+</VirtualHost>
+
+### myideacenter.com ###
+<VirtualHost *:80>
+ServerName 	www.myideacenter.com
+ServerAlias 	myideacenter.com
+ServerAdmin 	jr@amperemedia.com
+Redirect 	/ http://store.yahoo.com/mybargaintown/
+</VirtualHost>
+
+### handcraftersvillage.com ###
+<VirtualHost *:80>
+ServerName   	www.handcraftersvillage.com
+ServerAlias  	admin.handcraftersvillage.com
+ServerAlias  	test.handcraftersvillage.com
+ServerAlias  	handcraftersvillage.com
+ServerAdmin  	spatel@amperemedia.com
+DocumentRoot    /var/www/html/handcraftersvillage.com/html
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/handcraftersvillage.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/handcraftersvillage.com-error.%Y%m%d.log 86400"
+ServerSignature	On
+</VirtualHost>
+
+### silverinet.com ###
+<VirtualHost *:80>
+ServerName      silverinet.com
+ServerAlias  	admin.silverinet.com
+ServerAlias  	test.silverinet.com
+ServerAlias  	www.silverinet.com
+ServerAlias	*.silverinet.com
+ServerAdmin  	spatel@amperemedia.com
+DocumentRoot    /var/www/html/silverinet.com/html
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/silverinet.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/silverinet.com-error.%Y%m%d.log 86400"
+ServerSignature On
+</VirtualHost>
+
+### fitness.amperemedia.com ###
+<VirtualHost *:80>
+ServerName   	fitness.amperemedia.com
+ServerAdmin  	jr@amperemedia.com
+Redirect 	/ http://www.popularliving.com/p/healthandfitness.php
+</VirtualHost>
+
+### www.b2bfreeresources.com ###
+<VirtualHost *:80>
+ServerName 	www.b2bfreeresources.com
+ServerAlias 	b2bfreeresources.com
+ServerAdmin 	jr@amperemedia.com
+Redirect 	/ http://www.myfree.com/displayContent.php?content=offers&offerCat=152
+</VirtualHost>
+
+### everystitchercounts.com ###
+<VirtualHost *:80>
+ServerName 	www.everystitchercounts.com
+ServerAlias 	everystitchercounts.com
+ServerAdmin 	jr@amperemedia.com
+Redirect 	/ http://store.yahoo.com/mybargaintown/
+</VirtualHost>
+
+### cpacoreg.com ###
+<VirtualHost *:80>
+ServerName   	www.cpacoreg.com
+ServerAlias  	cpacoreg.com
+ServerAdmin  	spatel@amperemedia.com
+Redirect	/ http://www.silverinet.com/
+</VirtualHost>
+
+### admin.cpacoreg.com ###
+<VirtualHost *:80>
+ServerName      www.cpacoreg.com
+ServerAlias     admin.cpacoreg.com
+ServerAlias     test.cpacoreg.com
+ServerAlias     cpacoreg.com
+ServerAdmin     spatel@amperemedia.com
+DocumentRoot    /var/www/html/cpacoreg.com/html
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/cpacoreg.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/cpacoreg.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### time.amperemedia.com ###
+<VirtualHost *:80>
+ServerName      time.amperemedia.com
+ServerAdmin     spatel@amperemedia.com
+DocumentRoot    /var/www/html/time.amperemedia.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/time.amperemedia.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/time.amperemedia.com-error.%Y%m%d.log 86400"
+</VirtualHost>
+
+### mydegreenavigator.com 
+<VirtualHost *:80>
+ServerName      mydegreenavigator.com
+ServerAlias	www.mydegreenavigator.com
+ServerAdmin     spatel@amperemedia.com
+DocumentRoot    /var/www/html/mydegreenavigator.com
+CustomLog       "|/usr/sbin/rotatelogs /vol1/apache_logs/mydegreenavigator.com.%Y%m%d.log 86400" combined
+ErrorLog        "|/usr/sbin/rotatelogs /vol1/apache_logs/mydegreenavigator.com-error.%Y%m%d.log 86400"
+</VirtualHost>

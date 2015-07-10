@@ -1,0 +1,154 @@
+
+1.Partner will promote Ampere Media's Free eMagazines offer via email campaign.
+
+2.Only approved creative and unique URL provided by Ampere Media will be used.  If applicable, any revisions 
+made by Partner must be approved by Ampere Media prior to campaign execution.
+
+3.Partner represents that it has permission from its opt-in subscribers to send them emails.  In other words, 
+if campaign is executed via Partner email, email is sent where there is a pre-existing relationship between 
+Partner and Partner’s subscribers as one where the recipient has made an inquiry and has provided his or her 
+email address, or has made an application, purchase or transaction, with or without consideration, regarding 
+products or services offered by Partner.  Ampere Media expressly prohibits the use of unsolicited email.
+
+4.Publisher agrees that prior to mailing any email campaign for Ampere Media, it will download, or otherwise 
+obtain from Ampere Media, the most recent suppression list and will suppress all email addresses within its 
+database that are found on such list.
+
+5.Ampere Media will conduct this campaign on a CPA (Cost Per Acquisition) basis, and will pay Partner $0.50 per 
+unique lead.  For purposes of this agreement, a lead is defined as a unique U.S. user, eighteen (18) years of age 
+or older, who is driven to the MyFree.com web site from or through Partner, subscribes to one or more free 
+eMagazines and confirms said subscription request via autoresponder confirmation email sent by MyFree.com.
+
+6.Publisher warrants that it has downloaded and removed the domains located on the FCC's wireless domain names 
+list (http://www.fcc.gov/cgb/policy/DomainNameDownload.html) from all current data used in Ampere Media mailings.  
+Publisher further warrants that any new data that it acquires, regardless of its source, will be run against the 
+FCC's wireless domain names list and that domain names contained therein will be removed before sending any Ampere 
+Media mailings.
+
+7.Ampere Media will have a 5,000 lead cap per month on this campaign.  Partner shall not surpass this limit without 
+prior, written authorization from Ampere Media.
+
+8.Reports will be sent upon request via email as indicated by partner.
+
+9.All billing is based on the Ampere Media reporting system.  Total billable is reported on or about the first 
+day of each month for the previous month.  Payment terms are net 30 days from postmarked date on invoice.
+
+10.Foreign, duplicate and invalid submissions are deducted from the final count  Data submitted on sweepstakes 
+alternate entry forms do not count as a valid lead.
+
+11.Partner agrees to fully defend, indemnify and hold harmless Ampere Media LLC from and against any claims and 
+actions, liabilities, demands, losses or damages, including attorney fees, arising from or in connection with a 
+breach of Partner’s representation herein.  Partner’s indemnification will survive the completion or termination 
+of this insertion order.
+
+12.Either party may cancel this contract with or without cause by providing a twenty-four (24) hour advanced written 
+notice.  Fax and/or email notices are acceptable.
+
+13.All terms contained in this Insertion Order are confidential, binding, and constitute and incorporate the parties' 
+entire agreement.  Such terms shall prevail and supersede any and all prior oral and written agreements and 
+understandings.
+
+14.If Partner will be running campaign via email, Partner will also sign and return Ampere Media’s Can-Spam 
+Certification and Supplement to Ampere Media Insertion Order.
+
+<footer>
+<new_page>
+<header>
+
+Supplement to Ampere Media LLC Insertion Order
+Partner Obligations regarding E-mail and Can-Spam Act Compliance
+
+As many of you are aware, Congress has passed the CAN-SPAM Act of 2003 (the “Act”) and President Bush signed the
+ Act into law on December 16, 2003.  The effective date of the Act is January 1, 2004.  Ampere Media LLC is 
+ committed to maintaining its commitment to quality and effective marketing and promotions on behalf of its 
+ clients and in-house offers.  All Partners working with Ampere Media LLC must share in this commitment to 
+ ethical practices.  
+
+This supplement shall constitute an amendment to all Insertion Orders and/or Advertising Agreements, including 
+any and all understandings, agreements or arrangements (whether oral or written) between the undersigned Partner 
+and Ampere Media LLC.
+
+For purposes of this Supplement, (i) Ampere shall mean Ampere Media LLC; (ii) Partner shall mean the undersigned 
+Partner and its agents and representatives; and (iii)  Ampere Offers shall mean all Ampere offers, advertisements 
+or products brokered or distributed by Partner.
+
+Accordingly, in consideration of our continuing relationship and the ability to continue to distribute e-mail 
+offers and promotions on behalf of Ampere and its partners and subsidiaries, by signing this Supplement, you as 
+the Partner, and on behalf of your agents and representatives agree to follow and adhere to all of the obligations 
+and requirements of the Act, including, without limitation the following requirements with respect to each and 
+every Ampere Offer:
+
+I.	E-mail Requirements.
+
+1.	Opt-Out Requirement.  Each e-mail shall include a clear and conspicuous functioning return e-mail address or 
+Internet based mechanism that a recipient may use to submit a request to no longer receive future e-mail messages 
+from the Partner.
+
+2.	Processing Opt-Out Requests.  Each opt-out requests must be processed within five (5) days, if not sooner.  
+Partner agrees to maintain accurate records evidencing such opt-out request and the removal of the recipient from 
+your mailing list.  Such records shall be provided to Ampere upon request.
+
+3.	Opt-Out Capabilities.  Each opt-out e-mail address or Internet based mechanism must be capable of receiving 
+opt-out requests for a period of thirty (30) days.  Opt-out procedures shall be easy to find and use.
+
+4.	Notice Requirement.  The body of each e-mail advertisement shall include a clear and conspicuous header that 
+the e-mail message is an advertisement or solicitation.  This requirement may be waived by Ampere if Ampere has 
+been provided with adequate assurance that recipients of the Ampere Offer have given Affirmative Consent to receive 
+such messages.
+
+5.	Postal Address.  Each e-mail shall include a valid postal address of the Partner/sender.
+
+6.	Subject Lines.  Each subject line must be clear and understandable and must not be considered misleading or 
+deceptive.  Subject lines must describe the content of the e-mail.
+
+7.	From Line.  Each from line must accurately identify the Partner as the sender of the e-mail advertisement.
+
+8.	Header Requirement.  All header information (i.e. source, designation and routing information attached to 
+an e-mail message, including the originating domain name and originating e-mail address and any other information 
+that appears in the line identifying, or purporting to identify, a person initiating the e-mail message) must not 
+be false or misleading.
+
+II.	E-mail Prohibitions.
+
+	1.	Third Party Brokers.  Partner is prohibited from utilizing or engaging any broker or third party for an 
+	Ampere Offer without the prior written consent of Ampere.
+
+	2.	Header Information.  Partner is prohibited from falsifying or fraudulently obtaining header information, 
+	including without limitation the identity of the registrant of e-mail accounts, domain names or Internet 
+	Protocol addresses for purposes of transmitting any Ampere Offer.
+
+	3.	Harvesting.  No e-mail advertisement of an Ampere Offer shall be sent for the purpose of harvesting the 
+	e-mail address of a recipient. 
+
+III.	Review Procedures.
+
+	1.	Review by Ampere.  All Ampere Offers shall be reviewed by Ampere prior to distribution.  You are only 
+	authorized to send e-mail of an Ampere Offer that have been approved by Ampere and is unaltered or unmodified.
+
+	2.	Complaints.  Partner shall provide Ampere with a copy of all correspondence of an Ampere Offer that has 
+	complained or disputed the legality of any Ampere Offer.
+
+	3.	Termination.  Upon notice by Ampere, Partner shall immediately cease the distribution of one of more 
+	Ampere Offers.
+
+	4.Compliance Certification.  Prior to engaging in any distribution of an Ampere Offer, Partner shall execute the 
+	Compliance Certificate attached hereto and be an approved Partner of Ampere.
+
+	5.Compliance Monitoring.  Ampere has established procedures to monitor and take reasonable actions to prevent 
+	violations of its procedures. An Ampere compliance officer will monitor compliance with the above requirements. 
+	All email campaigns must be seeded with the address complianceofficer@myfree.com. This person will receive and 
+	review all email being sent out by Partners.
+
+Please confirm your acceptance and understanding of the terms and conditions set forth in this Supplement by 
+signing below and initialing each page where indicated.
+
+<footer>
+
+Compliance Certification
+1.  Certification.  The undersigned hereby certifies to Ampere Media LLC that (a) each e-mail address obtained by the undersigned, and to which any promotions or offers are being sent on behalf of Ampere Media LLC, has been obtained through Affirmative Consent as such term is defined in the Can-Spam Act of 2003, and acts amendatory thereto (“Can-Spam Act”); (b) the undersigned does not and has not engaged in any conduct prohibited by the Can-Spam Act, including without limitation e-mail harvesting, dictionary attacks or other deceptive practices; and (c) no e-mail sent by the undersigned violates any laws or regulations, including without limitation, the Can-Spam Act.
+2.  Indemnification.  The undersigned does hereby indemnify and hold harmless Ampere Media LLC, its subsidiaries, members, managers, governors, employees and agents, and their respective successors and assigns against any and all liabilities, claims, actions, suits, proceedings, judgments, fines, damages, costs (including without limitation settlement costs), losses and expenses (including reasonable attorneys’ fees) which Ampere Media LLC may suffer as a result of any breach of the above certification.
+3.  Amendment to Insertion Order. This Certification shall supplement and constitute an amendment to all Insertion Orders and/or Advertising Agreements, including any and all understandings, agreements or arrangements (whether oral or written) between the undersigned and Ampere Media LLC.
+This Certification is executed this ____ day of _____________, 200__ by an officer of the undersigned with the authority to bind the undersigned.
+Please fill in execution date, printed name, title, and company name.
+Sign and fax this form to:  847-205-9340
+

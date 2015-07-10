@@ -1,0 +1,49 @@
+Email / CGI Submission Instructions
+
+To submit information to us by email, you'll need to make your existing CGI script send a properly formatted email message to us. If you don't understand how to make your script send email, contact your List Manager to arrange for us to do it for you.
+
+There are four steps to this process.
+
+1. Contact your List Manager and let them know that you would like to submit signups via email.
+
+2. Modify your CGI script so that it will send messages to us in the correct email format. Remember that the messages must be sent in the correct format for us to interpret them correctly.
+
+3. Send test messages to adamn@netcreations.com. We will look over the format to make sure that everything is in place and formatted correctly. If everything is correct, we will send you a confirmation message with the email address that you should use for submitting information; if there are any problems, we will tell you what changes are necessary.
+
+4. Make sure that your CGI script is sending messages to the email address we sent in your confirmation message, and then post the new form on your site.
+
+Submission Format Requirements
+
+Your email submissions can not be processed correctly unless they contain the following four fields: email (the subscriber's email address), owner (your list owner account name), gatherer (the name of the gatherer) and at least one list name (the name of the list that the person is subscribing to). 
+
+You can send as many other fields as you like, but all other fields are optional. Because submissions are more valuable when they contain more information, it's a good idea to ask for as much information as you think your site's visitors will provide.
+
+The basic format is:
+
+email address of subscriber [tab] field name [tab] field value [tab] ownername
+email address of subscriber [tab] field name [tab] field value [tab] ownername
+Valid Field Names
+
+All the valid field names are listed below. These are the only field names that our system can recognize, so any other field names sent will be ignored.
+
+To find out the possible values for the more complex fields (such as dmindustry or buyerhowmuch), Go to your List Signup Tools page and make a list signup page that contains all the fields you want to use. View that signup page, and then use the "view source" function of your web browser to look at the HTML source code. The HTML source code will show all of the possible values for the fields you selected.
+
+(If you don't understand this process, contact your List Manager -- we can provide a more detailed explanation or complete the process for you.)
+
+Important Notes
+
+Remember that you do NOT have to send us every possible field. The only absolutely essential fields are 'email' and one 'listname' line for each list they are joining.
+
+Make sure that your CGI script only sends us submissions when someone actually selects a list on your form. If they haven't selected any list checkboxes, do NOT send us an email. Every email you send will generate a confirmation email to the subscriber -- so if they haven't actually selected any lists, they are going to question why we're sending them a subscription confirmation for your lists.
+
+ 	Most sites incorporate opt-in list signups into their existing forms as follows:
+1.	Create a signup page with the lists and fields you'd like to incorporate into your existing form. 
+2.	View the HTML source to extract the checkboxes for lists, ie: 
+<input type=text name=listname value=" ownername/WebMasters.list">WebMasters
+
+<input type=text name=listname value=" ownername/Gardening.list">Gardening 
+3.	Use the HTML source to possibly add extra fields that are not on your existing form, ie: 
+Zip/Postal Code: <input type=text name=zip size=10> 
+4.	Change cgi script to send us data in the format above when the user checks a signup box. 
+When you have set up your CGI script, PLEASE contact your List Manager and let us review the script before you start sending submissions. If your submissions are not correct when they are sent to us, they will be unusable -- there is no way to resubmit or fix an incorrect submission.
+

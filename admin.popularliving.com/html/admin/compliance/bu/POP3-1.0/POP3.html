@@ -1,0 +1,717 @@
+    <HTML> 
+	<HEAD> 
+	    <TITLE>1.0 - An RFC 1939 compliant PHP wrapper to the POP3 protocol
+
+</TITLE> 
+	</HEAD>
+
+	<BODY>
+
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#NAME">NAME</A>
+	<LI><A HREF="#SYNOPSIS">SYNOPSIS</A>
+	<LI><A HREF="#DESCRIPTION">DESCRIPTION</A>
+	<LI><A HREF="#METHODS">METHODS</A>
+	<UL>
+
+		<LI><A HREF="#POP3_server_timeout_">POP3( $server = "", $timeout = "" )</A>
+		<LI><A HREF="#connect_server_port_110_">connect($server, $port = 110)</A>
+		<LI><A HREF="#user_user_">user($user = "")</A>
+		<LI><A HREF="#pass_pass_">pass($pass = "")</A>
+		<LI><A HREF="#apop_login_pass_">apop($login,$pass)</A>
+		<LI><A HREF="#login_login_pass_">login($login = "", $pass = "")</A>
+		<LI><A HREF="#noop_">noop()</A>
+		<LI><A HREF="#top_msgNum_numLines_0_">top($msgNum, $numLines = "0")</A>
+		<LI><A HREF="#pop_list_msgNum_">pop_list($msgNum = "")</A>
+		<LI><A HREF="#get_msgNum_">get($msgNum)</A>
+		<LI><A HREF="#last_type_count_">last( $type = "count" )</A>
+		<LI><A HREF="#reset_">reset()</A>
+		<LI><A HREF="#send_cmd_cmd_">send_cmd( $cmd = "" )</A>
+		<LI><A HREF="#popstat_">popstat()</A>
+		<LI><A HREF="#uidl_msgNum_">uidl($msgNum = "")</A>
+		<LI><A HREF="#delete_msgNum_">delete($msgNum = "")</A>
+		<LI><A HREF="#quit_">quit()</A>
+		<LI><A HREF="#is_ok_cmd_">is_ok($cmd = "")</A>
+		<LI><A HREF="#strip_clf_text_">strip_clf($text = "")</A>
+		<LI><A HREF="#parse_banner_server_text_">parse_banner( $server_text )</A>
+		<LI><A HREF="#update_timer_">update_timer()</A>
+	</UL>
+
+	<LI><A HREF="#VARIABLES">VARIABLES</A>
+	<UL>
+
+		<LI><A HREF="#ERROR_string_">ERROR (string)</A>
+		<LI><A HREF="#_TIMEOUT_integer_default_60">$TIMEOUT (integer, default == 60)</A>
+		<LI><A HREF="#_COUNT_integer_default_1_">$COUNT (integer, default == -1)</A>
+		<LI><A HREF="#_BUFFER_integer_default_512">$BUFFER (integer, default == 512)</A>
+		<LI><A HREF="#_FP_file_pointer_default_NU">$FP  (file pointer, default == NULL)</A>
+		<LI><A HREF="#_MAILSERVER_string_default_">$MAILSERVER (string, default == NULL)</A>
+		<LI><A HREF="#_DEBUG_boolean_default_fals">$DEBUG (boolean, default == false)</A>
+		<LI><A HREF="#_BANNER_string_default_NULL">$BANNER (string, default == NULL)</A>
+		<LI><A HREF="#_ALLOWAPOP_boolean_default_">$ALLOWAPOP (boolean, default == false)</A>
+		<LI><A HREF="#RFC1939_boolean_default_tru">RFC1939 (boolean, default == true)</A>
+	</UL>
+
+	<LI><A HREF="#EXAMPLES">EXAMPLES</A>
+	<LI><A HREF="#DOCUMENTATION">DOCUMENTATION</A>
+	<LI><A HREF="#INSTALLATION">INSTALLATION</A>
+	<LI><A HREF="#BUGS">BUGS</A>
+	<LI><A HREF="#VERSION">VERSION</A>
+	<LI><A HREF="#AUTHOR">AUTHOR</A>
+	<LI><A HREF="#LICENSE">LICENSE</A>
+	<LI><A HREF="#AVAILABILITY">AVAILABILITY</A>
+	<LI><A HREF="#HISTORY">HISTORY</A>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="NAME">NAME
+
+</A></H1>
+POP3 1.0 - An RFC 1939 compliant PHP wrapper to the POP3 protocol
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="SYNOPSIS">SYNOPSIS
+
+</A></H1>
+<PRE>    include(&quot;class.POP3.php3&quot;);
+</PRE>
+
+<P>
+
+<PRE>    $pop3 = new POP3();
+</PRE>
+
+<P>
+
+<PRE>    if(!$pop3-&gt;connect(&quot;mail.yourserver.com&quot;,60))
+    {
+        echo &quot;Ooops $pop3-&gt;ERROR &lt;BR&gt;\n&quot;;
+            exit;
+    }
+</PRE>
+
+<P>
+
+<PRE>    $login = 'cdi';
+    $pass = 'secret';
+    $Count = $pop3-&gt;login($login,$pass);
+    if( (!$Count) or ($Count == -1) )
+    {
+        echo &quot;&lt;H1&gt;Login Failed: $pop3-&gt;ERROR&lt;/H1&gt;\n&quot;;
+        exit;
+    }
+</PRE>
+
+<P>
+
+<PRE>    // ONLY USE THIS IF YOUR PHP VERSION SUPPORTS IT!
+    register_shutdown_function($pop3-&gt;quit());
+</PRE>
+
+<P>
+
+<PRE>    if ($Count &lt; 1)
+    {
+        echo &quot;Login OK: Inbox EMPTY&lt;BR&gt;\n&quot;;
+    } else {
+        echo &quot;Login OK: Inbox contains [$Count] messages&lt;BR&gt;\n&quot;;
+    }
+    $MsgOne = $pop3-&gt;get(1);
+    if( (!$MsgOne) or (gettype($MsgOne) != &quot;array&quot;) )
+    {
+        echo &quot;oops, $pop3-&gt;ERROR&lt;BR&gt;\n&quot;;
+        exit;
+    }
+    while ( list ( $lineNum,$line ) = each ($MsgOne) )
+    {
+        echo &quot;$line &lt;BR&gt;\n&quot;;
+    }
+    if(!$pop3-&gt;delete(1))
+    {
+        echo &quot;oops $pop3-&gt;ERROR &lt;BR&gt;\n&quot;;
+        $pop3-&gt;reset();
+        exit;
+    } else {
+        echo &quot;Message 1 Deleted &lt;BR&gt;\n&quot;;
+    }
+    exit;
+</PRE>
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="DESCRIPTION">DESCRIPTION
+
+</A></H1>
+class.POP3.php3 is a wrapper to the POP3 protocol, as specified by RFC
+1939. All mandatory POP3 commands are available, as are a few optional POP3
+commands. Using this class you can construct your own POP3 based web mail
+program, check for new mail from the web, or even use POP3 to authenticate
+secured areas of your web site.
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="METHODS">METHODS
+
+</A></H1>
+<P>
+<HR>
+<H2><A NAME="POP3_server_timeout_">POP3( $server = "", $timeout = "" )
+
+</A></H2>
+The class is instantiated by a call to the <CODE>POP3()</CODE> or new
+<CODE>POP3()</CODE> method. This method does not require arguments, but
+will set the global
+<STRONG>MAILSERVER</STRONG> and global <STRONG>TIMEOUT</STRONG> vars to the specified values if they are submitted. See <STRONG>MAILSERVER</STRONG> and <STRONG>TIMEOUT</STRONG> in the <STRONG>VARIABLES</STRONG> section.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="connect_server_port_110_">connect($server, $port = 110)
+
+</A></H2>
+This method <STRONG>must</STRONG> be called before any POP3 command can be sent. This actually creates the
+socket connection to the specified server, using either a user supplied
+port number or the POP3 default port 110. Returns true or false. If the
+connection succeeds, it sets the global var <STRONG>FP</STRONG> to the file pointer returned by the <CODE>fsocketopen()</CODE> call.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="user_user_">user($user = "")
+
+</A></H2>
+Sends the POP3 <STRONG>USER</STRONG> command to the server. The only allowable argument is the login id (mailbox
+name) of the user. Returns true on success, false on failure. Believe it or
+not, but the <STRONG>USER</STRONG> POP3 command is <STRONG>OPTIONAL</STRONG> per RFC 1939. If this is the case, the most probable login method is going
+to be <STRONG>APOP</STRONG>. Check with your server administrator to find out for sure.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="pass_pass_">pass($pass = "")
+
+</A></H2>
+Sends the POP3 <STRONG>PASS</STRONG> command to the server. The only allowable argument is the password for the
+mailbox specified by <STRONG>USER</STRONG>. Returns false on failure, and returns the <STRONG>number of messages in the mailbox</STRONG> on success. If login is successful but a problem occurs when trying to get
+the number of messages, the method returns <STRONG>-1</STRONG>. Believe it or not, but <STRONG>PASS</STRONG> is
+<STRONG>OPTIONAL</STRONG> per RFC 1939 and may not be supported by your server. If this is the case,
+you're seriously screwed unless they support <STRONG>APOP</STRONG>.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="apop_login_pass_">apop($login,$pass)
+
+</A></H2>
+Sends the POP3 <STRONG>APOP</STRONG> command to the server. The only allowable arguments are the name of the
+mailbox (login id) and the password.  <STRONG>APOP</STRONG> is an
+<STRONG>OPTIONAL</STRONG> POP3 command. Not all servers support this method of authentication. As
+such, this may or may not work for your server. If authentication fails,
+this method will automatically use the <CODE>login()</CODE> method to
+authenticate. Returns false on failure, the number of messages in the
+mailbox on success, or <STRONG>-1</STRONG> if unable to get the number of messages in the specified mailbox. This
+method can be disallowed by manually setting the global var <STRONG>ALLOWAPOP</STRONG> to false. See <STRONG>ALLOWAPOP</STRONG> in the <STRONG>VARIABLES</STRONG>
+section.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="login_login_pass_">login($login = "", $pass = "")
+
+</A></H2>
+Combined <STRONG>USER</STRONG> and <STRONG>PASS</STRONG>. Identical to using <CODE>user()</CODE> and <CODE>pass()</CODE>
+sequentially. The return values are the same as the <CODE>pass()</CODE>
+method.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="noop_">noop()
+
+</A></H2>
+Sends the POP3 <STRONG>NOOP</STRONG> command to the POP3 server. This command is implemented to allow clients to
+check the server for RFC 1939 compliance. The only response to this command
+is a <STRONG>'+OK'</STRONG> or a <STRONG>'-ERR'</STRONG>, which indicate RFC 1939 compliance.  <STRONG>Any other response from the server is
+invalid!</STRONG> This method has no other purpose, and is called automatically. If
+<CODE>noop()</CODE> is called before a user has authenticated, returns <STRONG>'-ERR'</STRONG>. The call to <CODE>noop()</CODE> <STRONG>must</STRONG> fail if the connection has not authenticated, and
+<STRONG>must</STRONG> succeed if the connection <STRONG>has</STRONG> authenticated. This POP3 class already implements this checking. If at any
+time a <CODE>noop()</CODE> call returns an inappropriate response, <STRONG>ERROR</STRONG> is set, the connect or login attempt will be aborted, and the connection to
+the server will be closed.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="top_msgNum_numLines_0_">top($msgNum, $numLines = "0")
+
+</A></H2>
+Sends the POP3 <STRONG>TOP</STRONG> command. Retrieves the message header and
+<STRONG>$numLines</STRONG> of the message body. Defaults to headers only. Set
+<STRONG>$numLines</STRONG> to <STRONG>-1</STRONG> to retrieve the entire message contents. This method returns an array where
+each line of the message is an array element. Returns <STRONG>undef</STRONG> on failure. The <STRONG>TOP</STRONG> command is <STRONG>OPTIONAL</STRONG> per RFC 1939 and may not be supported by your server.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="pop_list_msgNum_">pop_list($msgNum = "")
+
+</A></H2>
+Sends the POP3 <STRONG>LIST</STRONG> command to the server. This method returns the specified <STRONG>$msgNum's</STRONG> size in octets. If no message is specified, this method returns an
+associative array of undeleted message numbers as the keys, and the
+associated message size as the element. Array index zero will contain the
+total number of undeleted messages in the mailbox. Valid message numbers
+begin at array index one. Messages in the mailbox that are flagged for
+deletion will have their message size set to ``deleted''. This method
+returns <STRONG>undef</STRONG> (false) on failure.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="get_msgNum_">get($msgNum)
+
+</A></H2>
+Similar to <STRONG>TOP</STRONG>, this sends the POP3 <STRONG>RETR</STRONG> command. This method returns the contents of the specified message as an
+array, with each line of the message being an array element. Returns <STRONG>undef</STRONG> (false) on failure.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="last_type_count_">last( $type = "count" )
+
+</A></H2>
+Sends the POP3 <STRONG>STAT</STRONG> command, which returns the number of undeleted messages in the mailbox.
+Valid arguments to <CODE>last()</CODE> are <STRONG>count</STRONG> and
+<STRONG>array</STRONG>. If the argument to <CODE>last()</CODE> is <STRONG>array</STRONG>, the method returns a 2 element array. Element zero will be the number of
+messages in the mailbox, and element one will be the mailbox total size in
+octets.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="reset_">reset()
+
+</A></H2>
+Sends the POP3 <STRONG>RSET</STRONG> command to the server. Returns true on success, false on failure. An <STRONG>RSET</STRONG> command is used to undelete a previously deleted message. This method is
+automatically called if the connection to the server is closed before a
+valid <CODE>quit()</CODE> call is sent. The <STRONG>RSET</STRONG>
+command can only undelete messages flagged for deletion <STRONG>during the
+currently open session</STRONG> and cannot undelete a message deleted during a previous session.  <STRONG>This method automatcially closes the connection to the
+mail server</STRONG>. An <STRONG>RSET</STRONG> call implies that something <STRONG>bad</STRONG> has happened to the connection or the mailbox contents and automatically
+closes the connection to the server when called. A new
+<CODE>connect()</CODE> method must be called in order to re-establish the
+connection.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="send_cmd_cmd_">send_cmd( $cmd = "" )
+
+</A></H2>
+This is an internal method, but can be called from your programs. Sends a
+user specified command to the POP3 server and returns <STRONG>a one line
+response</STRONG>. This method is useless if you need to read a multi-line response from the
+server. The command sent to the server should <STRONG>not</STRONG> include the carriage return line-feed pair as it will be supplied
+automatically by <CODE>send_cmd().</CODE> The corresponding carriage return
+line-feed pair will be stripped from the returned reply automatically. If <STRONG>DEBUG</STRONG> is set to true, this command automatically logs the command and response
+via <CODE>error_log().</CODE> See <STRONG>DEBUG</STRONG> for more information.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="popstat_">popstat()
+
+</A></H2>
+Sends the POP3 <STRONG>STAT</STRONG> command with no arguments, which returns a 2 element array containing the
+total number of undeleted messages in the mailbox, and the size of the
+mailbox in octets. Returns <STRONG>undef</STRONG> on failure.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="uidl_msgNum_">uidl($msgNum = "")
+
+</A></H2>
+Sends the POP3 <STRONG>UIDL</STRONG> command to the server and returns it's output. The
+<STRONG>UIDL</STRONG> command is <STRONG>OPTIONAL</STRONG> per RFC 1939 and there-for may not be supported by your server. If given a
+message number, returns the UIDL for that message. If called with no
+arguments, returns an associative array containing undeleted message number
+keys and their associated UIDL elements. Returns <STRONG>undef</STRONG> on failure.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="delete_msgNum_">delete($msgNum = "")
+
+</A></H2>
+Sends the POP3 <STRONG>DELE</STRONG> command to the server and returns a true or false response. This deletes a
+specified message number. If no message number is specified, returns false.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="quit_">quit()
+
+</A></H2>
+Sends the POP3 <STRONG>QUIT</STRONG> command to the server and closes the connection. You
+<STRONG>must</STRONG> call this method if you have deleted any messages. Failure to call this
+method before your program terminates will result in the mailbox being
+returned to the state it was in prior to your connection. This message
+recovery is implemented by the POP3 server and per RFC 1939 there's no way
+to override that unless you send the <STRONG>QUIT</STRONG> command.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="is_ok_cmd_">is_ok($cmd = "")
+
+</A></H2>
+Internal method. Examines the reply from a POP3 command looking for <STRONG>'+OK'</STRONG>
+or <STRONG>'-ERR'</STRONG> at the beginning of the response string. If there is
+<STRONG>anything other than</STRONG>  <STRONG>'+OK'</STRONG> at the beginning of a response string, (and we're not looking at a
+multi-line response) will automatically be assumed to be a failure notice.
+Per RFC 1939 the first line of a POP3 server response
+<STRONG>MUST</STRONG> contain one of these two strings.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="strip_clf_text_">strip_clf($text = "")
+
+</A></H2>
+Strips (all) CRLF's from the text submitted and returns the results. The
+first line of <STRONG>all</STRONG> server responses automatically have their CRLF stripped. Lines from a
+multi-line response are not stripped.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="parse_banner_server_text_">parse_banner( $server_text )
+
+</A></H2>
+Internal method. This method parses the initial POP3 server response
+looking for the <STRONG>APOP</STRONG> banner. If found, <CODE>parse_banner()</CODE> automatically stashes the
+banner in the global variable <STRONG>BANNER</STRONG>. The <STRONG>BANNER</STRONG> is used as the common seed string in an <CODE>apop()</CODE> call per RFC
+1939.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="update_timer_">update_timer()
+
+</A></H2>
+Internal method to reset the <CODE>set_time_limit()</CODE> with the current <STRONG>$TIMEOUT</STRONG>
+value.
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="VARIABLES">VARIABLES
+
+</A></H1>
+<P>
+<HR>
+<H2><A NAME="ERROR_string_">ERROR (string)
+
+</A></H2>
+This variable contains the text of the last ERROR encountered. If a method
+fails, the text description of why the method failed can be retrieved by
+grabbing this variable.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="_TIMEOUT_integer_default_60">$TIMEOUT (integer, default == 60)
+
+</A></H2>
+The number of seconds to wait for a server response before giving up. Used
+with the PHP <CODE>set_time_limit()</CODE> function. Keep this fairly high,
+as downloading a 2 megabyte email over a modem is obviously going to take a
+few seconds. You may want to dynamically alter this value based upon
+message size. The timeout is set <STRONG>PRIOR</STRONG> to <STRONG>every</STRONG> POP3 command.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="_COUNT_integer_default_1_">$COUNT (integer, default == -1)
+
+</A></H2>
+After a successful login sequence, this variable contains the total number
+of messages in the mailbox at the time the user authenticated. Deleting
+messages in the mailbox will <STRONG>not</STRONG> alter this count. After deleting a message, you will need to call
+<CODE>popstat()</CODE> or <CODE>list()</CODE> to find out the total number
+of undeleted messages left in the mailbox.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="_BUFFER_integer_default_512">$BUFFER (integer, default == 512)
+
+</A></H2>
+Per RFC 1939, the largest line length returned by a POP3 server, including
+CRLF pairs, cannot exceed 512 bytes. When reading lines from a server
+response, the POP3 class uses <CODE>fgets()</CODE> to return the lines.
+<CODE>fgets()</CODE> stops reading the line when it encounters a new line,
+EOF, or <STRONG>$BUFFER</STRONG> number of bytes have been read.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="_FP_file_pointer_default_NU">$FP  (file pointer, default == NULL)
+
+</A></H2>
+This global maintains the open file pointer created by a successfull
+<CODE>connect()</CODE> method. Do not alter upon pain of death. This var is
+<CODE>unset()</CODE> if a <CODE>connect()</CODE> call fails, or if the
+<CODE>quit()</CODE> or <CODE>reset()</CODE> methods are called.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="_MAILSERVER_string_default_">$MAILSERVER (string, default == NULL)
+
+</A></H2>
+This global is set to null for the life of the process. If you want to
+<STRONG>HARD CODE</STRONG> the server that this class is allowed to use, then edit the source and
+specify the server name. Once the server is specified, the class will
+ignore any server specified in a <CODE>connect(),</CODE>
+<CODE>new(),</CODE> or <CODE>POP3()</CODE> method call and will <STRONG>always</STRONG> use the server pointed to by <STRONG>$MAILSERVER</STRONG>.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="_DEBUG_boolean_default_fals">$DEBUG (boolean, default == false)
+
+</A></H2>
+If set to true, the command - response pairs of all POP3 commands will be
+logged via <CODE>error_log().</CODE> This logging is usually captured by
+your web server and stored someplace like /var/log/httpd/error_log.  <STRONG>WARNING</STRONG>. If
+<STRONG>DEBUG</STRONG> is set to true, <STRONG>ALL</STRONG> commands, and the initial response to those commands, get logged. This
+means that <STRONG>login id</STRONG> and <STRONG>password</STRONG> pairs are logged <STRONG>as plain text</STRONG>. Obviously this is not something you want to enable if you are at all
+concerned with server security.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="_BANNER_string_default_NULL">$BANNER (string, default == NULL)
+
+</A></H2>
+The <STRONG>$BANNER</STRONG> var contains the results of the <CODE>parse_banner()</CODE> call. This is
+the common seed value for the creation of an MD5 hash used for <STRONG>APOP</STRONG>
+authentication.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="_ALLOWAPOP_boolean_default_">$ALLOWAPOP (boolean, default == false)
+
+</A></H2>
+Set to true if you want to allow <STRONG>APOP</STRONG> authentication. If the server does not support <STRONG>APOP</STRONG>, set this to false. Most POP3 servers will
+<STRONG>deliberately impose a random delay</STRONG> in response to a failed <STRONG>APOP</STRONG>
+attempt. This is an effort to thwart brute force password cracking. As
+such, it can substantially slow down your program if it tries to do <STRONG>APOP</STRONG>
+authentication on a server that does not support it.
+
+
+<P>
+
+<P>
+<HR>
+<H2><A NAME="RFC1939_boolean_default_tru">RFC1939 (boolean, default == true)
+
+</A></H2>
+Do not attempt to change this variable manually. This boolean value
+contains the results of the last <CODE>noop()</CODE> call made within the
+class. The <CODE>noop()</CODE> call <STRONG>MUST</STRONG> return false before authentication, and <STRONG>MUST</STRONG> return true after authentication. These checks are already handled by this
+class. See <CODE>noop()</CODE> and the <STRONG>rfc1939.txt</STRONG> for more information.
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="EXAMPLES">EXAMPLES
+
+</A></H1>
+see SYNOPSIS
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="DOCUMENTATION">DOCUMENTATION
+
+</A></H1>
+Included with the archive is <STRONG>rfc1939.txt</STRONG>. Read it before sending me a question. Please. :)
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="INSTALLATION">INSTALLATION
+
+</A></H1>
+Copy the class file to the location specified in your PHP3.INI file.
+Failing that, use the full path to the class file's location in your
+<CODE>include()</CODE> directive.
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="BUGS">BUGS
+
+</A></H1>
+<STRONG>APOP</STRONG> has not been tested. None of the servers I have access to support it. In <STRONG>theory</STRONG> it should work, as the RFC is very rigid in how <STRONG>APOP</STRONG> is implemented, but of course, <STRONG>YMMV</STRONG>.
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="VERSION">VERSION
+
+</A></H1>
+Version 1.0 1999/03/24 CDI, <A
+HREF="MAILTO:cdi@thewebmasters.net">cdi@thewebmasters.net</A>
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="AUTHOR">AUTHOR
+
+</A></H1>
+Copyright (c) 1999, CDI - <A
+HREF="MAILTO:cdi@thewebmasters.net.">cdi@thewebmasters.net.</A> All Rights
+Reserved.
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="LICENSE">LICENSE
+
+</A></H1>
+This program is free software; you can redistribute it and/or modify it
+under the GNU General Artistic License, with the following stipulations;
+
+
+<P>
+
+Changes or modifications must retain these Copyright statements. Changes or
+modifications <STRONG>must</STRONG> be submitted to the AUTHOR, <A
+HREF="MAILTO:cdi@thewebmasters.net.">cdi@thewebmasters.net.</A>
+
+
+<P>
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the Artistic License for more
+details. This software is distributed <STRONG>AS-IS</STRONG>.
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="AVAILABILITY">AVAILABILITY
+
+</A></H1>
+<A
+HREF="http://www.thewebmasters.net/php/">http://www.thewebmasters.net/php/</A>
+
+
+
+<P>
+
+<P>
+<HR>
+<H1><A NAME="HISTORY">HISTORY
+
+</A></H1>
+Version 1.0, initial public release
+
+
+<P>
+
+</DL>
+    </BODY>
+
+    </HTML>

@@ -1,0 +1,406 @@
+<!-- START OF HEADER CONTENT --><html>
+<head>
+<title>Recipe4Living Newsletter</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td height="30" colspan="2" bgcolor="#5c94c5" style="border-bottom:5px solid #fdb813;">
+    
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="12" height="30" align="left" valign="top"><img src="http://www.arcamax.com/partners/r4l/topnav-left.png" /></td>
+          
+          <td align="center" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; color:#FFFFFF;">
+          <a href="http://www.recipe4living.com/recipes" style="color:#FFFFFF; text-decoration:none;">Recipes</a> | <a href="http://www.recipe4living.com/hints_and_tips/" style="color:#FFFFFF; text-decoration:none;">Hints & Tips</a> | <a href="http://www.recipe4living.com/dash_of_fun" style="color:#FFFFFF; text-decoration:none;">A Dash Of Fun</a> | <a href="http://www.recipe4living.com/thinking_healthy" style="color:#FFFFFF; text-decoration:none;">Thinking Healthy</a> | <a href="http://www.recipe4living.com/contact" style="color:#FFFFFF; text-decoration:none;">Contact Us</a> | <a href="http://www.recipe4living.com/" style="color:#FFFFFF; text-decoration:none;">www.Recipe4Living.com</a>          </td>
+          
+          <td width="12" align="right" valign="top"><img src="http://www.arcamax.com/partners/r4l/topnav-right.png" /></td>
+        </tr>
+      </table>
+    
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="border-bottom:3px solid #fdb813; border-left: solid 1px #9f9f9f; border-right: solid 1px #9f9f9f; ">
+    
+ 
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td><a href="http://www.recipe4living.com"><img src="http://pics.recipe4living.com/Daily-Header-FINAL.jpg" border="0" alt="Recipe4Living's Daily Recipe Newsletter"/></a>      </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="border-bottom:2px solid #fdb813; border-left: solid 1px #9f9f9f; border-right: solid 1px #9f9f9f; ">
+    
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr> 
+          <td colspan="2" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000000; padding:6px;">Add <a href="mailto:R4L@recipe4living-recipes.com" style="color:#000000;">R4L@recipe4living-recipes.com</a> to your address book to ensure future delivery of these newsletters! <a href="http://www.recipe4living.com/assets/pdf/Domain_Instructions.pdf" style="color:#000000;"> Click here for instructions</a>.</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr><!-- END OF HEADER CONTENT --><!-- START OF BODY CONTENT --><tr>
+	<td width="340" valign="top" style="border-left: solid 1px #9f9f9f; padding:10px;">
+	    <!-- start left column -->
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <!-- START OF SLOT 1 -->
+	      <tr>
+	      	<td>
+	      		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;">
+
+      <tr>
+        <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color:#0F52B0; font-weight:bold;" colspan="6">13 One-Dish Meals in a Jiffy!</td>
+      </tr>
+
+<tr><td colspan="4">Whether you use a casserole dish, crockpot or a skillet, these are all one-pot meals that have no fussy preparation plans. They are ready to serve in a jiffy and make everyone at the table happy! Be sure to make enough so everyone can pile up on seconds!
+<br/><br/></td>
+<td width="118" valign="top">
+          <a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm"><img src="http://pics.recipe4living.com/onedishmeals33.jpg" width="118" height="100" border="0" /></a>          </td></tr>
+        <tr>
+<td valign="top" style="padding-left:6px; font-family:Arial, Helvetica, sans-serif; font-size:12px;" colspan="6">
+
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:000000">Beef and Cabbage</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:0F52B0">Ron's Chicken Delight</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:000000">Settler Beans</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:0F52B0">Vegetarian Enchilada Skillet</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:000000">Reuben Dip</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:0F52B0">Chicken Azteca Casserole</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:000000">Crockpot Veggie Spaghetti</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:0F52B0">Sausage and Potato Casserole</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:000000">Chicken and Eggplant with Capers</a><br>
+<a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:0F52B0">Tater Tot Casserole</a><br><br>
+
+
+<strong><a href="http://www.recipe4living.com/articles/13_one_dish_meals_in_a_jiffy.htm" style="color:#000000;">For a full list of these recipes, click here!</a></strong><br /><br />
+
+ </td>
+
+</tr>
+
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;">
+
+        <tr>
+          <td colspan="6"><br/>Did you miss yesterday's newsletter? We featured: <a href="http://www.recipe4living.com/articles/ham_it_up_12_ham_casseroles.htm" style="color:#000000;">12 Ham Casseroles</a><br/><br/></td>
+        </tr>
+<tr>
+<td colspan="6"><strong>Share your favorite recipe with us on Facebook or Twitter:</strong> <br/><align="center"><a href="http://www.facebook.com/Recipe4Living"><img src="http://pics.recipe4living.com/facebook_small.jpg" border="0"></a> <a href="http://www.twitter.com/Recipe4Living"><img src="http://pics.recipe4living.com/twitter_small.png" border="0"></a></align><br/>
+
+</td>
+        </tr></table>
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 1 -->
+	      
+	      
+	      <!-- START OF R4L_Recipe4Living_After_Slot_1 -->
+	      <tr>
+	      	<td>
+	      		<!-- NO ADS -->
+	      	</td>
+	      </tr>
+	      <!-- END OF R4L_Recipe4Living_After_Slot_1 -->
+	      
+	      <!-- START OF SLOT 2 -->
+	      <tr>
+	      	<td>
+	      		<br><table width="100%" cellpadding="0" cellspacing="0" border="0">
+
+			       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">More Articles From Recipe4Living</td>
+			      </tr>
+			
+			  
+			
+			  <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+			          <a href="http://www.recipe4living.com/articles/15_flavorful_pot_roasts.htm" style="color:#000000; font-weight:bold;">15 Flavorful Pot Roasts</a><br /><br />
+			A pot roast is a simple, delicious, and hearty dish that everyone loves! Pair it with tender roasted veggies and you have the perfect dinner for those chillier months. Which one will be your favorite?
+			
+			<br /> 
+			          <a href="http://www.recipe4living.com/articles/15_flavorful_pot_roasts.htm" style="color:#000000;"><u>Read the full article here.</u></a>
+			          </td>
+			        </tr>
+			
+			  <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+			          <a href="http://www.recipe4living.com/articles/18_quick_and_easy_entrees.htm" style="color:#000000; font-weight:bold;">18 Quick and Easy Entrees!</a><br /><br />
+			It has been a long day and you don't have the energy to think up a complex meal. No worries! We have 18 easy entrees that will make everyone happy and keep your night simple. You will have the time to help the kids with homework or sit down and read a book, because these easy entrees are no sweat at all!
+			
+			<br /> 
+			          <a href="http://www.recipe4living.com/articles/18_quick_and_easy_entrees.htm" style="color:#000000;"><u>Read the full article here.</u></a>
+			          </td>
+			        </tr>
+			
+			  <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+			          <a href="http://www.recipe4living.com/articles/15_desserts_in_under_15_minutes.htm" style="color:#000000; font-weight:bold;">15 Desserts in Under 15 Minutes</a><br /><br />
+			By the time dessert comes around, you don't want to be fussing over a grand dish that takes a long time to prepare and serve. Here are 15 desserts that you can have from cupboard to table in under 15 minutes!
+			
+			<br /> 
+			          <a href="http://www.recipe4living.com/articles/15_desserts_in_under_15_minutes.htm" style="color:#000000;"><u>Read the full article here.</u></a>
+			          </td>
+			        </tr>
+			
+			  <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+			          <a href="http://www.recipe4living.com/articles/a_fall_festival_of_food_108_casseroles_crockpots_and_seasonal_desserts.htm" style="color:#000000; font-weight:bold;">A Fall Festival of Food: 108 Casseroles, Crockpots and Seasonal Desserts</a><br /><br />
+			The leaves are falling and the air smells crisp. You are probably excited to put on your new Fall jacket and jump in a pile of leaves with the kids, but before you do, cozy up to Recipe4Living's Fall Festival of Food collection! From toasty apple cider to hearty casseroles and pumpkin sweets, this collection will warm you up and won't let you down! So snuggle up with your family and enjoy the best the season has to offer!
+			
+			<br /> 
+			          <a href="http://www.recipe4living.com/articles/a_fall_festival_of_food_108_casseroles_crockpots_and_seasonal_desserts.htm" style="color:#000000;"><u>Read the full article here.</u></a>
+			          </td>
+			        </tr>
+			
+			  <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+			          <a href="http://www.recipe4living.com/articles/15_no_fail_side_dishes.htm" style="color:#000000; font-weight:bold;">15 No Fail Side Dishes</a><br /><br />
+			You have your bird in the oven, your steak sizzling or your chicken ready to go. Now all you need is the perfect side dish. We have taken out all of the guesswork and have provided you with 15 'no fail' side dishes. Find your perfect fit and serve your family up a well-rounded meal that they will ask for again and again!
+			
+			<br /> 
+			          <a href="http://www.recipe4living.com/articles/15_no_fail_side_dishes.htm" style="color:#000000;"><u>Read the full article here.</u></a>
+			          </td>
+			        </tr>
+			
+			      </table>
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 2 -->
+	      
+	      <!-- START OF SLOT 3 -->
+	      <tr>
+	      	<td>
+	      		<br><table width="100%" cellpadding="0" cellspacing="0" border="0">
+			
+			       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">More Newsletters</td>
+			      </tr>
+			
+			         <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+			Love your Recipe4Living newsletter? We've got more! From special quick and easy recipes to budget cooking tips, there are so many more ways to enjoy Recipe4Living! <br/><br/> <strong>Click on the links below to sign up for one or try them all!</strong><br/>
+			</td></tr>
+			<tr><td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+			          <strong><a href="http://www.nickelthoughts.com/dispatch2.asp?home=70-28702V-L4" style="color:#000000">Fit&Fab Living Newsletter</a></strong> <br />
+			    Get the latest fashion, health and beauty tips in this newsletter. Learn how to look and feel your best.
+			          </td>
+			        </tr>   
+			 <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+			          <strong><a href="http://www.giftsforanswers.com/dispatch2.asp?home=70-28042S-L1" style="color:#000000">Party Recipes & Tips</a></strong> <br />
+			    For the party planner in you, here is a newsletter with entertaining tips, party decoration ideas and enough themed parties to keep you busy all year long.
+			          </td>
+			        </tr>
+			        <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+			          <strong><a href="http://www.giftsforanswers.com/dispatch2.asp?home=70-28043F-L1" style="color:#000000;">Quick & Easy Recipes</a></strong> <br />
+			          Recipes in this newsletter are always ready in under an hour, so you can enjoy home-cooked meals without all the fuss.
+			          </td>
+			        </tr>
+			        <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+			          <strong> <a href="http://www.focusforfree.com/dispatch2.asp?home=70-28368D-L2" style="color:#000000">Budget Cooking Recipes</a></strong> <br />
+			          Stretch your dollars further with this money-saving recipe newsletter that will bring you budget-friendly tips, meal planners and more, once a week.
+			          </td>
+			        </tr>
+			<tr>
+			   <td style="font-family:Arial, Helvetica, sans-serif; font-size:4px; color:#FFFFFF;">*mf rfl 092211 {to} mf*</td>
+			</tr>
+			      </table>
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 3 -->
+	      
+	      <!-- START OF R4L_Recipe4Living_After_Slot_3 -->
+	      <tr>
+	      	<td>
+	      		<!-- NO ADS -->
+	      	</td>
+	      </tr>
+	      <!-- END OF R4L_Recipe4Living_After_Slot_3 -->
+	      
+	      <!-- START OF SLOT 4 -->
+	      <tr>
+	      	<td>
+	      		<br>
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 4 -->
+	    </table>
+	    <!-- end left column -->
+	</td>
+	<td width="340" valign="top" style="border-right: solid 1px #9f9f9f; padding:10px;">
+	    <!-- start right column -->
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <!-- START OF SLOT 5 -->
+	      <tr>
+	      	<td>
+	      		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="4">20 Ways to Cook with Yogurt</td>
+      </tr>
+
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;" colspan="2">
+   While yogurt is commonly thought of as a snack, there are so many other ways to use it in the kitchen. Substitute sour cream or mayonnaise with Greek yogurt for a healthier dish!
+ <a href="http://www.recipe4living.com/articles/20_ways_to_cook_with_yogurt.htm" style="color:#000000;"><strong>Click here to see 20 different ways to cook with yogurt!</strong></a></td>
+<td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;" colspan="2">
+<a href="http://www.recipe4living.com/articles/20_ways_to_cook_with_yogurt.htm"><img src="http://pics.recipe4living.com/TomatoBasilDip.jpg" width="100" height="100" border="0"></a>
+        </td></tr>
+
+      </table>
+
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 5 -->
+	      
+	      <!-- START OF SLOT 6 -->
+	      <tr>
+	      	<td>
+	      		<br><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="4">10 Jello Recipes for Dessert</td>
+      </tr>
+
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;" colspan="2"> 
+   Jello is such a simple and inexpensive food, and yet it's a staple at many family dinners and holiday meals! Why? Because jello recipes taste good and brings back memories of childhood. <a href="http://www.recipe4living.com/articles/10_jello_recipes_for_dessert.htm" style="color:#000000;"><strong>Check out 10 of our best jello dessert recipes!</strong></a></td>
+<td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;" colspan="2">
+<a href="http://www.recipe4living.com/articles/10_jello_recipes_for_dessert.htm"><img src="http://pics.recipe4living.com/seafoam.jpg" width="100" height="100" border="0"></a>
+        </td></tr>
+
+      </table>
+
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 6 -->
+	      
+	      
+	      <!-- START OF R4L_Recipe4Living_After_Slot_6 -->
+	      <tr>
+	      	<td>
+	      		<!-- START OF ADS --><script language="JavaScript">
+var zflag_nid="608"; var zflag_cid="83/82/4"; var zflag_sid="1"; var zflag_width="300"; var zflag_height="250"; var zflag_sz="9"; var zflag_click="[INSERT_CLICK_TRACKER_MACRO]"; 
+</script>
+<script language="JavaScript" src="http://c5.zedo.com/jsc/c5/fo.js"></script><!-- END OF ADS -->
+	      	</td>
+	      </tr>
+	      <!-- END OF R4L_Recipe4Living_After_Slot_6 -->
+	      
+	      <!-- START OF SLOT 7 -->
+	      <tr>
+	      	<td>
+	      		<br><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			
+			
+			       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">Tip of the Day</td>
+			      </tr>
+			        <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+			          <strong>Avocados</strong><br /><br />
+			Avocados, available all year, vary greatly in shape, size, and color. Despite this variation in appearance, avocados are of good eating quality when they are properly ripened, becoming slightly soft. This ripening process normally takes from 3 to 5 days at room temperature for the quite firm avocados usually found in food stores. Ripening can be slowed by refrigeration.<br/><br/>
+			
+			Looking for more great cooking tips? <a href="http://www.recipe4living.com/articles/encyclopedia_of_tips" style="color:#000000;">Visit our Encyclopedia of Tips</a>!
+			
+			          <br /><br />Have a tip you'd like to share? <a href="http://www.recipe4living.com/contact" style="color:#000000;">Submit it here</a> and we might publish it in this newsletter!
+			          </td>
+			         </tr>
+			      </table>
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 7 -->
+	      
+	      <!-- START OF SLOT 8 -->
+	      <tr>
+	      	<td>
+	      		<br><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">Chew On That Blog</td>
+			      </tr>
+			
+			        <tr>
+			          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+			        September 20, 2011<br /><br />
+			<strong>Food in the News for Tuesday, September 20th</strong><br /><br />
+			It's time for another edition of Food in the News! Keep reading for the stories that have people talking, from food events across the country to Michelle Obama’s latest attempts to give the country’s children healthy eating options. You can also find out what national food day occurs today! Hint: The photo says it all!
+			<br/><br/>
+			         <a href="http://www.chewonthatblog.com/2011/09/20/food-in-the-news-for-tuesday-september-20th/" style="color:#000000;"><u>Read more and see pictures here!</u></a></p> 
+			          </td>
+			         </tr>
+			      </table>
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 8 -->
+	      
+	      <!-- START OF R4L_Recipe4Living_After_Slot_8 -->
+	      <tr>
+	      	<td>
+	      		<!-- START OF ADS --><script language="JavaScript">
+var zflag_nid="608"; var zflag_cid="84/82/4"; var zflag_sid="1"; var zflag_width="300"; var zflag_height="250"; var zflag_sz="9"; var zflag_click="[INSERT_CLICK_TRACKER_MACRO]"; 
+</script>
+<script language="JavaScript" src="http://c5.zedo.com/jsc/c5/fo.js"></script><!-- END OF ADS -->
+	      	</td>
+	      </tr>
+	      <!-- END OF R4L_Recipe4Living_After_Slot_8 -->
+	      
+	    </table>
+	    <!-- end right column -->
+	</td>
+</tr>
+<tr>
+    <td colspan="2"><img src="http://www.arcamax.com/partners/r4l/content-container-bottom.png" style="width: 705px;" /></td>
+</tr>
+<tr>
+    <td colspan="2"> </td>
+</tr>
+<!-- END OF BODY CONTENT --><!-- START OF FOOTER CONTENT --><tr>
+  
+    <td height="30" colspan="2" align="center" bgcolor="#2666a4" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; color:#FFFFFF;">
+    <a href="http://www.awesomeopinions.com/dispatch2.asp?home=70-27507K-L4" style="color:#FFFFFF; text-decoration:none;">Subscribe to Newsletter</a>   |    
+    <a href="http://www.recipe4living.com/rss/_all" style="color:#FFFFFF; text-decoration:none;">Newsfeed</a>
+    | 
+    <a href="http://www.recipe4living.com/share" style="color:#FFFFFF; text-decoration:none;">Submit a Recipe</a>
+    |
+    <a href="http://www.recipe4living.com/about" style="color:#FFFFFF; text-decoration:none;">About Us</a>
+    |
+    <a href="http://www.recipe4living.com/contact" style="color:#FFFFFF; text-decoration:none;">Contact Us</a>
+   |
+    <a href="http://www.recipe4living.com/home/" style="color:#FFFFFF; text-decoration:none;">Recipe4Living.com</a></td>
+    
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:8px 0px;"> </td>
+  </tr>
+<tr>
+    <td colspan="2" style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+             <P>This e-mail was requested by: <SPAN 
+            style="COLOR: blue">{to}</SPAN>.<BR><BR>
+To unsubscribe, <a href="http://r4l.popularliving.com/subctr/unsub/unsub_r4l.php?email={to}&id={job.listid}" style="color:#2E2E2E;">click here</a>.
+<br /><br />
+To manage your subscriptions, <a href="http://www.recipe4living.com/index/subctr" style="color:#2E2E2E;">click here</a>.
+<br />
+    </P>
+
+<P>Privacy Policy: <a href="http://www.recipe4living.com/privacy" style="color:#2E2E2E;">http://www.recipe4living.com/privacy</a></P>
+
+    <P align="left">Ampere Media LLC, 3400 Dundee Road, Suite 236, Northbrook, IL 60062,   FAX: (847) 205-9340<BR>
+Copyright &copy; 2011 Ampere Media, LLC. All rights reserved. 
+</P>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">{opencount('<img src="{opct.url}" width="1" height="1" border="0">')}</td>
+  </tr>
+</table>
+
+<!-- start page container -->
+
+<!-- end page container -->
+
+</body>
+</html>
+<!-- END OF FOOTER CONTENT -->

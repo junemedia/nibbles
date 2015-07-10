@@ -1,0 +1,79 @@
+<?php
+
+/*********
+
+Script to Display List/Add/Edit/Delete You Won eMail Contents
+
+**********/
+
+include("../../includes/paths.php");
+
+session_start();
+
+$sPageTitle = "Change Help";
+
+session_start();
+
+// Check user permission to access this page
+
+if (hasAccessRight($iMenuId) || isAdmin()) {
+	
+		
+	if ($sSave) {
+		$sHelpContent = stripslashes($sHelpContent);
+		$helpFile = fopen($sGblIncludePath."/help.txt","w");
+		if ($helpFile) {
+			
+			if (!fwrite($helpFile, $sHelpContent)) {				
+				$sMessage = "Help File Writing Error...";
+				
+			} else {
+				$sMessage = "Changes Saved In Help File...";
+			}
+		} else {
+			$sMessage = "Error In Opening Help File For Writing Content...";
+		}		
+	} 
+	
+	$sHelpContent = '';	
+	
+	
+	$helpFile = fopen($sGblIncludePath."/help.txt","r");
+	if ($helpFile) {
+		while ($temp = fread($helpFile,1024)) {
+			$sHelpContent .= $temp;
+		}
+		$sHelpContent = stripslashes($sHelpContent);
+	} else {
+		$sMessage = "Help File Not Exists...";
+	}
+	// Hidden fields to be passed with form submission
+	$sHidden = "<input type=hidden name=iMenuId value='$iMenuId'>";
+		
+	include("../../includes/adminHeader.php");	
+	
+?>
+
+
+<form name=form1 action='<?php echo $PHP_SELF;?>' method=post>
+
+<?php echo $sHidden;?>
+
+<table cellpadding=5 cellspacing=0 bgcolor=c9c9c9 width=95% align=center>
+
+<tr><Td align=left valign=top>Help Content:</a></th>
+
+<Td align=left valign=top><textarea  name=sHelpContent rows=15 cols=50><?php echo $sHelpContent;?></textarea></td>
+
+</tr>
+<tr><td></tD><td><input type=submit name='sSave' value='Save'></td></tr>
+<tr><td></tD><td>This will change the help file located at /home/sites/www_popularliving_com/html/includes/help.txt</td></tr>
+</table>
+</form>
+
+<?php
+	include("../../includes/adminFooter.php");
+} else {
+	echo "You are not authorized to access this page...";
+}
+?>

@@ -1,0 +1,579 @@
+.rn '' }`
+''' $RCSfile$$Revision$$Date$
+'''
+''' $Log$
+'''
+.de Sh
+.br
+.if t .Sp
+.ne 5
+.PP
+\fB\\$1\fR
+.PP
+..
+.de Sp
+.if t .sp .5v
+.if n .sp
+..
+.de Ip
+.br
+.ie \\n(.$>=3 .ne \\$3
+.el .ne 3
+.IP "\\$1" \\$2
+..
+.de Vb
+.ft CW
+.nf
+.ne \\$1
+..
+.de Ve
+.ft R
+
+.fi
+..
+'''
+'''
+'''     Set up \*(-- to give an unbreakable dash;
+'''     string Tr holds user defined translation string.
+'''     Bell System Logo is used as a dummy character.
+'''
+.tr \(*W-|\(bv\*(Tr
+.ie n \{\
+.ds -- \(*W-
+.ds PI pi
+.if (\n(.H=4u)&(1m=24u) .ds -- \(*W\h'-12u'\(*W\h'-12u'-\" diablo 10 pitch
+.if (\n(.H=4u)&(1m=20u) .ds -- \(*W\h'-12u'\(*W\h'-8u'-\" diablo 12 pitch
+.ds L" ""
+.ds R" ""
+'''   \*(M", \*(S", \*(N" and \*(T" are the equivalent of
+'''   \*(L" and \*(R", except that they are used on ".xx" lines,
+'''   such as .IP and .SH, which do another additional levels of
+'''   double-quote interpretation
+.ds M" """
+.ds S" """
+.ds N" """""
+.ds T" """""
+.ds L' '
+.ds R' '
+.ds M' '
+.ds S' '
+.ds N' '
+.ds T' '
+'br\}
+.el\{\
+.ds -- \(em\|
+.tr \*(Tr
+.ds L" ``
+.ds R" ''
+.ds M" ``
+.ds S" ''
+.ds N" ``
+.ds T" ''
+.ds L' `
+.ds R' '
+.ds M' `
+.ds S' '
+.ds N' `
+.ds T' '
+.ds PI \(*p
+'br\}
+.\"	If the F register is turned on, we'll generate
+.\"	index entries out stderr for the following things:
+.\"		TH	Title 
+.\"		SH	Header
+.\"		Sh	Subsection 
+.\"		Ip	Item
+.\"		X<>	Xref  (embedded
+.\"	Of course, you have to process the output yourself
+.\"	in some meaninful fashion.
+.if \nF \{
+.de IX
+.tm Index:\\$1\t\\n%\t"\\$2"
+..
+.nr % 0
+.rr F
+.\}
+.TH POP3 1 "PHP 3.0.6" "28/Mar/99" " Contributed PHP Docs "
+.UC
+.if n .hy 0
+.if n .na
+.ds C+ C\v'-.1v'\h'-1p'\s-2+\h'-1p'+\s0\v'.1v'\h'-1p'
+.de CQ          \" put $1 in typewriter font
+.ft CW
+'if n "\c
+'if t \\&\\$1\c
+'if n \\&\\$1\c
+'if n \&"
+\\&\\$2 \\$3 \\$4 \\$5 \\$6 \\$7
+'.ft R
+..
+.\" @(#)ms.acc 1.5 88/02/08 SMI; from UCB 4.2
+.	\" AM - accent mark definitions
+.bd B 3
+.	\" fudge factors for nroff and troff
+.if n \{\
+.	ds #H 0
+.	ds #V .8m
+.	ds #F .3m
+.	ds #[ \f1
+.	ds #] \fP
+.\}
+.if t \{\
+.	ds #H ((1u-(\\\\n(.fu%2u))*.13m)
+.	ds #V .6m
+.	ds #F 0
+.	ds #[ \&
+.	ds #] \&
+.\}
+.	\" simple accents for nroff and troff
+.if n \{\
+.	ds ' \&
+.	ds ` \&
+.	ds ^ \&
+.	ds , \&
+.	ds ~ ~
+.	ds ? ?
+.	ds ! !
+.	ds /
+.	ds q
+.\}
+.if t \{\
+.	ds ' \\k:\h'-(\\n(.wu*8/10-\*(#H)'\'\h"|\\n:u"
+.	ds ` \\k:\h'-(\\n(.wu*8/10-\*(#H)'\`\h'|\\n:u'
+.	ds ^ \\k:\h'-(\\n(.wu*10/11-\*(#H)'^\h'|\\n:u'
+.	ds , \\k:\h'-(\\n(.wu*8/10)',\h'|\\n:u'
+.	ds ~ \\k:\h'-(\\n(.wu-\*(#H-.1m)'~\h'|\\n:u'
+.	ds ? \s-2c\h'-\w'c'u*7/10'\u\h'\*(#H'\zi\d\s+2\h'\w'c'u*8/10'
+.	ds ! \s-2\(or\s+2\h'-\w'\(or'u'\v'-.8m'.\v'.8m'
+.	ds / \\k:\h'-(\\n(.wu*8/10-\*(#H)'\z\(sl\h'|\\n:u'
+.	ds q o\h'-\w'o'u*8/10'\s-4\v'.4m'\z\(*i\v'-.4m'\s+4\h'\w'o'u*8/10'
+.\}
+.	\" troff and (daisy-wheel) nroff accents
+.ds : \\k:\h'-(\\n(.wu*8/10-\*(#H+.1m+\*(#F)'\v'-\*(#V'\z.\h'.2m+\*(#F'.\h'|\\n:u'\v'\*(#V'
+.ds 8 \h'\*(#H'\(*b\h'-\*(#H'
+.ds v \\k:\h'-(\\n(.wu*9/10-\*(#H)'\v'-\*(#V'\*(#[\s-4v\s0\v'\*(#V'\h'|\\n:u'\*(#]
+.ds _ \\k:\h'-(\\n(.wu*9/10-\*(#H+(\*(#F*2/3))'\v'-.4m'\z\(hy\v'.4m'\h'|\\n:u'
+.ds . \\k:\h'-(\\n(.wu*8/10)'\v'\*(#V*4/10'\z.\v'-\*(#V*4/10'\h'|\\n:u'
+.ds 3 \*(#[\v'.2m'\s-2\&3\s0\v'-.2m'\*(#]
+.ds o \\k:\h'-(\\n(.wu+\w'\(de'u-\*(#H)/2u'\v'-.3n'\*(#[\z\(de\v'.3n'\h'|\\n:u'\*(#]
+.ds d- \h'\*(#H'\(pd\h'-\w'~'u'\v'-.25m'\f2\(hy\fP\v'.25m'\h'-\*(#H'
+.ds D- D\\k:\h'-\w'D'u'\v'-.11m'\z\(hy\v'.11m'\h'|\\n:u'
+.ds th \*(#[\v'.3m'\s+1I\s-1\v'-.3m'\h'-(\w'I'u*2/3)'\s-1o\s+1\*(#]
+.ds Th \*(#[\s+2I\s-2\h'-\w'I'u*3/5'\v'-.3m'o\v'.3m'\*(#]
+.ds ae a\h'-(\w'a'u*4/10)'e
+.ds Ae A\h'-(\w'A'u*4/10)'E
+.ds oe o\h'-(\w'o'u*4/10)'e
+.ds Oe O\h'-(\w'O'u*4/10)'E
+.	\" corrections for vroff
+.if v .ds ~ \\k:\h'-(\\n(.wu*9/10-\*(#H)'\s-2\u~\d\s+2\h'|\\n:u'
+.if v .ds ^ \\k:\h'-(\\n(.wu*10/11-\*(#H)'\v'-.4m'^\v'.4m'\h'|\\n:u'
+.	\" for low resolution devices (crt and lpr)
+.if \n(.H>23 .if \n(.V>19 \
+\{\
+.	ds : e
+.	ds 8 ss
+.	ds v \h'-1'\o'\(aa\(ga'
+.	ds _ \h'-1'^
+.	ds . \h'-1'.
+.	ds 3 3
+.	ds o a
+.	ds d- d\h'-1'\(ga
+.	ds D- D\h'-1'\(hy
+.	ds th \o'bp'
+.	ds Th \o'LP'
+.	ds ae ae
+.	ds Ae AE
+.	ds oe oe
+.	ds Oe OE
+.\}
+.rm #[ #] #H #V #F C
+.SH "NAME"
+POP3 1.0 \- An RFC 1939 compliant PHP wrapper to the POP3 protocol
+.SH "SYNOPSIS"
+.PP
+.Vb 1
+\&    include("class.POP3.php3");
+.Ve
+.Vb 1
+\&    $pop3 = new POP3();
+.Ve
+.Vb 5
+\&    if(!$pop3->connect("mail.yourserver.com",60))
+\&    {
+\&        echo "Ooops $pop3->ERROR <BR>\en";
+\&            exit;
+\&    }
+.Ve
+.Vb 8
+\&    $login = 'cdi';
+\&    $pass = 'secret';
+\&    $Count = $pop3->login($login,$pass);
+\&    if( (!$Count) or ($Count == -1) )
+\&    {
+\&        echo "<H1>Login Failed: $pop3->ERROR</H1>\en";
+\&        exit;
+\&    }
+.Ve
+.Vb 2
+\&    // ONLY USE THIS IF YOUR PHP VERSION SUPPORTS IT!
+\&    register_shutdown_function($pop3->quit());
+.Ve
+.Vb 25
+\&    if ($Count < 1)
+\&    {
+\&        echo "Login OK: Inbox EMPTY<BR>\en";
+\&    } else {
+\&        echo "Login OK: Inbox contains [$Count] messages<BR>\en";
+\&    }
+\&    $MsgOne = $pop3->get(1);
+\&    if( (!$MsgOne) or (gettype($MsgOne) != "array") )
+\&    {
+\&        echo "oops, $pop3->ERROR<BR>\en";
+\&        exit;
+\&    }
+\&    while ( list ( $lineNum,$line ) = each ($MsgOne) )
+\&    {
+\&        echo "$line <BR>\en";
+\&    }
+\&    if(!$pop3->delete(1))
+\&    {
+\&        echo "oops $pop3->ERROR <BR>\en";
+\&        $pop3->reset();
+\&        exit;
+\&    } else {
+\&        echo "Message 1 Deleted <BR>\en";
+\&    }
+\&    exit;
+.Ve
+.SH "DESCRIPTION"
+class.POP3.php3 is a wrapper to the POP3 protocol, as specified by RFC 1939. 
+All mandatory POP3 commands are available, as are a few optional POP3
+commands.  Using this class you can construct your own POP3 based web mail
+program, check for new mail from the web, or even use POP3 to authenticate
+secured areas of your web site.
+.SH "METHODS"
+.Sh "\fI\s-1POP3\s0\fR\|( \f(CW$server\fR = """", \f(CW$timeout\fR = """" )"
+The class is instantiated by a call to the \fI\s-1POP3\s0()\fR or new \fI\s-1POP3\s0()\fR method. 
+This method does not require arguments, but will set the global
+\fB\s-1MAILSERVER\s0\fR and global \fB\s-1TIMEOUT\s0\fR vars to the specified values if they are
+submitted.  See \fB\s-1MAILSERVER\s0\fR and \fB\s-1TIMEOUT\s0\fR in the \fB\s-1VARIABLES\s0\fR section.
+.Sh "\fIconnect\fR\|($server, \f(CW$port\fR = 110)"
+This method \fBmust\fR be called before any \s-1POP3\s0 command can be sent. This
+actually creates the socket connection to the specified server, using either
+a user supplied port number or the \s-1POP3\s0 default port 110.  Returns true or
+false.  If the connection succeeds, it sets the global var \fB\s-1FP\s0\fR to the file
+pointer returned by the \fIfsocketopen()\fR call.
+.Sh "\fIuser\fR\|($user = """")"
+Sends the \s-1POP3\s0 \fB\s-1USER\s0\fR command to the server. The only allowable argument is
+the login id (mailbox name) of the user.  Returns true on success, false on
+failure.  Believe it or not, but the \fB\s-1USER\s0\fR \s-1POP3\s0 command is \fB\s-1OPTIONAL\s0\fR per
+\s-1RFC\s0 1939.  If this is the case, the most probable login method is going to
+be \fB\s-1APOP\s0\fR.  Check with your server administrator to find out for sure.
+.Sh "\fIpass\fR\|($pass = """")"
+Sends the \s-1POP3\s0 \fB\s-1PASS\s0\fR command to the server.  The only allowable argument
+is the password for the mailbox specified by \fB\s-1USER\s0\fR.  Returns false on
+failure, and returns the \fBnumber of messages in the mailbox\fR on success. If
+login is successful but a problem occurs when trying to get the number of
+messages, the method returns \fB\-1\fR.  Believe it or not, but \fB\s-1PASS\s0\fR is
+\fB\s-1OPTIONAL\s0\fR per \s-1RFC\s0 1939 and may not be supported by your server.  If this
+is the case, you're seriously screwed unless they support \fB\s-1APOP\s0\fR.
+.Sh "\fIapop\fR\|($login,$pass)"
+Sends the \s-1POP3\s0 \fB\s-1APOP\s0\fR command to the server.  The only allowable arguments
+are the name of the mailbox (login id) and the password.  \fB\s-1APOP\s0\fR is an
+\fB\s-1OPTIONAL\s0\fR \s-1POP3\s0 command. Not all servers support this method of
+authentication.  As such, this may or may not work for your server.  If
+authentication fails, this method will automatically use the \fIlogin()\fR method
+to authenticate.  Returns false on failure,  the number of messages in the
+mailbox on success, or \fB\-1\fR if unable to get the number of messages in the
+specified mailbox.  This method can be disallowed by manually setting the
+global var \fB\s-1ALLOWAPOP\s0\fR to false.  See \fB\s-1ALLOWAPOP\s0\fR in the \fB\s-1VARIABLES\s0\fR
+section.
+.Sh "\fIlogin\fR\|($login = """", \f(CW$pass\fR = """")"
+Combined \fB\s-1USER\s0\fR and \fB\s-1PASS\s0\fR.  Identical to using \fIuser()\fR and \fIpass()\fR
+sequentially.  The return values are the same as the \fIpass()\fR method.
+.Sh "\fInoop()\fR"
+Sends the \s-1POP3\s0 \fB\s-1NOOP\s0\fR command to the \s-1POP3\s0 server.  This command is
+implemented to allow clients to check the server for \s-1RFC\s0 1939 compliance. 
+The only response to this command is a \fB'+\s-1OK\s0\*(R'\fR or a \fB\*(R'\-\s-1ERR\s0\*(R'\fR, which
+indicate \s-1RFC\s0 1939 compliance.  \fBAny other response from the server is
+invalid!\fR This method has no other purpose, and is called automatically.  If
+\fInoop()\fR is called before a user has authenticated, returns \fB\*(R'\-\s-1ERR\s0\*(R'\fR. The
+call to \fInoop()\fR \fBmust\fR fail if the connection has not authenticated, and
+\fBmust\fR succeed if the connection \fBhas\fR authenticated.  This \s-1POP3\s0 class
+already implements this checking.  If at any time a \fInoop()\fR call returns an
+inappropriate response, \fB\s-1ERROR\s0\fR is set,  the connect or login attempt
+will be aborted, and the connection to the server will be closed.
+.Sh "\fItop\fR\|($msgNum, \f(CW$numLines\fR = \*(M"0"")"
+Sends the \s-1POP3\s0 \fB\s-1TOP\s0\fR command.  Retrieves the message header and
+\fB$numLines\fR of the message body.  Defaults to headers only.  Set
+\fB$numLines\fR to \fB\-1\fR to retrieve the entire message contents.  This method
+returns an array where each line of the message is an array element. 
+Returns \fBundef\fR on failure.  The \fB\s-1TOP\s0\fR command is \fB\s-1OPTIONAL\s0\fR per \s-1RFC\s0 1939
+and may not be supported by your server.
+.Sh "\fIpop_list\fR\|($msgNum = """")"
+Sends the \s-1POP3\s0 \fB\s-1LIST\s0\fR command to the server.  This method returns the
+specified \fB$msgNum's\fR size in octets.  If no message is specified, this
+method returns an associative array of undeleted message numbers as the
+keys, and the associated message size as the element.  Array index zero will
+contain the total number of undeleted messages in the mailbox.  Valid
+message numbers begin at array index one.  Messages in the mailbox that are
+flagged for deletion will have their message size set to \*(L"deleted\*(R".  This
+method returns \fBundef\fR (false) on failure.
+.Sh "\fIget\fR\|($msgNum)"
+Similar to \fB\s-1TOP\s0\fR, this sends the \s-1POP3\s0 \fB\s-1RETR\s0\fR command.  This method returns
+the contents of the specified message as an array, with each line of the
+message being an array element.  Returns \fBundef\fR (false) on failure.
+.Sh "\fIlast\fR\|( \f(CW$type\fR = \*(M"count\*(S" )"
+Sends the \s-1POP3\s0 \fB\s-1STAT\s0\fR command, which returns the number of undeleted
+messages in the mailbox.  Valid arguments to \fIlast()\fR are \fBcount\fR and
+\fBarray\fR.  If the argument to \fIlast()\fR is \fBarray\fR,  the method returns a 2
+element array.  Element zero will be the number of messages in the mailbox,
+and element one will be the mailbox total size in octets.
+.Sh "\fIreset()\fR"
+Sends the \s-1POP3\s0 \fB\s-1RSET\s0\fR command to the server.  Returns true on success,
+false on failure.  An \fB\s-1RSET\s0\fR command is used to undelete a previously
+deleted message.  This method is automatically called if the connection to
+the server is closed before a valid \fIquit()\fR call is sent.  The \fB\s-1RSET\s0\fR
+command can only undelete messages flagged for deletion \fBduring the
+currently open session\fR and cannot undelete a message deleted during a
+previous session.  \fBThis method automatcially closes the connection to the
+mail server\fR.  An \fB\s-1RSET\s0\fR call implies that something \fBbad\fR has happened to
+the connection or the mailbox contents and automatically closes the
+connection to the server when called.  A new \fIconnect()\fR method must be called
+in order to re-establish the connection.
+.Sh "\fIsend_cmd\fR\|( \f(CW$cmd\fR = """" )"
+This is an internal method, but can be called from your programs.  Sends a
+user specified command to the \s-1POP3\s0 server and returns \fBa one line
+response\fR.  This method is useless if you need to read a multi-line response
+from the server.  The command sent to the server should \fBnot\fR include the
+carriage return line-feed pair as it will be supplied automatically by
+\fIsend_cmd()\fR.  The corresponding carriage return line-feed pair will be
+stripped from the returned reply automatically.  If \fB\s-1DEBUG\s0\fR is set to true,
+this command automatically logs the command and response via \fIerror_log()\fR. 
+See \fB\s-1DEBUG\s0\fR for more information.
+.Sh "\fIpopstat()\fR"
+Sends the \s-1POP3\s0 \fB\s-1STAT\s0\fR command with no arguments, which returns a 2 element
+array containing the total number of undeleted messages in the mailbox, and
+the size of the mailbox in octets.  Returns \fBundef\fR on failure.
+.Sh "\fIuidl\fR\|($msgNum = """")"
+Sends the \s-1POP3\s0 \fB\s-1UIDL\s0\fR command to the server and returns it's output.  The
+\fB\s-1UIDL\s0\fR command is \fB\s-1OPTIONAL\s0\fR per \s-1RFC\s0 1939 and there-for may not be
+supported by your server.  If given a message number, returns the \s-1UIDL\s0 for
+that message.  If called with no arguments, returns an associative array
+containing undeleted message number keys and their associated \s-1UIDL\s0 elements. 
+Returns \fBundef\fR on failure.
+.Sh "\fIdelete\fR\|($msgNum = """")"
+Sends the \s-1POP3\s0 \fB\s-1DELE\s0\fR command to the server and returns a true or false
+response.  This deletes a specified message number.  If no message number is
+specified, returns false.
+.Sh "\fIquit()\fR"
+Sends the \s-1POP3\s0 \fB\s-1QUIT\s0\fR command to the server and closes the connection.  You
+\fBmust\fR call this method if you have deleted any messages.  Failure to call
+this method before your program terminates will result in the mailbox being
+returned to the state it was in prior to your connection.  This message
+recovery is implemented by the \s-1POP3\s0 server and per \s-1RFC\s0 1939 there's no way
+to override that unless you send the \fB\s-1QUIT\s0\fR command.
+.Sh "\fIis_ok\fR\|($cmd = """")"
+Internal method.  Examines the reply from a \s-1POP3\s0 command looking for \fB'+\s-1OK\s0\*(R'\fR
+or \fB\*(R'\-\s-1ERR\s0\*(R'\fR at the beginning of the response string.  If there is
+\fBanything other than\fR \fB'+\s-1OK\s0\*(R'\fR at the beginning of a response string, (and
+we're not looking at a multi-line response) will automatically be assumed to
+be a failure notice.  Per \s-1RFC\s0 1939 the first line of a \s-1POP3\s0 server response
+\fB\s-1MUST\s0\fR contain one of these two strings.
+.Sh "\fIstrip_clf\fR\|($text = """")"
+Strips (all) \s-1CRLF\s0's from the text submitted and returns the results.  The
+first line of \fBall\fR server responses automatically have their \s-1CRLF\s0
+stripped.  Lines from a multi-line response are not stripped.
+.Sh "\fIparse_banner\fR\|( \f(CW$server_text\fR )"
+Internal method.  This method parses the initial \s-1POP3\s0 server response
+looking for the \fB\s-1APOP\s0\fR banner.  If found, \fIparse_banner()\fR automatically
+stashes the banner in the global variable \fB\s-1BANNER\s0\fR.  The \fB\s-1BANNER\s0\fR is used
+as the common seed string in an \fIapop()\fR call per \s-1RFC\s0 1939.
+.Sh "\fIupdate_timer()\fR"
+Internal method to reset the \fIset_time_limit()\fR with the current \fB$\s-1TIMEOUT\s0\fR
+value.
+.SH "VARIABLES"
+.Sh "\s-1ERROR\s0 (string)"
+This variable contains the text of the last \s-1ERROR\s0 encountered.  If a method
+fails, the text description of why the method failed can be retrieved by
+grabbing this variable.
+.Sh "\f(CW$TIMEOUT\fR (integer, default == 60)"
+The number of seconds to wait for a server response before giving up.  Used
+with the \s-1PHP\s0 \fIset_time_limit()\fR function.  Keep this fairly high, as
+downloading a 2 megabyte email over a modem is obviously going to take a
+few seconds.  You may want to dynamically alter this value based upon
+message size.  The timeout is set \fB\s-1PRIOR\s0\fR to \fBevery\fR \s-1POP3\s0 command.
+.Sh "\f(CW$COUNT\fR (integer, default == \-1)"
+After a successful login sequence, this variable contains the total number
+of messages in the mailbox at the time the user authenticated.  Deleting
+messages in the mailbox will \fBnot\fR alter this count.  After deleting a
+message, you will need to call \fIpopstat()\fR or \fIlist()\fR to find out the total
+number of undeleted messages left in the mailbox.
+.Sh "\f(CW$BUFFER\fR (integer, default == 512)"
+Per \s-1RFC\s0 1939, the largest line length returned by a \s-1POP3\s0 server, including
+\s-1CRLF\s0 pairs, cannot exceed 512 bytes.  When reading lines from a server
+response, the \s-1POP3\s0 class uses \fIfgets()\fR to return the lines.  \fIfgets()\fR stops
+reading the line when it encounters a new line, \s-1EOF\s0, or \fB$\s-1BUFFER\s0\fR number of
+bytes have been read.
+.Sh "\f(CW$FP\fR  (file pointer, default == \s-1NULL\s0)"
+This global maintains the open file pointer created by a successfull
+\fIconnect()\fR method.  Do not alter upon pain of death.  This var is \fIunset()\fR if
+a \fIconnect()\fR call fails, or if the \fIquit()\fR or \fIreset()\fR methods are called.
+.Sh "\f(CW$MAILSERVER\fR (string, default == \s-1NULL\s0)"
+This global is set to null for the life of the process.  If you want to
+\fB\s-1HARD\s0 \s-1CODE\s0\fR the server that this class is allowed to use, then edit the
+source and specify the server name. Once the server is specified, the class
+will ignore any server specified in a \fIconnect()\fR, \fInew()\fR, or \fI\s-1POP3\s0()\fR method
+call and will \fBalways\fR use the server pointed to by \fB$\s-1MAILSERVER\s0\fR.
+.Sh "\f(CW$DEBUG\fR (boolean, default == false)"
+If set to true, the command \- response pairs of all \s-1POP3\s0 commands will be
+logged via \fIerror_log()\fR.  This logging is usually captured by your web server
+and stored someplace like /var/log/httpd/error_log.  \fB\s-1WARNING\s0\fR.  If
+\fB\s-1DEBUG\s0\fR is set to true, \fB\s-1ALL\s0\fR commands, and the initial response to those
+commands, get logged.  This means that \fBlogin id\fR and \fBpassword\fR pairs are
+logged \fBas plain text\fR.  Obviously this is not something you want to enable
+if you are at all concerned with server security.
+.Sh "\f(CW$BANNER\fR (string, default == \s-1NULL\s0)"
+The \fB$\s-1BANNER\s0\fR var contains the results of the \fIparse_banner()\fR call.  This is
+the common seed value for the creation of an \s-1MD5\s0 hash used for \fB\s-1APOP\s0\fR
+authentication.
+.Sh "\f(CW$ALLOWAPOP\fR (boolean, default == false)"
+Set to true if you want to allow \fB\s-1APOP\s0\fR authentication.  If the server does
+not support \fB\s-1APOP\s0\fR, set this to false.  Most \s-1POP3\s0 servers will
+\fBdeliberately impose a random delay\fR in response to a failed \fB\s-1APOP\s0\fR
+attempt.  This is an effort to thwart brute force password cracking.  As
+such, it can substantially slow down your program if it tries to do \fB\s-1APOP\s0\fR
+authentication on a server that does not support it.
+.Sh "\s-1RFC1939\s0 (boolean, default == true)"
+Do not attempt to change this variable manually.  This boolean value
+contains the results of the last \fInoop()\fR call made within the class.  The
+\fInoop()\fR call \fB\s-1MUST\s0\fR return false before authentication, and \fB\s-1MUST\s0\fR return
+true after authentication.  These checks are already handled by this class. 
+See \fInoop()\fR and the \fBrfc1939.txt\fR for more information.
+.SH "EXAMPLES"
+see SYNOPSIS
+.SH "DOCUMENTATION"
+Included with the archive is \fBrfc1939.txt\fR.  Read it before sending me a
+question.  Please.  :)
+.SH "INSTALLATION"
+Copy the class file to the location specified in your PHP3.INI file. 
+Failing that, use the full path to the class file's location in your
+\fIinclude()\fR directive.
+.SH "BUGS"
+\fBAPOP\fR has not been tested.  None of the servers I have access to support
+it.  In \fBtheory\fR it should work, as the RFC is very rigid in how \fBAPOP\fR is
+implemented, but of course, \fBYMMV\fR.
+.SH "VERSION"
+Version 1.0    1999/03/24  CDI, cdi@thewebmasters.net
+.SH "AUTHOR"
+Copyright (c) 1999, CDI \- cdi@thewebmasters.net.  All Rights Reserved.
+.SH "LICENSE"
+This program is free software; you can redistribute it and/or modify it
+under the GNU General Artistic License, with the following stipulations;
+.PP
+Changes or modifications must retain these Copyright statements. Changes or
+modifications \fBmust\fR be submitted to the AUTHOR, cdi@thewebmasters.net.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the Artistic License for more
+details. This software is distributed \fBAS\-IS\fR.
+.SH "AVAILABILITY"
+http://www.thewebmasters.net/php/
+.SH "HISTORY"
+Version 1.0, initial public release
+
+.rn }` ''
+.IX Title "POP3 1"
+.IX Name "POP3 1.0 - An RFC 1939 compliant PHP wrapper to the POP3 protocol"
+
+.IX Header "NAME"
+
+.IX Header "SYNOPSIS"
+
+.IX Header "DESCRIPTION"
+
+.IX Header "METHODS"
+
+.IX Subsection "\fI\s-1POP3\s0\fR\|( \f(CW$server\fR = """", \f(CW$timeout\fR = """" )"
+
+.IX Subsection "\fIconnect\fR\|($server, \f(CW$port\fR = 110)"
+
+.IX Subsection "\fIuser\fR\|($user = """")"
+
+.IX Subsection "\fIpass\fR\|($pass = """")"
+
+.IX Subsection "\fIapop\fR\|($login,$pass)"
+
+.IX Subsection "\fIlogin\fR\|($login = """", \f(CW$pass\fR = """")"
+
+.IX Subsection "\fInoop()\fR"
+
+.IX Subsection "\fItop\fR\|($msgNum, \f(CW$numLines\fR = \*(M"0"")"
+
+.IX Subsection "\fIpop_list\fR\|($msgNum = """")"
+
+.IX Subsection "\fIget\fR\|($msgNum)"
+
+.IX Subsection "\fIlast\fR\|( \f(CW$type\fR = \*(M"count\*(S" )"
+
+.IX Subsection "\fIreset()\fR"
+
+.IX Subsection "\fIsend_cmd\fR\|( \f(CW$cmd\fR = """" )"
+
+.IX Subsection "\fIpopstat()\fR"
+
+.IX Subsection "\fIuidl\fR\|($msgNum = """")"
+
+.IX Subsection "\fIdelete\fR\|($msgNum = """")"
+
+.IX Subsection "\fIquit()\fR"
+
+.IX Subsection "\fIis_ok\fR\|($cmd = """")"
+
+.IX Subsection "\fIstrip_clf\fR\|($text = """")"
+
+.IX Subsection "\fIparse_banner\fR\|( \f(CW$server_text\fR )"
+
+.IX Subsection "\fIupdate_timer()\fR"
+
+.IX Header "VARIABLES"
+
+.IX Subsection "\s-1ERROR\s0 (string)"
+
+.IX Subsection "\f(CW$TIMEOUT\fR (integer, default == 60)"
+
+.IX Subsection "\f(CW$COUNT\fR (integer, default == \-1)"
+
+.IX Subsection "\f(CW$BUFFER\fR (integer, default == 512)"
+
+.IX Subsection "\f(CW$FP\fR  (file pointer, default == \s-1NULL\s0)"
+
+.IX Subsection "\f(CW$MAILSERVER\fR (string, default == \s-1NULL\s0)"
+
+.IX Subsection "\f(CW$DEBUG\fR (boolean, default == false)"
+
+.IX Subsection "\f(CW$BANNER\fR (string, default == \s-1NULL\s0)"
+
+.IX Subsection "\f(CW$ALLOWAPOP\fR (boolean, default == false)"
+
+.IX Subsection "\s-1RFC1939\s0 (boolean, default == true)"
+
+.IX Header "EXAMPLES"
+
+.IX Header "DOCUMENTATION"
+
+.IX Header "INSTALLATION"
+
+.IX Header "BUGS"
+
+.IX Header "VERSION"
+
+.IX Header "AUTHOR"
+
+.IX Header "LICENSE"
+
+.IX Header "AVAILABILITY"
+
+.IX Header "HISTORY"
+

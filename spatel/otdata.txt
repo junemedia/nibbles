@@ -1,0 +1,396 @@
+images/offers/ACSC_BF_ForFemale/images/ot.php:1971:		// entry in otData table
+images/offers/ACSC_BF_ForFemale/images/ot.php:2029:					// If return false, then insert into otData.
+images/offers/ACSC_BF_ForFemale/images/ot.php:2031:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+images/offers/ACSC_BF_ForFemale/images/ot.php:2041:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+images/offers/ACSC_BF_ForFemale/images/ot.php:2050:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/ACSC_BF_ForFemale/images/ot.php:2051:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/ACSC_BF_ForFemale/images/ot.php:2068:					// If return false, then insert into otData.
+images/offers/ACSC_BF_ForFemale/images/ot.php:2070:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+images/offers/ACSC_BF_ForFemale/images/ot.php:2083:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+images/offers/ACSC_BF_ForFemale/images/ot.php:2092:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/ACSC_BF_ForFemale/images/ot.php:2093:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/ACSC_BF_ForFemale/images/ot.php:2261:							$sUpdateStatusQuery = "UPDATE otData
+images/offers/ACSC_BF_ForFemale/images/ot.php:2510:					// If return false, then insert into otData.
+images/offers/ACSC_BF_ForFemale/images/ot.php:2512:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION["sSesEmail"],$_SESSION["aSesPage2Offers"][$i]);
+images/offers/ACSC_BF_ForFemale/images/ot.php:2516:						$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId, postalVerified )
+images/offers/ACSC_BF_ForFemale/images/ot.php:2525:							$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/ACSC_BF_ForFemale/images/ot.php:2526:							mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/ACSC_BF_ForFemale/images/ot.php:2747:							$sUpdateStatusQuery = "UPDATE otData
+images/offers/ACSC_BF_ForFemale/images/ot.php:3224:								FROM otData
+images/offers/ACSC_BF_ForFemale/images/ot.php:3237:								FROM otDataHistory
+images/offers/ACSC_BF_ForFemale/images/ot.php:3254:								FROM otDataHistory
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:44:		  //select data from otData
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:50:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:51:			                  FROM otData LEFT JOIN tempHttpFormPostTracking ON (otData.offerCode=tempHttpFormPostTracking.offerCode)
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:52:							  WHERE otData.offerCode = '%s'
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:57:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:58:			                  FROM otData 
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:59:							  WHERE otData.offerCode = '%s'
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:126:			//select Leads query data from otData
+images/offers/ACSC_BF_ForFemale/images/testpick2.php:145:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/ACSC_BF_ForFemale/images/testpick.php:45:		  //select data from otData
+images/offers/ACSC_BF_ForFemale/images/testpick.php:51:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/ACSC_BF_ForFemale/images/testpick.php:52:			                  FROM otData,tempHttpFormPostTracking
+images/offers/ACSC_BF_ForFemale/images/testpick.php:54:							        otData.offerCode=tempHttpFormPostTracking.offerCode and 
+images/offers/ACSC_BF_ForFemale/images/testpick.php:55:									otData.email=tempHttpFormPostTracking.email
+images/offers/ACSC_BF_ForFemale/images/testpick.php:60:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/ACSC_BF_ForFemale/images/testpick.php:61:			                  FROM otData 
+images/offers/ACSC_BF_ForFemale/images/testpick.php:62:							  WHERE otData.offerCode = '%s'
+images/offers/ACSC_BF_ForFemale/images/testpick.php:124:			//select Leads query data from otData
+images/offers/ACSC_BF_ForFemale/images/testpick.php:142:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:71:		  //select data from otData
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:77:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:78:			                  FROM otData,tempHttpFormPostTracking
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:80:							        otData.offerCode=tempHttpFormPostTracking.offerCode and 
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:81:									otData.email=tempHttpFormPostTracking.email
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:86:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:87:			                  FROM otData 
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:88:							  WHERE otData.offerCode = '%s'
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:155:			//select Leads query data from otData
+images/offers/ACSC_BF_ForFemale/images/testpick3.php:174:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/EKU_MAG/images/ot.php:1971:		// entry in otData table
+images/offers/EKU_MAG/images/ot.php:2029:					// If return false, then insert into otData.
+images/offers/EKU_MAG/images/ot.php:2031:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+images/offers/EKU_MAG/images/ot.php:2041:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+images/offers/EKU_MAG/images/ot.php:2050:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/EKU_MAG/images/ot.php:2051:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/EKU_MAG/images/ot.php:2068:					// If return false, then insert into otData.
+images/offers/EKU_MAG/images/ot.php:2070:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+images/offers/EKU_MAG/images/ot.php:2083:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+images/offers/EKU_MAG/images/ot.php:2092:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/EKU_MAG/images/ot.php:2093:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/EKU_MAG/images/ot.php:2261:							$sUpdateStatusQuery = "UPDATE otData
+images/offers/EKU_MAG/images/ot.php:2510:					// If return false, then insert into otData.
+images/offers/EKU_MAG/images/ot.php:2512:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION["sSesEmail"],$_SESSION["aSesPage2Offers"][$i]);
+images/offers/EKU_MAG/images/ot.php:2516:						$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId, postalVerified )
+images/offers/EKU_MAG/images/ot.php:2525:							$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/EKU_MAG/images/ot.php:2526:							mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/EKU_MAG/images/ot.php:2747:							$sUpdateStatusQuery = "UPDATE otData
+images/offers/EKU_MAG/images/ot.php:3224:								FROM otData
+images/offers/EKU_MAG/images/ot.php:3237:								FROM otDataHistory
+images/offers/EKU_MAG/images/ot.php:3254:								FROM otDataHistory
+images/offers/EKU_MAG/images/testpick2.php:44:		  //select data from otData
+images/offers/EKU_MAG/images/testpick2.php:50:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/EKU_MAG/images/testpick2.php:51:			                  FROM otData LEFT JOIN tempHttpFormPostTracking ON (otData.offerCode=tempHttpFormPostTracking.offerCode)
+images/offers/EKU_MAG/images/testpick2.php:52:							  WHERE otData.offerCode = '%s'
+images/offers/EKU_MAG/images/testpick2.php:57:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/EKU_MAG/images/testpick2.php:58:			                  FROM otData 
+images/offers/EKU_MAG/images/testpick2.php:59:							  WHERE otData.offerCode = '%s'
+images/offers/EKU_MAG/images/testpick2.php:126:			//select Leads query data from otData
+images/offers/EKU_MAG/images/testpick2.php:145:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/EKU_MAG/images/testpick.php:45:		  //select data from otData
+images/offers/EKU_MAG/images/testpick.php:51:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/EKU_MAG/images/testpick.php:52:			                  FROM otData,tempHttpFormPostTracking
+images/offers/EKU_MAG/images/testpick.php:54:							        otData.offerCode=tempHttpFormPostTracking.offerCode and 
+images/offers/EKU_MAG/images/testpick.php:55:									otData.email=tempHttpFormPostTracking.email
+images/offers/EKU_MAG/images/testpick.php:60:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/EKU_MAG/images/testpick.php:61:			                  FROM otData 
+images/offers/EKU_MAG/images/testpick.php:62:							  WHERE otData.offerCode = '%s'
+images/offers/EKU_MAG/images/testpick.php:124:			//select Leads query data from otData
+images/offers/EKU_MAG/images/testpick.php:142:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/EKU_MAG/images/testpick3.php:71:		  //select data from otData
+images/offers/EKU_MAG/images/testpick3.php:77:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/EKU_MAG/images/testpick3.php:78:			                  FROM otData,tempHttpFormPostTracking
+images/offers/EKU_MAG/images/testpick3.php:80:							        otData.offerCode=tempHttpFormPostTracking.offerCode and 
+images/offers/EKU_MAG/images/testpick3.php:81:									otData.email=tempHttpFormPostTracking.email
+images/offers/EKU_MAG/images/testpick3.php:86:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/EKU_MAG/images/testpick3.php:87:			                  FROM otData 
+images/offers/EKU_MAG/images/testpick3.php:88:							  WHERE otData.offerCode = '%s'
+images/offers/EKU_MAG/images/testpick3.php:155:			//select Leads query data from otData
+images/offers/EKU_MAG/images/testpick3.php:174:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/DSC_DaCruise/images/ot.php:1971:		// entry in otData table
+images/offers/DSC_DaCruise/images/ot.php:2029:					// If return false, then insert into otData.
+images/offers/DSC_DaCruise/images/ot.php:2031:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+images/offers/DSC_DaCruise/images/ot.php:2041:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+images/offers/DSC_DaCruise/images/ot.php:2050:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/DSC_DaCruise/images/ot.php:2051:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/DSC_DaCruise/images/ot.php:2068:					// If return false, then insert into otData.
+images/offers/DSC_DaCruise/images/ot.php:2070:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+images/offers/DSC_DaCruise/images/ot.php:2083:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+images/offers/DSC_DaCruise/images/ot.php:2092:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/DSC_DaCruise/images/ot.php:2093:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/DSC_DaCruise/images/ot.php:2261:							$sUpdateStatusQuery = "UPDATE otData
+images/offers/DSC_DaCruise/images/ot.php:2510:					// If return false, then insert into otData.
+images/offers/DSC_DaCruise/images/ot.php:2512:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION["sSesEmail"],$_SESSION["aSesPage2Offers"][$i]);
+images/offers/DSC_DaCruise/images/ot.php:2516:						$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId, postalVerified )
+images/offers/DSC_DaCruise/images/ot.php:2525:							$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/DSC_DaCruise/images/ot.php:2526:							mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/DSC_DaCruise/images/ot.php:2747:							$sUpdateStatusQuery = "UPDATE otData
+images/offers/DSC_DaCruise/images/ot.php:3224:								FROM otData
+images/offers/DSC_DaCruise/images/ot.php:3237:								FROM otDataHistory
+images/offers/DSC_DaCruise/images/ot.php:3254:								FROM otDataHistory
+images/offers/DSC_DaCruise/images/testpick2.php:44:		  //select data from otData
+images/offers/DSC_DaCruise/images/testpick2.php:50:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/DSC_DaCruise/images/testpick2.php:51:			                  FROM otData LEFT JOIN tempHttpFormPostTracking ON (otData.offerCode=tempHttpFormPostTracking.offerCode)
+images/offers/DSC_DaCruise/images/testpick2.php:52:							  WHERE otData.offerCode = '%s'
+images/offers/DSC_DaCruise/images/testpick2.php:57:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/DSC_DaCruise/images/testpick2.php:58:			                  FROM otData 
+images/offers/DSC_DaCruise/images/testpick2.php:59:							  WHERE otData.offerCode = '%s'
+images/offers/DSC_DaCruise/images/testpick2.php:126:			//select Leads query data from otData
+images/offers/DSC_DaCruise/images/testpick2.php:145:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/DSC_DaCruise/images/testpick.php:49:		  //select data from otData
+images/offers/DSC_DaCruise/images/testpick.php:55:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/DSC_DaCruise/images/testpick.php:56:			                  FROM otData,tempHttpFormPostTracking
+images/offers/DSC_DaCruise/images/testpick.php:58:							        otData.offerCode=tempHttpFormPostTracking.offerCode and 
+images/offers/DSC_DaCruise/images/testpick.php:59:									otData.email=tempHttpFormPostTracking.email
+images/offers/DSC_DaCruise/images/testpick.php:64:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/DSC_DaCruise/images/testpick.php:65:			                  FROM otData 
+images/offers/DSC_DaCruise/images/testpick.php:66:							  WHERE otData.offerCode = '%s'
+images/offers/DSC_DaCruise/images/testpick.php:128:			//select Leads query data from otData
+images/offers/DSC_DaCruise/images/testpick.php:146:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/DSC_DaCruise/images/testpick3.php:71:		  //select data from otData
+images/offers/DSC_DaCruise/images/testpick3.php:77:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/DSC_DaCruise/images/testpick3.php:78:			                  FROM otData,tempHttpFormPostTracking
+images/offers/DSC_DaCruise/images/testpick3.php:80:							        otData.offerCode=tempHttpFormPostTracking.offerCode and 
+images/offers/DSC_DaCruise/images/testpick3.php:81:									otData.email=tempHttpFormPostTracking.email
+images/offers/DSC_DaCruise/images/testpick3.php:86:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/DSC_DaCruise/images/testpick3.php:87:			                  FROM otData 
+images/offers/DSC_DaCruise/images/testpick3.php:88:							  WHERE otData.offerCode = '%s'
+images/offers/DSC_DaCruise/images/testpick3.php:155:			//select Leads query data from otData
+images/offers/DSC_DaCruise/images/testpick3.php:174:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/MS_IMPERIAL/images/ot.php:1971:		// entry in otData table
+images/offers/MS_IMPERIAL/images/ot.php:2029:					// If return false, then insert into otData.
+images/offers/MS_IMPERIAL/images/ot.php:2031:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+images/offers/MS_IMPERIAL/images/ot.php:2041:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+images/offers/MS_IMPERIAL/images/ot.php:2050:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/MS_IMPERIAL/images/ot.php:2051:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/MS_IMPERIAL/images/ot.php:2068:					// If return false, then insert into otData.
+images/offers/MS_IMPERIAL/images/ot.php:2070:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+images/offers/MS_IMPERIAL/images/ot.php:2083:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+images/offers/MS_IMPERIAL/images/ot.php:2092:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/MS_IMPERIAL/images/ot.php:2093:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/MS_IMPERIAL/images/ot.php:2261:							$sUpdateStatusQuery = "UPDATE otData
+images/offers/MS_IMPERIAL/images/ot.php:2510:					// If return false, then insert into otData.
+images/offers/MS_IMPERIAL/images/ot.php:2512:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION["sSesEmail"],$_SESSION["aSesPage2Offers"][$i]);
+images/offers/MS_IMPERIAL/images/ot.php:2516:						$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId, postalVerified )
+images/offers/MS_IMPERIAL/images/ot.php:2525:							$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+images/offers/MS_IMPERIAL/images/ot.php:2526:							mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+images/offers/MS_IMPERIAL/images/ot.php:2747:							$sUpdateStatusQuery = "UPDATE otData
+images/offers/MS_IMPERIAL/images/ot.php:3224:								FROM otData
+images/offers/MS_IMPERIAL/images/ot.php:3237:								FROM otDataHistory
+images/offers/MS_IMPERIAL/images/ot.php:3254:								FROM otDataHistory
+images/offers/MS_IMPERIAL/images/testpick2.php:44:		  //select data from otData
+images/offers/MS_IMPERIAL/images/testpick2.php:50:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/MS_IMPERIAL/images/testpick2.php:51:			                  FROM otData LEFT JOIN tempHttpFormPostTracking ON (otData.offerCode=tempHttpFormPostTracking.offerCode)
+images/offers/MS_IMPERIAL/images/testpick2.php:52:							  WHERE otData.offerCode = '%s'
+images/offers/MS_IMPERIAL/images/testpick2.php:57:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/MS_IMPERIAL/images/testpick2.php:58:			                  FROM otData 
+images/offers/MS_IMPERIAL/images/testpick2.php:59:							  WHERE otData.offerCode = '%s'
+images/offers/MS_IMPERIAL/images/testpick2.php:126:			//select Leads query data from otData
+images/offers/MS_IMPERIAL/images/testpick2.php:145:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/MS_IMPERIAL/images/testpick.php:49:		  //select data from otData
+images/offers/MS_IMPERIAL/images/testpick.php:55:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/MS_IMPERIAL/images/testpick.php:56:			                  FROM otData,tempHttpFormPostTracking
+images/offers/MS_IMPERIAL/images/testpick.php:58:							        otData.offerCode=tempHttpFormPostTracking.offerCode and 
+images/offers/MS_IMPERIAL/images/testpick.php:59:									otData.email=tempHttpFormPostTracking.email
+images/offers/MS_IMPERIAL/images/testpick.php:64:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/MS_IMPERIAL/images/testpick.php:65:			                  FROM otData 
+images/offers/MS_IMPERIAL/images/testpick.php:66:							  WHERE otData.offerCode = '%s'
+images/offers/MS_IMPERIAL/images/testpick.php:128:			//select Leads query data from otData
+images/offers/MS_IMPERIAL/images/testpick.php:146:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+images/offers/MS_IMPERIAL/images/testpick3.php:71:		  //select data from otData
+images/offers/MS_IMPERIAL/images/testpick3.php:77:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data ,httpPostString 
+images/offers/MS_IMPERIAL/images/testpick3.php:78:			                  FROM otData,tempHttpFormPostTracking
+images/offers/MS_IMPERIAL/images/testpick3.php:80:							        otData.offerCode=tempHttpFormPostTracking.offerCode and 
+images/offers/MS_IMPERIAL/images/testpick3.php:81:									otData.email=tempHttpFormPostTracking.email
+images/offers/MS_IMPERIAL/images/testpick3.php:86:			$query = sprintf("SELECT otData.offerCode,otData.dateTimeAdded,otData.realTimeResponse,otData.remoteIp,otData.page2Data 
+images/offers/MS_IMPERIAL/images/testpick3.php:87:			                  FROM otData 
+images/offers/MS_IMPERIAL/images/testpick3.php:88:							  WHERE otData.offerCode = '%s'
+images/offers/MS_IMPERIAL/images/testpick3.php:155:			//select Leads query data from otData
+images/offers/MS_IMPERIAL/images/testpick3.php:174:    $sTempLeadsQuery = eregi_replace("otDataHistoryWorking", "otData",$sTempLeadsQuery);
+includes/gpgProcessingAndSend.php.bak.20061227.pd:369:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061227.pd:580:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061227.pd:639:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061227.pd:680:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061227.pd:718:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php:346:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php:532:	$sCountQuery = "SELECT count(*) as count FROM otDataHistory 
+includes/gpgProcessingAndSend.php:580:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php:621:	$rCountResult = dbQuery("SELECT count(*) as count FROM otDataHistory WHERE offerCode='TYES_HOME' AND dateTimeAdded > date_add(CURRENT_DATE, INTERVAL -1 DAY) AND sendStatus='S'");
+includes/gpgProcessingAndSend.php:646:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php:684:				FROM otDataHistory 
+includes/gpg_pd.php:132:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061128.jrs:369:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061128.jrs:580:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061128.jrs:639:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061128.jrs:680:				FROM otDataHistory 
+includes/gpgProcessingAndSend.php.bak.20061128.jrs:718:				FROM otDataHistory 
+includes/gpgTemp.php:193:				FROM otDataHistory 
+includes/gpgTemp.php:314:				FROM otDataHistory 
+libs/validationFunctions.php:1615:	$sUpdateStatusQuery = "UPDATE otData
+libs/validationFunctions.php:1628:function checkForOtDataDups ($sEmail,$sOfferCode) {
+libs/validationFunctions.php:1631:	$sCheckDupQuery = "SELECT * FROM otData
+newOtPage2Submit_0223.php:486:	// make offers taken entries into otData table
+newOtPage2Submit_0223.php:539:			$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode )
+newOtPage2Submit_0223.php:544:			$iOtDataId = dbInsertId();		
+newOtPage2Submit_0223.php:704:					$sUpdateStatusQuery = "UPDATE otData
+newOtPage2Submit_0223.php:711:									   WHERE  id = '$iOtDataId'";
+newOtPage2Submit_0223.php:807:					$sUpdateStatusQuery = "UPDATE otData
+newOtPage2Submit_0223.php:811:									 	  WHERE   id = '$iOtDataId'";
+newOtPage2SubmitC.php:536:		// If return false, then insert into otData.
+newOtPage2SubmitC.php:538:		$bFoundDuplicateLead = checkForOtDataDups ($sEmail,$sOfferCode);
+newOtPage2SubmitC.php:541:			pixel firing to get their data into otData. Sometimes they
+newOtPage2SubmitC.php:557:				$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, postalVerified, sessionId )
+newOtPage2SubmitC.php:562:					$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+newOtPage2SubmitC.php:563:					mail('it@amperemedia.com',"Insert otData Failed - newOtPage2SubmitC.php", "$sEmailMessage");
+newOtPage2SubmitC.php:573:			   FROM   otData
+newOtPage2SubmitC.php:578:		$iOtDataId = $sRow->id;
+newOtPage2SubmitC.php:784:				$sUpdateStatusQuery = "UPDATE otData
+newOtPage2Submit.php:613:		// If return false, then insert into otData.
+newOtPage2Submit.php:615:		$bFoundDuplicateLead = checkForOtDataDups ($sEmail,$sOfferCode);
+newOtPage2Submit.php:619:			pixel firing to get their data into otData. Sometimes they
+newOtPage2Submit.php:634:				$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, postalVerified, sessionId )
+newOtPage2Submit.php:639:					$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+newOtPage2Submit.php:640:					mail('it@amperemedia.com',"Insert otData Failed - newOtPage2Submit.php", "$sEmailMessage");
+newOtPage2Submit.php:652:			   FROM   otData
+newOtPage2Submit.php:657:		$iOtDataId = $sRow->id;
+newOtPage2Submit.php:863:				$sUpdateStatusQuery = "UPDATE otData
+nibbles2/ot.php:1919:		// entry in otData table
+nibbles2/ot.php:1986:					// If return false, then insert into otData.
+nibbles2/ot.php:1988:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+nibbles2/ot.php:1998:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+nibbles2/ot.php:2007:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+nibbles2/ot.php:2008:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+nibbles2/ot.php:2026:					// If return false, then insert into otData.
+nibbles2/ot.php:2028:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION['sSesEmail'],$sTempOffersCode);
+nibbles2/ot.php:2041:							$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+nibbles2/ot.php:2050:								$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+nibbles2/ot.php:2051:								mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+nibbles2/ot.php:2056:									$sUpdate = "UPDATE otData
+nibbles2/ot.php:2231:							$sUpdateStatusQuery = "UPDATE otData
+nibbles2/ot.php:2393:					// If return false, then insert into otData.
+nibbles2/ot.php:2395:					$bFoundDuplicateLead = checkForOtDataDups ($_SESSION["sSesEmail"],$_SESSION["aSesPage2Offers"][$i]);
+nibbles2/ot.php:2399:						$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId, postalVerified )
+nibbles2/ot.php:2408:							$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+nibbles2/ot.php:2409:							mail('it@amperemedia.com',"Insert otData Failed - ot.php", "$sEmailMessage");
+nibbles2/ot.php:2627:							$sUpdateStatusQuery = "UPDATE otData
+nibbles2/ot.php:3097:								FROM otData
+nibbles2/preview.php:482:			// If return false, then insert into otData.
+nibbles2/preview.php:484:			$bFoundDuplicateLead = checkForOtDataDups ($sEmail,$sTempOffersCode);
+nibbles2/preview.php:495:					$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+nibbles2/preview.php:658:					$sUpdateStatusQuery = "UPDATE otData
+nibbles2/preview.php:736:			// If return false, then insert into otData.
+nibbles2/preview.php:738:			$bFoundDuplicateLead = checkForOtDataDups ($_SESSION["sSesEmail"],$sOfferCode);
+nibbles2/preview.php:741:				$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId, postalVerified )
+nibbles2/preview.php:943:					$sUpdateStatusQuery = "UPDATE otData
+nibbles2/sop.php:489:			// If return false, then insert into otData.
+nibbles2/sop.php:491:			$bFoundDuplicateLead = checkForOtDataDups ($sEmail,$sTempOffersCode);
+nibbles2/sop.php:503:					$sLeadInsertQuery = "INSERT IGNORE INTO otData (email, offerCode, revPerLead, sourceCode, 
+nibbles2/sop.php:668:					$sUpdateStatusQuery = "UPDATE otData
+nibbles2/sop.php:748:			// If return false, then insert into otData.
+nibbles2/sop.php:750:			$bFoundDuplicateLead = checkForOtDataDups ($_SESSION["sSesEmail"],$sOfferCode);
+nibbles2/sop.php:755:				$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId, postalVerified )
+nibbles2/sop.php:957:					$sUpdateStatusQuery = "UPDATE otData
+nibbles2/owh.php:102:			// If return false, then insert into otData.
+nibbles2/owh.php:104:			$bFoundDuplicateLead = checkForOtDataDups ($_SESSION["sSesEmail"],$sOfferCode);
+nibbles2/owh.php:107:				$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId, postalVerified )
+nibbles2/owh.php:113:					$sEmailMessage = "Insert into otData query failed.  Please run below insert query manually\n\n$sLeadInsertQuery";
+nibbles2/owh.php:114:					mail('it@amperemedia.com',"Insert otData Failed - otPage2Submit.php", "$sEmailMessage");
+nibbles2/owh.php:320:					$sUpdateStatusQuery = "UPDATE otData
+nibbles2/libs/function.php:544:	$sUpdateStatusQuery = "UPDATE otData
+nibbles2/libs/function.php:557:function checkForOtDataDups ($sEmail,$sOfferCode) {
+nibbles2/libs/function.php:560:	$sCheckDupQuery = "SELECT * FROM otData
+offerActInact.php:55:							   FROM   otData
+otPage2Submit_0204.php:48:// If no error messages, make entry in otData table
+otPage2Submit_0204.php:135:			$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, page2Data, mode )
+otPage2Submit_0204.php:140:			$iOtDataId = dbInsertId();
+otPage2Submit_0204.php:357:					$sUpdateStatusQuery = "UPDATE otData
+otPage2Submit_0204.php:364:									   WHERE  id = '$iOtDataId'";
+otPage2Submit_0204.php:460:					$sUpdateStatusQuery = "UPDATE otData
+otPage2Submit_0204.php:464:									 	  WHERE   id = '$iOtDataId'";
+otPage2Submit_0209.php:48:// If no error messages, make entry in otData table
+otPage2Submit_0209.php:179:			$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, page2Data, mode )
+otPage2Submit_0209.php:184:			$iOtDataId = dbInsertId();
+otPage2Submit_0209.php:360:					$sUpdateStatusQuery = "UPDATE otData
+otPage2Submit_0209.php:367:									   WHERE  id = '$iOtDataId'";
+otPage2Submit_0209.php:463:					$sUpdateStatusQuery = "UPDATE otData
+otPage2Submit_0209.php:467:									 	  WHERE   id = '$iOtDataId'";
+otPage2Submit_0310.php:48:// If no error messages, make entry in otData table
+otPage2Submit_0310.php:179:			$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId )
+otPage2Submit_0310.php:184:			$iOtDataId = dbInsertId();
+otPage2Submit_0310.php:360:					$sUpdateStatusQuery = "UPDATE otData
+otPage2Submit_0310.php:367:									   WHERE  id = '$iOtDataId'";
+otPage2Submit_0310.php:463:					$sUpdateStatusQuery = "UPDATE otData
+otPage2Submit_0310.php:467:									 	  WHERE   id = '$iOtDataId'";
+otPage2Submit_0329.php:48:// If no error messages, make entry in otData table
+otPage2Submit_0329.php:206:			$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, page2Data, mode, sessionId )
+otPage2Submit_0329.php:211:			$iOtDataId = dbInsertId();
+otPage2Submit_0329.php:408:					$sUpdateStatusQuery = "UPDATE otData
+otPage2Submit_0329.php:415:									   WHERE  id = '$iOtDataId'";
+otPage2Submit_0329.php:511:					$sUpdateStatusQuery = "UPDATE otData
+otPage2Submit_0329.php:515:									 	  WHERE   id = '$iOtDataId'";
+otPageSubmit_0204.php:440:	// entry in otData table
+otPageSubmit_0204.php:520:			$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, mode )
+otPageSubmit_0204.php:523:			$iOtDataId = dbInsertId();
+otPageSubmit_0204.php:643:				$sUpdateStatusQuery = "UPDATE otData
+otPageSubmit_0204.php:650:									   WHERE  id = '$iOtDataId'";
+otPageSubmit_0204.php:730:				$sUpdateStatusQuery = "UPDATE otData
+otPageSubmit_0204.php:734:									   WHERE  id = '$iOtDataId'";
+otPageSubmit_0310.php:443:	// entry in otData table
+otPageSubmit_0310.php:523:			$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, serverIp, mode, sessionId )
+otPageSubmit_0310.php:526:			$iOtDataId = dbInsertId();
+otPageSubmit_0310.php:646:				$sUpdateStatusQuery = "UPDATE otData
+otPageSubmit_0310.php:653:									   WHERE  id = '$iOtDataId'";
+otPageSubmit_0310.php:733:				$sUpdateStatusQuery = "UPDATE otData
+otPageSubmit_0310.php:737:									   WHERE  id = '$iOtDataId'";
+otPageSubmitTest.php:432:	// entry in otData table
+otPageSubmitTest.php:512:			$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, mode )
+otPageSubmitTest.php:515:			$iOtDataId = dbInsertId();
+otPageSubmitTest.php:635:				$sUpdateStatusQuery = "UPDATE otData
+otPageSubmitTest.php:642:									   WHERE  id = '$iOtDataId'";
+otPageSubmitTest.php:722:				$sUpdateStatusQuery = "UPDATE otData
+otPageSubmitTest.php:726:									   WHERE  id = '$iOtDataId'";
+pixels/coRegPopUpOfferTakenPixel.php:61:		$sGetOtData = "SELECT * FROM otData WHERE sessionId='$sSessId' LIMIT 1";
+pixels/coRegPopUpOfferTakenPixel.php:62:		$rGetOtData = dbQuery($sGetOtData);
+pixels/coRegPopUpOfferTakenPixel.php:63:		while($sOtData = dbFetchObject($rGetOtData)) {
+pixels/coRegPopUpOfferTakenPixel.php:64:			$sEmail = $sOtData->email;
+pixels/coRegPopUpOfferTakenPixel.php:65:			$sSourceCode = $sOtData->sourceCode;
+pixels/coRegPopUpOfferTakenPixel.php:66:			$sSubSourceCode = $sOtData->subSourceCode;
+pixels/coRegPopUpOfferTakenPixel.php:67:			$sPostalVerified = $sOtData->postalVerified;
+pixels/coRegPopUpOfferTakenPixel.php:74:				while($sUserDataRow = dbFetchObject($rGetOtData)) {
+pixels/coRegPopUpOfferTakenPixel.php:95:	// Insert into otData
+pixels/coRegPopUpOfferTakenPixel.php:97:	$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, sourceCode, subSourceCode, revPerLead, pageId, dateTimeAdded, 
+pixels/closeTheyHostPixel.php:76:			$sGetOtData = "SELECT * FROM otData WHERE sessionId='$sSessId' LIMIT 1";
+pixels/closeTheyHostPixel.php:77:			$rGetOtData = dbQuery($sGetOtData);
+pixels/closeTheyHostPixel.php:78:			while($sOtData = dbFetchObject($rGetOtData)) {
+pixels/closeTheyHostPixel.php:79:				$sEmail = $sOtData->email;
+pixels/closeTheyHostPixel.php:80:				$sSourceCode = $sOtData->sourceCode;
+pixels/closeTheyHostPixel.php:81:				$sSubSourceCode = $sOtData->subSourceCode;
+pixels/closeTheyHostPixel.php:82:				$sPostalVerified = $sOtData->postalVerified;
+pixels/closeTheyHostPixel.php:89:					while($sUserDataRow = dbFetchObject($rGetOtData)) {
+pixels/closeTheyHostPixel.php:114:	// Insert into otData
+pixels/closeTheyHostPixel.php:116:	$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, sourceCode, subSourceCode, revPerLead, pageId, dateTimeAdded, remoteIp, serverIp, mode, postalVerified, processStatus, sendStatus, 
+pixels/thOfferTakenPixel.php:65:		$sGetOtData = "SELECT * FROM otData WHERE sessionId='$sSessId' LIMIT 1";
+pixels/thOfferTakenPixel.php:66:		$rGetOtData = dbQuery($sGetOtData);
+pixels/thOfferTakenPixel.php:67:		while($sOtData = dbFetchObject($rGetOtData)) {
+pixels/thOfferTakenPixel.php:68:			$sEmail = $sOtData->email;
+pixels/thOfferTakenPixel.php:69:			$sSourceCode = $sOtData->sourceCode;
+pixels/thOfferTakenPixel.php:70:			$sSubSourceCode = $sOtData->subSourceCode;
+pixels/thOfferTakenPixel.php:71:			$sPostalVerified = $sOtData->postalVerified;
+pixels/thOfferTakenPixel.php:78:				while($sUserDataRow = dbFetchObject($rGetOtData)) {
+pixels/thOfferTakenPixel.php:111:// Insert into otData
+pixels/thOfferTakenPixel.php:113:$sLeadInsertQuery = "INSERT INTO otData(email, offerCode, sourceCode, subSourceCode, revPerLead, pageId, dateTimeAdded, remoteIp, serverIp, mode, postalVerified, processStatus, sendStatus, 
+r/r.php:21:// and get session id.  with session id, we look into otData/userData table and get user's information
+r/r.php:22:// that's the user information we use when we insert record into otData (insert into otData from pixel script).
+sopSubmit_0209.php:356:	// entry in otData table
+sopSubmit_0209.php:448:			$sLeadInsertQuery = "INSERT IGNORE INTO otData(email, offerCode, revPerLead, sourceCode, subSourceCode, pageId, dateTimeAdded, remoteIp, page2Data, mode )
+sopSubmit_0209.php:451:			$iOtDataId = dbInsertId();
+sopSubmit_0209.php:600:				$sUpdateStatusQuery = "UPDATE otData
+sopSubmit_0209.php:607:									   WHERE  id = '$iOtDataId'";
+sopSubmit_0209.php:711:				$sUpdateStatusQuery = "UPDATE otData
+sopSubmit_0209.php:715:									   WHERE  id = '$iOtDataId'";
+TempCapCount.php:23:						  FROM   otData
+TempCapCount.php:32:						  FROM   otDataHistory
+TempCapCount.php:61:						  FROM   otDataHistory
+TempCapCount.php:95:						  FROM   otDataHistory
+temp.php:34:		  				$sOtDataUpdateQuery = "UPDATE otDataHistory
+temp.php:40:					$rOtDataUpdateResult = mysql_query($sOtDataUpdateQuery);
+temp.php:41:					echo "<BR>$sTestEmail ".$sOtDataUpdateQuery;
+temp.php:53:	$query2 = "UPDATE `otDataHistory` set processStatus = 'R' ,reasonCode = 'npv', dateTimeProcessed = now()
+temp.php:93:	$query2 = "update otDataHistory
+temp.php:121:$sUpdateQuery = "UPDATE otDataHistory
+temp.php:134:$sUpdateQuery = "UPDATE otData
+temp.php:161:			FROM   otDataHistory
+temp.php:169:	$sUpdateQuery = "UPDATE otDataHistory
+temp.php:192:			  FROM   otDataHistory
+temp.php:201:				FROM   otDataHistory

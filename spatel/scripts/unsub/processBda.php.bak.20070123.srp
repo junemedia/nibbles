@@ -1,0 +1,96 @@
+<?php
+
+	ini_set('max_execution_time', 500000000);
+	$iniConfig = parse_ini_file( "/home/scripts/includes/mysqlServer.conf" );
+	$sNotify = $iniConfig['recipNotify'];
+	include( "/home/scripts/includes/cssLogFunctions.php" );
+	$iScriptId = cssLogStart( "processBda.php" );
+	$StormPostSOAPUrl = "https://silvercarrot2.login.skylist.net/services/SoapRequestProcessor";
+	$StormPostUsername = "jr@myfree.com";
+	$StormPostPassword = "bestjohn";
+	$head1 = new SoapHeader('http://services.web.stormpost.skylist.com',
+                        'username',
+                        $StormPostUsername,
+                        0,'http://schemas.xmlsoap.org/soap/actor/next');
+	$head2 = new SoapHeader('http://services.web.stormpost.skylist.com',
+                        'password',
+                        $StormPostPassword,
+                        0,'http://schemas.xmlsoap.org/soap/actor/next');
+	$client = new SoapClient(NULL,
+                        array(  'location' => "https://silvercarrot2.login.skylist.net/services/SoapRequestProcessor",
+                                'uri'=>"http://services.web.stormpost.skylist.com")
+                        );
+
+	mysql_connect($iniConfig['mysqlMASTERIP'],$iniConfig['mysqlNibblesUSER'],$iniConfig['mysqlNibblesPASS']);
+	mysql_select_db($iniConfig['mysqlDatabaseNibbles']);
+	$sNewDataTimeAdded = "";
+	$iCount = 0;
+	
+	
+	$rFile = fopen("/home/scripts/unsub/log.txt","r");
+	if ($rFile) {
+		$sDateTimeAdded = fread($rFile, 19);
+	}
+	echo "Start DateTime: $sDateTimeAdded\n\n";
+
+	$sGetSubData = "SELECT email, dateTimeAdded
+			FROM joinEmailConfirm
+			WHERE dateTimeAdded > '$sDateTimeAdded'
+			AND joinListId = '215'
+			ORDER BY dateTimeAdded ASC";
+	$rGetSubDataResult = mysql_query($sGetSubData);
+	$iTotal = mysql_num_rows($rGetSubDataResult);
+	while ($sSubData = mysql_fetch_object($rGetSubDataResult)) {
+		$soap_parameters = array('importID' =>3, 'Data' => $sSubData->email);
+		$result = $client->__SoapCall('doImportFromTemplate',
+                                $soap_parameters,
+                                NULL,
+                                array($head1, $head2)
+                                );
+		//$result = $client->call('doImportFromTemplate',$soap_parameters,'http://services.web.stormpost.skylist.com','',false);
+		$sNewDataTimeAdded = $sSubData->dateTimeAdded;
+		$iCount++;
+		
+		if ($iCount % 50 == 0) {
+			echo "$iCount / $iTotal \n";
+			sleep(1);
+		}
+	}
+
+	if ($sNewDataTimeAdded != "") {
+		$rFile = fopen("/home/scripts/unsub/log.txt","w");
+		if ($rFile) {
+			$sTemp = fwrite($rFile, $sNewDataTimeAdded);
+		}
+		echo "End DateTime: $sNewDataTimeAdded\n\n";
+	}
+	
+
+	$sGetUnSubData = "SELECT email FROM joinEmailUnsub
+			WHERE dateTimeAdded > '$sDateTimeAdded'	AND joinListId = '215'";
+	$rGetUnSubDataResult = mysql_query($sGetUnSubData);
+	if (!($rGetUnSubDataResult)) {
+		$rGetUnSubDataResult = mysql_query($sGetUnSubData);
+	}
+	$iTotal = mysql_num_rows($rGetUnSubDataResult);
+	$iCount = 0;
+	
+	while ($sUnSubData = mysql_fetch_object($rGetUnSubDataResult)) {
+		$soap_parameters = array('importID' =>2, 'Data' => $sUnSubData->email);
+		//$result = $client->call('doImportFromTemplate',$soap_parameters,'http://services.web.stormpost.skylist.com','',false);
+		$result = $client->__SoapCall('doImportFromTemplate',
+                                $soap_parameters,
+                                NULL,
+                                array($head1, $head2)
+                                );
+		$iCount++;
+		
+		if ($iCount % 50 == 0) {
+			echo "$iCount / $iTotal \n";
+			sleep(1);
+		}
+	}
+	
+
+	cssLogFinish( $iScriptId );
+?>

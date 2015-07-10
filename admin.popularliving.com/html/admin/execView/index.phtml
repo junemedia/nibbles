@@ -1,0 +1,39 @@
+<!-- Template to display Recovery Report-->
+
+<form name=form1 action='{ACTION}'>
+{HIDDEN}
+<table width=95% align=center bgcolor=c9c9c9>
+	<tr><td>Date from</td><td><select name=monthFrom>{MONTH_FROM_OPTIONS}
+	</select> &nbsp;<select name=dayFrom>{DAY_FROM_OPTIONS}
+	</select> &nbsp;<select name=yearFrom>{YEAR_FROM_OPTIONS}
+	</select></td><td>Date to</td>
+	<td><select name=monthTo>{MONTH_TO_OPTIONS}
+	</select> &nbsp;<select name=dayTo>{DAYS_TO_OPTIONS}
+	</select> &nbsp;<select name=yearTo>{YEAR_TO_OPTIONS}
+	</select></td></tr>
+	<tr>
+<td><input type=submit name=submit value='View Report'></td></tr>
+
+			</table>
+			
+<table cellpadding=5 cellspacing=0 bgcolor=c9c9c9 width=95% align=center>
+
+<tr><td class=header colspan=3>MyFree Summary: </td></tr>
+<tr><td class=header> &nbsp; &nbsp; &nbsp; Home Page Display Count</td><td class=header>Offers Taken Count</td><td class=header>BD Redirects Count</td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; {MYFREE_DISPLAY_COUNT}</td><td>{OFFERS_TAKEN_COUNT}</td><td>{REDIRECT_COUNT}</td></tr>
+
+<tr><td class=header colspan=3><BR>Fun Pages Summary: </td></tr>
+<tr><td class=header> &nbsp; &nbsp; &nbsp; Fun Pages Display Count</td><td class=header>TAF Count</td><td class=header>Best Deals Subscribe Count</td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; {FP_COUNT}</td><td>{FP_TAF_COUNT}</td><td>{FP_BD_COUNT}</td></tr>
+
+<tr><td class=header colspan=3><BR>MyHealthyLiving Summary: </td></tr>
+<tr><td class=header> &nbsp; Orders Count</td><td class=header>Orders Total</td><td class=header>Orders Cost</td><td class=header>Orders Profit</td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; {ORDER_COUNT}</td><td>{ORDER_TOTAL}</td><td>{ORDER_COST}</td><td>{ORDER_PROFIT}</td></tr>
+
+
+<tr><td class=header colspan=3><BR>You Won Summary: </td></tr>
+<tr><td class=header> &nbsp; &nbsp; &nbsp; You Won Display Count</td><td class=header>You Won Responded Count</td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; {YW_COUNT}</td><td>{YW_RESPONDED_COUNT}</td></tr>
+
+</table>
+</form>

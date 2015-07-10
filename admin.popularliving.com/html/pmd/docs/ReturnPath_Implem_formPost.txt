@@ -1,0 +1,34 @@
+Return Path Implementation for form post
+
+
+First, add to current form the bold line below:
+
+…<FORM id="" name="" action=http://signup.postmasterdirect.com/signup.mhtml method=post>
+< input type=hidden value=YOUR_SITE name=owner> 
+< input type=hidden name=gatherer value=YOUR_GATHERER> 
+<input name=thankyouurl value="http://" type=hidden>
+<input name=disableconfirmationwarning value="" type=hidden>
+<input type="hidden" name="coreg" value="returnpath">…
+
+This is a generic line and is the same for all owners.
+
+Second, usually under your email input field you can put this line:
+
+<input name="old_email" type="text" id="old_email" size="10" maxlength="50">
+
+Placement of this input field should be close to the regular email field. 
+
+Third, you should include a message to state that the old email field is optional. 
+Ex. “Enter your old email address to enter ReturnPath's service that helps you stay in touch”
+
+
+You can also to choose to include the Return Path logo which can be found at:
+http://gfx.postmasterdirect.com/hosted_images/rp/rp.gif
+
+Example code to include image:
+<img src="http://gfx.postmasterdirect.com/hosted_images/rp/rp.gif" alt="Enter your old email to make sure people can find you at your new one." width="92" height="31" border="0">
+
+
+A sample of implementation is found on 
+http://www.postmasterdirect.com/signup_page.html
+

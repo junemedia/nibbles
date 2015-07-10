@@ -1,0 +1,32 @@
+{RELOAD_WINDOW_OPENER}
+
+<table cellpadding=5 cellspacing=5 bgcolor=c9c9c9 width=95% align=center>
+<tr><td>Offer Title</td>
+		<td><input type=text name='title' value='{TITLE}' size=50></td>
+	</tr>
+	<tr><td>PopUp URL</td>
+		<td><input type=text name='url' value='{URL}' size=45></td>
+	</tr>
+	<tr><td>eMail Type</td>
+		<td><input type=radio name='emailType' value='' {NO_EMAIL_CHECKED}> No eMail
+			<input type=radio name='emailType' value='text' {TEXT_TYPE_CHECKED}> Text			
+			<input type=radio name='emailType' value='html' {HTML_TYPE_CHECKED}> HTML
+		</td>
+	</tr>
+	<tr><td>PopUp Height</td>
+		<td><input type=text name='popHeight' value='{POP_HEIGHT}' size=5></td>
+	</tr>				
+	<tr><td>PopUp Width</td>
+		<td><input type=text name='popWidth' value='{POP_WIDTH}' size=5></td>
+	</tr>					
+	<tr><td>Text Content</td>
+		<td><textarea name=textContent rows=5 cols=40>{TEXT_CONTENT}</textarea></td>
+	</tr>					
+	<tr><td>HTML Content</td>
+		<td><textarea name=htmlContent rows=5 cols=40>{HTML_CONTENT}</textarea></td>
+	</tr>			
+	<tr><td>Sort Order</td>
+		<td><input type=text name='sortOrder' value='{SORT_ORDER}' size=5></td>
+	</tr>			
+
+</table>

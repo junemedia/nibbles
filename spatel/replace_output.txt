@@ -1,0 +1,379 @@
+
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="30" colspan="2" bgcolor="#5c94c5" style="border-bottom:5px solid #fdb813;">
+
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="12" height="30" align="left" valign="top"><img src="http://www.arcamax.com/partners/r4l/topnav-left.png" /></td>
+
+          <td align="center" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; color:#FFFFFF;">
+          <a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#FFFFFF; text-decoration:none;">Recipes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#FFFFFF; text-decoration:none;">Hints & Tips</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#FFFFFF; text-decoration:none;">A Dash Of Fun</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#FFFFFF; text-decoration:none;">Thinking Healthy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#FFFFFF; text-decoration:none;">Contact Us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#FFFFFF; text-decoration:none;">www.Recipe4Living.com</a>          </td>
+
+          <td width="12" align="right" valign="top"><img src="http://www.arcamax.com/partners/r4l/topnav-right.png" /></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="border-bottom:3px solid #fdb813; border-left: solid 1px #9f9f9f; border-right: solid 1px #9f9f9f; ">
+
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="216"><img src="http://www.recipe4living.com/frontend/recipe4living/images/site/logo.png" height="50" alt="Recipe4Living" width="269" /></td>
+          <td align="right"><img src="http://pics.recipe4living.com/qe-header.jpg" height="70" alt="Recipe4Living's Quick &amp; Easy Recipes Newsletter" width="410" />          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="border-bottom:2px solid #fdb813; border-left: solid 1px #9f9f9f; border-right: solid 1px #9f9f9f; ">
+
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td colspan="2" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000000; padding:6px;">Add <a href="mailto:R4L@recipe4living-recipes.com" style="color:#000000;">R4L@recipe4living-recipes.com</a> to your address book to ensure future delivery of these newsletters! <a href="http://www.recipe4living.com/assets/pdf/Domain_Instructions.pdf" style="color:#000000;"> Click here for instructions</a>.</td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td width="370" valign="top" style="border-left: solid 1px #9f9f9f; padding:10px;">
+
+    <!-- start left column -->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+        <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#000000; font-weight:bold;">
+        <span style="padding:6px 0px; display:block;">Today's Recipe: Summertime Delight Watermelon Sorbet</span>
+        <span style="border-bottom:solid 4px #d0c841; display:block;width:170px;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; padding:10px 0px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;">
+        <tr>
+          <td width="118" valign="top">
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=61904"><img src="http://www.recipe4living.com/uploadedImages/Recipes/Recipes/watermelon_sorbet_FEATURE.JPG" width="118" height="100" border="0" /></a>          </td>
+          <td valign="top" style="padding-left:6px; font-family:Arial, Helvetica, sans-serif; font-size:12px;"><strong>This delicious frozen treat is the perfect dessert for a warm summer evening. It is cool and refreshing and has just the right amount of sweetness to make it very satisfying. Since you do not need an ice cream maker for this recipe, you can whip up a batch very quickly any time and it's a great way to use up leftover watermelon.</strong><br />
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=61904" style="color:#000000;">Click here to read and rate the full recipe! </a><br /><br />
+          <strong>More like this:</strong><br /><br />
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=61844" style="color:#000000;">Watermelon Slush</a><br />
+          <a href="http://www.recipe4living.com/Recipe/45208-WatermelonIce.aspx" style="color:#000000;">Watermelon Ice</a><br />
+          <a href="http://www.recipe4living.com/Recipe/25110-MintyWatermelonCooler.aspx" style="color:#000000;">Minty Watermelon Cooler</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Last newsletter's featured recipe: <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67928" style="color:#000000;">Easy Eggs Florentine</a></td>
+        </tr>
+      </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <!-- FIND FIRST AD TR TAG -->
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#000000; font-weight:bold;">
+        <span style="padding:6px 0px; display:block;">Latest Recipe Collection</span>
+        <span style="border-bottom:solid 4px #d0c841; display:block;width:170px;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; padding:10px 0px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="118">
+          <a href="http://www.recipe4living.com/Common/Article.aspx?id=60996"><img src="http://www.recipe4living.com/uploadedImages/Hints_And_Tips/Articles/pork%20chops(1).jpg" width="118" height="100" border="0" /></a>
+          </td>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px;"><a href="http://www.recipe4living.com/Common/Article.aspx?id=60996"  style="color:#000000; font-weight:bold;">25 Delicious Pork Chop Recipes</a><br /><br />Here at Recipe4Living, we know how delicious pork chops can be. That's why we've compiled a collection of our favorite pork chop recipes all in one place! Whether you like your chops baked, grilled or pan fried, you'll find this list of recipes finger-lickin' good!<br /><br /><a href="http://www.recipe4living.com/Common/Article.aspx?id=60996" style="color:#000000; font-weight:bold;">See the whole list!</a></td>
+        </tr>
+      </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#000000; font-weight:bold;">
+        <span style="padding:6px 0px; display:block;">Recently Submitted Quick & Easy Recipes</span>
+        <span style="border-bottom:solid 4px #d0c841; display:block;width:170px;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; padding:10px 0px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67884" style="color:#000000; font-weight:bold;">Key Largo Coconut Shrimp in Curry Butter</a><br />
+           Shrimp is dredged in coconut, pan fried in curry butter and then served with a mixture of orange marmalade and horseradish.<br />
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67884" style="color:#000000">Read and rate the full recipe here.</a>
+          </td>
+        </tr>
+         <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67880" style="color:#000000; font-weight:bold;">Hot Dog Relish</a><br />
+           Don't know what to do with all the condiment bottles in the fridge that have just a little bit left? Check this out.<br />
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67880" style="color:#000000">Read and rate the full recipe here.</a>
+          </td>
+        </tr>
+         <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67868" style="color:#000000; font-weight:bold;">Creamy Asian Avocado Dip</a><br />
+           This recipe provides a new way to serve avocado as a dip. The soy sauce gives it a saltiness and the sour cream makes it smooth and tangy.<br />
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67868" style="color:#000000">Read and rate the full recipe here.</a>
+          </td>
+        </tr>
+         <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67852" style="color:#000000; font-weight:bold;">Puffed Rice Confection</a><br />
+           Your family will love this tasty confection!<br />
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67852" style="color:#000000">Read and rate the full recipe here.</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67784" style="color:#000000; font-weight:bold;">Cream Cheese Pie</a><br />
+           This pie tastes like cheese cake, but it is light and fluffy. You can put any kind of fruit topping on to make it a little different every time you serve it. People are always asking me for this recipe. It is very quick and easy.<br />
+          <a href="http://www.recipe4living.com/Recipes/Recipe.aspx?id=67784" style="color:#000000">Read and rate the full recipe here.</a>
+          </td>
+        </tr>
+      </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <!-- FIND SECOND AD TR TAG -->
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#000000; font-weight:bold;">
+        <span style="padding:6px 0px; display:block;">More Newsletters</span>
+        <span style="border-bottom:solid 4px #d0c841; display:block;width:170px;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; padding:10px 0px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+          <a href="http://www.awesomeopinions.com/dispatch2.asp?home=70-27507K-L4" style="color:#000000">The Recipe4Living Newsletter</a><br />
+          Subscribe to our original newsletter and get our exclusive 7 Day Meal Planner plus more recipes throughout the week.
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+          <a href="http://www.giftsforanswers.com/dispatch2.asp?home=70-28042S-L1" style="color:#000000">Party Recipes &amp; Tips</a><br />
+          For the party planner in you, here is a newsletter with entertaining tips, party decoration ideas and enough themed parties to keep you busy all year long.
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+          <strong>NEW!</strong> <a href="http://www.focusforfree.com/dispatch2.asp?home=70-28368D-L2" style="color:#000000">Budget  Cooking Recipes</a><br />
+          Stretch your dollars further with this money-saving recipe newsletter that will bring you budget-friendly tips, meal planners and more, once a week.
+          </td>
+        </tr>
+<tr>
+   <td style="font-family:Arial, Helvetica, sans-serif; font-size:4px; color:#FFFFFF;">*mf qer 062609 someone@somewhere.com mf*</td>
+</tr>
+      </table>
+        </td>
+      </tr>
+
+    </table>
+
+    <!-- end left column -->
+
+    </td>
+    <td width="310" valign="top" style="border-right: solid 1px #9f9f9f; padding:10px 10px 10px 0;">
+
+    <!-- start right column -->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+        <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#000000; font-weight:bold;">
+        <span style="padding:6px 0px; display:block;">See Your Name in Print (And Win Prizes!)</span>
+        <span style="border-bottom:solid 4px #d0c841; display:block;width:170px;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; padding:10px 0px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+         - <a href="http://www.recipe4living.com/Common/Article.aspx?id=67014" style="color:#000000; font-weight:bold;">Heavenly Herb Recipe Contest</a> - Do you love to use fresh herbs in your cooking? So do we! Enter your favorite herb recipe into the Recipe4Living Heavenly Herb Recipe Contest for a chance to win your own herb garden and a pair of herb scissors!
+          </td>
+         </tr>
+  <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+         - <a href="http://www.recipe4living.com/Common/Article.aspx?id=67560" style="color:#000000; font-weight:bold;">The Super Summer Salad Recipe Contest</a> - The best part about summer is all the fresh summer fruit and veggies that are perfect for salads! From strawberries to spinach, what ingredients do you like to dress your salad with? Send us your favorite summer salad recipe for a chance to win a salad spinner and salad dressing maker!
+          </td>
+         </tr>
+<tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+         - <a href="http://www.recipe4living.com/Common/Article.aspx?id=67848" style="color:#000000; font-weight:bold;">5 Ingredient (Or Less) Recipe Contest</a> - We're looking to make a simple dinner that requires only 5 ingredients or less! Send us your recipes and you can win valuable prizes!
+
+          </td>
+         </tr>
+<tr>
+<td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;"><a href="http://www.facebook.com/pages/Recipe4Livingcom/69336321053?ref=nf"><img src="http://pics.recipe4living.com/FacebookButtonRevised.jpg" border="0"></a><br />Become a Recipe4Living Fan on Facebook and get even MORE recipes! <strong><a href="http://www.facebook.com/pages/Recipe4Livingcom/69336321053?ref=nf" style="color:#000000;">Check out our page now!</a></strong> Become one of our first fans and get a <strong>FREE eCookbook</strong>!<br /><br />
+<a href="http://www.twitter.com/Recipe4Living"><img src="http://pics.recipe4living.com/Twitter.jpg" border="0"></a>
+</td>
+</tr>
+      </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+       <td align="center"><center>
+<a href="http://arcamaxads.inorder.hop.clickbank.net/?tid=CTinorder">
+<img src="http://www.arcamax.com/07/declutter_ctt.jpg"
+alt="DeClutter FAST!
+How To Get Your Home In Order Almost Immediately
+In The Easiest Possible Way
+Click here for more details..." border="0">
+</a>
+</center>
+</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#000000; font-weight:bold;">
+        <span style="padding:6px 0px; display:block;">Quickie Corner</span>
+        <span style="border-bottom:solid 4px #d0c841; display:block;width:170px;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; padding:10px 0px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+   Melons may be kept at room temperature, un-cut, for about two weeks. Store whole melons at 50-60 degrees. Cut melons should be wrapped and stored at 40-50 degrees. If you need a small amount of watermelon, it is best to buy a piece of a larger one. It may be more expensive per pound, but you will be more likely to get good flavor.      <br /><br />Have a tip you'd like to share? <a href="http://www.recipe4living.com/Help/Default.aspx?id=44" style="color:#000000;">Submit it here</a> and we might publish it in this newsletter!
+          </td>
+         </tr>
+      </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#000000; font-weight:bold;">
+        <span style="padding:6px 0px; display:block;">Chew on That Blog</span>
+        <span style="border-bottom:solid 4px #d0c841; display:block;width:170px;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000000; padding:10px 0px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+          <p>June 19, 2009</p>
+	<p><strong>Introducing Foodie Vocab Lessons!</strong></p>
+          <p>This week's word is: verrine (noun).
+
+Please choose the most appropriate definition for a verrine. (No cheating!)<br /><br />
+          <a href="http://www.chewonthatblog.com/2009/06/19/introducing-foodie-vocab-lessons/" style="font-weight:bold; color:#000000;">Read more and see pictures here!</a>
+          </p>
+          </td>
+        </tr>
+      </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"><center>
+<a href="http://www.lynxtrack.com/afclick.php?o=7194&b=90c2ffm6&p=198&l=1&s=E0708CTTregoptimizer">
+<img border="0" src="http://www.arcamax.com/08/regoptimizer_ctt.jpg"
+alt=" Is Your Computer Slower Than When You Bought It?
+
+Do your applications run unpredictably lately?
+
+Do you suffer long start-up times?
+
+If you answered yes, then your computer could have
+errors in its registry.
+
+Usually, it is a matter of time before your PC will
+collect hundreds, if not thousands of registry errors,
+junk files, and data debris.
+
+Scan Your PC Now... "></a>
+</center>
+</td>
+      </tr>
+    </table>
+
+    <!-- end right column -->
+
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="http://www.arcamax.com/partners/r4l/content-container-bottom.png" /></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="30" colspan="2" align="center" bgcolor="#d0c841" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px;"><a href="http://www.giftsforanswers.com/dispatch2.asp?home=70-28043F-L1" style="color:#000000;">Subscribe to Newsletter</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#000000;">Newsfeed</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#000000;">Submit a Recipe</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#000000;">About Us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.arcamax.com/ard/0?t=C2000000000L394" style="color:#000000;">Contact Us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.recipe4living.com/home/" style="color:#000000;">www.Recipe4Living.com</a></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:8px 0px;">&nbsp;</td>
+  </tr>
+ <tr>
+    <td colspan="2" style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+             <P>This e-mail was requested by: <SPAN
+            style="COLOR: blue">someone@somewhere.com</SPAN>.<BR><BR>
+
+To manage your Recipe4Living email subscriptions including newsletters and special offers: <a href="http://www.popularliving.com/r4l/unsub.php?issue=20090626&jobid=394" style="color:#2E2E2E;">click here</a>
+<br />
+    </P>
+
+<P>Privacy Policy: <a href="http://www.recipe4living.com/privacy" style="color:#2E2E2E;">http://www.recipe4living.com/privacy</a></P>
+
+    <P align="left">Ampere Media LLC, 3400 Dundee Road, Suite 236, Northbrook, IL 60062,   FAX: (847) 205-9340<BR>
+Copyright &copy; 2010 Ampere Media, LLC. All rights reserved.
+</P>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="http://www.arcamax.com/images/clear.gif" width="1" height="1" border="0">&nbsp;</td>
+  </tr>
+</table>
+
+<!-- start page container -->
+
+<!-- end page container -->
+
+
+

@@ -1,0 +1,654 @@
+Demographic Values for PostmasterDirect Submissions
+
+<input name=owner value="ownername" type=hidden>
+<input name=gatherer value="gatherername here" type=hidden>
+<input name=thankyouurl value="http://" type=hidden>
+<input name=disableconfirmationwarning value="" type=hidden>
+
+Name: <input type=text name=name size=20 value="">
+
+Email Address: <input type=text name=email size=20>
+
+URL of your Web Site: 
+<input type=text name=url size=30 value="">
+
+Address: <input type=text name=address size=20 value="">
+
+City: <input type=text name=city size=20 value="">
+
+State: <select name=state>
+	<option value=""  selected>(n/a)
+	<option value="AL" >Alabama
+	<option value="AK" >Alaska
+	<option value="AZ" >Arizona
+	<option value="AR" >Arkansas
+	<option value="CA" >California
+	<option value="CO" >Colorado
+	<option value="CT" >Connecticut
+	<option value="DE" >Delaware
+	<option value="DC" >District of Columbia
+	<option value="FL" >Florida
+	<option value="GA" >Georgia
+	<option value="GU" >Guam
+	<option value="HI" >Hawaii
+	<option value="ID" >Idaho
+	<option value="IL" >Illinois
+	<option value="IN" >Indiana
+	<option value="IA" >Iowa
+	<option value="KS" >Kansas
+	<option value="KY" >Kentucky
+	<option value="LA" >Louisiana
+	<option value="ME" >Maine
+	<option value="MH" >Marshall Islands
+	<option value="MD" >Maryland
+	<option value="MA" >Massachusetts
+	<option value="MI" >Michigan
+	<option value="FM" >Federated States of Micronesia
+	<option value="MN" >Minnesota
+	<option value="MS" >Mississippi
+	<option value="MO" >Missouri
+	<option value="MT" >Montana
+	<option value="NE" >Nebraska
+	<option value="NV" >Nevada
+	<option value="NH" >New Hampshire
+	<option value="NJ" >New Jersey
+	<option value="NM" >New Mexico
+	<option value="NY" >New York
+	<option value="NC" >North Carolina
+	<option value="ND" >North Dakota
+	<option value="OH" >Ohio
+	<option value="OK" >Oklahoma
+	<option value="OR" >Oregon
+	<option value="PW" >Palau
+	<option value="PA" >Pennsylvania
+	<option value="PR" >Puerto Rico
+	<option value="RI" >Rhode Island
+	<option value="SC" >South Carolina
+	<option value="SD" >South Dakota
+	<option value="TN" >Tennessee
+	<option value="TX" >Texas
+	<option value="UT" >Utah
+	<option value="VT" >Vermont
+	<option value="VI" >Virgin Islands
+	<option value="VA" >Virginia
+	<option value="WA" >Washington
+	<option value="WV" >West Virginia
+	<option value="WI" >Wisconsin
+	<option value="WY" >Wyoming
+	<option value="AB" >Alberta
+	<option value="BC" >British Columbia
+	<option value="MB" >Manitoba
+	<option value="NB" >New Brunswick
+	<option value="NF" >Newfoundland
+	<option value="NT" >Northwest Territories
+	<option value="NS" >Nova Scotia
+	<option value="ON" >Ontario
+	<option value="PE" >Prince Edward Island
+	<option value="QC" >Quebec
+	<option value="SK" >Saskatchewan
+	<option value="YT" >Yukon
+	<option value="AS" >American Somoa
+	<option value="TT" >Trust Territories
+	<option value="GU" >Guam
+	<option value="VI" >Virgin Islands
+	<option value="WL" >Wake Island
+</select>
+
+Country: <select name=country>
+	<option value="">
+	<option value="6"> United States
+	<option value="11"> Afghanistan
+	<option value="14"> Albania
+	<option value="67"> Algeria
+	<option value="20"> American Samoa
+	<option value="9"> Andorra
+	<option value="17"> Angola
+	<option value="13"> Anguilla
+	<option value="18"> Antarctica
+	<option value="12"> Antigua and Barbuda
+	<option value="19"> Argentina
+	<option value="15"> Armenia
+	<option value="23"> Aruba
+	<option value="22"> Australia
+	<option value="21"> Austria
+	<option value="24"> Azerbaijan
+	<option value="38"> Bahamas
+	<option value="31"> Bahrain
+	<option value="27"> Bangladesh
+	<option value="26"> Barbados
+	<option value="42"> Belarus
+	<option value="28"> Belgium
+	<option value="43"> Belize
+	<option value="33"> Benin
+	<option value="34"> Bermuda
+	<option value="39"> Bhutan
+	<option value="36"> Bolivia
+	<option value="25"> Bosnia and Herzegovina
+	<option value="41"> Botswana
+	<option value="40"> Bouvet Island
+	<option value="37"> Brazil
+	<option value="110"> British Indian Ocean Territory
+	<option value="35"> Brunei Darussalam
+	<option value="30"> Bulgaria
+	<option value="29"> Burkina Faso
+	<option value="32"> Burundi
+	<option value="120"> Cambodia
+	<option value="52"> Cameroon
+	<option value="44"> Canada
+	<option value="58"> Cape Verde
+	<option value="127"> Cayman Islands
+	<option value="46"> Central African Republic
+	<option value="214"> Chad
+	<option value="51"> Chile
+	<option value="53"> China
+	<option value="59"> Christmas Island
+	<option value="45"> Cocos (Keeling) Islands
+	<option value="54"> Colombia
+	<option value="122"> Comoros
+	<option value="47"> Congo
+	<option value="50"> Cook Islands
+	<option value="55"> Costa Rica
+	<option value="49"> Cote D Ivoire (Ivory Coast)
+	<option value="103"> Croatia (Hrvatska)
+	<option value="57"> Cuba
+	<option value="60"> Cyprus
+	<option value="56"> Czechoslovakia (former)
+	<option value="61"> Czech Republic
+	<option value="64"> Denmark
+	<option value="63"> Djibouti
+	<option value="65"> Dominica
+	<option value="66"> Dominican Republic
+	<option value="223"> East Timor
+	<option value="68"> Ecuador
+	<option value="70"> Egypt
+	<option value="210"> El Salvador
+	<option value="93"> Equatorial Guinea
+	<option value="72"> Eritrea
+	<option value="69"> Estonia
+	<option value="74"> Ethiopia
+	<option value="77"> Falkland Islands (Malvinas)
+	<option value="79"> Faroe Islands
+	<option value="76"> Fiji
+	<option value="75"> Finland
+	<option value="80"> France
+	<option value="81"> France, Metropolitan
+	<option value="86"> French Guiana
+	<option value="177"> French Polynesia
+	<option value="215"> French Southern Territories
+	<option value="82"> Gabon
+	<option value="90"> Gambia
+	<option value="85"> Georgia
+	<option value="62"> Germany
+	<option value="87"> Ghana
+	<option value="88"> Gibraltar
+	<option value="83"> Great Britain (UK)
+	<option value="94"> Greece
+	<option value="89"> Greenland
+	<option value="84"> Grenada
+	<option value="92"> Guadeloupe
+	<option value="97"> Guam
+	<option value="96"> Guatemala
+	<option value="91"> Guinea
+	<option value="98"> Guinea-Bissau
+	<option value="99"> Guyana
+	<option value="104"> Haiti
+	<option value="101"> Heard and McDonald Islands
+	<option value="102"> Honduras
+	<option value="100"> Hong Kong
+	<option value="105"> Hungary
+	<option value="113"> Iceland
+	<option value="109"> India
+	<option value="106"> Indonesia
+	<option value="112"> Iran
+	<option value="111"> Iraq
+	<option value="107"> Ireland
+	<option value="108"> Israel
+	<option value="114"> Italy
+	<option value="115"> Jamaica
+	<option value="117"> Japan
+	<option value="116"> Jordan
+	<option value="128"> Kazakhstan
+	<option value="118"> Kenya
+	<option value="121"> Kiribati
+	<option value="124"> Korea (North)
+	<option value="125"> Korea (South)
+	<option value="126"> Kuwait
+	<option value="119"> Kyrgyzstan
+	<option value="129"> Laos
+	<option value="138"> Latvia
+	<option value="130"> Lebanon
+	<option value="135"> Lesotho
+	<option value="134"> Liberia
+	<option value="139"> Libya
+	<option value="132"> Liechtenstein
+	<option value="136"> Lithuania
+	<option value="137"> Luxembourg
+	<option value="149"> Macau
+	<option value="145"> Macedonia
+	<option value="143"> Madagascar
+	<option value="157"> Malawi
+	<option value="159"> Malaysia
+	<option value="156"> Maldives
+	<option value="146"> Mali
+	<option value="154"> Malta
+	<option value="144"> Marshall Islands
+	<option value="151"> Martinique
+	<option value="152"> Mauritania
+	<option value="155"> Mauritius
+	<option value="245"> Mayotte
+	<option value="158"> Mexico
+	<option value="78"> Micronesia
+	<option value="142"> Moldova
+	<option value="141"> Monaco
+	<option value="148"> Mongolia
+	<option value="153"> Montserrat
+	<option value="140"> Morocco
+	<option value="160"> Mozambique
+	<option value="147"> Myanmar
+	<option value="161"> Namibia
+	<option value="170"> Nauru
+	<option value="169"> Nepal
+	<option value="167"> Netherlands
+	<option value="16"> Netherlands Antilles
+	<option value="171"> Neutral Zone
+	<option value="162"> New Caledonia
+	<option value="173"> New Zealand (Aotearoa)
+	<option value="166"> Nicaragua
+	<option value="163"> Niger
+	<option value="165"> Nigeria
+	<option value="172"> Niue
+	<option value="164"> Norfolk Island
+	<option value="150"> Northern Mariana Islands
+	<option value="168"> Norway
+	<option value="174"> Oman
+	<option value="180"> Pakistan
+	<option value="186"> Palau
+	<option value="175"> Panama
+	<option value="178"> Papua New Guinea
+	<option value="187"> Paraguay
+	<option value="176"> Peru
+	<option value="179"> Philippines
+	<option value="183"> Pitcairn
+	<option value="181"> Poland
+	<option value="185"> Portugal
+	<option value="184"> Puerto Rico
+	<option value="188"> Qatar
+	<option value="189"> Reunion
+	<option value="190"> Romania
+	<option value="191"> Russian Federation
+	<option value="192"> Rwanda
+	<option value="123"> Saint Kitts and Nevis
+	<option value="131"> Saint Lucia
+	<option value="236"> Saint Vincent and the Grenadines
+	<option value="243"> Samoa
+	<option value="204"> San Marino
+	<option value="208"> Sao Tome and Principe
+	<option value="193"> Saudi Arabia
+	<option value="205"> Senegal
+	<option value="195"> Seychelles
+	<option value="95"> S. Georgia and S. Sandwich Isls.
+	<option value="203"> Sierra Leone
+	<option value="198"> Singapore
+	<option value="202"> Slovak Republic
+	<option value="200"> Slovenia
+	<option value="194"> Solomon Islands
+	<option value="206"> Somalia
+	<option value="247"> South Africa
+	<option value="73"> Spain
+	<option value="133"> Sri Lanka
+	<option value="199"> St. Helena
+	<option value="182"> St. Pierre and Miquelon
+	<option value="196"> Sudan
+	<option value="207"> Suriname
+	<option value="201"> Svalbard and Jan Mayen Islands
+	<option value="212"> Swaziland
+	<option value="197"> Sweden
+	<option value="48"> Switzerland
+	<option value="211"> Syria
+	<option value="227"> Taiwan
+	<option value="218"> Tajikistan
+	<option value="228"> Tanzania
+	<option value="217"> Thailand
+	<option value="216"> Togo
+	<option value="219"> Tokelau
+	<option value="222"> Tonga
+	<option value="225"> Trinidad and Tobago
+	<option value="221"> Tunisia
+	<option value="224"> Turkey
+	<option value="220"> Turkmenistan
+	<option value="213"> Turks and Caicos Islands
+	<option value="226"> Tuvalu
+	<option value="230"> Uganda
+	<option value="229"> Ukraine
+	<option value="10"> United Arab Emirates
+	<option value="231"> United Kingdom
+	<option value="233"> Uruguay
+	<option value="232"> US Minor Outlying Islands
+	<option value="209"> USSR (former)
+	<option value="234"> Uzbekistan
+	<option value="241"> Vanuatu
+	<option value="235"> Vatican City State (Holy See)
+	<option value="237"> Venezuela
+	<option value="240"> Viet Nam
+	<option value="238"> Virgin Islands (British)
+	<option value="239"> Virgin Islands (U.S.)
+	<option value="242"> Wallis and Futuna Islands
+	<option value="71"> Western Sahara
+	<option value="244"> Yemen
+	<option value="246"> Yugoslavia
+	<option value="249"> Zaire
+	<option value="248"> Zambia
+	<option value="250"> Zimbabwe
+</select>
+
+Zip/Postal Code: <input type=text name=zip size=10 value="">
+
+Language: 
+<select name=language size=1>
+	<option value="en" > English  
+	<option value="cs" > Czech
+	<option value="da" > Danish  
+	<option value="nl" > Dutch  
+	<option value="fi" > Finnish  
+	<option value="fr" > French  
+	<option value="de" > German  
+	<option value="el" > Greek  
+	<option value="hu" > Hungarian  
+	<option value="it" > Italian  
+	<option value="nw" > Norwegian  
+	<option value="pl" > Polish  
+	<option value="pt" > Portuguese  
+	<option value="ru" > Russian  
+	<option value="sl" > Slovenian  
+	<option value="es" > Spanish  
+	<option value="sv" > Swedish  
+	<option value="tr" > Turkish
+	<option value="jp" > Japanese
+	<option value="cn" > Chinese 
+	<option value="kr" > Korean
+	<option value="ee" > Estonian
+	<option value="il" > Hebrew
+	<option value="is" > Icelandic
+	<option value="ro" > Romanian
+	<option value="lv" > Latvien
+	<option value="lt" > Lithuanian
+	<option value="ae" > Arabic
+</select>
+
+Phone: <input type=text name=phone size=20 value="">
+
+Fax: <input type=text name=fax size=20 value="">
+
+Gender: <select name=gender size=2> 
+	<option value="M" >Male 
+	<option  value="F" >Female 
+	</select>
+
+Income: Household income is:<br>
+<select name=income size=9>
+	<option value="0" >Under $14,999
+	<option value="15000" >$15,000 - $24,000
+	<option value="25000" >$25,000 - $34,000
+	<option value="35000" >$35,000 - $49,000
+	<option value="50000" >$50,000 - $74,000
+	<option value="75000" >$75,000 - $99,000
+	<option value="100000" >$100,000 - $149,999
+	<option value="150000" >$150,000 - $199,999
+	<option value="200000" >Over $200,000
+</select>
+
+
+Buy online: 
+<select name=buyonline size=5>
+	<option value="0" >I never buy online
+	<option value="1-49" >less than $50 per month
+	<option value="50-99" >less than $100 per month
+	<option value="100-499" >between $100 and $500 per month
+	<option value="500+" >over $500 per month
+</select>
+
+Company Name: Please enter the name of the company where you work<br>
+<input type=text name=companyname size=20 value="">
+
+Title: 
+<select name=title>
+<option value="account executive"> Account Executive
+<option value="accountant"> Accountant
+<option value="administrator"> Administrative/Clerical
+<option value="analyst"> Analyst
+<option value="architect"> Architect
+<option value="associate"> Associate
+<option value="attorney"> Attorney
+<option value="business development director"> Business Development Director
+<option value="buyer"> Buyer
+<option value="ceo/president"> CEO/President
+<option value="chairman"> Chairman
+<option value="chemist/scientist"> Chemist/Scientist
+<option value="chief financial officer"> Chief Financial Officer
+<option value="chief information officer"> Chief Information Officer
+<option value="coo"> Chief Operations Officer
+<option value="cto"> Chief Technology Officer
+<option value="chiropractor"> Chiropractor
+<option value="consultant"> Consultant
+<option value="controller"> Controller
+<option value="counselor"> Counselor
+<option value="dba"> Dba
+<option value="dentist/dental hygenist"> Dentist/Dental Hygenist
+<option value="designer"> Designer
+<option value="director"> Director
+<option value="editor/writer"> Editor/Writer
+<option value="educator"> Educator
+<option value="engineer"> Engineer
+<option value="executive officer"> Executive Officer
+<option value="financial advisor"> Financial Advisor
+<option value="graphic designer"> Graphic Designer
+<option value="human resources director"> Human Resources Director
+<option value="it consultant"> IT Consultant
+<option value="it manager"> IT Manager
+<option value="mis director"> MIS Director
+<option value="manager"> Manager
+<option value="marketing manager"> Marketing Manager/Director
+<option value="military/govt"> Military/Gov't
+<option value="nurse"> Nurse
+<option value="occupational/physical therapist"> Occupational/Physical Therapist
+<option value="operator"> Operator
+<option value="opticians/optometrist"> Opticians/Optometrist
+<option value="other"> Other
+<option value="owner/proprietor/principal"> Owner/Proprietor/Principal
+<option value="partner"> Partner
+<option value="pharmacist"> Pharmacist
+<option value="physician/doctor"> Physician/Doctor
+<option value="planner/scheduler"> Planner/Scheduler
+<option value="producer"> Producer
+<option value="programmer"> Programmer
+<option value="project manager"> Project Manager
+<option value="psychologist"> Psychologist
+<option value="representative/sales"> Representative/Sales
+<option value="retired"> Retired
+<option value="secretary/treasurer"> Secretary/Treasurer
+<option value="senior management"> Senior Management
+<option value="social worker"> Social Worker
+<option value="software developer"> Software Developer
+<option value="speech pathologist/audiologist"> Speech Pathologist/Audiologist
+<option value="staff"> Staff
+<option value="student"> Student
+<option value="supervisor"> Supervisor
+<option value="systems administrator"> Systems Administrator
+<option value="technoligist/technicans"> Technoligist/Technicans
+<option value="unemployed"> Unemployed
+<option value="vp/marketing"> VP/Marketing
+<option value="vp/sales"> VP/Sales
+<option value="veterinarian"> Veterinarian
+<option value="vice president"> Vice President
+<option value="web developer"> Web Developer
+</select>	
+Industry:
+<select name=bus_cat>
+<option value="advertising"> Advertising/Marketing
+<option value="automotive"> Automotive
+<option value="business services"> Business Services
+<option value="communications"> Communications/Telcomm
+<option value="computer"> Computer/High Tech
+<option value="construction"> Construction/Development
+<option value="non-technical consulting"> Consulting
+<option value="consulting"> Consulting/ASP/Web Hosting
+<option value="education"> Education
+<option value="engineering"> Engineering
+<option value="entertainment"> Entertainment/Recreation
+<option value="fashion"> Fashion
+<option value="finance/banking"> Finance/Banking
+<option value="government"> Government
+<option value="isp"> ISP/Service Provider
+<option value="isv/independent software vendor"> ISV/Independent Software Vendor
+<option value="insurance"> Insurance
+<option value="internet/ecommerce"> Internet/Ecommerce
+<option value="legal"> Legal
+<option value="manufacturing"> Manufacturing
+<option value="medical/health care"> Medical/Health Care
+<option value="military"> Military
+<option value="natural resources/agriculture"> Natural Resources/Agriculture
+<option value="non-profit"> Non-Profit
+<option value="other"> Other
+<option value="public service/government"> Public Service
+<option value="publishing/media"> Publishing/Media
+<option value="real estate"> Real Estate
+<option value="research"> Research
+<option value="restaurant/food"> Restaurant/Food
+<option value="retail"> Retail
+<option value="soho/work from home"> SOHO/Work from home
+<option value="transportation"> Transportation
+<option value="travel"> Travel/Hospitality
+<option value="utilities"> Utilities
+<option value="var/system integration"> Var/System integration
+</select>
+Business Revenue: Please select your annual revenue rate<br>
+<select name=bus_rev>
+	<option value=""  selected>
+	<option value="0" >Under $500,000
+	<option value="500000" >$500,000 - $1 million
+	<option value="1000000" >$1 million - $4 million
+	<option value="5000000" >$5 million - $9 million
+	<option value="10000000" >$10 million - $49 million
+	<option value="50000000" >$50 million - $99 million
+	<option value="100000000" >$100 million - $499 million
+ 	<option value="500000000" >$500 million - $999 million
+	<option value="1000000000" >$1 billion or more
+</select>
+	
+Job Function/Department:
+ <select name=jobfunction>
+<option value="advertising"> Advertising
+<option value="creative"> Creative
+<option value="customer"> Customer Service
+<option value="datacomm"> Datacomm/Telecomm
+<option value="education"> Education
+<option value="engineering"> Engineering
+<option value="health"> Env./Health/Safety
+<option value="executive/corporate"> Executive(CEO,Pres,SVP,etc.)
+<option value="financial/accounting"> Financial/Accounting
+<option value="management"> General Management
+<option value="health professionals"> Health Professionals
+<option value="hr"> Human Resources
+<option value="is/systems/technology"> IS/Systems/Technology
+<option value="internationalops"> International Operations
+<option value="legal"> Legal
+<option value="logistics"> Logistics/Distribution
+<option value="maintenance"> Maintenance/Facilities
+<option value="networking"> Networking/LAN
+<option value="operations"> Operations
+<option value="other"> Other
+<option value="production/manufacturing"> Production/Manufacturing
+<option value="purchasing"> Purchasing/Supply Chain
+<option value="qa"> Quality Assurance
+<option value="research"> Research
+<option value="sales/marketing"> Sales/Marketing
+<option value="var"> Var
+</select>
+
+
+
+Buyer Howmuch: If you do influence buying at your company, what are the approximate annual expenditures for goods and services you specify, recommend, approve or buy? 
+<select name=buyer size=6>
+	<option value="1" >$0 to $9,999
+	<option value="2" >$1,000 to $49,999
+	<option value="3" >$50,000 to $99,999
+	<option value="4" >$100,000 to $499,999
+	<option value="5" >$500,000 to $999,999
+	<option value="6" >$1 million to $9.9 million
+	<option value="7" >$10 million to $49.9 million
+	<option value="8" >$50 million to $99.9 million
+	<option value="9" >$100 million+
+</select>
+
+
+Number of Employees: If you run your own business, how many people does it employ?<br>
+<select name=numberemployees>
+	<option value=""  selected>
+	<option value="0" >under 5
+	<option value="5" > 5-9
+	<option value="10" >10-19
+	<option value="20" >20-99
+	<option value="100" >100-249
+	<option value="250" >250-499
+	<option value="500" >500-999
+	<option value="1000" >1000-3999
+	<option value="4000" >4000-9999
+	<option value="10000" >10000-19999
+	<option value="20000" >20000-59999
+	<option value="60000" >60000 or more
+</select>
+
+
+Year of birth: example: 1994 <input type=text name=yearofbirth size=4 value="">
+
+
+Ethnic: 
+<select name=ethnic>
+<option value=""  selected>
+<option value="asian"> Asian
+<option value="black/african-american"> Black/African-American
+<option value="hispanic/latino"> Hispanic/Latino
+<option value="native american"> Native American
+<option value="white/caucasian"> White/Caucasian
+<option value="other"> Other
+<option value="prefer not to say"> Prefer Not to Say
+</select>
+
+
+
+
+
+Age of Child:
+
+Child1 :  <select name=yearofchild1>
+<option value=""  selected>
+<option value="0-2 years"> 0-2 years
+<option value="3-8 years"> 3-8 years
+<option value="9-13 years"> 9-13 years
+<option value="14-17 years"> 14-17 years
+</select>
+
+Child2 :  <select name=yearofchild2>
+<option value=""  selected>
+<option value="0-2 years"> 0-2 years
+<option value="3-8 years"> 3-8 years
+<option value="9-13 years"> 9-13 years
+<option value="14-17 years"> 14-17 years
+</select>
+
+Child3 :  <select name=yearofchild3>
+<option value=""  selected>
+<option value="0-2 years"> 0-2 years
+<option value="3-8 years"> 3-8 years
+<option value="9-13 years"> 9-13 years
+<option value="14-17 years"> 14-17 years
+</select>
+
+Child4 :  <select name=yearofchild4>
+<option value=""  selected>
+<option value="0-2 years"> 0-2 years
+<option value="3-8 years"> 3-8 years
+<option value="9-13 years"> 9-13 years
+<option value="14-17 years"> 14-17 years
+</select>
+

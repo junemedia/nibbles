@@ -1,0 +1,34 @@
+<!-- Template to display Recovery Report-->
+
+<form name=form1 action='{ACTION}'>
+{HIDDEN}
+<table width=95% align=center bgcolor=c9c9c9>
+	<tr><td>Date from</td><td><select name=monthFrom>{MONTH_FROM_OPTIONS}
+	</select> &nbsp;<select name=dayFrom>{DAY_FROM_OPTIONS}
+	</select> &nbsp;<select name=yearFrom>{YEAR_FROM_OPTIONS}
+	</select></td><td>Date to</td>
+	<td><select name=monthTo>{MONTH_TO_OPTIONS}
+	</select> &nbsp;<select name=dayTo>{DAYS_TO_OPTIONS}
+	</select> &nbsp;<select name=yearTo>{YEAR_TO_OPTIONS}
+	</select></td></tr>
+	<tr>
+<td><input type=submit name=submit value='View Report'></td></tr>
+
+			</table>
+			
+<table cellpadding=5 cellspacing=0 bgcolor=c9c9c9 width=95% align=center>
+<tr><td colspan=7 align=right class=header>Total <font color=red>{REMAINING_TO_VERIFY}</font> remaining to verify &nbsp; &nbsp; &nbsp; {FIRST_PAGE_LINK} &nbsp; {PREV_PAGE_LINK} &nbsp; {NEXT_PAGE_LINK} &nbsp; {LAST_PAGE_LINK} &nbsp; {CURRENT_PAGE}</td></tr>
+<tr><TD align=left class=header><a href='{SORT_LINK}&orderColumn=dateAttempted&dateAttemptedOrder={DATE_ATTEMPTED_ORDER}'>Date Attempted</a></td></TD>
+<TD align=left class=header><a href='{SORT_LINK}&orderColumn=totalAttempted&totalAttemptedOrder={TOTAL_ATTEMPTED_ORDER}'>Total Attempted</a></td></TD>	
+<TD align=left class=header><a href='{SORT_LINK}&orderColumn=valid&validOrder={VALID_ORDER}'>Total Valid</a></TD>	
+<TD align=left class=header><a href='{SORT_LINK}&orderColumn=invalid&invalidOrder={INVALID_ORDER}'>Total Invalid</a></TD>	
+<TD align=left class=header><a href='{SORT_LINK}&orderColumn=unknown&unknownOrder={UNKNOWN_ORDER}'>Total Unknown</a></TD>	
+<TD align=left class=header>% Valid</TD>
+<TD align=left class=header>% Invalid</TD>
+<TD align=left class=header>% Unknown</TD>
+<TD align=left class=header>New Added</TD>
+</tr>
+{REPORT_DATA}
+<tr><td colspan=7 align=right class=header>{FIRST_PAGE_LINK} &nbsp; {PREV_PAGE_LINK} &nbsp; {NEXT_PAGE_LINK} &nbsp; {LAST_PAGE_LINK} &nbsp; {CURRENT_PAGE}</td></tr>
+</table>
+</form>

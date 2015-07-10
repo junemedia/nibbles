@@ -1,0 +1,90 @@
+BODY {
+	BACKGROUND-COLOR: #FFFFFF
+}
+
+A.menulink:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A.menulink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A.menulink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A.menulink:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+A.header:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A.header:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A.header:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A.header:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+
+A:link {
+	 FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A:visited {
+	 FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A:hover {
+	 FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A:active {
+	 FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+TD {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+
+TD.mid {
+	FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+TD.header {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+
+TD.midHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+TD.bigHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+
+TD.small { 
+	FONT-FAMILY: Arial, Helvetica, "Sans Serif" ; FONT-SIZE: 9px; COLOR: #000000;
+}
+
+TR.ODD {
+	BACKGROUND-COLOR: #DEDEDE
+}
+
+TR.EVEN {
+	BACKGROUND-COLOR: #C1C1C1
+}
+
+TR.EVEN_WHITE {
+	BACKGROUND-COLOR: #FFFFFF
+}
+
+TD.message {
+	FONT-SIZE: 8pt; COLOR: #FF0000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; FONT-WEIGHT: BOLD;
+}
+
+TR.hlHeader {
+	BACKGROUND-COLOR: #D9DFF4
+}

@@ -1,0 +1,753 @@
+<HTML><HEAD>
+<!-- If you were e-mailed this survey, you will need to save it to disk and view it in a web browser, since your e-mail system does not support HTML. -->
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252"><META NAME="GENERATOR" CONTENT="Perseus SurveySolutions (visit http://www.perseusdevelopment.com/fromsurv.htm)">
+<TITLE>Spray Booth Research</TITLE>
+<script><!--
+
+function AutoJump(destination) {
+   window.location=destination
+}
+
+function SelectJump(sel, Jmp_ls) {
+   SelArr = new Array();
+   SelArr = Jmp_ls.split(";");
+   ValArr = new Array();
+   for (var i=0;i<SelArr.length;i++){
+      if (SelArr[i].length > 0) {
+         ValArr = SelArr[i].split("|");
+         if((ValArr.length == 2) && (parseInt(sel.options[sel.selectedIndex].value) == parseInt(ValArr[0]))){
+            window.location = ValArr[1]
+            break;
+         }
+      }
+   }
+}
+
+// --></script>
+<script language="JavaScript1.2"><!-- 
+//Version 3.01 10/13/00
+function FrmElement_NonNull(FrmIndx_li, EleIndx_li) {
+	ReturnFlag_lb = new Boolean(false); 
+	with(document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		if ((type == "select-one") || (type == "select-multiple")) {
+			if (options[selectedIndex].value != "") ReturnFlag_lb = true;
+		}
+		if ((type == "text") || (type == "textarea")){
+			if (value != "") ReturnFlag_lb = true;
+		}
+	} 
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].type == "checkbox") {
+		i = 0;
+		while (document.forms[FrmIndx_li].elements[EleIndx_li].name.charAt(i) != "_") i++; 
+		MainQName_ls = document.forms[FrmIndx_li].elements[EleIndx_li].name.slice(0,i);
+		i = EleIndx_li;
+		while (document.forms[FrmIndx_li].elements[i].name.search(MainQName_ls) != -1) {
+			if (document.forms[FrmIndx_li].elements[i].checked) {
+				ReturnFlag_lb = true;
+			}
+			i++;
+		}
+	}
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].type == "radio") {
+		i = EleIndx_li;
+		while (document.forms[FrmIndx_li].elements[i].name == document.forms[FrmIndx_li].elements[EleIndx_li].name) {
+			if (document.forms[FrmIndx_li].elements[i].checked) ReturnFlag_lb = true;
+			i++;
+		}
+	}
+	if (ReturnFlag_lb == true) return true;
+	else return false;
+}
+function Chk_CntSel(FrmIndx_li, EleIndx_li) {
+	NumChecked_li = new Number(0); 
+	QuesName_ls = new String(""); 
+	with(document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		i = 0;
+		while ((name.charAt(i) != "_") && (i < (name.length - 1))) i++;
+		if (i == (name.length - 1)) {
+			QuesName_ls = name;
+		} else {
+			QuesName_ls = name.slice(0,i);
+		}
+	} 
+	if ((document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-multiple") ||
+	    (document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-one")) {
+		with(document.forms[FrmIndx_li].elements[EleIndx_li]){
+			for(j=0;j<length;j++) {
+				if (options[j].selected == true) NumChecked_li++;
+			}
+		} 
+	} else {
+		j = EleIndx_li;
+		while (document.forms[FrmIndx_li].elements[j].name.slice(0,i) == QuesName_ls) {
+			if (document.forms[FrmIndx_li].elements[j].checked) NumChecked_li++;
+			j++;
+		}
+	} 
+	return NumChecked_li;
+}
+function Chk_NoneAbove(FrmIndx_li, EleIndx_li, NoneAbove_ls) {
+	QuesName_ls = new String(""); 
+	with(document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		i = 0;
+		while ((name.charAt(i) != "_") && (i < (name.length - 1))) i++;
+			QuesName_ls = name.slice(0,i);
+	} 
+	if ((document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-multiple") ||
+	    (document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-one")) {
+		with(document.forms[FrmIndx_li].elements[EleIndx_li]){
+			for(j=0;j<length;j++) {
+				if ((options[j].selected == true) && (options[j].value == NoneAbove_ls)) {
+					return true
+				};
+			}
+		} 
+	} else if (document.forms[FrmIndx_li].elements[EleIndx_li].type == "radio") {
+	j = EleIndx_li;
+		while ((document.forms[FrmIndx_li].elements[j].name.slice(0,i) == QuesName_ls) && (j < document.forms[FrmIndx_li].elements.length)) {
+			if ((document.forms[FrmIndx_li].elements[j].checked) && (document.forms[FrmIndx_li].elements[j].value == NoneAbove_ls)) {
+				return true;
+			}
+			j++;
+		}
+	} 
+	return false;
+}
+function Chk_atLstX(FrmIndx_li, EleIndx_li, Limit_li, NoneAbove_ls) {
+	if (NoneAbove_ls != "") {
+		if (Chk_NoneAbove(FrmIndx_li, EleIndx_li, NoneAbove_ls) == true) {
+			return true;
+		}
+	}
+	NumChecked_li = Chk_CntSel(FrmIndx_li, EleIndx_li);
+	if (NumChecked_li >= Limit_li) {
+		return true;
+	} else {
+		return false;
+	}
+} 
+function Chk_atMstX(FrmIndx_li, EleIndx_li, Limit_li, NoneAbove_ls) {
+	if (NoneAbove_ls != "") {
+		if (Chk_NoneAbove(FrmIndx_li, EleIndx_li, NoneAbove_ls) == true) {
+			return true;
+		}
+	}
+	NumChecked_li = Chk_CntSel(FrmIndx_li, EleIndx_li);
+	if (NumChecked_li <= Number(Limit_li)) {
+		return true;
+	} else {
+		return false;
+	}
+} 
+function Chk_ExactX(FrmIndx_li, EleIndx_li, Limit_li, NoneAbove_ls) {
+	if (NoneAbove_ls != "") {
+		if (Chk_NoneAbove(FrmIndx_li, EleIndx_li, NoneAbove_ls) == true) {
+			return true;
+		}
+	}
+	NumChecked_li = Chk_CntSel(FrmIndx_li, EleIndx_li);
+	if (NumChecked_li == Number(Limit_li)) {
+		return true;
+	} else {
+		return false;
+	}
+} 
+function Str_FillInTot(FrmIndx_li, EleIndx_li, TotalSum_lc) {
+	i = 0;
+	with(document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		while ((name.charAt(i) != "_") && (i < (name.length - 1))) i++;
+	}
+	QuestName_ls = document.forms[FrmIndx_li].elements[EleIndx_li].name.slice(0,i);
+	FormSum_li = new Number(0);
+	SumModified_lb = false;
+	with (document.forms[FrmIndx_li]) {
+		for (i=EleIndx_li;i<elements.length;i++) {
+			if ((elements[i].name.search(QuestName_ls) != -1) && elements[i].value != ""){
+				FormSum_li += parseFloat(document.forms[FrmIndx_li].elements[i].value);
+				SumModified_lb = true;
+			}
+		}
+	}
+	if ((FormSum_li == Number(TotalSum_lc)) || (SumModified_lb == false)) return true;
+	else return false;
+}
+function isGoodForm(SearchString) {
+	i = new Number(0);
+	while ((SearchString.charAt(i) != '@') && (i < SearchString.length)) i++;
+		if (i==SearchString.length) return false;
+	while ((SearchString.charAt(i) != '.') && (i < SearchString.length)) i++;
+		if (i==SearchString.length) return false;
+	return true;
+}
+function noBadPeriods(SearchString) {
+	if ((SearchString.charAt(0) == '.') || (SearchString.charAt(SearchString.length) == '.')) return false;
+	return true;
+}
+function hasOneAmp(SearchString) {
+	count = new Number(0);
+	for (i=0;i<SearchString.length;i++) {
+		if (SearchString.charAt(i) == '@') count++;
+	}
+	if (count == 1) return true;
+	else return false;
+}
+function isMember(SearchArray, key) {
+	i = new Number(0);
+	for (i=0;i<SearchArray.length;i++) {
+		if (SearchArray[i] == key) return true;
+	}
+	return false;
+}
+function Str_IsValidEmailAddress(FrmIndx_li, EleIndx_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	EmailAddress = document.forms[FrmIndx_li].elements[EleIndx_li].value;
+	PassedTests_lb = new Boolean("true");
+	if (!isGoodForm(EmailAddress)) {
+		PassedTests_lb = false;
+	} else if (!noBadPeriods(EmailAddress)) {
+		PassedTests_lb = false;
+	} else if (!hasOneAmp(EmailAddress)) {
+		PassedTests_lb = false;
+	}
+	return PassedTests_lb;
+}
+function Str_IsShorterThan(FrmIndx_li, EleIndx_li, MaxLength_zi) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(document.forms[FrmIndx_li].elements[EleIndx_li].value.length <= Number(MaxLength_zi))) {
+		return false;
+	} else return true;
+}
+function Str_IsLongerThan(FrmIndx_li, EleIndx_li, MinLength_zi) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(document.forms[FrmIndx_li].elements[EleIndx_li].value.length >= Number(MinLength_zi))) {
+		return false;
+	} else return true;
+}
+function Str_IsExactly(FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value.length != Number(Limit_li)) {
+		return false;
+	} else return true;
+}
+function Str_IsNumber(FrmIndx_li, EleIndx_li, DecPnt_lc) {
+	NumeralFlag_b = new Boolean(false);
+	Str_Value = document.forms[FrmIndx_li].elements[EleIndx_li].value;
+	if (Str_Value == "") return true;
+	if (Str_Value.search("[^0-9.,-]") != -1) return false;
+	if (Str_Value.search("[0-9]") == -1) return false;
+	PntCnt_li = 0;
+	for (var i=0;i<Str_Value.length;i++) {
+		if (Str_Value.charAt(i) == DecPnt_lc) PntCnt_li++;
+	}
+	if (PntCnt_li > 1) return false;
+	T_re = new RegExp("\\" + DecPnt_lc);
+	if (Str_Value.search(T_re) != -1) {
+		DecHit_lb = false;
+		i = Str_Value.length;
+		while(i>=0) {
+			if (Str_Value.charAt(i) == DecPnt_lc) break;
+			if (Str_Value.charAt(i) == ((DecPnt_lc == ".") ? "," : ".")) {
+				return false;
+			}
+		i--;
+		}
+	}
+	return true;
+}
+function Str_MatchRegExp(FrmIndx_li, EleIndx_li, MatchCase_ls, RegExp_ls) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	T_lr = new RegExp(RegExp_ls, MatchCase_ls);
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value.search(T_lr) == -1) {
+		return false;
+	} else return true;
+}
+function Str_NoMatchRegExp(FrmIndx_li, EleIndx_li, MatchCase_ls, RegExp_ls) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	T_lr = new RegExp(RegExp_ls, MatchCase_ls);
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value.search(T_lr) != -1) {
+		return false;
+	} else return true;
+}
+function Number_IsGreaterThan (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) > Limit_li)) {
+		return false;
+	} else return true;
+}
+function Number_IsGreaterThanOrEqualTo (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) >= Limit_li)) {
+		return false;
+	} else return true;
+}
+function Number_IsLessThan (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) < Limit_li)) {
+		return false;
+	} else return true;
+}
+function Number_IsLessThanOrEqualTo (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) <= Limit_li)) {
+		return false;
+	} else return true;
+}
+function Number_IsEqualTo (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) == Limit_li)) {
+		return false;
+	} else return true;
+}
+function Frm_NoDupRank(FrmIndx_li, EleIndx_li, NumOptPerChoice_li, NumChoice_li) {
+	NumOptPerChoice_li = Number(NumOptPerChoice_li);
+	NumChoice_li = Number(NumChoice_li);
+	Responses_l = new Array();
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].type == "radio") {
+		for (var i=0;i<NumChoice_li;i++) {
+			for (var j=0;j<NumOptPerChoice_li;j++) {
+				if (document.forms[FrmIndx_li].elements[EleIndx_li + (i * NumOptPerChoice_li) + j].checked) {
+					Responses_l[i] = (document.forms[FrmIndx_li].elements[EleIndx_li + (i * NumOptPerChoice_li) + j].value);
+				}
+			}
+		}
+	} else if ((document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-one") ||
+	 	       (document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-multiple")){
+		for (var i=0;i<NumChoice_li;i++) {
+			with(document.forms[FrmIndx_li].elements[EleIndx_li + i]) {
+				if (options[selectedIndex].defaultSelected == false) {
+					Responses_l[i] = options[selectedIndex].value;
+				}
+			}
+		}
+	} else {
+		return true;
+	}
+	if (Responses_l.length <= NumOptPerChoice_li) {
+		for (var i=0;i<Responses_l.length - 1;i++) {
+			for (var j=i+1;j<Responses_l.length;j++) {
+				if (Responses_l[i] == Responses_l[j]) {
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
+function Sel_NoChoose(FrmIndx_li, EleIndx_li, DisAllwd_ls) {
+	with (document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		if (options[options.selectedIndex].value == DisAllwd_ls) {
+			return false;
+		} else return true;
+	}
+}
+function ValErrMsgArr_Search(Key_ls) {
+	IndxToReturn_li = -1;
+	PosToTest_li = 0;
+	while (PosToTest_li < ValErrMsgArr.length) {
+		if (ValErrMsgArr[PosToTest_li].slice(0,Key_ls.length) == Key_ls) {
+			IndxToReturn_li = PosToTest_li;
+			break;
+		}
+		PosToTest_li ++;
+	}
+	return IndxToReturn_li;
+}
+function Str_FillInErrorParameters (MessageStr_zs, Parameters_as) {
+	var BeginPos_li = 0;
+	var Length_li   = 0;
+	var NewStr_ls   = "";
+	while ((BeginPos_li + 1) < MessageStr_zs.length) {
+		if 	((MessageStr_zs.charAt(BeginPos_li) == "{") && (MessageStr_zs.charAt(BeginPos_li + 1) == "{")) {
+			break;
+		} else {
+			BeginPos_li++;
+		}
+	}
+	if ((BeginPos_li + 1) == MessageStr_zs.length) {
+		return MessageStr_zs;
+	} else {
+		Length_li = 5;
+		if ((Length_li + BeginPos_li) > MessageStr_zs.length) {
+			return MessageStr_zs;
+		}
+		if ((MessageStr_zs.charAt(BeginPos_li + 3) == "}") && (MessageStr_zs.charAt(BeginPos_li + 4) == "}")) {
+			Index_li = new Number(MessageStr_zs.slice(BeginPos_li + 2, BeginPos_li + 3));
+			NewStr_ls =  MessageStr_zs.slice(0,BeginPos_li);
+			NewStr_ls += Parameters_as[Index_li] || Parameters_as[0];
+			NewStr_ls += MessageStr_zs.slice((BeginPos_li + Length_li), MessageStr_zs.length);
+			return NewStr_ls;
+		} else {
+			return MessageStr_zs;
+		}
+	}
+}
+function Str_GetFrmIndex(ElementName_zs, ElementArray_as) {
+	var i;
+	for(i=0;i<ElementArray_as.length;i++) {
+		if (ElementArray_as[i].name == ElementName_zs) {
+			return i;
+		}
+	}
+	i = 0;
+	while ((ElementName_zs.charAt(i) != "_") && (i < (ElementName_zs.length -1))) i++;
+	if (i < (ElementName_zs.length -1)) {
+		return Str_GetFrmIndex(ElementName_zs.slice(0,i), ElementArray_as);
+	}
+	return -1
+}
+function Sur_Validate(SetFocus_lb) {
+	FormIndex_li = new Number(0);
+	ElementIndex_li = new Number(0);
+	ValidationType_ls = new String("");
+	Identifier_ls = new String("");
+	ExtraParameters_la = new Array(0);
+	PosBegCom_li = new Number(0); 
+	PosBegExtPara_li = new Number(0); 
+	CurPos = new Number(0); 
+	T_ls = new String(); 
+	ExtraParameters_la = new Array(); 
+	TestOutcome_lb = new Boolean(true); 
+	StdErrMsg_ls = new String(""); 
+	ValArr = new Array();
+	ElementIndex_li = Str_GetFrmIndex("PDCPDCVld", document.forms[0].elements);
+	if (ElementIndex_li != -1) {
+		T_ls = document.forms[0].elements[ElementIndex_li].value;
+		ValArr = T_ls.split(";");
+	}
+	ValErrMsgArr = new Array();
+	ElementIndex_li = Str_GetFrmIndex("PDCPDCVldErrMsg", document.forms[0].elements);
+	if (ElementIndex_li != -1) {
+		T_ls = document.forms[0].elements[ElementIndex_li].value;
+		ValErrMsgArr = T_ls.split(";");
+	}
+	for (var i=0;i<ValArr.length;i++){
+		CurrentString = new String(ValArr[i]);
+		if (CurrentString.length > 0) {
+	 		with(CurrentString) {
+				ExtraParameters_la.length = 0;
+				CurrPos = 0;
+				T_ls = "";
+				while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+					T_ls = T_ls.concat(charAt(CurrPos));
+					CurrPos++;
+				}
+				FormIndex_li = parseInt(T_ls);
+				CurrPos++;
+				T_ls = "";
+				while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+					T_ls = T_ls.concat(charAt(CurrPos));
+					CurrPos++;
+				}
+				ElementIndex_li = parseInt(T_ls);
+				if (isNaN(ElementIndex_li)) {
+					ElementIndex_li = Str_GetFrmIndex(T_ls, document.forms[FormIndex_li].elements);
+				}
+				PosBegCom_li = CurrPos + 1;
+				CurrPos++;
+				T_ls = "";
+				while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+					T_ls = T_ls.concat(charAt(CurrPos));
+					CurrPos++;
+				}
+				ValidationType_ls = T_ls;
+				CurrPos++;
+				T_ls = "";
+				while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+					T_ls = T_ls.concat(charAt(CurrPos));
+					CurrPos++;
+				}
+				Identifier_ls = T_ls;
+				PosBegExtPara_li = CurrPos+1;
+				while (CurrPos < (length - 1)) {
+					T_ls = "";
+					CurrPos++;
+					while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+						T_ls = T_ls.concat(charAt(CurrPos));
+						CurrPos++;
+					}
+					ExtraParameters_la = ExtraParameters_la.concat(T_ls);
+				}
+			}
+			switch (ValidationType_ls) {
+				case "ReqAns" : {
+					T_ls = "FrmElement_NonNull(FormIndex_li, ElementIndex_li)";
+					StdErrMsg_ls = "Please answer this question.";
+					break;
+				}
+				case "ChkMin" : {
+					T_ls="Chk_atLstX(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Please select at least {{0}} choices.";
+					break;
+				}
+				case "ChkMax" : {
+					T_ls="Chk_atMstX(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Only {{0}} choices are permitted to this question.";
+					break;
+				}
+				case "ChkExc" : {
+					T_ls="Chk_ExactX(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Please select exactly {{0}} choices to this question.";
+					break;
+				}
+				case "ReqSum" : {
+					T_ls="Str_FillInTot(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answers do not add up to the correct sum of {{0}}.";
+					break;
+				}
+				case "IsEml" : {
+					T_ls="Str_IsValidEmailAddress(FormIndex_li, ElementIndex_li)";
+					StdErrMsg_ls = "Invalid e-mail address.";
+					break;
+				}
+				case "MinLen" : {
+					T_ls="Str_IsLongerThan(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is shorter than the minimum allowed length of {{0}} characters.";
+					break;
+				}
+				case "MaxLen" : {
+					T_ls="Str_IsShorterThan(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is longer than the maximum allowed length of {{0}} characters.";
+					break;
+				}
+				case "ExcLen" : {
+					T_ls="Str_IsExactly(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+	   			StdErrMsg_ls = "Your answer must be exactly {{0}} characters in length.";
+					break;
+				}
+				case "IsNum" : {
+					T_ls="Str_IsNumber(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is not a number.";
+					break;
+				}
+				case "IncRegExp" : {
+					T_ls="Str_MatchRegExp(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Your answer does not match the criteria set for this question.";
+					break;
+				}
+				case "ExcRegExp" : {
+					T_ls="Str_NoMatchRegExp(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Your answer contains a pattern which is invalid for this question.";
+					break;
+				}
+				case ">" : {
+					T_ls="Number_IsGreaterThan(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is less than {{0}}, the minimum allowed for this question.";
+					break;
+				}
+				case ">=" : {
+					T_ls="Number_IsGreaterThanOrEqualTo(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is less than {{0}}, the minimum allowed for this question.";
+					break;
+				}
+				case "<" : {
+					T_ls="Number_IsLessThan(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is greater than {{0}}, the maximum allowed for this question.";
+					break;
+				}
+				case "<=" : {
+					T_ls="Number_IsLessThanOrEqualTo(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is greater than {{0}}, the maximum allowed for this question.";
+					break;
+				}
+				case "==" : {
+					T_ls="Number_IsEqualTo(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is not the same as {{0}}, which is the required answer for this question.";
+					break;
+				}
+				case "ReqRnk" : {
+					T_ls="Frm_NoDupRank(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "You must choose a different answer for each part of this question.";
+					break;
+				}
+				case "ExcSelCho" : {
+					T_ls="Sel_NoChoose(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "You have chosen an invalid selection for this question";
+					break;
+				}
+				default : {
+					alert("An invalid validation command was specified (" + ValidationType_ls + ").");
+					return true;
+				}
+			}
+			TestOutcome_lb = eval(T_ls);
+			if (TestOutcome_lb == false) {
+				with(document.forms[FormIndex_li].elements[ElementIndex_li]) {
+					if(SetFocus_lb == true) {
+						focus();
+					}
+					if ((type == "text") || (type == "textarea")) {
+						select();
+					}
+				} 
+				if (Identifier_ls == "n") continue;
+				if ((ValErrMsgArr_Search(ValArr[i].slice(PosBegCom_li)) == -1) || (Identifier_ls == "s")) {
+					StdErrMsg_ls = Str_FillInErrorParameters(StdErrMsg_ls, ExtraParameters_la);
+					alert(StdErrMsg_ls);
+				} else {
+					KeyInErrMsgArr = ValArr[i].slice(PosBegCom_li);
+					PosInErrMsgArr = ValErrMsgArr_Search(KeyInErrMsgArr);
+					BeginPosErrMsg = ValArr[i].length - PosBegCom_li ;
+					EndPosErrMsg = ValErrMsgArr[PosInErrMsgArr].length -1;
+					StdErrMsg_ls = ValErrMsgArr[PosInErrMsgArr].slice(BeginPosErrMsg, EndPosErrMsg);
+					StdErrMsg_ls = Str_FillInErrorParameters(StdErrMsg_ls, ExtraParameters_la);
+					alert(StdErrMsg_ls);
+				}
+				return false;
+			}
+	   } 
+	} 
+	return true;
+} 
+
+// --></script>
+</HEAD>
+<BODY bgcolor="white">
+<!-- Do not change the Form Action command, otherwise the survey software cannot build a database from responses to this form. -->
+<FORM NAME="Survey" ACTION="http://www.perseus.com/cgi-bin/survsol40.pl" onSubmit="return Sur_Validate(true);" METHOD="POST">
+<H1>Spray Booth Research</H1>
+<!-- You should not change the names of any form fields, otherwise the survey software cannot build a database from responses to this form. -->
+<B><A NAME="Q1">1</A>. </B>
+Do you or a member of your household regularly use (6 times or more a year) spray paints and other materials that require proper ventilation?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q1" value="1"> Yes	  <BR>
+<INPUT TYPE="radio" NAME="Q1" value="2" OnClick="AutoJump('#Q14')"> No - If no, please do not continue with this survey or <A HREF="#Q14">[Go to question 14]</A>  
+<BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q2">2</A>. </B>
+<B>	</B>  Where do you use these materials now? (Choose all that apply.)<br>
+<BLOCKQUOTE><INPUT TYPE="checkbox" NAME="Q2_1" value="1"> In My Home  <BR>
+<INPUT TYPE="checkbox" NAME="Q2_2" value="2"> In My Garage  <BR>
+<INPUT TYPE="checkbox" NAME="Q2_3" value="3"> Outdoors  <BR>
+<INPUT TYPE="checkbox" NAME="Q2_4" value="4"> Other  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q3">3</A>. </B>
+ If it was available, would you consider the purchase of a compact, portable spray booth that would catch overspray and vent fumes to the outside so that this work could be done indoors, year-round in comfort?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q3" value="1"> Yes  <BR>
+<INPUT TYPE="radio" NAME="Q3" value="2" OnClick="AutoJump('#Q14')"> No - If no, please do not continue with this survey or <A HREF="#Q14">[Go to question 14]</A>  
+<BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q4">4</A>. </B>
+  If such a spray booth was available, what is the largest size project you would use it for? (please check only one):<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q4" value="1"> 12&rdquo; x 12&rdquo; x 12&rdquo;  <BR>
+<INPUT TYPE="radio" NAME="Q4" value="2"> 18&rdquo; x 18&rdquo; x 18&rdquo;  <BR>
+<INPUT TYPE="radio" NAME="Q4" value="3"> 24&rdquo; x 24&rdquo; x 24&rdquo;  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q5">5</A>. </B>
+  If you could buy such a spray booth, what would you expect to spend? (please check only one)<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q5" value="1"> under $60  <BR>
+<INPUT TYPE="radio" NAME="Q5" value="2"> $60-$80  <BR>
+<INPUT TYPE="radio" NAME="Q5" value="3"> $80-$100  <BR>
+<INPUT TYPE="radio" NAME="Q5" value="4"> over $100  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q6">6</A>. </B>
+  Where would you expect to buy this product?: (Choose all that apply.)<br>
+<BLOCKQUOTE><INPUT TYPE="checkbox" NAME="Q6_1" value="1"> Craft store (such as Michael's, Hobby Lobby, AC Moore)  <BR>
+<INPUT TYPE="checkbox" NAME="Q6_2" value="2"> Home center (such as Home Depot, Lowes)  <BR>
+<INPUT TYPE="checkbox" NAME="Q6_3" value="3"> Hardware store  <BR>
+<INPUT TYPE="checkbox" NAME="Q6_4" value="4"> Paint store  <BR>
+<INPUT TYPE="checkbox" NAME="Q6_5" value="5"> Discount store (such as Wal-Mart, Target, K-Mart)  <BR>
+<INPUT TYPE="checkbox" NAME="Q6_6" value="6"> Mail Order catalog  <BR>
+<INPUT TYPE="checkbox" NAME="Q6_7" value="7"> Other  <BR>
+</BLOCKQUOTE><P>
+<B><U>Demographics<BR></U></B><br>
+Please provide the following demographic information.  It will only be used to make statistical comparisons between different groups of respondents; it will not be used to profile individual respondents.<br>
+<B><A NAME="Q7">7</A>. </B>
+What is your gender?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q7" value="1"> Male  <BR>
+<INPUT TYPE="radio" NAME="Q7" value="2"> Female  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q8">8</A>. </B>
+How old are you?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q8" value="1"> Under 20 years  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="2"> 20 - 24  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="3"> 25 - 29  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="4"> 30 - 34  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="5"> 35 - 39  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="6"> 40 - 44  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="7"> 45 - 49  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="8"> 50 - 54  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="9"> 55 - 59  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="10"> 60 - 64  <BR>
+<INPUT TYPE="radio" NAME="Q8" value="11"> 65+  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q9">9</A>. </B>
+Which of the following best represents the highest level of education that you have completed?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q9" value="1"> Some high school or less  <BR>
+<INPUT TYPE="radio" NAME="Q9" value="2"> High school graduate  <BR>
+<INPUT TYPE="radio" NAME="Q9" value="3"> Attended some college  <BR>
+<INPUT TYPE="radio" NAME="Q9" value="4"> Associates degree  <BR>
+<INPUT TYPE="radio" NAME="Q9" value="5"> Bachelors degree  <BR>
+<INPUT TYPE="radio" NAME="Q9" value="6"> Post-college graduate  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q10">10</A>. </B>
+Are you currently employed?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q10" value="1"> Yes, full-time  <BR>
+<INPUT TYPE="radio" NAME="Q10" value="2"> Yes, part-time (30 hours or less per week)  <BR>
+<INPUT TYPE="radio" NAME="Q10" value="3"> No  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q11">11</A>. </B>
+What is your marital status?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q11" value="1"> Married  <BR>
+<INPUT TYPE="radio" NAME="Q11" value="2"> Single, never married  <BR>
+<INPUT TYPE="radio" NAME="Q11" value="3"> Widowed  <BR>
+<INPUT TYPE="radio" NAME="Q11" value="4"> Separated or divorced  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q12">12</A>. </B>
+What are the age ranges of any children 18 years of age or younger living in your household?  Choose all that apply.<br>
+<BLOCKQUOTE><INPUT TYPE="checkbox" NAME="Q12_1" value="1"> Under Age 6 years  <BR>
+<INPUT TYPE="checkbox" NAME="Q12_2" value="2"> Aged 6-12  <BR>
+<INPUT TYPE="checkbox" NAME="Q12_3" value="3"> Aged 13-18  <BR>
+<INPUT TYPE="checkbox" NAME="Q12_4" value="4"> Have no children 18 or under living in household  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q13">13</A>. </B>
+Which of the following best describes your total household income before taxes last year?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q13" value="1"> Under $10,000  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="2"> $10,000 - $19,999  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="3"> $20,000 - $29,999  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="4"> $30,000 - $39,999  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="5"> $40,000 - $49,999  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="6"> $50,000 - $59,999  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="7"> $60,000 - $69,999  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="8"> $70,000 - $79,999  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="9"> $80,000 - $89,999  <BR>
+<INPUT TYPE="radio" NAME="Q13" value="10"> $90,000 +  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q14">14</A>. </B>
+How would you best describe the area/region you live in? (please check only one)<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Q14" value="1"> Urban (City)  <BR>
+<INPUT TYPE="radio" NAME="Q14" value="2"> Suburban  <BR>
+<INPUT TYPE="radio" NAME="Q14" value="3"> Rural (Country)  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Q15">15</A>. </B>
+<B><U>Contact Information</U></B><br>
+This section is necessary to notify our winners.  Please fill out this section only if you would like to be entered into the drawing for the FREE $149 Value Craft Table.<br>
+<BLOCKQUOTE><TABLE><TR><TD>	State / Province / Region</TD><TD><INPUT TYPE="Text" NAME="Q15_1" SIZE="34"></TD></TR>
+<TR><TD>	E-mail</TD><TD><INPUT TYPE="Text" NAME="Q15_2" SIZE="34"></TD></TR>
+</TABLE></BLOCKQUOTE><INPUT TYPE="submit" VALUE="Submit Survey">
+<!-- Do not delete any hidden fields, otherwise the survey software cannot build a database from responses to this form. -->
+<INPUT TYPE="hidden" NAME="PDCPDCProjectID" VALUE="AACT051502">
+<INPUT TYPE="hidden" NAME="PDCPDCAppVer" VALUE="4.00.19">
+
+<INPUT TYPE="hidden" NAME="PDCPDCAdminEmlAdr" VALUE="assist@myfree.com">
+<INPUT TYPE="hidden" NAME="PDCPDCEmailAddress" VALUE="stuarto@myfree.com">
+<INPUT TYPE="hidden" NAME="PDCPDCFrmFld" VALUE="Q1; Q2_1; Q2_2; Q2_3; Q2_4; Q3; Q4; Q5; Q6_1; Q6_2; Q6_3; Q6_4; Q6_5; Q6_6; Q6_7; Q7; Q8; Q9; Q10; Q11; Q12_1; Q12_2; Q12_3; Q12_4; Q13; Q14; Q15_1; Q15_2; PDCPDCProjectID; PDCPDCAppVer; ">
+<!-- The thank-you page contains hidden HTML tags, with the angle brackets changed to curly brackets and with double quotes changed to two single quotes. These changes are to prevent HTML editors and browsers from misunderstanding the field; the Perseus Development Perl script correctly translates these tags into HTML. Any placeholders (e.g., {{Q1}}) are actually replaced with the respondent's answer to that question (e.g., the answer to Q1). -->
+<INPUT TYPE="hidden" NAME="PDCPDCThankYouPage" VALUE="Location:http://asp.myfree.com/ot5/default.asp?src=MYF0524KK
+
+">
+<INPUT TYPE="hidden" NAME="PDCPDCRspEmlAdrQstHdg" VALUE="Q15_2">
+<INPUT TYPE="hidden" NAME="PDCPDCRspEmlMsg" VALUE="Re:  Survey For Manufacturer Of Craft Tables And Related Products
+
+Thank you for assisting in research we are conducting for a manufacturer of craft tables and related products.
+
+Your information will help us serve you better.   
+
+You have been entered to win one of three AmeriCrafters craft tables valued at $149 each!  Winners will be notified by e-mail shortly.  Again, thank you for your assistance.
+
+Craft Table Research Coordinator
+">
+</FORM>
+
+<BR>
+<FONT size="2"><A HREF=""></A></FONT>
+</BODY>
+</HTML>

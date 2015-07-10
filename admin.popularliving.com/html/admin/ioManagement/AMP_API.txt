@@ -1,0 +1,62 @@
+
+Offer Name:
+
+Offer Code:
+
+Start Date:
+
+End Date:
+
+Net CPA Per Lead:
+
+# Of Leads:
+
+Authorized URL(s)
+	Where Offer Will Run:
+
+
+Campaign may only run on above specified URL.  If any other URL is to be used, specific written 
+authorization must be given, prior to placement.  Violation will result in loss of ALL revenue on 
+this campaign. I have read and specifically agree to this term. __________(Host Site Initials)   
+Date: __________ . 
+
+Offer Headline:
+
+Offer Description:
+
+Standard Data Required:
+First & Last Name, Complete Postal address (Street Address, City, State, Zip), complete area code 
+& phone number, date, time & IP.  
+
+Additional Data Required:
+
+Lead Screening & Acceptance:  Leads generated pursuant to this Agreement must be submitted on a
+daily basis using an HTTP post method as specified in Media Broker’s Technical Specifications. 
+Unique opt-in leads only. US Residents. No incentives to take specific offer. 18 years or older. 
+Data with profanity; obviously bogus names (George Bush); invalid US Postal address; Zip Codes 
+that do not match area codes; phone prefix that do not match city will be determined “Invalid”. 
+
+Creative: Media Broker must approve all creative material and placement. Only approved creative 
+only must generate such leads.  Creative approval shall in all cases be evidenced by communications 
+documenting the agreement of the Parties. 
+
+Compliance: Media Broker will periodically review Host Site to ensure compliance.  In the event
+that Media Broker discovers any inconsistency, it will immediately assume that all leads generated 
+during the term of the Agreement were done so in violation of the Agreement and that, therefore, 
+any monies accrued shall not be paid; any monies paid shall be returned to Media Broker. 
+
+Non-Compete: During the time of this agreement and for a period of 6 months from the end of this 
+agreement, Host Site agrees that it will not engage, contract with, nor license the client and/or 
+offer in any marketing relationship, nor permit any person, firm, or entity associated with Host 
+Site to represent or engage the client and/or offer in any marketing relationship. 
+
+Payment: Any leads determined “Invalid” or generated via unapproved creative and/or placement will 
+not be paid. Media Broker will make payment to Host Site within thirty (30) days from month end for 
+all amounts due to Host Site for which Media Broker has received payment from Advertiser.  Media 
+Broker may cancel this Agreement with 24 hours prior written notice.
+
+Each Party represents that it has the full authority and corporate right to enter into this 
+Agreement. In Witness Whereof, the parties have caused this Agreement to be duly executed as of 
+the date set forth above.
+
+<footer>

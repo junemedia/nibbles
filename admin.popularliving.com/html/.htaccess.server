@@ -1,0 +1,19 @@
+order deny,allow
+deny from all
+allow from 66.54.186.254
+allow from 98.220.232.93
+allow from 125.212.36.88
+allow from 125.212.36.66
+allow from 108.176.58.178
+allow from 24.1.185.32
+allow from 110.54.231.231
+allow from 67.186.97.250
+allow from 124.106.153.97
+allow from 124.106.153.197
+allow from 76.16.220.193
+allow from 67.165.152.203
+allow from 64.179.117.14
+allow from 66.117.119.138
+allow from 60.216.3.163
+allow from 123.168.0.82
+

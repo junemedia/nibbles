@@ -1,0 +1,41 @@
+BODY {
+	BACKGROUND-COLOR: #FFFFFF;
+	
+}
+
+A:link {
+	 FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A:visited {
+	 FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A:hover {
+	 FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+A:active {
+	 FONT-SIZE: 8pt; COLOR: #0000FF; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+TD.small {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; COLOR: #000000; 
+}
+
+TD.tiny {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10px; COLOR: #000000; 
+}
+
+TD {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+TD.header {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; 
+}
+
+TR.ODD {
+	BACKGROUND-COLOR: #DEDEDE
+}
+
+TR.EVEN {
+	BACKGROUND-COLOR: #C1C1C1
+}

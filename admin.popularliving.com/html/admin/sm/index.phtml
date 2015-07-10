@@ -1,0 +1,39 @@
+
+<script language=JavaScript>
+	function confirmDelete(form1,id)
+	{
+		if(confirm('Are you sure to delete this record ?'))
+		{							
+			document.form1.elements['delete'].value='Delete';
+			document.form1.elements['id'].value=id;
+			document.form1.submit();								
+		}
+	}		
+		function funcRecPerPage(form1) {
+		document.form1.submit();
+	}
+						
+</script>
+		
+<form name=form1 method=post action='{ACTION}'>
+{HIDDEN}
+<input type=hidden name=delete>
+
+<table cellpadding=5 cellspacing=0 bgcolor=c9c9c9 width=95% align=center>
+<tr><Td>{ADD_BUTTON}</td><td colspan=2>{SORT_OFFERS_LINK} &nbsp; &nbsp; {REPORT_LINKS}</td></tr>
+<tr><td colspan=5 align=right class=header><input type=text name=recPerPage value='{REC_PER_PAGE}' size=2 onChange='funcRecPerPage(this);'> &nbsp;Records Per Page &nbsp; &nbsp; {FIRST_PAGE_LINK} &nbsp; {PREV_PAGE_LINK} &nbsp; {NEXT_PAGE_LINK} &nbsp; {LAST_PAGE_LINK} &nbsp; {CURRENT_PAGE}</td></tr>	
+<tr>	
+	<TD class=header><a href='{SORT_LINK}&orderColumn=title&titleOrder={TITLE_ORDER}' class=header>Title</a></td>
+	<TD class=header><a href='{SORT_LINK}&orderColumn=url&urlOrder={URL_ORDER}' class=header>URL</a></td>	
+	<TD class=header><a href='{SORT_LINK}&orderColumn=emailType&emailTypeOrder={EMAIL_TYPE_ORDER}' class=header>eMail Type</a></td>		
+	<TD class=header><a href='{SORT_LINK}&orderColumn=sortOrder&sortOrderOrder={SORT_ORDER_ORDER}' class=header>Sort Order</a></td>
+
+	<!--<td class=header>PopUp Height</td>	
+	<td class=header>PopUp Width</td>	-->
+	<th>&nbsp; </th>
+</tr>
+{OFFER_LIST}
+<tr><td colspan=5 align=right class=header>{FIRST_PAGE_LINK} &nbsp; {PREV_PAGE_LINK} &nbsp; {NEXT_PAGE_LINK} &nbsp; {LAST_PAGE_LINK} &nbsp; {CURRENT_PAGE}</td></tr>
+<tr><Td>{ADD_BUTTON}</td></tr>
+</table>
+</form>

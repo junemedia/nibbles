@@ -1,0 +1,50 @@
+TABLE.table650 {
+	margin-left:auto; margin-right:auto; width:650px; 
+}
+
+TD {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif";
+}
+
+
+TD.offer10 {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif";
+}
+
+
+TD.offer9 {
+	FONT-SIZE: 9px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif";
+}
+
+TD.offer11 {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif";
+}
+
+TD.offer12 {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif";
+}
+
+TD.bigBold {
+	FONT-SIZE: 12pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; FONT-WEIGHT: bold;
+}
+
+TD.mainErrorMessage {
+	FONT-SIZE: 12pt; COLOR: #FF0000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; FONT-WEIGHT: bold;
+}
+
+TD.message {
+	FONT-SIZE: 12pt; COLOR: #FF0000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; FONT-WEIGHT: bold;
+}
+
+
+TD.tiny {
+	FONT-SIZE: 7pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif";
+}
+
+.required {
+	FONT-SIZE: 7pt; COLOR: #003DB8; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-WEIGHT: normal;
+}
+
+TD.page2Question {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-weight: bold;
+}

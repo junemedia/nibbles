@@ -1,0 +1,737 @@
+<HTML><HEAD>
+<!-- If you were e-mailed this survey, you will need to save it to disk and view it in a web browser, since your e-mail system does not support HTML. -->
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252"><META NAME="GENERATOR" CONTENT="Perseus SurveySolutions (visit http://www.perseusdevelopment.com/fromsurv.htm)">
+<TITLE>Weekly Craft Survey</TITLE>
+
+<script language="JavaScript1.2"><!-- 
+//Version 3.01 10/13/00
+function FrmElement_NonNull(FrmIndx_li, EleIndx_li) {
+	ReturnFlag_lb = new Boolean(false); 
+	with(document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		if ((type == "select-one") || (type == "select-multiple")) {
+			if (options[selectedIndex].value != "") ReturnFlag_lb = true;
+		}
+		if ((type == "text") || (type == "textarea")){
+			if (value != "") ReturnFlag_lb = true;
+		}
+	} 
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].type == "checkbox") {
+		i = 0;
+		while (document.forms[FrmIndx_li].elements[EleIndx_li].name.charAt(i) != "_") i++; 
+		MainQName_ls = document.forms[FrmIndx_li].elements[EleIndx_li].name.slice(0,i);
+		i = EleIndx_li;
+		while (document.forms[FrmIndx_li].elements[i].name.search(MainQName_ls) != -1) {
+			if (document.forms[FrmIndx_li].elements[i].checked) {
+				ReturnFlag_lb = true;
+			}
+			i++;
+		}
+	}
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].type == "radio") {
+		i = EleIndx_li;
+		while (document.forms[FrmIndx_li].elements[i].name == document.forms[FrmIndx_li].elements[EleIndx_li].name) {
+			if (document.forms[FrmIndx_li].elements[i].checked) ReturnFlag_lb = true;
+			i++;
+		}
+	}
+	if (ReturnFlag_lb == true) return true;
+	else return false;
+}
+function Chk_CntSel(FrmIndx_li, EleIndx_li) {
+	NumChecked_li = new Number(0); 
+	QuesName_ls = new String(""); 
+	with(document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		i = 0;
+		while ((name.charAt(i) != "_") && (i < (name.length - 1))) i++;
+		if (i == (name.length - 1)) {
+			QuesName_ls = name;
+		} else {
+			QuesName_ls = name.slice(0,i);
+		}
+	} 
+	if ((document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-multiple") ||
+	    (document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-one")) {
+		with(document.forms[FrmIndx_li].elements[EleIndx_li]){
+			for(j=0;j<length;j++) {
+				if (options[j].selected == true) NumChecked_li++;
+			}
+		} 
+	} else {
+		j = EleIndx_li;
+		while (document.forms[FrmIndx_li].elements[j].name.slice(0,i) == QuesName_ls) {
+			if (document.forms[FrmIndx_li].elements[j].checked) NumChecked_li++;
+			j++;
+		}
+	} 
+	return NumChecked_li;
+}
+function Chk_NoneAbove(FrmIndx_li, EleIndx_li, NoneAbove_ls) {
+	QuesName_ls = new String(""); 
+	with(document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		i = 0;
+		while ((name.charAt(i) != "_") && (i < (name.length - 1))) i++;
+			QuesName_ls = name.slice(0,i);
+	} 
+	if ((document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-multiple") ||
+	    (document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-one")) {
+		with(document.forms[FrmIndx_li].elements[EleIndx_li]){
+			for(j=0;j<length;j++) {
+				if ((options[j].selected == true) && (options[j].value == NoneAbove_ls)) {
+					return true
+				};
+			}
+		} 
+	} else if (document.forms[FrmIndx_li].elements[EleIndx_li].type == "radio") {
+	j = EleIndx_li;
+		while ((document.forms[FrmIndx_li].elements[j].name.slice(0,i) == QuesName_ls) && (j < document.forms[FrmIndx_li].elements.length)) {
+			if ((document.forms[FrmIndx_li].elements[j].checked) && (document.forms[FrmIndx_li].elements[j].value == NoneAbove_ls)) {
+				return true;
+			}
+			j++;
+		}
+	} 
+	return false;
+}
+function Chk_atLstX(FrmIndx_li, EleIndx_li, Limit_li, NoneAbove_ls) {
+	if (NoneAbove_ls != "") {
+		if (Chk_NoneAbove(FrmIndx_li, EleIndx_li, NoneAbove_ls) == true) {
+			return true;
+		}
+	}
+	NumChecked_li = Chk_CntSel(FrmIndx_li, EleIndx_li);
+	if (NumChecked_li >= Limit_li) {
+		return true;
+	} else {
+		return false;
+	}
+} 
+function Chk_atMstX(FrmIndx_li, EleIndx_li, Limit_li, NoneAbove_ls) {
+	if (NoneAbove_ls != "") {
+		if (Chk_NoneAbove(FrmIndx_li, EleIndx_li, NoneAbove_ls) == true) {
+			return true;
+		}
+	}
+	NumChecked_li = Chk_CntSel(FrmIndx_li, EleIndx_li);
+	if (NumChecked_li <= Number(Limit_li)) {
+		return true;
+	} else {
+		return false;
+	}
+} 
+function Chk_ExactX(FrmIndx_li, EleIndx_li, Limit_li, NoneAbove_ls) {
+	if (NoneAbove_ls != "") {
+		if (Chk_NoneAbove(FrmIndx_li, EleIndx_li, NoneAbove_ls) == true) {
+			return true;
+		}
+	}
+	NumChecked_li = Chk_CntSel(FrmIndx_li, EleIndx_li);
+	if (NumChecked_li == Number(Limit_li)) {
+		return true;
+	} else {
+		return false;
+	}
+} 
+function Str_FillInTot(FrmIndx_li, EleIndx_li, TotalSum_lc) {
+	i = 0;
+	with(document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		while ((name.charAt(i) != "_") && (i < (name.length - 1))) i++;
+	}
+	QuestName_ls = document.forms[FrmIndx_li].elements[EleIndx_li].name.slice(0,i);
+	FormSum_li = new Number(0);
+	SumModified_lb = false;
+	with (document.forms[FrmIndx_li]) {
+		for (i=EleIndx_li;i<elements.length;i++) {
+			if ((elements[i].name.search(QuestName_ls) != -1) && elements[i].value != ""){
+				FormSum_li += parseFloat(document.forms[FrmIndx_li].elements[i].value);
+				SumModified_lb = true;
+			}
+		}
+	}
+	if ((FormSum_li == Number(TotalSum_lc)) || (SumModified_lb == false)) return true;
+	else return false;
+}
+function isGoodForm(SearchString) {
+	i = new Number(0);
+	while ((SearchString.charAt(i) != '@') && (i < SearchString.length)) i++;
+		if (i==SearchString.length) return false;
+	while ((SearchString.charAt(i) != '.') && (i < SearchString.length)) i++;
+		if (i==SearchString.length) return false;
+	return true;
+}
+function noBadPeriods(SearchString) {
+	if ((SearchString.charAt(0) == '.') || (SearchString.charAt(SearchString.length) == '.')) return false;
+	return true;
+}
+function hasOneAmp(SearchString) {
+	count = new Number(0);
+	for (i=0;i<SearchString.length;i++) {
+		if (SearchString.charAt(i) == '@') count++;
+	}
+	if (count == 1) return true;
+	else return false;
+}
+function isMember(SearchArray, key) {
+	i = new Number(0);
+	for (i=0;i<SearchArray.length;i++) {
+		if (SearchArray[i] == key) return true;
+	}
+	return false;
+}
+function Str_IsValidEmailAddress(FrmIndx_li, EleIndx_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	EmailAddress = document.forms[FrmIndx_li].elements[EleIndx_li].value;
+	PassedTests_lb = new Boolean("true");
+	if (!isGoodForm(EmailAddress)) {
+		PassedTests_lb = false;
+	} else if (!noBadPeriods(EmailAddress)) {
+		PassedTests_lb = false;
+	} else if (!hasOneAmp(EmailAddress)) {
+		PassedTests_lb = false;
+	}
+	return PassedTests_lb;
+}
+function Str_IsShorterThan(FrmIndx_li, EleIndx_li, MaxLength_zi) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(document.forms[FrmIndx_li].elements[EleIndx_li].value.length <= Number(MaxLength_zi))) {
+		return false;
+	} else return true;
+}
+function Str_IsLongerThan(FrmIndx_li, EleIndx_li, MinLength_zi) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(document.forms[FrmIndx_li].elements[EleIndx_li].value.length >= Number(MinLength_zi))) {
+		return false;
+	} else return true;
+}
+function Str_IsExactly(FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value.length != Number(Limit_li)) {
+		return false;
+	} else return true;
+}
+function Str_IsNumber(FrmIndx_li, EleIndx_li, DecPnt_lc) {
+	NumeralFlag_b = new Boolean(false);
+	Str_Value = document.forms[FrmIndx_li].elements[EleIndx_li].value;
+	if (Str_Value == "") return true;
+	if (Str_Value.search("[^0-9.,-]") != -1) return false;
+	if (Str_Value.search("[0-9]") == -1) return false;
+	PntCnt_li = 0;
+	for (var i=0;i<Str_Value.length;i++) {
+		if (Str_Value.charAt(i) == DecPnt_lc) PntCnt_li++;
+	}
+	if (PntCnt_li > 1) return false;
+	T_re = new RegExp("\\" + DecPnt_lc);
+	if (Str_Value.search(T_re) != -1) {
+		DecHit_lb = false;
+		i = Str_Value.length;
+		while(i>=0) {
+			if (Str_Value.charAt(i) == DecPnt_lc) break;
+			if (Str_Value.charAt(i) == ((DecPnt_lc == ".") ? "," : ".")) {
+				return false;
+			}
+		i--;
+		}
+	}
+	return true;
+}
+function Str_MatchRegExp(FrmIndx_li, EleIndx_li, MatchCase_ls, RegExp_ls) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	T_lr = new RegExp(RegExp_ls, MatchCase_ls);
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value.search(T_lr) == -1) {
+		return false;
+	} else return true;
+}
+function Str_NoMatchRegExp(FrmIndx_li, EleIndx_li, MatchCase_ls, RegExp_ls) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	T_lr = new RegExp(RegExp_ls, MatchCase_ls);
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value.search(T_lr) != -1) {
+		return false;
+	} else return true;
+}
+function Number_IsGreaterThan (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) > Limit_li)) {
+		return false;
+	} else return true;
+}
+function Number_IsGreaterThanOrEqualTo (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) >= Limit_li)) {
+		return false;
+	} else return true;
+}
+function Number_IsLessThan (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) < Limit_li)) {
+		return false;
+	} else return true;
+}
+function Number_IsLessThanOrEqualTo (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) <= Limit_li)) {
+		return false;
+	} else return true;
+}
+function Number_IsEqualTo (FrmIndx_li, EleIndx_li, Limit_li) {
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].value == "") return true;
+	if (!(parseInt(document.forms[FrmIndx_li].elements[EleIndx_li].value) == Limit_li)) {
+		return false;
+	} else return true;
+}
+function Frm_NoDupRank(FrmIndx_li, EleIndx_li, NumOptPerChoice_li, NumChoice_li) {
+	NumOptPerChoice_li = Number(NumOptPerChoice_li);
+	NumChoice_li = Number(NumChoice_li);
+	Responses_l = new Array();
+	if (document.forms[FrmIndx_li].elements[EleIndx_li].type == "radio") {
+		for (var i=0;i<NumChoice_li;i++) {
+			for (var j=0;j<NumOptPerChoice_li;j++) {
+				if (document.forms[FrmIndx_li].elements[EleIndx_li + (i * NumOptPerChoice_li) + j].checked) {
+					Responses_l[i] = (document.forms[FrmIndx_li].elements[EleIndx_li + (i * NumOptPerChoice_li) + j].value);
+				}
+			}
+		}
+	} else if ((document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-one") ||
+	 	       (document.forms[FrmIndx_li].elements[EleIndx_li].type == "select-multiple")){
+		for (var i=0;i<NumChoice_li;i++) {
+			with(document.forms[FrmIndx_li].elements[EleIndx_li + i]) {
+				if (options[selectedIndex].defaultSelected == false) {
+					Responses_l[i] = options[selectedIndex].value;
+				}
+			}
+		}
+	} else {
+		return true;
+	}
+	if (Responses_l.length <= NumOptPerChoice_li) {
+		for (var i=0;i<Responses_l.length - 1;i++) {
+			for (var j=i+1;j<Responses_l.length;j++) {
+				if (Responses_l[i] == Responses_l[j]) {
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
+function Sel_NoChoose(FrmIndx_li, EleIndx_li, DisAllwd_ls) {
+	with (document.forms[FrmIndx_li].elements[EleIndx_li]) {
+		if (options[options.selectedIndex].value == DisAllwd_ls) {
+			return false;
+		} else return true;
+	}
+}
+function ValErrMsgArr_Search(Key_ls) {
+	IndxToReturn_li = -1;
+	PosToTest_li = 0;
+	while (PosToTest_li < ValErrMsgArr.length) {
+		if (ValErrMsgArr[PosToTest_li].slice(0,Key_ls.length) == Key_ls) {
+			IndxToReturn_li = PosToTest_li;
+			break;
+		}
+		PosToTest_li ++;
+	}
+	return IndxToReturn_li;
+}
+function Str_FillInErrorParameters (MessageStr_zs, Parameters_as) {
+	var BeginPos_li = 0;
+	var Length_li   = 0;
+	var NewStr_ls   = "";
+	while ((BeginPos_li + 1) < MessageStr_zs.length) {
+		if 	((MessageStr_zs.charAt(BeginPos_li) == "{") && (MessageStr_zs.charAt(BeginPos_li + 1) == "{")) {
+			break;
+		} else {
+			BeginPos_li++;
+		}
+	}
+	if ((BeginPos_li + 1) == MessageStr_zs.length) {
+		return MessageStr_zs;
+	} else {
+		Length_li = 5;
+		if ((Length_li + BeginPos_li) > MessageStr_zs.length) {
+			return MessageStr_zs;
+		}
+		if ((MessageStr_zs.charAt(BeginPos_li + 3) == "}") && (MessageStr_zs.charAt(BeginPos_li + 4) == "}")) {
+			Index_li = new Number(MessageStr_zs.slice(BeginPos_li + 2, BeginPos_li + 3));
+			NewStr_ls =  MessageStr_zs.slice(0,BeginPos_li);
+			NewStr_ls += Parameters_as[Index_li] || Parameters_as[0];
+			NewStr_ls += MessageStr_zs.slice((BeginPos_li + Length_li), MessageStr_zs.length);
+			return NewStr_ls;
+		} else {
+			return MessageStr_zs;
+		}
+	}
+}
+function Str_GetFrmIndex(ElementName_zs, ElementArray_as) {
+	var i;
+	for(i=0;i<ElementArray_as.length;i++) {
+		if (ElementArray_as[i].name == ElementName_zs) {
+			return i;
+		}
+	}
+	i = 0;
+	while ((ElementName_zs.charAt(i) != "_") && (i < (ElementName_zs.length -1))) i++;
+	if (i < (ElementName_zs.length -1)) {
+		return Str_GetFrmIndex(ElementName_zs.slice(0,i), ElementArray_as);
+	}
+	return -1
+}
+function Sur_Validate(SetFocus_lb) {
+	FormIndex_li = new Number(0);
+	ElementIndex_li = new Number(0);
+	ValidationType_ls = new String("");
+	Identifier_ls = new String("");
+	ExtraParameters_la = new Array(0);
+	PosBegCom_li = new Number(0); 
+	PosBegExtPara_li = new Number(0); 
+	CurPos = new Number(0); 
+	T_ls = new String(); 
+	ExtraParameters_la = new Array(); 
+	TestOutcome_lb = new Boolean(true); 
+	StdErrMsg_ls = new String(""); 
+	ValArr = new Array();
+	ElementIndex_li = Str_GetFrmIndex("PDCPDCVld", document.forms[0].elements);
+	if (ElementIndex_li != -1) {
+		T_ls = document.forms[0].elements[ElementIndex_li].value;
+		ValArr = T_ls.split(";");
+	}
+	ValErrMsgArr = new Array();
+	ElementIndex_li = Str_GetFrmIndex("PDCPDCVldErrMsg", document.forms[0].elements);
+	if (ElementIndex_li != -1) {
+		T_ls = document.forms[0].elements[ElementIndex_li].value;
+		ValErrMsgArr = T_ls.split(";");
+	}
+	for (var i=0;i<ValArr.length;i++){
+		CurrentString = new String(ValArr[i]);
+		if (CurrentString.length > 0) {
+	 		with(CurrentString) {
+				ExtraParameters_la.length = 0;
+				CurrPos = 0;
+				T_ls = "";
+				while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+					T_ls = T_ls.concat(charAt(CurrPos));
+					CurrPos++;
+				}
+				FormIndex_li = parseInt(T_ls);
+				CurrPos++;
+				T_ls = "";
+				while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+					T_ls = T_ls.concat(charAt(CurrPos));
+					CurrPos++;
+				}
+				ElementIndex_li = parseInt(T_ls);
+				if (isNaN(ElementIndex_li)) {
+					ElementIndex_li = Str_GetFrmIndex(T_ls, document.forms[FormIndex_li].elements);
+				}
+				PosBegCom_li = CurrPos + 1;
+				CurrPos++;
+				T_ls = "";
+				while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+					T_ls = T_ls.concat(charAt(CurrPos));
+					CurrPos++;
+				}
+				ValidationType_ls = T_ls;
+				CurrPos++;
+				T_ls = "";
+				while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+					T_ls = T_ls.concat(charAt(CurrPos));
+					CurrPos++;
+				}
+				Identifier_ls = T_ls;
+				PosBegExtPara_li = CurrPos+1;
+				while (CurrPos < (length - 1)) {
+					T_ls = "";
+					CurrPos++;
+					while ((charAt(CurrPos) != "|") && (CurrPos < length)) {
+						T_ls = T_ls.concat(charAt(CurrPos));
+						CurrPos++;
+					}
+					ExtraParameters_la = ExtraParameters_la.concat(T_ls);
+				}
+			}
+			switch (ValidationType_ls) {
+				case "ReqAns" : {
+					T_ls = "FrmElement_NonNull(FormIndex_li, ElementIndex_li)";
+					StdErrMsg_ls = "Please answer this question.";
+					break;
+				}
+				case "ChkMin" : {
+					T_ls="Chk_atLstX(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Please select at least {{0}} choices.";
+					break;
+				}
+				case "ChkMax" : {
+					T_ls="Chk_atMstX(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Only {{0}} choices are permitted to this question.";
+					break;
+				}
+				case "ChkExc" : {
+					T_ls="Chk_ExactX(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Please select exactly {{0}} choices to this question.";
+					break;
+				}
+				case "ReqSum" : {
+					T_ls="Str_FillInTot(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answers do not add up to the correct sum of {{0}}.";
+					break;
+				}
+				case "IsEml" : {
+					T_ls="Str_IsValidEmailAddress(FormIndex_li, ElementIndex_li)";
+					StdErrMsg_ls = "Invalid e-mail address.";
+					break;
+				}
+				case "MinLen" : {
+					T_ls="Str_IsLongerThan(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is shorter than the minimum allowed length of {{0}} characters.";
+					break;
+				}
+				case "MaxLen" : {
+					T_ls="Str_IsShorterThan(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is longer than the maximum allowed length of {{0}} characters.";
+					break;
+				}
+				case "ExcLen" : {
+					T_ls="Str_IsExactly(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+	   			StdErrMsg_ls = "Your answer must be exactly {{0}} characters in length.";
+					break;
+				}
+				case "IsNum" : {
+					T_ls="Str_IsNumber(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is not a number.";
+					break;
+				}
+				case "IncRegExp" : {
+					T_ls="Str_MatchRegExp(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Your answer does not match the criteria set for this question.";
+					break;
+				}
+				case "ExcRegExp" : {
+					T_ls="Str_NoMatchRegExp(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "Your answer contains a pattern which is invalid for this question.";
+					break;
+				}
+				case ">" : {
+					T_ls="Number_IsGreaterThan(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is less than {{0}}, the minimum allowed for this question.";
+					break;
+				}
+				case ">=" : {
+					T_ls="Number_IsGreaterThanOrEqualTo(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is less than {{0}}, the minimum allowed for this question.";
+					break;
+				}
+				case "<" : {
+					T_ls="Number_IsLessThan(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is greater than {{0}}, the maximum allowed for this question.";
+					break;
+				}
+				case "<=" : {
+					T_ls="Number_IsLessThanOrEqualTo(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is greater than {{0}}, the maximum allowed for this question.";
+					break;
+				}
+				case "==" : {
+					T_ls="Number_IsEqualTo(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "Your answer is not the same as {{0}}, which is the required answer for this question.";
+					break;
+				}
+				case "ReqRnk" : {
+					T_ls="Frm_NoDupRank(FormIndex_li, ElementIndex_li, ExtraParameters_la[0], ExtraParameters_la[1])";
+					StdErrMsg_ls = "You must choose a different answer for each part of this question.";
+					break;
+				}
+				case "ExcSelCho" : {
+					T_ls="Sel_NoChoose(FormIndex_li, ElementIndex_li, ExtraParameters_la[0])";
+					StdErrMsg_ls = "You have chosen an invalid selection for this question";
+					break;
+				}
+				default : {
+					alert("An invalid validation command was specified (" + ValidationType_ls + ").");
+					return true;
+				}
+			}
+			TestOutcome_lb = eval(T_ls);
+			if (TestOutcome_lb == false) {
+				with(document.forms[FormIndex_li].elements[ElementIndex_li]) {
+					if(SetFocus_lb == true) {
+						focus();
+					}
+					if ((type == "text") || (type == "textarea")) {
+						select();
+					}
+				} 
+				if (Identifier_ls == "n") continue;
+				if ((ValErrMsgArr_Search(ValArr[i].slice(PosBegCom_li)) == -1) || (Identifier_ls == "s")) {
+					StdErrMsg_ls = Str_FillInErrorParameters(StdErrMsg_ls, ExtraParameters_la);
+					alert(StdErrMsg_ls);
+				} else {
+					KeyInErrMsgArr = ValArr[i].slice(PosBegCom_li);
+					PosInErrMsgArr = ValErrMsgArr_Search(KeyInErrMsgArr);
+					BeginPosErrMsg = ValArr[i].length - PosBegCom_li ;
+					EndPosErrMsg = ValErrMsgArr[PosInErrMsgArr].length -1;
+					StdErrMsg_ls = ValErrMsgArr[PosInErrMsgArr].slice(BeginPosErrMsg, EndPosErrMsg);
+					StdErrMsg_ls = Str_FillInErrorParameters(StdErrMsg_ls, ExtraParameters_la);
+					alert(StdErrMsg_ls);
+				}
+				return false;
+			}
+	   } 
+	} 
+	return true;
+} 
+
+// --></script>
+</HEAD>
+<BODY bgcolor="white">
+<!-- Do not change the Form Action command, otherwise the survey software cannot build a database from responses to this form. -->
+<FORM NAME="Survey" ACTION="http://www.perseus.com/cgi-bin/survsol40.pl" onSubmit="return Sur_Validate(true);" METHOD="POST">
+<H1>Weekly Craft Survey</H1>
+<!-- You should not change the names of any form fields, otherwise the survey software cannot build a database from responses to this form. -->
+<DIV ALIGN=CENTER><B>Carole's Weekly Survey - 2/14/02</B></DIV><br>
+Please answer the following question:<br>
+<P>
+<B><A NAME="Q1">1</A>. </B>
+Please pick THREE favorite weekend craft projects from list below.<br>
+<BLOCKQUOTE><INPUT TYPE="checkbox" NAME="Q1_1" value="1"> Friend  Craftingsssssss  <BR>
+<INPUT TYPE="checkbox" NAME="Q1_2" value="2"> Yellow Project   <BR>
+<INPUT TYPE="checkbox" NAME="Q1_3" value="3"> Newspaper Holiday  <BR>
+<INPUT TYPE="checkbox" NAME="Q1_4" value="4"> Television  <BR>
+<INPUT TYPE="checkbox" NAME="Q1_5" value="5"> Radio  <BR>
+<INPUT TYPE="checkbox" NAME="Q1_6" value="6"> Internet   <BR>
+<INPUT TYPE="checkbox" NAME="Q1_7" value="7"> Billboard  <BR>
+<INPUT TYPE="checkbox" NAME="Q1_8" value="8"> Direct mail flyer  <BR>
+<INPUT TYPE="checkbox" NAME="Q1_9" value="9"> Other (specify)  <INPUT TYPE="Text" NAME="Q1Specified_1">
+<BR>
+</BLOCKQUOTE><P>
+<B><U>Demographics<BR></U></B><br>
+Please provide the following demographic information.  It will only be used to make statistical comparisons between different groups of respondents; it will not be used to profile individual respondents.<br>
+<B><A NAME="Age">Age</A>. </B>
+How old are you?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Age" value="1"> Under 20 years  <BR>
+<INPUT TYPE="radio" NAME="Age" value="2"> 20 - 24  <BR>
+<INPUT TYPE="radio" NAME="Age" value="3"> 25 - 29  <BR>
+<INPUT TYPE="radio" NAME="Age" value="4"> 30 - 34  <BR>
+<INPUT TYPE="radio" NAME="Age" value="5"> 35 - 39  <BR>
+<INPUT TYPE="radio" NAME="Age" value="6"> 40 - 44  <BR>
+<INPUT TYPE="radio" NAME="Age" value="7"> 45 - 49  <BR>
+<INPUT TYPE="radio" NAME="Age" value="8"> 50 - 54  <BR>
+<INPUT TYPE="radio" NAME="Age" value="9"> 55 - 59  <BR>
+<INPUT TYPE="radio" NAME="Age" value="10"> 60 - 64  <BR>
+<INPUT TYPE="radio" NAME="Age" value="11"> 65+  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Education">Education</A>. </B>
+Which of the following best represents the highest level of education that you have completed?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="Education" value="1"> Some high school or less  <BR>
+<INPUT TYPE="radio" NAME="Education" value="2"> High school graduate  <BR>
+<INPUT TYPE="radio" NAME="Education" value="3"> Attended some college  <BR>
+<INPUT TYPE="radio" NAME="Education" value="4"> Associates degree  <BR>
+<INPUT TYPE="radio" NAME="Education" value="5"> Bachelors degree  <BR>
+<INPUT TYPE="radio" NAME="Education" value="6"> Post-college graduate  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="MaritalStatus">MaritalStatus</A>. </B>
+What is your marital status?<br>
+<BLOCKQUOTE><INPUT TYPE="radio" NAME="MaritalStatus" value="1"> Married  <BR>
+<INPUT TYPE="radio" NAME="MaritalStatus" value="2"> Single, never married  <BR>
+<INPUT TYPE="radio" NAME="MaritalStatus" value="3"> Widowed  <BR>
+<INPUT TYPE="radio" NAME="MaritalStatus" value="4"> Separated or divorced  <BR>
+</BLOCKQUOTE><P>
+<B><A NAME="Children">Children</A>. </B>
+What are the age ranges of any children 18 years of age or younger living in your household?  Choose all that apply.<br>
+<BLOCKQUOTE><INPUT TYPE="checkbox" NAME="Children_1" value="1"> Under Age 6 years  <BR>
+<INPUT TYPE="checkbox" NAME="Children_2" value="2"> Aged 6-12  <BR>
+<INPUT TYPE="checkbox" NAME="Children_3" value="3"> Aged 13-18  <BR>
+<INPUT TYPE="checkbox" NAME="Children_4" value="4"> Have no children 18 or under living in household  <BR>
+</BLOCKQUOTE><P>
+<INPUT TYPE="submit" VALUE="Submit Survey">
+<!-- Do not delete any hidden fields, otherwise the survey software cannot build a database from responses to this form. -->
+<INPUT TYPE="hidden" NAME="PDCPDCProjectID" VALUE="021402b">
+<INPUT TYPE="hidden" NAME="PDCPDCAppVer" VALUE="4.00.19">
+<INPUT TYPE="hidden" NAME="PDCPDCVld" VALUE="0|Q1_1|ChkExc|d|3|;">
+<INPUT TYPE="hidden" NAME="PDCPDCVldErrMsg" VALUE="ChkExc|d|Please select the specified number of choices.|;">
+
+<INPUT TYPE="hidden" NAME="PDCPDCAdminEmlAdr" VALUE="stuarto@myfree.com">
+<INPUT TYPE="hidden" NAME="PDCPDCEmailAddress" VALUE="stuarto@myfree.com">
+<INPUT TYPE="hidden" NAME="PDCPDCFrmFld" VALUE="Q1_1; Q1_2; Q1_3; Q1_4; Q1_5; Q1_6; Q1_7; Q1_8; Q1_9; Q1Specified_1; Age; Education; MaritalStatus; Children_1; Children_2; Children_3; Children_4; PDCPDCProjectID; PDCPDCAppVer; ">
+<!-- The thank-you page contains hidden HTML tags, with the angle brackets changed to curly brackets and with double quotes changed to two single quotes. These changes are to prevent HTML editors and browsers from misunderstanding the field; the Perseus Development Perl script correctly translates these tags into HTML. Any placeholders (e.g., {{Q1}}) are actually replaced with the respondent's answer to that question (e.g., the answer to Q1). -->
+<INPUT TYPE="hidden" NAME="PDCPDCThankYouPage" VALUE="
+{HTML}{HEAD}
+{!-- This results report template was automatically generated using Perseus SurveySolutions. --}
+{META HTTP-EQUIV=''Content-Type'' CONTENT=''text/html; charset=windows-1252''}{META NAME=''GENERATOR'' CONTENT=''Perseus SurveySolutions (visit http://www.perseusdevelopment.com/fromsurv.htm)''}
+{TITLE}Live Survey Results{/TITLE}
+{/HEAD}
+{BODY bgcolor=''white''}
+{H1}Live Survey Results{/H1}
+{DIV ALIGN=CENTER}{B}Carole's Weekly Survey - 2/14/02{/B}{/DIV}{P}
+Please answer the following question:{P}
+{P}
+{B}1. {/B}
+Please pick THREE favorite weekend craft projects from list below.{P}
+{BLOCKQUOTE}{TABLE}{BLOCKQUOTE}{TABLE}{TR}{TH}{/TH}{TH}Count{/TH}{TH}Percentage{/TH}{/TR}
+{TR}{TD}Friend  Craftingsssssss{/TD}{TD}{{1_1CNT}}{/TD}{TD}{{1_1PCT}}{/TD}{/TR}
+{TR}{TD}Yellow Project{/TD}{TD}{{1_2CNT}}{/TD}{TD}{{1_2PCT}}{/TD}{/TR}
+{TR}{TD}Newspaper Holiday{/TD}{TD}{{1_3CNT}}{/TD}{TD}{{1_3PCT}}{/TD}{/TR}
+{TR}{TD}Television{/TD}{TD}{{1_4CNT}}{/TD}{TD}{{1_4PCT}}{/TD}{/TR}
+{TR}{TD}Radio{/TD}{TD}{{1_5CNT}}{/TD}{TD}{{1_5PCT}}{/TD}{/TR}
+{TR}{TD}Internet{/TD}{TD}{{1_6CNT}}{/TD}{TD}{{1_6PCT}}{/TD}{/TR}
+{TR}{TD}Billboard{/TD}{TD}{{1_7CNT}}{/TD}{TD}{{1_7PCT}}{/TD}{/TR}
+{TR}{TD}Direct mail flyer{/TD}{TD}{{1_8CNT}}{/TD}{TD}{{1_8PCT}}{/TD}{/TR}
+{TR}{TD}Other (specify){/TD}{TD}{{1_9CNT}}{/TD}{TD}{{1_9PCT}}{/TD}{/TR}{/TABLE}{/BLOCKQUOTE}{/TABLE}{/BLOCKQUOTE}
+{B}{U}Demographics{BR}{/U}{/B}{P}
+Please provide the following demographic information.  It will only be used to make statistical comparisons between different groups of respondents; it will not be used to profile individual respondents.{P}
+{B}1Specified. {/B}
+{BLOCKQUOTE}{TABLE}{BLOCKQUOTE}{TABLE}{TR}{TH}{BLOCKQUOTE}{I}These results are not shown.{/I}{/BLOCKQUOTE}{P}{/TH}{/TR}{/TABLE}{/BLOCKQUOTE}
+{/TABLE}{/BLOCKQUOTE}
+{P}
+{B}Age. {/B}
+{P}
+How old are you?{P}
+{BLOCKQUOTE}{TABLE}{BLOCKQUOTE}{TABLE}{TR}{TH}{/TH}{TH}Count{/TH}{TH}Percentage{/TH}{/TR}
+{TR}{TD}Under 20 years{/TD}{TD}{{Age_1CNT}}{/TD}{TD}{{Age_1PCT}}{/TD}{/TR}
+{TR}{TD}20 - 24{/TD}{TD}{{Age_2CNT}}{/TD}{TD}{{Age_2PCT}}{/TD}{/TR}
+{TR}{TD}25 - 29{/TD}{TD}{{Age_3CNT}}{/TD}{TD}{{Age_3PCT}}{/TD}{/TR}
+{TR}{TD}30 - 34{/TD}{TD}{{Age_4CNT}}{/TD}{TD}{{Age_4PCT}}{/TD}{/TR}
+{TR}{TD}35 - 39{/TD}{TD}{{Age_5CNT}}{/TD}{TD}{{Age_5PCT}}{/TD}{/TR}
+{TR}{TD}40 - 44{/TD}{TD}{{Age_6CNT}}{/TD}{TD}{{Age_6PCT}}{/TD}{/TR}
+{TR}{TD}45 - 49{/TD}{TD}{{Age_7CNT}}{/TD}{TD}{{Age_7PCT}}{/TD}{/TR}
+{TR}{TD}50 - 54{/TD}{TD}{{Age_8CNT}}{/TD}{TD}{{Age_8PCT}}{/TD}{/TR}
+{TR}{TD}55 - 59{/TD}{TD}{{Age_9CNT}}{/TD}{TD}{{Age_9PCT}}{/TD}{/TR}
+{TR}{TD}60 - 64{/TD}{TD}{{Age_10CNT}}{/TD}{TD}{{Age_10PCT}}{/TD}{/TR}
+{TR}{TD}65+{/TD}{TD}{{Age_11CNT}}{/TD}{TD}{{Age_11PCT}}{/TD}{/TR}
+{TR}{TD}Total{/TD}{TD}{{AgeCNT}}{/TD}{TD}100.0%{/TD}{/TR}{/TABLE}{/BLOCKQUOTE}{/TABLE}{/BLOCKQUOTE}
+{B}Education. {/B}
+{P}
+Which of the following best represents the highest level of education that you have completed?{P}
+{BLOCKQUOTE}{TABLE}{BLOCKQUOTE}{TABLE}{TR}{TH}{/TH}{TH}Count{/TH}{TH}Percentage{/TH}{/TR}
+{TR}{TD}Some high school or less{/TD}{TD}{{Education_1CNT}}{/TD}{TD}{{Education_1PCT}}{/TD}{/TR}
+{TR}{TD}High school graduate{/TD}{TD}{{Education_2CNT}}{/TD}{TD}{{Education_2PCT}}{/TD}{/TR}
+{TR}{TD}Attended some college{/TD}{TD}{{Education_3CNT}}{/TD}{TD}{{Education_3PCT}}{/TD}{/TR}
+{TR}{TD}Associates degree{/TD}{TD}{{Education_4CNT}}{/TD}{TD}{{Education_4PCT}}{/TD}{/TR}
+{TR}{TD}Bachelors degree{/TD}{TD}{{Education_5CNT}}{/TD}{TD}{{Education_5PCT}}{/TD}{/TR}
+{TR}{TD}Post-college graduate{/TD}{TD}{{Education_6CNT}}{/TD}{TD}{{Education_6PCT}}{/TD}{/TR}
+{TR}{TD}Total{/TD}{TD}{{EducationCNT}}{/TD}{TD}100.0%{/TD}{/TR}{/TABLE}{/BLOCKQUOTE}{/TABLE}{/BLOCKQUOTE}
+{B}MaritalStatus. {/B}
+{P}
+What is your marital status?{P}
+{BLOCKQUOTE}{TABLE}{BLOCKQUOTE}{TABLE}{TR}{TH}{/TH}{TH}Count{/TH}{TH}Percentage{/TH}{/TR}
+{TR}{TD}Married{/TD}{TD}{{MaritalStatus_1CNT}}{/TD}{TD}{{MaritalStatus_1PCT}}{/TD}{/TR}
+{TR}{TD}Single, never married{/TD}{TD}{{MaritalStatus_2CNT}}{/TD}{TD}{{MaritalStatus_2PCT}}{/TD}{/TR}
+{TR}{TD}Widowed{/TD}{TD}{{MaritalStatus_3CNT}}{/TD}{TD}{{MaritalStatus_3PCT}}{/TD}{/TR}
+{TR}{TD}Separated or divorced{/TD}{TD}{{MaritalStatus_4CNT}}{/TD}{TD}{{MaritalStatus_4PCT}}{/TD}{/TR}
+{TR}{TD}Total{/TD}{TD}{{MaritalStatusCNT}}{/TD}{TD}100.0%{/TD}{/TR}{/TABLE}{/BLOCKQUOTE}{/TABLE}{/BLOCKQUOTE}
+{B}Children. {/B}
+What are the age ranges of any children 18 years of age or younger living in your household?  Choose all that apply.{P}
+{BLOCKQUOTE}{TABLE}{BLOCKQUOTE}{TABLE}{TR}{TH}{/TH}{TH}Count{/TH}{TH}Percentage{/TH}{/TR}
+{TR}{TD}Under Age 6 years{/TD}{TD}{{Children_1CNT}}{/TD}{TD}{{Children_1PCT}}{/TD}{/TR}
+{TR}{TD}Aged 6-12{/TD}{TD}{{Children_2CNT}}{/TD}{TD}{{Children_2PCT}}{/TD}{/TR}
+{TR}{TD}Aged 13-18{/TD}{TD}{{Children_3CNT}}{/TD}{TD}{{Children_3PCT}}{/TD}{/TR}
+{TR}{TD}Have no children 18 or under living in household{/TD}{TD}{{Children_4CNT}}{/TD}{TD}{{Children_4PCT}}{/TD}{/TR}{/TABLE}{/BLOCKQUOTE}{/TABLE}{/BLOCKQUOTE}
+{FONT size=''2''}{A HREF=''http://www.perseus.com/fromsurv.htm''}Powered by Perseus SurveySolutions.{/A}{!-- While of course you can remove this link, we would rather you didn't.  :-)  If you would like us to reciprocate with a link from our site, please let us know.  --}{!-- Powered by Perseus SurveySolutions., http://www.perseus.com/fromsurv.htm. --}{/FONT}
+{/BODY}
+{/HTML}
+">
+<INPUT TYPE="hidden" NAME="PDCPDCRspEmlAdrQstHdg" VALUE="Q1Specified_1">
+<INPUT TYPE="hidden" NAME="PDCPDCRspEmlMsg" VALUE="Thank you for completing this survey.  Your information will help us serve you better. ">
+</FORM>
+
+<BR>
+<FONT size="2"><A HREF=""></A></FONT>
+</BODY>
+</HTML>

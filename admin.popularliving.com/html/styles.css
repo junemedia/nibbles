@@ -1,0 +1,50 @@
+
+
+BODY{BACKGROUND-COLOR: #FFFFFF;}
+
+A:link{ COLOR: #3333ff }
+A:visited{ COLOR: #3333ff }
+A:active{ COLOR: #3333ff }
+A:hover{ COLOR: midnightblue }
+
+
+TABLE.table650 {
+	margin-left:auto; margin-right:auto; width:650px; 
+}
+
+TD {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif";
+}
+
+
+TD.bigBold {
+	FONT-SIZE: 12pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; FONT-WEIGHT: bold;
+}
+
+
+TD.mainErrorMessage {
+	FONT-SIZE: 12pt; COLOR: #FF0000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; FONT-WEIGHT: bold;
+}
+
+TD.message {
+	FONT-SIZE: 12pt; COLOR: #FF0000; FONT-FAMILY: Arial, Helvetica, "Sans Serif"; FONT-WEIGHT: bold;
+}
+
+
+.bigblue {
+   font-family: Verdana, Arial, Helvetica, sans-serif; 
+   font-size:16px;
+	color: #000099;
+	 background-color: #FFFFFF;
+	 border-style: none;
+}
+
+.default {
+FONT-FAMILY: Arial, Verdana,Sans-serif; FONT-SIZE: 10pt; 
+}
+
+
+#8point { FONT-FAMILY: Verdana,Sans-serif; FONT-SIZE: 8pt;}
+
+
+

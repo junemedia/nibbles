@@ -1,0 +1,635 @@
+<?php
+
+include("../../includes/paths.php");
+include("$sGblLibsPath/dateFunctions.php");
+include("$sGblIncludePath/reportInclude.php");
+
+$iScriptStartTime = getMicroTime();
+$sPageTitle = "ECPM Summary Report";
+session_start();
+$sTrackingUser = $_SERVER['PHP_AUTH_USER'];
+
+mysql_connect ($reportingHost, $reportingUser, $reportingPass);
+mysql_select_db ($reportingDbase);
+
+if (hasAccessRight($iMenuId) || isAdmin()) {
+	// Hidden fields to be passed with form submission
+	$sHidden = "<input type=hidden name=iMenuId value='$iMenuId'>
+				<input type=hidden name=iId value='$iId'>";
+	
+	$iCurrYear = date('Y');
+	$iCurrMonth = date('m');
+	$iCurrDay = date('d');
+	$iCurrHH = date('H');
+	$iCurrMM = date('i');
+	$iCurrSS = date('s');
+	$sRunDateAndTime = "$iCurrMonth-$iCurrDay-$iCurrYear $iCurrHH:$iCurrMM:$iCurrSS";
+	$sYesterday = DateAdd("d", -1, date('Y')."-".date('m')."-".date('d'));
+	
+	$iYearTo = substr( $sYesterday, 0, 4);
+	$iMonthTo = substr( $sYesterday, 5, 2);
+	$iDayTo = substr( $sYesterday, 8, 2);
+	$iYearFrom = substr( $sYesterday, 0, 4);
+	$iMonthFrom = substr( $sYesterday, 5, 2);
+	$iDayFrom = "01";
+	
+	if ($iGrossLeads) {
+		$sLeadsCountCol = "grossLeadsCount";
+	} else {
+		$sLeadsCountCol = "leadsSentCount";
+	}
+	
+	if (($sViewReport) && checkdate($iMonthFrom, $iDayFrom, $iYearFrom) && checkdate($iMonthTo, $iDayTo, $iYearTo)) {
+		if ($sAllowReport == 'N') {
+			$sMessage = "Server Load Is High. Please check back soon...";
+		} else {
+			$sDateFrom = "$iYearFrom-$iMonthFrom-$iDayFrom";
+			$sDateTo = "$iYearTo-$iMonthTo-$iDayTo";
+			$sDateTimeFrom = "$iYearFrom-$iMonthFrom-$iDayFrom"." 00:00:00";
+			$sDateTimeTo = "$iYearTo-$iMonthTo-$iDayTo"." 23:59:59";
+			
+			if ($iMonthTo =='1') {
+				$iPrevMonthYear = $iYearTo-1;
+				$iPrevMonthMonth = "12";
+			} else {
+				$iPrevMonthYear = $iYearTo;
+				$iPrevMonthMonth = $iMonthTo -1;
+			}
+			
+			if ($iPrevMonthMonth < 10) {
+				$iPrevMonthMonth = "0".$iPrevMonthMonth;			
+			}
+			
+			// specify any date of last month as just place holder
+			$sPrevMonth = $iPrevMonthYear."-".$iPrevMonthMonth."-25";			
+			
+			$iPrevMonthNum = substr($sPrevMonth,5,2);
+			$iPrevMonthNum = round($iPrevMonthNum) - 1;
+			$sPrevMonthName = $aGblMonthsArray[$iPrevMonthNum];
+					
+			
+			if ($iExcludeApiLeads == '1') {
+				$iExcludeApiLeadsFilter = " AND offerLeadsCountSum.pageId != '238'";
+				$sPageDisplayStatsSum = " AND pageDisplayStatsSum.pageId != '238'";
+				$sOfferStatsSum = " AND offerStatsSum.pageId != '238'";
+				$sNote = "API Leads are excluded from this report.";
+			} else {
+				$iExcludeApiLeadsFilter = "";
+				$sPageDisplayStatsSum = "";
+				$sOfferStatsSum = "";
+				$sNote = "API Leads are included on this report.";
+			}
+			
+			
+			$sOffersQuery = "SELECT offers.*, offerCompanies.repDesignated
+							 FROM   offers, offerCompanies
+							 WHERE  offers.companyId = offerCompanies.id ";
+			
+			// prepare comma separated offer list
+			if ($aOfferCode[0] != 'all') {
+				for ($i=0; $i<count($aOfferCode); $i++) {
+					$sOffersSelected .= "'".$aOfferCode[$i]."',";
+				}
+				if ($sOffersSelected !='') {
+					$sOffersSelected = substr($sOffersSelected,0,strlen($sOffersSelected)-1);
+					$sOffersQuery .= " AND offerCode IN (".$sOffersSelected.")";
+				}
+				$sOffersQuery .= " ORDER BY offerCode";
+			} else {
+				if ($aOfferCode[0] == 'all') {
+					$sOffersQuery = "SELECT DISTINCT offerLeadsCountSum.offerCode, offers.mode, offers.isLive, 
+											offerCompanies.creditStatus, offers.revPerLead, offerCompanies.repDesignated
+									 FROM   offerLeadsCountSum, offers, offerCompanies
+									 WHERE  offerLeadsCountSum.offerCode = offers.offerCode	
+									 AND	offers.companyId = offerCompanies.id
+									 AND    dateAdded BETWEEN '$sDateFrom' AND '$sDateTo'
+									 $iExcludeApiLeadsFilter
+								 	 ORDER BY offerLeadsCountSum.offerCode";
+				}
+			}
+			
+			
+			// start of track users' activity in nibbles
+			mysql_connect ($host, $user, $pass);
+			mysql_select_db ($dbase);
+			$sAddQuery = "INSERT INTO nibbles.trackNibbleUse(userName, pageName, dateTimeLogged, action) 
+			  		VALUES('$sTrackingUser', '$PHP_SELF', now(), \"View report: $sOffersQuery\")";
+			$rResult = dbQuery($sAddQuery);
+			mysql_connect ($reportingHost, $reportingUser, $reportingPass);
+			mysql_select_db ($reportingDbase);
+			// end of track users' activity in nibbles
+	
+			
+			$rOffersResult = dbQuery($sOffersQuery);
+			echo dbError();
+			$iRow = 0;
+			$aPageOffersRevenue = '';
+			$aCatOffersRevenue = '';
+			while ($oOffersRow = dbFetchObject($rOffersResult)) {
+				$iRow++;
+
+				$sOfferCode = $oOffersRow->offerCode;
+				$sMode = $oOffersRow->mode;
+				$iIsLive = $oOffersRow->isLive;
+				$sCreditStatus = $oOffersRow->creditStatus;
+				$fRevPerLead = $oOffersRow->revPerLead;
+				$sRepDesignated = $oOffersRow->repDesignated;
+
+				$fOfferRevenueRowTotal = 0;
+				$iOffersTakenCount = 0;
+				$fPrevMonthOfferRevenueRowTotal = 0;
+				$iPrevMonthOffersTakenCount = 0;
+				$sRestrictions = '';
+				
+				
+				$sGetResQuery = "SELECT * FROM offers WHERE offerCode='$oOffersRow->offerCode'";
+				$rGetResResult = dbQuery($sGetResQuery);
+				while ($oResRow = dbFetchObject($rGetResResult)) {
+					$sRestrictions = substr($oResRow->restrictions,0,25);
+					$sOfferType = $oResRow->offerType;
+				}
+				
+				if ($sRestrictions == '') { $sRestrictions = "&nbsp;"; }
+				
+				// get offer rep here
+				$sOfferRep = '';
+				if ($sRepDesignated != '') {
+					$sRepQuery = "SELECT firstName, lastName
+								  FROM   nbUsers
+								  WHERE  id IN (".$sRepDesignated.")";
+					$rRepResult = dbQuery($sRepQuery);
+					echo dbError();
+					while ($oRepRow = dbFetchObject($rRepResult)) {
+						$sOfferRep .= substr($oRepRow->firstName,0,1).substr($oRepRow->lastName,0,1)." ";
+					}
+					dbFreeResult($rRepResult);
+				}
+				
+				if ($sOfferRep == '') { $sOfferRep = "&nbsp;"; }
+				
+				$sTheyHostType = "&nbsp;";
+				if ($sOfferType == 'OTH') { $sTheyHostType = 'O'; }
+				if ($sOfferType == 'CTH') { $sTheyHostType = 'C'; }
+				if ($sOfferType == 'OTH_CTH') { $sTheyHostType = 'OC'; }
+				
+				
+				// define header if iRow = 1
+				if ($iRow == 1) {
+					// get current month (last month of selected date range) details
+					$sLeadsQuery = "SELECT sum($sLeadsCountCol) AS offersTaken, sum($sLeadsCountCol * offers.revPerLead) as revenue
+									FROM   offerLeadsCountSum, offers
+									WHERE  offerLeadsCountSum.offerCode = offers.offerCode										
+									AND    dateAdded BETWEEN '$sDateFrom' AND '$sDateTo'
+									$iExcludeApiLeadsFilter";
+					$rLeadsResult = dbQuery($sLeadsQuery);
+					while ($oLeadsRow = dbFetchObject($rLeadsResult)) {
+						$iCurrMonthOffersTakenCount = $oLeadsRow->offersTaken;
+						$fCurrMonthRevenue = $oLeadsRow->revenue;
+					}
+					dbFreeResult($rLeadsResult);
+					$fCurrMonthRevenue = sprintf("%12.2f",round($fCurrMonthRevenue, 2));
+
+					$sDisplayQuery = "SELECT sum(opens) AS displayCount
+						  		  FROM   pageDisplayStatsSum
+						  		  WHERE  openDate BETWEEN '$sDateFrom' AND '$sDateTo'
+						  		  $sPageDisplayStatsSum";
+					$rDisplayResult = dbQuery($sDisplayQuery);
+					while ($oDisplayRow = dbFetchObject($rDisplayResult)) {
+						$iCurrMonthDisplayCount += $oDisplayRow->displayCount;
+					}
+					dbFreeResult($rDisplayResult);
+
+					if ($iCurrMonthDisplayCount == 0) { $iCurrMonthDisplayCount = "&nbsp;"; }
+
+
+					// get previous month (month before the last month of selected date range) details
+					$sLeadsQuery = "SELECT sum($sLeadsCountCol) AS offersTaken, sum($sLeadsCountCol * offers.revPerLead) as revenue
+									FROM   offerLeadsCountSum, offers
+									WHERE  offerLeadsCountSum.offerCode = offers.offerCode										
+									AND    date_format(dateAdded,'%Y-%m') = date_format('$sPrevMonth','%Y-%m')
+									$iExcludeApiLeadsFilter";
+					$rLeadsResult = dbQuery($sLeadsQuery);
+					while ($oLeadsRow = dbFetchObject($rLeadsResult)) {
+						$iPrevMonthOffersTakenCount = $oLeadsRow->offersTaken;
+						$fPrevMonthRevenue = $oLeadsRow->revenue;
+					}
+					dbFreeResult($rLeadsResult);
+					$fPrevMonthRevenueTotal = sprintf("%12.2f",round($fPrevMonthRevenueTotal, 2));
+
+					$sDisplayQuery = "SELECT sum(opens) AS displayCount
+						  		  FROM   pageDisplayStatsSum
+						  		  WHERE  date_format(openDate,'%Y-%m') = date_format('$sPrevMonth','%Y-%m')
+						  		  $sPageDisplayStatsSum";
+					$rDisplayResult = dbQuery($sDisplayQuery);
+					while ($oDisplayRow = dbFetchObject($rDisplayResult)) {
+						$iPrevMonthDisplayCount += $oDisplayRow->displayCount;
+					}
+					dbFreeResult($rDisplayResult);
+				}
+
+				// get no of pages offer is on
+				$iNoOfPagesOfferLiveOn = 0;
+				$sOfferPagesQuery = "SELECT count(*) AS noOfPages
+									 FROM   pageMap
+									 WHERE  offerCode = '$sOfferCode'";
+				$rOFferPagesResult = dbQuery($sOfferPagesQuery);
+				while ($oOfferPagesRow = dbFetchObject($rOFferPagesResult)) {
+					$iNoOfPagesOfferLiveOn = $oOfferPagesRow->noOfPages;
+				} 
+						
+				$fOfferRevenue = 0;
+				$iOfferDisplayCount = 0;					
+				$fOfferEcpm = 0;
+				// get lead details
+				$sLeadsQuery = "SELECT sum($sLeadsCountCol) AS offersTaken, sum($sLeadsCountCol * offers.revPerLead) as revenue
+								FROM   offerLeadsCountSum, offers
+								WHERE  offerLeadsCountSum.offerCode = '$sOfferCode'
+								AND    offerLeadsCountSum.offerCode = offers.offerCode									
+								AND    dateAdded BETWEEN '$sDateFrom' AND '$sDateTo'
+								$iExcludeApiLeadsFilter";
+				$rLeadsResult = dbQuery($sLeadsQuery);
+				while ($oLeadsRow = dbFetchObject($rLeadsResult)) {
+					$iOffersTakenCount += $oLeadsRow->offersTaken;
+					$fOfferRevenue = $oLeadsRow->revenue;
+				}
+				dbFreeResult($rLeadsResult);
+				$fOfferRevenue = sprintf("%10.2f",round($fOfferRevenue, 2));
+
+				// get the display details and ecpm for the offer
+				$sDisplayQuery = "SELECT sum(displayCount) AS offerDisplayCount
+							  FROM   offerStatsSum
+							  WHERE  offerCode = '$sOfferCode'
+							  AND    displayDate BETWEEN '$sDateFrom' AND '$sDateTo'
+							  $sOfferStatsSum";
+				$rDisplayResult = dbQuery($sDisplayQuery);
+				while ($oDisplayRow = dbFetchObject($rDisplayResult)) {
+					$iOfferDisplayCount = $oDisplayRow->offerDisplayCount;
+				}
+				
+				if ($iOfferDisplayCount) {
+					$fOfferEcpm = ($fOfferRevenue * 1000 )/ $iOfferDisplayCount;
+				} else {
+					$fOfferEcpm = "0.0";
+					$iOfferDisplayCount = "0";
+				}
+				
+				$fOfferEcpm = trim(sprintf("%10.2f",round($fOfferEcpm, 2)));
+				
+				
+				
+				
+				// start of getting yesterday's offer ecpm
+				$fYesterdayRevenue = 0;
+				$iYesterdayOfferDisplayCount = 0;
+				$fYesterdayOfferEcpm = 0;
+				
+				// get lead details
+				$sYesterdayLeadsQuery = "SELECT sum($sLeadsCountCol * offers.revPerLead) as revenue
+								FROM   offerLeadsCountSum, offers
+								WHERE  offerLeadsCountSum.offerCode = '$sOfferCode'
+								AND    offerLeadsCountSum.offerCode = offers.offerCode									
+								AND    dateAdded = '$sYesterday'
+								AND	offerLeadsCountSum.pageId != '238'";
+				$rYesterdayLeadsResult = dbQuery($sYesterdayLeadsQuery);
+				while ($oYesLeadsRow = dbFetchObject($rYesterdayLeadsResult)) {
+					$fYesterdayRevenue = $oYesLeadsRow->revenue;
+				}
+				dbFreeResult($rYesterdayLeadsResult);
+				$fYesterdayRevenue = sprintf("%10.2f",round($fYesterdayRevenue, 2));
+			
+				// get the display details and ecpm for the offer
+				$sYesterdayDisplayQuery = "SELECT sum(displayCount) AS offerDisplayCount
+							  FROM   offerStatsSum
+							  WHERE  offerCode = '$sOfferCode'
+							  AND    displayDate = '$sYesterday'";
+				$rYesDisplayResult = dbQuery($sYesterdayDisplayQuery);
+				while ($oYesDisplayRow = dbFetchObject($rYesDisplayResult)) {
+					$iYesterdayOfferDisplayCount = $oYesDisplayRow->offerDisplayCount;
+				}
+						
+				if ($iYesterdayOfferDisplayCount) {
+					$fYesterdayOfferEcpm = ($fYesterdayRevenue * 1000 ) / $iYesterdayOfferDisplayCount;
+				} else {
+					$fYesterdayOfferEcpm = "0.0";
+					$iYesterdayOfferDisplayCount = "0";
+				}
+			
+				$fYesterdayOfferEcpm = trim(sprintf("%10.2f",round($fYesterdayOfferEcpm, 2)));
+				// end of getting yesterday's offer ecpm
+	
+				
+				
+				
+				// get the Prev month (the month before the last month of selected date range )
+				// display details and ecpm for the offer
+				// get prev month revenue
+				$fPrevMonthOfferRevenue = 0;
+				$sLeadsQuery = "SELECT sum($sLeadsCountCol) AS offersTaken, sum($sLeadsCountCol * offers.revPerLead) as revenue
+										FROM   offerLeadsCountSum, offers
+										WHERE  offerLeadsCountSum.offerCode = '$sOfferCode'
+										AND    offerLeadsCountSum.offerCode = offers.offerCode									
+										AND    date_format(dateAdded, '%Y-%m') = date_format('$sPrevMonth','%Y-%m')
+										$iExcludeApiLeadsFilter";
+				$rLeadsResult = dbQuery($sLeadsQuery);
+				echo dbError();
+				while ($oLeadsRow = dbFetchObject($rLeadsResult)) {
+					$iPrevMonthOffersTakenCount += $oLeadsRow->offersTaken;
+					$fPrevMonthOfferRevenue += $oLeadsRow->revenue;
+				}
+				
+				$fPrevMonthOfferRevenue = sprintf("%10.2f",round($fPrevMonthOfferRevenue, 2));
+				
+				
+				// get display count
+				$iPrevMonthOfferDisplayCount = 0;
+				$sDisplayQuery = "SELECT sum(displayCount) AS offerDisplayCount
+								  FROM   offerStatsSum
+								  WHERE  offerCode = '$sOfferCode'
+								  AND    date_format(displayDate,'%Y-%m') = date_format('$sPrevMonth','%Y-%m')
+								  $sOfferStatsSum";			
+				$rDisplayResult = dbQuery($sDisplayQuery);
+				echo dbError();
+				while ($oDisplayRow = dbFetchObject($rDisplayResult)) {
+					$iPrevMonthOfferDisplayCount += $oDisplayRow->offerDisplayCount;
+				}
+				
+				if ($iPrevMonthOfferDisplayCount) {
+					$fPrevMonthOfferEcpm = ($fPrevMonthOfferRevenue * 1000 )/ $iPrevMonthOfferDisplayCount;
+				} else {
+					$fPrevMonthOfferEcpm = "0.0";
+					$iPrevMonthOfferDisplayCount = "0";
+				}
+
+				$fPrevMonthOfferEcpm = trim(sprintf("%10.2f",round($fPrevMonthOfferEcpm, 2)));
+				$fOfferRevenue = trim(sprintf("%10.2f",round($fOfferRevenue, 2)));
+				
+				$aReportArray['offerCode'][$iRow-1] = $sOfferCode;
+				$aReportArray['offerRep'][$iRow-1] = $sOfferRep;
+				$aReportArray['noOfPages'][$iRow-1] = $iNoOfPagesOfferLiveOn;
+				$aReportArray['offersTakenCount'][$iRow-1] = $iOffersTakenCount;
+				$aReportArray['offerDisplayCount'][$iRow-1] = $iOfferDisplayCount;
+				$aReportArray['offerEcpm'][$iRow-1] = $fOfferEcpm;
+				$aReportArray['yesterdayOfferEcpm'][$iRow-1] = $fYesterdayOfferEcpm;
+				$aReportArray['prevMonthOfferEcpm'][$iRow-1] = $fPrevMonthOfferEcpm;
+				$aReportArray['revPerLead'][$iRow-1] = $fRevPerLead;
+				$aReportArray['offerRevenue'][$iRow-1] = $fOfferRevenue;
+				$aReportArray['restrictions'][$iRow-1] = $sRestrictions;
+				$aReportArray['theyHostType'][$iRow-1] = $sTheyHostType;
+	
+				if (strtoupper($sMode) == 'A' && $iIsLive && strtoupper($sCreditStatus)=='OK') {
+					$aReportArray['isLive'][$iRow-1] = "Y";
+				} else {
+					$aReportArray['isLive'][$iRow-1] = "N";
+				}
+			} // end of offers while loop
+			dbFreeResult($rOffersResult);
+
+			$sReportHeader .= "<tr><td width=5%>&nbsp;</td><td class=small valign=top width=5%>Rep.</td>
+							<td class=small valign=top width=5%>Rate/PL</td>
+							<td class=small valign=top width=10%>OfferCode</td>
+							<td class=small align=right valign=top width=7%>Offer<br>eCPM</td>
+							<td class=small align=right valign=top width=7%>Offer<br>eCPM (Yesterday)</td>
+							<td class=small align=right valign=top width=7%>Offer<br>eCPM<br>($sPrevMonthName)</td>
+							<td class=small align=right valign=top width=7%>No Of<br>Pages<br>Offer On</td>
+							<td class=small align=right valign=top width=5%>Offer<br>Total</td>
+							<td class=small align=right valign=top width=5%>Display<br>Total</td>
+							<td class=small align=right valign=top width=5%>Rate/PL</td>
+							<td class=small align=right valign=top width=5%>Offer<br>Rev</td>
+							<td class=small align=right valign=top width=5%>Dis</td>
+							<td class=small align=left valign=top width=15%>Restrictions</td>
+							<td class=small align=left valign=top width=15%>They Host</td>
+							</tr>";
+					
+			$sExpReportHeader .= "\tRep.\tRate/PL\tOfferCode\tOffer eCPM\tOffer eCPM (Yesterday)\tOffer eCPM ($sPrevMonthName)\tNo Of Pages Offer Live On\tOffer Total\tDisplay Total\tRate/PL\tOffer Rev\tDisplay\tRestrictions\tThey Host\n";
+	
+			// sort array in descending order of offer ecpm only if array is not empty	
+			if (count($aReportArray['offerCode']) > 0 ) {
+				array_multisort($aReportArray['offerEcpm'], SORT_DESC, $aReportArray['prevMonthOfferEcpm'], $aReportArray['offerCode'], $aReportArray['revPerLead'] ,$aReportArray['offerRep'], $aReportArray['noOfPages'], $aReportArray['offersTakenCount'], $aReportArray['offerDisplayCount'], $aReportArray['offerRevenue'], $aReportArray['isLive'], $aReportArray['restrictions'], $aReportArray['theyHostType'], $aReportArray['yesterdayOfferEcpm']);
+			}
+			
+			for ($i = 0; $i < count($aReportArray['offerCode']); $i++) {
+				$iRow = $i+1;
+				$sReportContent .="<tr><td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small>$iRow</td><td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small>".$aReportArray['offerRep'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small nowrap>\$".$aReportArray['revPerLead'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small>".$aReportArray['offerCode'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=right nowrap>\$".$aReportArray['offerEcpm'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=right nowrap>\$".$aReportArray['yesterdayOfferEcpm'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small nowrap align=right>\$".$aReportArray['prevMonthOfferEcpm'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=right>".$aReportArray['noOfPages'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=right>".$aReportArray['offersTakenCount'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=right>".$aReportArray['offerDisplayCount'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=right nowrap>\$".$aReportArray['revPerLead'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=right nowrap>\$".$aReportArray['offerRevenue'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=right nowrap>".$aReportArray['isLive'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=left nowrap>".$aReportArray['restrictions'][$i]."</td>
+										<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small align=left nowrap>".$aReportArray['theyHostType'][$i]."</td>
+										</tr>";
+				
+				if ($aReportArray['restrictions'][$i] == "&nbsp;") { $aReportArray['restrictions'][$i] = ''; }
+				if ($aReportArray['theyHostType'][$i] == "&nbsp;") { $aReportArray['theyHostType'][$i] = ''; }
+
+				$sExpReportContent .= "$iRow\t".
+								$aReportArray['offerRep'][$i]."\t\$".
+								$aReportArray['revPerLead'][$i]."\t".
+								$aReportArray['offerCode'][$i]."\t\$".
+								$aReportArray['offerEcpm'][$i]."\t\$".
+								$aReportArray['yesterdayOfferEcpm'][$i]."\t\$".
+								$aReportArray['prevMonthOfferEcpm'][$i]."\t".
+								$aReportArray['noOfPages'][$i]."\t". 
+								$aReportArray['offersTakenCount'][$i]."\t" . 
+								$aReportArray['offerDisplayCount'][$i]."\t\$". 
+								$aReportArray['revPerLead'][$i]."\t\$" . 
+								$aReportArray['offerRevenue'][$i]."\t" . 
+								$aReportArray['isLive'][$i]."\t" . 
+								$aReportArray['restrictions'][$i]."\t" .
+								$aReportArray['theyHostType'][$i]."\n";
+			}
+
+			if ($sReportContent != '') {
+				$fCurrMonthRevenue = sprintf("%10.2f",round($fCurrMonthRevenue, 2));
+				if ($iCurrMonthDisplayCount) {
+					$fCurrMonthEcpm = ($fCurrMonthRevenue * 1000) / $iCurrMonthDisplayCount;
+					$fCurrMonthEcpm = sprintf("%10.2f",round($fCurrMonthEcpm, 2));
+					$fCurrMonthEcpm = "\$".$fCurrMonthEcpm;
+				} else {
+					$fCurrMonthEcpm = "&nbsp;";
+				}
+				
+				$fPrevMonthRevenue = sprintf("%10.2f",round($fPrevMonthRevenue, 2));
+				
+				if ($iPrevMonthDisplayCount) {
+					$fPrevMonthEcpm = ($fPrevMonthRevenue * 1000) / $iPrevMonthDisplayCount;
+					$fPrevMonthEcpm = sprintf("%10.2f",round($fPrevMonthEcpm, 2));
+					$fPrevMonthEcpm = "\$".$fPrevMonthEcpm;
+				} else {
+					$fPrevMonthEcpm = "&nbsp;";
+				}
+				
+				
+				$sReportContent .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class=small nowrap>Total Rev</td>
+									<td align=right nowrap class=small><b>$fCurrMonthRevenue</b></td><td>&nbsp;</td>
+									<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+				$sReportContent .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class=small nowrap>$sPrevMonthName Total Rev</td>
+									<td align=right nowrap class=small><b>$fPrevMonthRevenue</b></td><td>&nbsp;</td>
+									<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+				
+				$sReportContent .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class=small nowrap>Total Display</td><td>&nbsp;</td>
+									<td>&nbsp;</td><td align=right nowrap class=small><b>$iCurrMonthDisplayCount</b></td>
+									<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+				$sReportContent .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class=small nowrap>$sPrevMonthName Total Display</td><td>&nbsp;</td>
+									<td>&nbsp;</td><td align=right nowrap class=small><b>$iPrevMonthDisplayCount</b></td>
+									<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+				
+				$sReportContent .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td nowrap class=small>eCPM</td><td>&nbsp;</td>
+									<td>&nbsp;</td><td>&nbsp;</td><td align=right nowrap class=small><b>$fCurrMonthEcpm</b></td>
+									<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+				$sReportContent .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td nowrap class=small>$sPrevMonthName eCPM</td><td>&nbsp;</td>
+									<td>&nbsp;</td><td>&nbsp;</td><td align=right nowrap class=small><b>$fPrevMonthEcpm</b></td>
+									<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
+				
+				// export content
+				$sExpReportContent .= "\n\t\t\tTotal Rev\t"."$fCurrMonthRevenue\t\t\t\t\t\t\t\n";
+				$sExpReportContent .= "\t\t\t$sPrevMonthName Total Rev\t"."$fPrevMonthRevenue\t\t\t\t\t\t\t\t\t\n";
+				
+				$sExpReportContent .= "\t\t\tTotal Display\t\t$iCurrMonthDisplayCount\t\t\t\t\t\t\n";
+				$sExpReportContent .= "\t\t\t$sPrevMonthName Total Display\t\t$iPrevMonthDisplayCount\t\t\t\t\t\t\t\t\n";
+				
+				$sExpReportContent .= "\t\t\teCPM\t\t\t$fCurrMonthEcpm\t\t\t\t\t\n";
+				$sExpReportContent .= "\t\t\t$sPrevMonthName eCPM\t\t\t$fPrevMonthEcpm\t\t\t\t\t\t\t\n";
+			}
+			
+			
+			// list offers with zero revenue or display count - start
+			$sNewContent = "<html><head>
+					<style =\"text/css\">
+					TD.big {
+						FONT-FAMILY: Arial, Helvetica, \"Sans Serif\" ; FONT-SIZE: 12px; COLOR: #000000;
+					}
+					TD.header {
+					FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, \"Sans Serif\"; 
+					}
+					TD.small { 
+						FONT-FAMILY: Arial, Helvetica, \"Sans Serif\" ; FONT-SIZE: 9px; COLOR: #000000;
+					}
+					</style>
+					</head>
+					<body><br><br>
+					<table width=400 border=1 bgcolor=#FFFFFF cellpaddiing=3 cellspacing=0 bordercolorlight=#000000>
+					<tr><td class=big colspan=3 align=center>Offers With Zero Revenue or Zero Display Count</td></tr>
+					<tr><td class=small><b>Offer Code</b></td>
+					<td class=small><b>Revenue</b></td>
+					<td class=small><b>Display Count</b></td></tr>";
+			$sGetYesterdayLiveOffers = "SELECT offerCode FROM liveOffers WHERE dateAdded = '$sYesterday'";
+			$sYesResult = dbQuery($sGetYesterdayLiveOffers);
+			echo dbError();
+			while ($oYesterdayRow = dbFetchObject($sYesResult)) {
+				$iYesterdayRev = 0;
+				$iYesterdayDisplay = 0;
+				$sYesterdayRevQuery = "SELECT sum($sLeadsCountCol * offers.revPerLead) AS rev
+								FROM   offerLeadsCountSum, offers
+								WHERE  offerLeadsCountSum.offerCode = '$oYesterdayRow->offerCode'
+								AND    offerLeadsCountSum.offerCode = offers.offerCode									
+								AND    dateAdded = '$sYesterday'
+								AND	offerLeadsCountSum.pageId != '238'";
+				$rYesterdayRevResult = dbQuery($sYesterdayRevQuery);
+				echo dbError();
+				while ($oYesRevRow = dbFetchObject($rYesterdayRevResult)) {
+					$iYesterdayRev = $oYesRevRow->rev;
+				}
+				dbFreeResult($rYesterdayRevResult);
+				
+				
+				// get the display details and ecpm for the offer
+				$sYesDisplayQuery = "SELECT sum(displayCount) AS offerDisplayCt
+							  FROM   offerStatsSum
+							  WHERE  offerCode = '$oYesterdayRow->offerCode'
+							  AND    displayDate = '$sYesterday'";
+				$rYesDisplay = dbQuery($sYesDisplayQuery);
+				echo dbError();
+				while ($oYesDisplay = dbFetchObject($rYesDisplay)) {
+					$iYesterdayDisplay = $oYesDisplay->offerDisplayCt;
+				}
+				dbFreeResult($rYesDisplay);
+				
+				
+				//echo "oc: $oYesterdayRow->offerCode\trev: $iYesterdayRev\tdisplay: $iYesterdayDisplay\n";
+				if ($iYesterdayDisplay <= 0 || $iYesterdayRev <= 0) {
+					if ($iYesterdayRev == '') { $iYesterdayRev = '&nbsp;';}
+					if ($iYesterdayRev == 0.00) { $iYesterdayRev = '&nbsp;';}
+					if ($iYesterdayDisplay == '') { $iYesterdayDisplay = '&nbsp;';}
+					$sNewContent .= "<tr><td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small>$oYesterdayRow->offerCode</td>
+							<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small>$iYesterdayRev</td>
+							<td bordercolordark=#FFFFFF bordercolorlight=#000000 class=small>$iYesterdayDisplay</td></tr>";
+				}
+			}
+			$sNewContent .= "</table><br><br></body></html>";
+			// list offers with zero revenue or display count - end
+		}
+	} // end of check date
+	
+	if ($sViewReport == 'Export Report') {
+		$sExpReportContent = $sExpReportHeader."\n".$sExpReportContent;
+		$sExpReportContent .= "\n\nReport From $iMonthFrom-$iDayFrom-$iYearFrom To $iMonthTo-$iDayTo-$iYearTo";
+		$sExpReportContent .= "\nRun Date/Time $sRunDateAndTime";
+		$sExpReportContent .= "\n\nNotes:\nReport reflects counts for selected date range.\nPrevious Month counts are counts of the second last month of selected date range.";
+		$sExpReportContent = ereg_replace("&nbsp;","",$sExpReportContent);
+		$sFileName = "ecpmSummary_".$iCurrMonth.$iCurrDay."_".$iCurrHH.$iCurrMM.$iCurrSS.".xls";
+
+		$rFpFile = fopen("$sGblWebRoot/temp/$sFileName", "w");
+		if ($rFpFile) {
+			fputs($rFpFile, $sExpReportContent, strlen($sExpReportContent));
+			fclose($rFpFile);
+			echo "<script language=JavaScript>
+				void(window.open(\"$sGblSiteRoot/download.php?sFile=$sFileName\",\"\",\"height=150, width=300, scrollbars=yes, resizable=yes, status=yes\"));
+				window.opener.form1.reportClicked.value='';
+				self.close();
+			  </script>";
+		} else {
+			$sMessage = "Error exporting data...";
+		}
+	} else {
+		include("../../includes/adminAddHeader.php");
+		$iScriptEndTime = getMicroTime();
+		$iScriptExecutionTime = round($iScriptEndTime - $iScriptStartTime);
+?>
+
+<table cellpadding=0 cellspacing=0 bgcolor=#FFFFFF width=95% align=center border=1 bordercolor=#000000>
+	<tr><td>
+	<table cellpadding=5 cellspacing=0 bgcolor=#FFFFFF width=100% align=center>
+<tr><td>
+<table cellpadding=5 cellspacing=0 bgcolor=#FFFFFF width=80% align=center>
+<tr><td  class=bigHeader align=center><BR><?php echo $sPageTitle;?><BR>
+<?php echo "From $iMonthFrom-$iDayFrom-$iYearFrom to $iMonthTo-$iDayTo-$iYearTo";?><BR><BR></td></tr>
+<tr><td class=header>Run Date / Time: <?php echo $sRunDateAndTime; ?></td></tr>
+</table></td></tr></table></td></tr>
+<tr><td>
+	<table cellpadding=3 cellspacing=0 bgcolor=#FFFFFF width=100% align=center border=1 bordercolorlight=#000000>
+		<?php echo $sReportHeader;?>
+		<?php echo $sReportContent;?>
+	</table>
+</td></tr>
+</table>
+	<br><br>
+		<?php echo $sNewContent;?>
+	<br><br>
+<table cellpadding=5 cellspacing=0 bgcolor=#FFFFFF width=95% align=center>
+<tr><td class=header>Notes:</td></tr>
+<tr><td>Report is accurate as of midnight last night after today's leads are processed.</td></tr>
+<tr><td>Only gross leads report is accurate for the offers which are not processed daily on a basis.</td></tr>
+<tr><td>Report reflects counts for current month upto midnight last night.</td></tr>
+<tr><td>Previous Month counts are of the month prior to the current month.</td></tr>
+<tr><td>They Host:  O = Open They Host, C = Close They Host, OC = Open/Close They Host</td></tr>
+<tr><td>Approximate time to run this report - <?php echo $iScriptExecutionTime;?> second(s)</td></tr>
+<tr><td><?php echo $sNote;?></td></tr>
+</table>
+<script language=JavaScript>
+window.opener.form1.reportClicked.value='';
+</script>
+</body>
+</html>
+<?php
+	}
+} else {
+	echo "You are not authorized to access this page...";
+}
+?>

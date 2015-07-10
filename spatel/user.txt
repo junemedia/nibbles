@@ -1,0 +1,265 @@
+administrator/components/com_sections/admin.sections.php:148:	. ' LEFT JOIN #__users AS u ON u.id = s.checked_out'
+administrator/components/com_poll/views/polls/view.html.php:77:		. ' LEFT JOIN #__users AS u ON u.id = m.checked_out'
+administrator/components/com_comprofiler/comprofiler.class.php:807:		$query = 'UPDATE #__users'
+administrator/components/com_comprofiler/comprofiler.class.php:1157: 			//	  ." FROM #__users";    		
+administrator/components/com_comprofiler/comprofiler.class.php:1181:			//	 . " FROM #__users";
+administrator/components/com_comprofiler/comprofiler.class.php:1429:			$oReturn .= htmlspecialchars(unHtmlspecialchars($oValue));		// needed for #__users:name (has &039; instead of ' in it...)		//TBD: unhtml is kept for backwards database compatibility until CB 2.0
+administrator/components/com_comprofiler/comprofiler.class.php:2024:						$query	= "UPDATE #__users SET password = '"
+administrator/components/com_comprofiler/comprofiler.class.php:2050:						$query	= "UPDATE #__users SET password = '"
+administrator/components/com_comprofiler/comprofiler.class.php:2385:		$query = "SELECT * FROM #__comprofiler c LEFT JOIN #__users u ON c.id = u.id WHERE c.id = " . (int) $id;
+administrator/components/com_comprofiler/comprofiler.class.php:2390:			$query = "SELECT * FROM #__users u LEFT JOIN #__comprofiler c ON c.id = u.id WHERE u.id = " . (int) $id;
+administrator/components/com_comprofiler/comprofiler.class.php:4456:				. "\n LEFT JOIN #__users AS u ON m.memberid = u.id"
+administrator/components/com_comprofiler/comprofiler.class.php:4472:		. "\n LEFT JOIN #__users AS u ON m.referenceid=u.id"
+administrator/components/com_comprofiler/comprofiler.class.php:4486:		. "\n LEFT JOIN #__users AS u ON m.memberid=u.id"
+administrator/components/com_comprofiler/comprofiler.class.php:4501:		. "\n LEFT JOIN #__users AS u ON m.referenceid=u.id"
+administrator/components/com_comprofiler/comprofiler.class.php:4771:			$query				=	"SELECT * FROM #__comprofiler c, #__users u WHERE c.id=u.id AND c.id =" . (int) $toid;
+administrator/components/com_comprofiler/comprofiler.class.php:4796:			$_CB_database->setQuery( "SELECT u.id FROM #__users u INNER JOIN #__comprofiler c ON u.id=c.id"
+administrator/components/com_comprofiler/database/database.cbcore.xml:131:					<field name="table" value="#__users" valuetype="const:string" strict="true" />
+administrator/components/com_comprofiler/database/database.cbcore.xml:215:					<field name="table" value="#__users" valuetype="const:string" strict="true" />
+administrator/components/com_comprofiler/database/database.cbcore.xml:243:					<field name="table" value="#__users" valuetype="const:string" strict="true" />
+administrator/components/com_comprofiler/database/database.cbcore.xml:299:					<field name="table" value="#__users" valuetype="const:string" strict="true" />
+administrator/components/com_comprofiler/database/database.cbcore.xml:467:					<field name="table" value="#__users" valuetype="const:string" strict="true" />
+administrator/components/com_comprofiler/database/database.cbcore.xml:495:					<field name="table" value="#__users" valuetype="const:string" strict="true" />
+administrator/components/com_comprofiler/database/database.cbcore.xml:523:					<field name="table" value="#__users" valuetype="const:string" strict="true" />
+administrator/components/com_comprofiler/install.comprofiler.php:268:	$MCBUpgrades[6]['updates'][] = "UPDATE `#__users` SET usertype='Registered' WHERE usertype='';";	// fix effect of previous bug in CB registration
+administrator/components/com_comprofiler/install.comprofiler.php:271:	$MCBUpgrades[6]['updates'][] = "UPDATE `#__comprofiler_fields` SET `table`='#__users' WHERE name='email';";
+administrator/components/com_comprofiler/install.comprofiler.php:272:	$MCBUpgrades[6]['updates'][] = "UPDATE `#__comprofiler_fields` SET `table`='#__users' WHERE name='lastvisitDate';";
+administrator/components/com_comprofiler/install.comprofiler.php:273:	$MCBUpgrades[6]['updates'][] = "UPDATE `#__comprofiler_fields` SET `table`='#__users' WHERE name='registerDate';";
+administrator/components/com_comprofiler/comprofilej.xml:281:VALUES (41, 'name', '#__users', '_UE_NAME', 'predefined', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1), 
+administrator/components/com_comprofiler/comprofilej.xml:283:(27, 'lastvisitDate', '#__users', '_UE_LASTONLINE', 'date', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1), 
+administrator/components/com_comprofiler/comprofilej.xml:284:(28, 'registerDate', '#__users', '_UE_MEMBERSINCE', 'date', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1), 
+administrator/components/com_comprofiler/comprofilej.xml:286:(42, 'username', '#__users', '_UE_UNAME', 'predefined', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1), 
+administrator/components/com_comprofiler/comprofilej.xml:292:(50, 'email', '#__users', '_UE_EMAIL', 'primaryemailaddress', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1);
+administrator/components/com_comprofiler/comprofilej.xml:295:INSERT IGNORE INTO #__comprofiler (id,user_id) SELECT id,id FROM #__users
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:1569:	$tablesSQL					=	array( 'u'	=> '#__users AS u' );
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:1847:					. "\n FROM #__users"
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:1937:	$query = "SELECT * FROM #__comprofiler c, #__users u WHERE c.id=u.id AND c.id IN ( " . $cids . " )";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:1958:							$_CB_database->setQuery( "UPDATE #__users SET password='" . $_CB_database->getEscaped($pwd) . "' WHERE id = " . (int) $row->id );
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:1974:				$_CB_database->setQuery( "UPDATE #__users SET block = " . (int) $actionValue . " WHERE id = " . (int) $row->id );
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2612:	$sql = "DELETE FROM #__users WHERE id = 0";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2643: 				  ." FROM #__users";    		
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2652:				 . " FROM #__users";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2656:			$sql = "INSERT IGNORE INTO #__comprofiler(id,user_id) SELECT id,id FROM #__users";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2681:	$sql = "SELECT c.id FROM #__comprofiler c LEFT JOIN #__users u ON u.id = c.id WHERE u.id IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2881:		$sql = "SELECT c.id FROM #__comprofiler c LEFT JOIN #__users u ON u.id = c.id WHERE u.id IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2899:		$sql = "SELECT u.id FROM #__users u LEFT JOIN #__comprofiler c ON c.id = u.id WHERE c.id IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2917:		$sql = "SELECT u.id FROM #__users u WHERE u.id = 0";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2965:			$sql = "SELECT u.id FROM #__users u LEFT JOIN #__core_acl_aro a ON a.section_value = 'users' AND a.value = CAST( u.id AS CHAR ) WHERE a.value IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2967:			$sql = "SELECT u.id FROM #__users u LEFT JOIN #__core_acl_aro a ON a.section_value = 'users' AND a.value = u.id WHERE a.value IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2989:			$sql = "SELECT a.value AS id, a.id AS aro_id FROM #__core_acl_aro a LEFT JOIN #__users u ON u.id = a.value WHERE a.section_value = 'users' AND u.id IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:2991:			$sql = "SELECT a.value AS id, a.aro_id FROM #__core_acl_aro a LEFT JOIN #__users u ON u.id = a.value WHERE a.section_value = 'users' AND u.id IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:3093:		$sql = "INSERT INTO #__core_acl_aro (section_value,value,order_value,name,hidden) SELECT 'users' AS section_value, u.id AS value, 0 AS order_value, u.name as name, 0 AS hidden FROM #__users u LEFT JOIN #__core_acl_aro a ON a.section_value = 'users' AND a.value = CAST( u.id AS CHAR ) WHERE a.value IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:3095:		$sql = "INSERT INTO #__core_acl_aro (section_value,value,order_value,name,hidden) SELECT 'users' AS section_value, u.id AS value, 0 AS order_value, u.name as name, 0 AS hidden FROM #__users u LEFT JOIN #__core_acl_aro a ON a.section_value = 'users' AND a.value = u.id WHERE a.value IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:3111:			$sql = "DELETE a FROM #__core_acl_aro a LEFT JOIN #__users u ON u.id = a.value WHERE a.section_value = 'users' AND u.id IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:3113:			$sql = "DELETE a FROM #__core_acl_aro a LEFT JOIN #__users u ON u.id = a.value WHERE a.section_value = 'users' AND u.id IS NULL";
+administrator/components/com_comprofiler/admin.comprofiler.controller.php:3456:	. "\n LEFT JOIN #__users AS u ON u.id = m.checked_out"
+administrator/components/com_comprofiler/plugin.foundation.php:2035:		$_CB_database->setQuery( 'SELECT id FROM #__users u WHERE u.' . $_CB_database->NameQuote( $field ) . ' = ' . $_CB_database->Quote( $value )
+administrator/components/com_comprofiler/library/cb/cb.acl.php:50:				$query			=	"SELECT gid FROM #__users WHERE id = ".(int) $oID;
+administrator/components/com_comprofiler/library/cb/cb.tables.php:543:			$sql = "SELECT MAX(id) FROM #__users";
+administrator/components/com_comprofiler/library/cb/cb.tables.php:617:	var $_cmsUserTable			=	'#__users';
+administrator/components/com_comprofiler/library/cb/cb.tables.php:1169:												.	"\n FROM #__users"
+administrator/components/com_comprofiler/library/cb/cb.tables.php:1333:							$_CB_database->setQuery( "UPDATE #__users SET password='" . $_CB_database->getEscaped($pwd) . "' WHERE id = " . (int) $this->id );
+administrator/components/com_massmail/admin.massmail.php:96:	. ' FROM #__users'
+administrator/components/com_massmail/admin.massmail.php:105:	. ' FROM #__users'
+administrator/components/com_weblinks/models/weblinks.php:135:			. ' LEFT JOIN #__users AS u ON u.id = a.checked_out '
+administrator/components/com_modules/controller.php:74:		$joins[] = 'LEFT JOIN #__users AS u ON u.id = m.checked_out';
+administrator/components/com_contact/admin.contact.php:154:	. ' LEFT JOIN #__users AS u ON u.id = cd.user_id'
+administrator/components/com_contact/admin.contact.php:155:	. ' LEFT JOIN #__users AS v ON v.id = cd.checked_out'
+administrator/components/com_categories/admin.categories.php:229:	. ' LEFT JOIN #__users AS u ON u.id = c.checked_out'
+administrator/components/com_banners/controllers/banner.php:95:		. ' LEFT JOIN #__users AS u ON u.id = b.checked_out'
+administrator/components/com_banners/controllers/client.php:65:		. ' LEFT JOIN #__users AS u ON u.id = a.checked_out'
+administrator/components/com_menus/models/list.php:97:				' LEFT JOIN #__users AS u ON u.id = m.checked_out' .
+administrator/components/com_messages/tables/message.php:156:							' FROM #__users' .
+administrator/components/com_messages/tables/message.php:166:							' FROM #__users' .
+administrator/components/com_messages/admin.messages.php:99:	. ' INNER JOIN #__users AS u ON u.id = a.user_id_from'
+administrator/components/com_messages/admin.messages.php:110:	. ' INNER JOIN #__users AS u ON u.id = a.user_id_from'
+administrator/components/com_messages/admin.messages.php:208:	$query = 'SELECT id AS value, username AS text FROM #__users'
+administrator/components/com_messages/admin.messages.php:252:	. ' INNER JOIN #__users AS u ON u.id = a.user_id_from'
+administrator/components/com_users/views/users/view.html.php:96:		. ' FROM #__users AS a'
+administrator/components/com_users/views/users/view.html.php:107:			. ' FROM #__users AS a'
+administrator/components/com_users/controller.php:146:					. ' FROM #__users'
+administrator/components/com_users/controller.php:281:						. ' FROM #__users'
+administrator/components/com_users/controller.php:369:						. ' FROM #__users'
+administrator/components/com_plugins/views/plugins/view.html.php:93:			. ' LEFT JOIN #__users AS u ON u.id = p.checked_out'
+administrator/components/com_newsfeeds/admin.newsfeeds.php:136:	. ' LEFT JOIN #__users AS u ON u.id = a.checked_out'
+administrator/components/com_trash/admin.trash.php:102:	. ' LEFT JOIN #__users AS u ON u.id = c.checked_out'
+administrator/components/com_trash/admin.trash.php:117:	. ' LEFT JOIN #__users AS u ON u.id = c.checked_out'
+administrator/components/com_trash/admin.trash.php:166:	. ' LEFT JOIN #__users AS u ON u.id = m.checked_out'
+administrator/components/com_trash/admin.trash.php:178:	. ' LEFT JOIN #__users AS u ON u.id = m.checked_out'
+administrator/components/com_ccboard/models/ccboard.php:26:		$query = "SELECT count(id) from #__users";
+administrator/components/com_ccboard/models/tools.php:125:		$query = 'INSERT INTO #__ccb_users (user_id, avatar, rank) (SELECT id, "avatar1.png", ' . $rank . ' FROM #__users WHERE id NOT IN (SELECT user_id FROM #__ccb_users) ) ';
+administrator/components/com_ccboard/models/editprofile.php:43:                 FROM #__users AS a
+administrator/components/com_ccboard/models/users.php:71:                  'FROM #__users  AS a '.
+administrator/components/com_ccboard/models/users.php:93:        $query = 'SELECT COUNT(*) FROM #__users ';
+administrator/components/com_ccboard/models/editforum.php:66:                  INNER JOIN #__users AS u on m.user_id = u.id
+administrator/components/com_frontpage/admin.frontpage.php:157:	. ' LEFT JOIN #__users AS u ON u.id = c.checked_out'
+administrator/components/com_frontpage/admin.frontpage.php:158:	. ' LEFT JOIN #__users AS v ON v.id = c.created_by'
+administrator/components/com_frontpage/admin.frontpage.php:188:	. ' LEFT JOIN #__users AS u ON u.id = c.created_by'
+administrator/components/com_content/controller.php:149:				' LEFT JOIN #__users AS u ON u.id = c.checked_out' .
+administrator/components/com_content/controller.php:150:				' LEFT JOIN #__users AS v ON v.id = c.created_by' .
+administrator/components/com_content/controller.php:179:				' LEFT JOIN #__users AS u ON u.id = c.created_by' .
+administrator/components/com_content/controller.php:285:				' LEFT JOIN #__users AS v ON v.id = c.created_by' .
+administrator/components/com_content/controller.php:316:				' LEFT JOIN #__users AS u ON u.id = c.created_by' .
+administrator/components/com_content/controller.php:398:					' FROM #__users'.
+administrator/components/com_content/controller.php:408:						' FROM #__users' .
+administrator/components/com_content/models/element.php:131:				' LEFT JOIN #__users AS u ON u.id = c.checked_out' .
+administrator/components/com_content/models/element.php:132:				' LEFT JOIN #__users AS v ON v.id = c.created_by' .
+administrator/components/com_sefservicemap/plugins/com_sefservicemap/com_content_bot.php:128:	. "\n LEFT JOIN #__users AS u ON u.id = a.created_by"
+administrator/components/com_jcomments/admin.jcomments.subcription.php:104:			. "\n LEFT JOIN #__users AS u ON u.id = js.userid"
+administrator/components/com_jcomments/admin.jcomments.migration.php:145:				. "\nLEFT JOIN #__users AS u ON c.created_by = u.id"
+administrator/components/com_jcomments/admin.jcomments.migration.php:477:			. "\nLEFT JOIN #__users AS u ON u.email=c.email AND u.name=c.name"
+administrator/components/com_jcomments/admin.jcomments.migration.php:535:			. "\nLEFT JOIN #__users AS u ON c.userid = u.id"
+administrator/components/com_jcomments/admin.jcomments.migration.php:607:			. "\nLEFT JOIN #__users AS u ON c.user_id = u.id"
+administrator/components/com_jcomments/admin.jcomments.migration.php:668:			. "\nLEFT JOIN #__users AS u ON c.iduser = u.id"
+administrator/components/com_jcomments/admin.jcomments.migration.php:728:			. "\nLEFT JOIN #__users AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:788:			. "\nLEFT JOIN #__users AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:821:			. "\nLEFT JOIN #__users AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:852:			. "\nLEFT JOIN #__users AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:932:			. "\nLEFT JOIN #__users AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:961:			. "\nLEFT JOIN #__users AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1040:			. "\nLEFT JOIN `#__users` AS u ON c.username = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1098:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1152:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1183:			. "\nLEFT JOIN `#__users` AS u ON c.created_by = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1216:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1248:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1281:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1315:				. "\nLEFT JOIN `#__users` AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1320:				. "\nLEFT JOIN `#__users` AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1355:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1390:			. "\nLEFT JOIN `#__users` AS u ON c.gbname = u.username and c.gbmail = u.email "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1423:			. "\nLEFT JOIN `#__users` AS u ON c.created_by = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1456:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1489:			. "\nLEFT JOIN `#__users` AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1523:			. "\nLEFT JOIN #__users AS u ON c.userid = u.id"
+administrator/components/com_jcomments/admin.jcomments.migration.php:1612:			. "\nLEFT JOIN `#__users` AS u ON c.iduser = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1644:			. "\nLEFT JOIN `#__users` AS u ON c.created_by = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1680:			. "\nLEFT JOIN `#__users` AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1715:			. "\nLEFT JOIN `#__users` AS u ON c.isuser = 1 AND c.handle = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1749:			. "\nLEFT JOIN `#__users` AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1784:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1819:			. "\nLEFT JOIN `#__users` AS u ON c.userid = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1851:			. "\nLEFT JOIN `#__users` AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1884:			. "\nLEFT JOIN `#__users` AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1914:			. "\nLEFT JOIN `#__users` AS u ON c.author_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1943:			. "\nLEFT JOIN `#__users` AS u ON c.user_id = u.id "
+administrator/components/com_jcomments/admin.jcomments.migration.php:1972:			. "\nLEFT JOIN `#__users` AS u ON c.uid = u.id "
+administrator/components/com_jcomments/admin.jcomments.php:401:			. "\n LEFT JOIN #__users AS u ON u.id = c.checked_out"
+administrator/components/com_k2/models/users.php:37:		$query = "SELECT juser.*, k2user.group, k2group.name as groupname FROM #__users as juser ".
+administrator/components/com_k2/models/users.php:96:		$query = "SELECT COUNT(juser.id) FROM #__users as juser ".
+administrator/components/com_k2/models/cpanel.php:28:		" LEFT JOIN #__users AS u ON u.id = i.checked_out".
+administrator/components/com_k2/models/cpanel.php:29:		" LEFT JOIN #__users AS v ON v.id = i.created_by".
+administrator/components/com_k2/models/cpanel.php:30:		" LEFT JOIN #__users AS w ON w.id = i.modified_by";
+administrator/components/com_k2/models/items.php:41:    $query .= " LEFT JOIN #__k2_categories AS c ON c.id = i.catid"." LEFT JOIN #__groups AS g ON g.id = i.access"." LEFT JOIN #__users AS u ON u.id = i.checked_out"." LEFT JOIN #__users AS v ON v.id = i.created_by"." LEFT JOIN #__users AS w ON w.id = i.modified_by";
+administrator/modules/mod_latest/mod_latest.php:51:. ' LEFT JOIN #__users AS u ON u.id = a.created_by'
+administrator/modules/mod_popular/mod_popular.php:20:. ' LEFT JOIN #__users AS u ON u.id=a.created_by'
+components/com_comprofiler/comprofiler.php:901:	$tableReferences		=	array( '#__comprofiler' => 'ue', '#__users' => 'u' );
+components/com_comprofiler/comprofiler.php:1164:		$_CB_database->setQuery( "SELECT id, username FROM #__users"
+components/com_comprofiler/comprofiler.php:1196:		$_CB_database->setQuery( "SELECT id FROM #__users"
+components/com_comprofiler/comprofiler.php:1221:			$sql		=	"UPDATE #__users SET password = '" . $_CB_database->getEscaped( $newpass ) . "' WHERE id = " . (int) $user_id;
+components/com_comprofiler/comprofiler.php:1412:		$query	=	"SELECT COUNT(*) AS result FROM #__users WHERE username = " . $_CB_database->Quote( ( trim( $usernameISO ) ) );
+components/com_comprofiler/comprofiler.php:1414:		$query	=	"SELECT COUNT(*) AS result FROM #__users WHERE LOWER(username) = " . $_CB_database->Quote( ( strtolower( trim( $usernameISO ) ) ) );
+components/com_comprofiler/comprofiler.php:1461:			$query	=	"SELECT COUNT(*) AS result FROM #__users WHERE email = " . $_CB_database->Quote( ( trim( $emailISO ) ) );
+components/com_comprofiler/comprofiler.php:1463:			$query	=	"SELECT COUNT(*) AS result FROM #__users WHERE LOWER(email) = " . $_CB_database->Quote( ( strtolower( trim( $emailISO ) ) ) );
+components/com_comprofiler/comprofiler.php:1578:			. "\n FROM #__users u, "
+components/com_comprofiler/comprofiler.php:1762:	. "\nFROM #__users u, "
+components/com_comprofiler/comprofiler.php:1800:			$query = "SELECT * FROM #__comprofiler c, #__users u "
+components/com_comprofiler/comprofiler.php:1803:	//		$query = "SELECT * FROM #__comprofiler c, #__users u WHERE c.id=u.id AND md5(c.id) = '" . cbGetEscaped($confirmcode) . "'";
+components/com_comprofiler/comprofiler.php:1812:			$query = "SELECT * FROM #__comprofiler c, #__users u "
+components/com_comprofiler/comprofiler.php:1843:			$_CB_database->setQuery( "UPDATE #__users SET password = " . $_CB_database->Quote( $pwd_md5 ) . " WHERE id=" . (int) $user[0]->id );
+components/com_comprofiler/comprofiler.php:2112:		$query = "SELECT * FROM #__comprofiler c, #__users u WHERE c.id=u.id AND c.id = " . (int) $uid;
+components/com_comprofiler/comprofiler.php:2130:			$_CB_database->setQuery( "UPDATE #__users SET password = " . $_CB_database->Quote( $pwd_md5 ) . " WHERE id=" . (int) $uid );
+components/com_comprofiler/comprofiler.php:2161:		$query = "SELECT * FROM #__comprofiler c, #__users u WHERE c.id=u.id AND c.id = " . (int) $uid;
+components/com_comprofiler/comprofiler.php:2195:	."\n FROM #__users u, #__comprofiler c "
+components/com_comprofiler/comprofiler.xml:276:VALUES (41, 'name', '#__users', '_UE_NAME', 'predefined', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1), 
+components/com_comprofiler/comprofiler.xml:278:(27, 'lastvisitDate', '#__users', '_UE_LASTONLINE', 'date', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1), 
+components/com_comprofiler/comprofiler.xml:279:(28, 'registerDate', '#__users', '_UE_MEMBERSINCE', 'date', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1), 
+components/com_comprofiler/comprofiler.xml:281:(42, 'username', '#__users', '_UE_UNAME', 'predefined', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1), 
+components/com_comprofiler/comprofiler.xml:287:(50, 'email', '#__users', '_UE_EMAIL', 'primaryemailaddress', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1);
+components/com_comprofiler/comprofiler.xml:290:INSERT IGNORE INTO #__comprofiler (id,user_id) SELECT id,id FROM #__users
+components/com_comprofiler/comprofiler.html.php:1828:			.	"\n INNER JOIN #__users AS u ON u.id=c.id"
+components/com_comprofiler/comprofiler.html.php:1829:			.	"\n INNER JOIN #__users AS u2 ON u2.id= c.bannedby"
+components/com_comprofiler/comprofiler.html.php:1830:			.	"\n LEFT JOIN #__users AS u3 ON  u3.id = c.unbannedby";
+components/com_comprofiler/comprofiler.html.php:1925:	$query = "SELECT u2.name as reportedbyname, u2.username as reportedbyusername, u.name as reportedname, u.username as reportedusername, ur.* FROM #__users u, #__comprofiler_userreports ur, #__users u2 WHERE u.id=ur.reporteduser AND u2.id=ur.reportedbyuser AND  ur.reportedstatus=0 ORDER BY ur.reporteduser,ur.reportedondate";
+components/com_comprofiler/comprofiler.html.php:1993:	$query = "SELECT * FROM #__comprofiler c, #__users u WHERE u.id= c.id AND c.avatarapproved=0 AND approved=1 AND confirmed=1 AND banned=0";
+components/com_comprofiler/comprofiler.html.php:2074:		$query = "SELECT u2.name as reportedbyname, u2.username as reportedbyusername, u.name as reportedname, u.username as reportedusername, ur.* FROM #__users u, #__comprofiler_userreports ur, #__users u2 WHERE u.id=ur.reporteduser AND u2.id=ur.reportedbyuser AND " . ( $act == 1 ? '' : "ur.reportedstatus=0 AND " ) . "ur.reporteduser=".(int) $uid." ORDER BY ur.reporteduser,ur.reportedondate";
+components/com_comprofiler/router.php:27:						$sql					=	'SELECT username FROM #__users WHERE id = '. (int) $query['user'];
+components/com_comprofiler/router.php:95:						$sql					=	'SELECT id FROM #__users WHERE username = '. $database->Quote( $user );
+components/com_comprofiler/plugin/user/plug_cbsimpleboardtab/cb.simpleboardtab.model.php:691:															.	', '			. $_CB_database->NameQuote( '#__users' ) . 'AS u'
+components/com_comprofiler/plugin/user/plug_cbcore/cb.core.xml:199:				<table name="#__users" class="mosUser" maintable="true" strict="false" drop="never" shared="true">
+components/com_comprofiler/plugin/user/plug_cbcore/cb.core.xml:286:				<table name="#__users" class="mosUser" maintable="true" strict="false" drop="never" shared="true">
+components/com_comprofiler/plugin/user/plug_cbcore/cb.core.xml:396:				<table name="#__users" class="mosUser" maintable="true" strict="false" drop="never" shared="true">
+components/com_comprofiler/plugin/user/plug_cbcore/cb.core.php:225:							$query	=	"SELECT COUNT(*) AS result FROM #__users WHERE username = " . $_CB_database->Quote( ( trim( $usernameISO ) ) );
+components/com_comprofiler/plugin/user/plug_cbcore/cb.core.php:227:							$query	=	"SELECT COUNT(*) AS result FROM #__users WHERE LOWER(username) = " . $_CB_database->Quote( ( strtolower( trim( $usernameISO ) ) ) );
+components/com_comprofiler/plugin/user/plug_cbcore/cb.core.php:1866:						$query	=	"SELECT COUNT(*) AS result FROM #__users WHERE email = " . $_CB_database->Quote( ( trim( $emailISO ) ) );
+components/com_comprofiler/plugin/user/plug_cbcore/cb.core.php:1868:						$query	=	"SELECT COUNT(*) AS result FROM #__users WHERE LOWER(email) = " . $_CB_database->Quote( ( strtolower( trim( $emailISO ) ) ) );
+components/com_comprofiler/plugin/user/plug_cbconnections/cb.connections.php:51:				$query					=	"SELECT u.name,u.email,u.username,c.avatar,c.avatarapproved, u.id " . "\n FROM #__comprofiler AS c" . "\n LEFT JOIN #__users AS u ON c.id=u.id" . "\n WHERE c.id IN (" . implode( ',', $congroups ) . ")" . "\n AND c.approved=1 AND c.confirmed=1 AND c.banned=0 AND u.block=0";
+components/com_comprofiler/plugin/user/plug_cbconnections/cb.connections.php:218:				$query		=	"SELECT COUNT(*)" . "\n FROM #__comprofiler_members AS m" . "\n LEFT JOIN #__comprofiler AS c ON m.memberid=c.id" . "\n LEFT JOIN #__users AS u ON m.memberid=u.id" . "\n WHERE m.referenceid=" . (int) $user->id . "\n AND c.approved=1 AND c.confirmed=1 AND c.banned=0 AND u.block=0" . $isVisitor . "\n ";
+components/com_comprofiler/plugin/user/plug_cbconnections/cb.connections.php:231:		$query				=	"SELECT m.*,u.name,u.email,u.username,c.avatar,c.avatarapproved, u.id " . "\n FROM #__comprofiler_members AS m" . "\n LEFT JOIN #__comprofiler AS c ON m.memberid=c.id" . "\n LEFT JOIN #__users AS u ON m.memberid=u.id" . // removed  . "\n LEFT JOIN #__session AS s ON s.userid=u.id"	and in SELECT: IF((s.session_id<=>null) OR (s.guest<=>1),0,1) AS 'isOnline' to avoid blocking site in case members table get locked
+components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php:157:			$_CB_database->setQuery("SELECT username, email FROM #__users WHERE id=$to_id");
+components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php:172:				$_CB_database->setQuery("SELECT email FROM #__users WHERE id=$from_id LIMIT 1");
+components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php:277:			$sql="SELECT name FROM #__users WHERE id=".(int) $udde_fromid;
+components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php:877:				$sql="SELECT gid FROM #__users WHERE id=".(int) $savetoid;
+components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php:970:			$sql = "SELECT name FROM #__users WHERE `id`=".(int) $var_fromid;
+components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php:972:			$sql = "SELECT username FROM #__users WHERE `id`=".(int) $var_fromid;	
+components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php:981:			$sql = "SELECT name AS displayname, email FROM #__users WHERE `id`=".(int) $var_toid;	
+components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php:983:			$sql = "SELECT username AS displayname, email FROM #__users WHERE `id`=".(int) $var_toid;
+components/com_ninjarsssyndicator/models/ninjarsssyndicator.php:129:				. 	"\n LEFT JOIN #__users AS u ON u.id = a.created_by"
+components/com_fjrelated/models/fjrelated.php:248:					' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+components/com_fjrelated/models/fjrelated.php:474:							' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+components/com_sectionex/models/ajax.php:37:	     $query	= 'SELECT `name` FROM `#__users` WHERE LOWER( `name` ) LIKE '. $db->Quote( '%'.$filter_author.'%');
+components/com_sectionex/models/category.php:607:			.  ' LEFT JOIN #__users AS u  '
+components/com_weblinks/controllers/weblink.php:94:				' FROM #__users' .
+components/com_user/controller.php:508:				' FROM #__users' .
+components/com_user/models/remind.php:60:		$db->setQuery('SELECT username FROM #__users WHERE email = '.$db->Quote($email), 0, 1);
+components/com_user/models/reset.php:62:		$query	= 'SELECT id FROM #__users'
+components/com_user/models/reset.php:78:		$query	= 'UPDATE #__users'
+components/com_user/models/reset.php:120:		$db->setQuery('SELECT id FROM #__users WHERE block = 0 AND activation = '.$db->Quote($token));
+components/com_user/models/reset.php:183:		$query 	= 'UPDATE #__users'
+components/com_ccboard/helpers/helper.php:28: 		                 'FROM #__users AS a ' .
+components/com_ccboard/helpers/helper.php:459:			$query = 'SELECT id FROM #__users ' .
+components/com_ccboard/helpers/helper.php:486:				$query = 'SELECT username, email FROM #__users WHERE id = ' . $usrid;
+components/com_ccboard/models/postlist.php:724:					'INNER JOIN #__users AS u ON m.user_id = u.id ' .
+components/com_ccboard/models/postlist.php:735:		$query = 'SELECT email FROM #__users WHERE id = 62';
+components/com_ccboard/models/forumlist.php:53:    				'LEFT JOIN #__users AS u ON u.id = f.last_post_user ' .
+components/com_ccboard/models/forumlist.php:92:        $query = 'SELECT count(id) as cnt FROM #__users where block=0';
+components/com_ccboard/models/forumlist.php:96:        $query = 'SELECT id,username FROM #__users where (block=0) ORDER BY registerDate DESC LIMIT 0,5';
+components/com_content/controller.php:214:					' FROM #__users' .
+components/com_content/models/article.php:523:					' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+components/com_content/models/section.php:422:				' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+components/com_content/models/archive.php:123:			' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+components/com_content/models/frontpage.php:139:			' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+components/com_content/models/article2.php:519:					' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+components/com_content/models/category.php:368:			' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+components/com_jcomments/jcomments.class.php:1274:			$db->setQuery("SELECT COUNT(*) FROM #__users WHERE name = '$str' OR username = '$str'");
+components/com_jcomments/jcomments.class.php:1287:			$db->setQuery("SELECT COUNT(*) FROM #__users WHERE email = '$str'");
+components/com_jcomments/model/jcomments.php:138:			. "\nLEFT JOIN #__users AS u ON c.userid = u.id"
+components/com_jcomments/plugins/com_ponygallery.plugin.php:39:			. "\n FROM #__users AS u"
+components/com_jcomments/plugins/com_yvcommodity.plugin.php:39:			. "\n FROM #__users AS u"
+components/com_jcomments/plugins/com_juserlist.plugin.php:16:		$db->setQuery( 'SELECT id, name as title FROM #__users WHERE id IN (' . implode(',', $ids) . ')' );
+components/com_jcomments/plugins/com_juserlist.plugin.php:23:		$db->setQuery( 'SELECT name FROM #__users WHERE id = ' . $id );
+components/com_jcomments/plugins/com_datsogallery.plugin.php:39:			. "\n FROM #__users AS u"
+components/com_k2/models/item.php:598:				$query = "SELECT COUNT(*) FROM #__users WHERE name=".$db->Quote($userName)." OR email=".$db->Quote($commentEmail);
+libraries/joomla/database/table/content.php:187:			. ' FROM #__users'
+libraries/joomla/database/table/user.php:123:		parent::__construct( '#__users', 'id', $db );
+libraries/joomla/database/table/user.php:170:		. ' FROM #__users '
+libraries/joomla/database/table/user.php:184:			. ' FROM #__users '
+libraries/joomla/html/html/list.php:144:		. ' FROM #__users'
+libraries/joomla/user/helper.php:42:		. ' FROM #__users'
+libraries/joomla/user/helper.php:85:		$query = 'SELECT id FROM #__users WHERE username = ' . $db->Quote( $username );
+modules/mod_cblogin/mod_cblogin.php:174:			$query = "SELECT name FROM #__users WHERE id = ". (int) $_CB_framework->myId();
+modules/mod_cblogin/mod_cblogin.php:456:			. "\n LEFT JOIN #__users AS u ON m.referenceid=u.id"
+modules/mod_fl_latest/helper.php:93:			' LEFT JOIN #__users AS u ON u.id = a.created_by' .
+modules/mod_stats/helper.php:57:			. ' FROM #__users'
+modules/mod_nastia_news/helper.php:877:					#__users AS users 
+modules/mod_comprofilermoderator/mod_comprofilermoderator.php:101:	. "\n LEFT JOIN #__users AS u ON m.referenceid=u.id"
+modules/mod_comprofileronline/mod_comprofileronline.php:70:."\n FROM #__session AS a, #__users AS u"
+plugins/authentication/joomla.php:74:			. ' FROM `#__users`'
+plugins/authentication/openid.php:210:						$query = 'SELECT username FROM #__users'.
+plugins/authentication/openid.php:220:							$query = 'SELECT username FROM #__users'.
+plugins/authentication/openid.php:227:								$query = 'UPDATE #__users SET username='.$db->Quote($result->getDisplayIdentifier()).
+plugins/jcomments/jcomments.avatar.php:625:				$query = 'SELECT user_id, user_avatar_type, user_avatar, username_clean FROM #__users WHERE username_clean IN (\'' . implode("','", $users2) . '\')';
+plugins/jcomments/jcomments.avatar.php:767:						. ' FROM ' . $db->nameQuote('#__users') 
+plugins/jcomments/jcomments.avatar.php:845:			        $db->setQuery('SELECT id, username as avatar FROM #__users WHERE id in (' . implode(',', $users)  . ')');
+plugins/system/legacy/user.php:69:		$this->_db->setQuery("SELECT username FROM #__users");
+plugins/system/legacy/user.php:96:			. ' FROM #__users'

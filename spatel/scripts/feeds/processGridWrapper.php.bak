@@ -1,0 +1,18 @@
+<?php
+
+//here, do a check to see that there aren't any other copies of this file running.
+$cmd = "ps ax | grep 'php /home/scripts/feeds/processGridOut.php' | grep -vc 'grep'";
+$out = '';
+exec($cmd, $out);
+if($out[0] == '1' || $out[0] > '1'){
+        exec("ps ax | grep 'php /home/scripts/feeds/processGridOut.php' | grep -v 'grep'",$out2);
+	mail('bbevis@amperemedia.com','process grid out still running',"workin':\n".print_r($out,true)."\n".print_r($out2,true));
+        //print "workin':\n".print_r($out,true)."\n".print_r($out2,true);
+        exit();
+} else {
+	//print "this should run the script now.";
+	exec('php /home/scripts/feeds/processGridOut.php >> /home/billb/processGridOut.txt');
+}
+
+
+?>

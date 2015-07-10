@@ -1,0 +1,200 @@
+Advertiser:
+[ADVERTISER-COMPANY-NAME]
+[ADVERTISER-CONTACT-NAME]
+[ADVERTISER-ADDRESS1], [ADVERTISER-ADDRESS2]
+[ADVERTISER-CITY], [ADVERTISER-STATE] [ADVERTISER-ZIP]
+P: [ADVERTISER-PHONE]
+__________________________________________________________________________________________
+Insertion Order#: [COMPANY-CODE]-B-[DATE-NUMBER-ONLY]-[AUTO-INCREMENT]
+Date: [TODAYS-DATE-WITH-SLASHES]
+[COMPANY-NAME], Contact: [SALES-REP-NAME]
+Tel: [SALES-REP-PHONE-EXT]
+Email: [SALES-REP-EMAIL]
+__________________________________________________________________________________________
+Agency:
+[AGENCY-COMPANY-NAME]
+[AGENCY-CONTACT-NAME]
+[AGENCY-ADDRESS1], [AGENCY-ADDRESS2]
+[AGENCY-CITY], [AGENCY-STATE] [AGENCY-ZIP]
+P: [AGENCY-PHONE]
+
+Publisher:
+[PUBLISHER-0]
+[PUBLISHER-1]
+[PUBLISHER-2]
+[PUBLISHER-3]
+[PUBLISHER-4]
+[PUBLISHER-5]
+[PUBLISHER-6]
+
+Send Payment To:
+[BILLING-0]
+[BILLING-1]
+[BILLING-2]
+[BILLING-3]
+[BILLING-4]
+[BILLING-5]
+[BILLING-6]
+__________________________________________________________________________________________
+Materials and Tracking:
+
+Materials Due:        [MATERIALS-DUE]
+Materials Due Date:   [MATERIALS-DUE-DATE]
+Deliver Materials To: [MATERIALS-TO]
+__________________________________________________________________________________________
+Campaign Details:
+
+Campaign Type:         [CAMP-TYPE]
+Placement:                 [TYPE-OF-SALE]
+Start Date:                  [ST-DATE]
+End Date:                   [ED-DATE]
+Volume:                      [VOL]
+Unit Cost:                   [COST]
+Campaign Total Cost: [TOTAL-COST]
+
+Campaign Total:          [TOTAL-COST]
+Due Upon Signing:      [TOTAL-COST]
+Balance Due:               [TOTAL-COST]
+<new_page>
+Insertion Order#: [COMPANY-CODE]-B-[DATE-NUMBER-ONLY]-[AUTO-INCREMENT]
+
+Terms & Conditions
+
+TERM:
+This contract is cancelable by either party on 48 hours advance written notice.
+
+CREATIVE:
+All creative is subject to review by Publisher, and Publisher reserves the right to reject any advertisement at 
+any time.  Publisher shall not make any changes to the advertiser-supplied creative and shall only use expressly 
+approved or provided "subject" lines.  Use of altered creative or unapproved subject lines may cause severe 
+financial harm to Advertiser.
+It is understood that any changes to approved "Subject" and/or "From" Lines will result in forfeiture of all 
+monies due to Publisher for effected campaigns. 
+_____  Initials
+
+ENTIRE AGREEMENT:
+This Agreement constitutes the entire understanding and agreement of the Parties with respect to the subject matter 
+of this Agreement, and supersedes all prior and contemporaneous understandings and agreements, whether written or 
+oral, with respect to such subject matter.  Any changes, supplements or waivers to the Agreement must be in writing 
+and signed by authorized representatives of all Parties.
+
+PROHIBITION AGAINST ASSIGNMENT:
+Neither this Agreement nor any rights, licenses or obligations hereunder, may be assigned by either Party without 
+the prior written approval of the non-assigning Party.  Notwithstanding the foregoing, either Party may assign this 
+Agreement, together with all of its rights and obligations hereunder, to its Affiliate or as part of a merger, 
+reorganization, change in its ownership or control or the sale or transfer of all or substantially all of its assets, 
+without the other Party’s consent.  Any attempted assignment in violation of this Section will be void and without 
+effect.  Subject to the foregoing, this Agreement will benefit and bind the Parties’ successors and permitted assigns. 
+
+ADVERTISER REPRESENTATIONS:
+Advertiser represents and warrants that its performance under this Insertion Order ("IO") will not (a) invade the 
+right of privacy or publicity of any third person, (b) contain any libelous, obscene, indecent or otherwise unlawful 
+material, or (c) otherwise infringe the rights of any third parties, including, but not limited to, such violations 
+as infringement or misappropriation of any copyright, patent, trademark, trade secret, or other intellectual 
+proprietary or property right, false advertising, unfair competition, defamation, invasion of rights of celebrity, 
+violation of any anti-discriminatory law or regulation, or any other right of any person or entity. Advertiser 
+further represents and warrants that it is and will remain duly licensed, authorized and certified by all 
+applicable governmental regulatory authorities to operate its business.
+
+CAN-SPAM CERTIFICATION:
+The parties certify that (a)they are aware of the new rules and regulations defined and set forth in the Can-Spam 
+Act of 2003("Can-Spam Act"); (b)the undersigned does not and has not engaged in any conduct prohibited by the 
+Can-Spam Act,; and (c) no e-mail sent by the undersigned violates any laws or regulations, including without 
+limitation, the Can-Spam Act.
+
+CONSUMER FRAUD OR MANIPULATION:
+SilverCarrot, Inc. shall not be responsible for payment to Publisher for any action, including but not limited to 
+emails, impressions, clicks, acquisitions and/or purchases that is reasonably determined to be the result of 
+consumer fraud or manipulation. Further, SilverCarrot, Inc. shall not be responsible for payment to the Publisher 
+for any incentivized action.
+
+INDEMNITY:
+Publisher will indemnify, defend and hold harmless Advertiser and its respective employees, directors, officers, 
+agents, shareholders, affiliates and subsidiaries, from and against any and all claims, demands, damages, 
+costs (including, without limitation, settlement costs), losses and expenses (including, without limitation, 
+attorneys' fees and costs) arising out of or relating to (a) any breach of this IO by Publisher; or (b) any 
+infringement or violation of any patent, copyright, trade secret, trademark, or other proprietary right by or in 
+connection with Publisher's operation under this IO.
+
+OWNERSHIP:
+Advertiser exclusively retains all rights, title and interest (including, without limitation, copyrights, trade 
+secrets, trademark, patent rights, and any and all other proprietary rights) in and to any and all elements 
+of its offer (including all promotions thereon).
+
+Insertion Order#: [COMPANY-CODE]-B-[DATE-NUMBER-ONLY]-[AUTO-INCREMENT]
+
+GOVERNING LAW AND OTHER TERMS:
+This Agreement is to be construed in accordance with and governed by the internal laws of the United States of 
+America and the State of New York without giving effect to any choice of law rule that would cause the application 
+of the laws of any jurisdiction other than the internal laws of the State of New York to the rights and duties of 
+the Parties.  Any action related to this Agreement will be governed by New York law. Any action relating to this 
+Agreement shall be brought in the state or federal courts located  in New York County, and you hereby submit to the 
+exclusive jurisdiction and venue thereof. You agree to comply with the laws of New York and the United States that 
+apply to the use of this Service and the compensation you may receive.  If any part of this Agreement is held to 
+be unenforceable, the unenforceable part shall be given effect to the greatest extent possible and the remainder 
+will remain in full force and effect.
+
+DISPUTE RESOLUTION:
+All disputes between the parties relating to this Agreement, except for those for which injunctive relief is 
+sought, may, upon mutual agreement of the parties, be submitted for final settlement by binding arbitration in 
+accordance with the then prevailing Rules of the American Arbitration Association (AAA). Any arbitration shall 
+take place before a panel of three (3) arbitrators (one selected by Partner, one selected by SilverCarrot, Inc., 
+and the third selected by the other two arbitrators) in New York County, NY.  Any resulting arbitral award may 
+be entered and enforced in any court of competent jurisdiction.  The arbitration shall be held in a location 
+mutually agreed upon by the parties.  The arbitrators shall have authority to award actual money damages, and 
+specific performance relief in accordance with the terms of this Agreement, but shall not have authority to 
+award exemplary or punitive damages, and the parties expressly waive any claimed right to such damages.  The 
+parties shall share the costs and expenses.
+
+FORCE MAJEURE:
+Except for obligations to make payment hereunder, neither Party hereto shall be responsible for any failure to 
+perform its obligations under this Agreement if such failure is caused by events or conditions beyond that 
+Party's reasonable control and the Party gives the other prompt notice and makes reasonable efforts to perform.  
+A Party whose performance is affected by a force majeure condition shall be excused from such performance to the 
+extent required by such force majeure condition so long as such Party uses commercially reasonable efforts to 
+avoid or remove such causes of nonperformance and such force majeure event does not extend beyond one (1) month.
+
+COUNTERPARTS:
+This Agreement may be executed in counterparts, each of which shall be deemed an original, but both of which 
+together shall constitute one and the same instrument.
+
+PAYMENT TERMS:
+All balances due net 30 days from the date of invoice.  In addition to other legal remedies, in the event of 
+a breach of this agreement by Publisher all payment due from Advertiser shall be forfeited.  All monies due will 
+be based on SilverCarrot’s reporting tools unless otherwise specifically agreed to in writing.
+
+[COMPANY-NAME] TECH CONTACT:
+
+Name __________________________________
+
+Email _________________________________
+
+Phone _________________________________
+
+
+PUBLISHER TECH CONTACT:
+
+Name __________________________________
+
+Email _________________________________
+
+Phone _________________________________
+
+<new_page>
+Insertion Order#: [COMPANY-CODE]-B-[DATE-NUMBER-ONLY]-[AUTO-INCREMENT]
+___________________________________________________________________________________________
+
+
+Accepted: [COMPANY-NAME]                     Accepted:__________________________________
+
+
+Signature: ____________________________     Signature: _________________________________ 
+
+
+Print: ________________________________         Print: _________________________________
+
+
+Title: ________________________________         Title: _________________________________
+
+
+Date: _________________________________          Date: _________________________________

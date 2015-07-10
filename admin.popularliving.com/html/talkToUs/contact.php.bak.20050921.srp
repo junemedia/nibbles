@@ -1,0 +1,238 @@
+<?php
+
+include("../includes/paths.php");
+
+$imagePath = "images/";
+
+$pageTitle = "Talk To Us";
+
+// get contact form details
+
+$formQuery = "SELECT *
+			  FROM   edContactForms
+			  WHERE  shortName = '$f'";
+$formResult = mysql_query($formQuery);
+echo dbError();
+while ( $formRow = mysql_fetch_object($formResult)) {
+	$formId = $formRow->id;
+	$shortName = $formRow->shortName;
+	$formName = $formRow->formName;
+	$formHeading = $formRow->formHeading;
+	$reqGraphic = $formRow->reqGraphic;
+	$contactEmail = $formRow->contactEmail;
+}
+
+
+if ($save) {
+	if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email))  {
+		$message = "Please enter valid eMail address...";
+		$keepValues = true;
+	} else {
+		// Generate a boundary string
+		$semiRand = md5(time());
+		$mimeBoundry = "==Multipart_Boundry_x{$semiRand}x";
+		
+		
+		// insert into nlUserFeedback table
+		
+		$insertQuery = "INSERT INTO nlUserFeedback(formId, email, first, last, city, state,
+								includeName, request, dateSubmitted)
+					VALUES('$formId', '$email', '$firstname', '$lastname', '$city', '$state', '$publishname', \"$request\", now())";
+		$insertResult = mysql_query($insertQuery);
+		
+		$id = mysql_insert_id();
+		
+		if ($_FILES['image']['tmp_name'] && $_FILES['image']['tmp_name'] != "none") {
+			
+			if ($_FILES['image']['size'] > 100000) {
+				$message = "File size should be no more than 100K...";
+				$keepValues = true;
+			} else if ($_FILES['image']['type'] != 'image/gif' && $_FILES['image']['type'] != 'image/jpg' && $_FILES['image']['type'] != 'image/png' ) {
+				$message = "Only .gif, .jpg and .png images are allowed...";
+				$keepValues = true;
+			} else {
+				$uploadedImage = $_FILES['image']['tmp_name'];
+				
+				//Get Extention
+				$ar = explode(".",$_FILES['image']['name']);
+				$i = count($ar) - 1;
+				$thisext = $ar[$i];
+				$imageFile = "image_".$id.".$thisext";
+				$imagePath  = $imagePath.$imageFile;
+				//$prThumbURL = $thumbfileurl . $prNo . ".$thisext";
+				move_uploaded_file( $uploadedImage, $imagePath);
+				
+				// update image file names
+				$updateQuery = "UPDATE nlUserFeedback
+									SET    image = '$imageFile'
+									WHERE  id = '$id'";
+				$updateResult = mysql_query($updateQuery);
+				
+				// attach file in email content
+				$fp = fopen($imagePath,'rb');
+				if ($fp) {
+					$fileData = fread($fp,filesize($imagePath));
+					$fileData = chunk_split(base64_encode($fileData));
+					fclose($fp);
+				}
+				
+				
+				$imageAttContent .= "\r\n--$mimeBoundry\r\n
+				 			Content-type: ".$_FILES['image']['type']." name=$imageFile\n						
+							Content-Transfer-Encoding: base64\r\n\n
+							Content-Disposition: attachment; \r\nfilename=$imageFile\r\n\n							
+             				$fileData \r\n\n
+							";	
+				$imageText = "\nImage File: $sGblEditorialPath/talkToUs/images/$imageFile";
+			}
+		}
+		
+		if ($keepValues != true) {
+			if (strstr($contactEmail,",")) {
+				//Get First email address for mail To
+				$emailTo = substr($contactEmail,0,strpos($contactEmail,","));
+				//Get other email address as CC To
+				$ccTo = substr($contactEmail,strpos($contactEmail,",")+1);
+			} else {
+				$emailTo = $contactEmail;
+			}
+			
+			
+			// update stat counts
+			$selectQuery = "SELECT id
+					FROM   edContactFormStats
+					WHERE  contactFormID = '$formId'
+					AND    dateSubmitted = CURRENT_DATE";
+			$selectResult = mysql_query($selectQuery);
+			
+			if (mysql_num_rows($selectResult)>0) {
+				while($selectRow = mysql_fetch_object($selectResult)) {
+					$contactFormStatsId = $selectRow->id;
+				}
+				$editQuery = "UPDATE edContactFormStats
+					  SET    counts = counts+1
+					  WHERE  id = '$contactFormStatsId'
+					  AND    dateSubmitted = CURRENT_DATE";
+				$editResult = mysql_query($editQuery);
+				
+			} else {
+				$insertQuery = "INSERT INTO edContactFormStats(contactFormId, dateSubmitted, counts)
+						VALUES('$formId', CURRENT_DATE, '1')";
+				$insertResult = mysql_query($insertQuery);
+				
+			}
+			
+									
+			/*$attHeaders = "\r\nMIME-version:  1.0
+							 Content-Type: multipart/mixed;\n
+							 boundry=\"$mimeBoundry\"\n";
+			
+			$mailContent = "\r\n--$mimeBoundry\r\n
+							Content-Type: text/plain; charset=iso-8859-1\r\n
+							Content-Transfer=Encoding: 7bit\r\n";
+			*/
+			$mailContent .= "Email : $email\r\n
+First Name : $firstname\r\n
+Last Name : $lastname\r\n
+City : $city\r\n
+State : $state\r\n
+Publish Name : $publishname\r\n
+Newsletter : $formName\r\n";
+			
+						
+			$request = stripslashes($request);
+			//$request = ereg_replace("\.", "\.\\\n", $request);
+			$mailContent .= "\r\nTip : ". stripslashes($request)."\r\n";
+			$mailContent .= $imageText;
+			
+			//$mailContent .= "$imageAttContent";
+			//$mailContent .= "\r\n--$mimeBoundry--\r\n";
+			
+			$headers .= "From:$email\r\n";
+			
+			if ($ccTo != '') {
+				$headers .= "cc: $ccTo";
+			}
+			
+			//$headers = $headers.$attHeaders;
+						
+			mail($emailTo, "$formName", $mailContent, $headers);
+			//mail("sraval@amperemedia.com", "Cook Tip", $mailContent);
+			
+		}
+	}
+	if ($keepValues != true) {
+		header("Location:http://www.popularliving.com/p/onetime.php");
+	}
+}
+
+
+if ($reqGraphic) {
+	$uploadGraphic = "<TR>
+						<TD valign=top><BR><font face=Arial>Attach Picture</font></TD>
+						<TD valign=top><BR><p align=left><font face=Arial><INPUT name=image type=file><BR>Maximum File Size - 100KB, .jpg, .gif, or .png format only</font> 
+						<input type=hidden name=MAX_FILE_SIZE value='100000'></TD></TR>";
+}
+
+$hidden = "<input type=hidden name=f value='$f'>";
+
+
+?>
+<html>
+
+<head>
+<title>Use this form to send us your <?php echo $formHeading;?></title>
+<meta name="generator" content="Namo WebEditor v5.0">
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+<!--<P align=center><IMG src="http://editors.myfree.com/editors/images/permanent/submitrecipes.gif" width="640" height="191"> -->
+<H3 align=center><FONT face=verdana>Use this form to send us your <?php echo $formHeading;?>.</FONT></H3>
+<FORM action=<?php echo $PHP_SELF;?> method=post enctype="multipart/form-data">
+<?php echo $hidden;?>
+<TABLE width="479" align=center border=0>
+<TBODY>
+<tr><td colspan=2 align=center><font face="Arial" color=#FF0000><?php echo $message;?></font></td></tr>
+<TR>
+<TD width="253"><font face="Arial">Email Address:</font></TD>
+<TD width="216">
+                <p align="left"><font face="Arial"><INPUT name=email value='<?php echo $email;?>'></font> </TD></TR>
+<TR>
+<TD width="253"><font face="Arial">First Name:</font></TD>
+<TD width="216">
+                <p align="left"><font face="Arial"><INPUT name=firstname value='<?php echo $firstname;?>'></font> </TD></TR>
+<TR>
+<TD width="253"><font face="Arial">Last Name:</font></TD>
+<TD width="216">
+                <p align="left"><font face="Arial"><INPUT name=lastname value='<?php echo $lastname;?>'></font> </TD></TR>
+<tR>
+<TD width="253"><font face="Arial">City</font></TD>
+<TD width="216">
+                <p align="left"><font face="Arial"><INPUT name=city value='<?php echo $city;?>'></font> </TD></TR>
+<TR>
+<TD width="253"><font face="Arial">State</font></TD>
+<TD width="216">
+                <p align="left"><font face="Arial"><INPUT name=state value='<?php echo $state;?>'></font> </TD></TR>
+<TR>
+<TD width="253">
+                <p><font face="Arial">Include your name with this posting?</font></TD>
+<TD width="216">
+                <p align="center"><font face="Arial"><INPUT type=radio value=yes name=publishname>yes <INPUT type=radio value=no 
+name=publishname>no</font> </TD></TR>
+
+<?php echo $uploadGraphic;?>
+<TR>
+<TD align=middle colSpan=2 width="473"><font face="Arial">&nbsp;</font> </TD></TR>
+<TR>
+<TD align=middle colSpan=2 width="473"><font face="Arial">Enter your text here:</font> </TD></TR>
+<TR>
+<TD align=middle colSpan=2 width="473"><TEXTAREA name=request rows=10 cols=60><?php echo $request;?></TEXTAREA> 
+</TD></TR>
+<TR>
+<TD align=middle colSpan=2 width="473">&nbsp; </TD></TR>
+<TR>
+<TD align=middle colSpan=2 width="473"><INPUT name=save type=submit value="Click Here To Submit"> 
+</TD></TR></TBODY></TABLE></FORM>
+</body>
+
+</html>

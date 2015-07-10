@@ -1,0 +1,227 @@
+<?php
+
+/*********
+
+Script to Add/Edit Ot Page
+
+**********/
+
+include("../../includes/paths.php");
+include("$sGblLibsPath/stringFunctions.php");
+include("$sGblLibsPath/urlFunctions.php");
+include("$sGblLibsPath/dateFunctions.php");
+
+$sToday = date('Y')."-".date('m')."-".date('d');
+$sTomorrow = DateAdd("d", 1, date('Y')."-".date('m')."-".date('d'));
+
+
+session_start();
+
+$sPageTitle = "Nibbles Production List - Add/Edit Request In Production List";
+
+if (hasAccessRight($iMenuId) || isAdmin()) {
+	
+	if ($sSaveClose || $sSaveNew || $sSaveContinue) {
+		// When New Record Submitted
+					
+		if (!($iId)) {
+			
+			// Check if offer already exists...
+			$sCheckQuery = "SELECT *
+					   FROM   productionList
+					   WHERE  request = '$sRequest'"; 
+			$rCheckResult = dbQuery($sCheckQuery);
+			
+			if (dbNumRows($rCheckResult) == 0) {
+				
+				// get preceding order items and calculate time as per
+				// cobrands 2 hrs
+				// new offer 3 hrs
+				// changes to existing offers 1 hr
+										
+			
+			// Insert record if everything is fine
+			
+			$sAddQuery = "INSERT INTO productionList(request, dateEntered, owner, requestType, 
+								offerPage, comments, status)
+						  VALUES(\"$sRequest\", CURRENT_DATE, \"$sOwner\", \"$sRequestType\", 
+								\"$sOfferPage\", \"$sComments\", \"newRequest\")";
+			
+			$rResult = dbQuery($sAddQuery);
+						
+			}  else {
+					$sMessage = "Request Already Exists...";
+					$bKeepValues = true;
+			}
+				
+			if ( $rResult ) {
+				
+					// send priority changed email to jr, josh
+					$sEmailMessage = "New production request added by $sOwner";
+					$sHeaders = "From:nibbles@amperemedia.com\r\n";
+					/*$sHeaders .= "cc: ";
+					$sEmailQuery = "SELECT *
+								   	FROM   emailRecipients
+			 						WHERE  purpose = 'production sheet update'";
+					$rEmailResult = dbQuery($sEmailQuery);
+					echo dbError();
+					while ($oEmailRow = dbFetchObject($rEmailResult)) {
+						$sRecipients = $oEmailRow->emailRecipients;
+					}
+					
+					if (!($sEmailTo)) {
+						$sEmailTo = substr($sRecipients,0,strlen($sRecipients)-strrpos(strrev($sRecipients),","));
+					}
+					
+					$sCcTo = substr($sRecipients,strlen($sEmailTo));
+					
+					//$sHeaders .= ", $sCcTo";
+					$sHeaders .= "\r\n";*/
+					
+					$sSubject = "Production sheet request";
+					
+					mail("jr@amperemedia.com", $sSubject, $sEmailMessage, $sHeaders);
+				
+			} else {
+				echo dbError();
+			}
+		
+		
+	} 
+	
+		if ($sSaveContinue) {
+			if ($bKeepValues != true) {
+				echo "<script language=JavaScript>
+						window.opener.location.reload();	
+					  </script>";
+				// exit from this script
+			}
+		} else if ($sSaveClose) {
+			
+			if ($bKeepValues != true) {
+				echo "<script language=JavaScript>
+						window.opener.location.reload();
+						self.close();
+					  </script>";
+				// exit from this script
+				exit();
+			}
+		} else if ($sSaveNew) {
+			
+			if ($bKeepValues != true) {
+				$sReloadWindowOpener = "<script language=JavaScript>
+							window.opener.location.reload();
+							</script>";		
+				
+				$sRequest = "";
+			}
+		}
+	}
+	
+	
+			
+		// If add button is clicked, display another two buttons
+	$sNewEntryButtons = "<BR><BR><input type=submit name=sSaveNew value=' Save & New  '> &nbsp; &nbsp;
+						<input type=reset name=sAbandonNew value=' Abandon & New  '>";	
+		
+	$sNewCobrandSelected = "";
+	$sNewOfferSelected = "";
+	$sChangeOfferSelected = "";
+	$sChangeCobrandSelected = "";	
+	$sOtherSelected = "";
+	
+	switch ($sRequestType) {
+		
+		case "New Co-Brand":
+		$sNewCobrandSelected = "selected";
+		break;
+		case "New Offer":
+		$sNewOfferSelected = "selected";
+		break;
+		case "Changes To Existing Offer";
+		$sChangeOfferSelected = "Selected";
+		break;		
+		case "Changes to Existing Co-Brand":
+		$sChangeCobrandSelected = "selected";
+		break;
+		default:
+		$sOtherSelected = "selected";
+		break;
+	}	
+			
+	$sRequestTypeOptions = "<option value='Changes to Existing Co-Brand' $sChangeCobrandSelected>Changes to Existing Co-Brand
+						  <option value='Changes To Existing Offer' $sChangeOfferSelected>Changes To Existing Offer
+						  <option value='New Co-Brand' $sNewCobrandSelected>New Co-Brand
+					  	<option value='New Offer' $sNewOfferSelected>New Offer				  	
+					  	<option value='Other' $sOtherSelected>Other
+					";
+		
+	
+	$sRepQuery = "SELECT *
+				 FROM   nbUsers
+				 ORDER BY firstName";
+	
+	$rRepResult = dbQuery($sRepQuery);
+	echo dbError();
+	
+	while ($oRepRow = dbFetchObject($rRepResult)) {
+		if (strtolower($sOwner) == strtolower($oRepRow->firstName)) {
+			$sSelected = "selected";
+		} else {
+			$sSelected = "";
+		}
+
+		$sOwnerOptions .= "<option value='".$oRepRow->firstName."' $sSelected>$oRepRow->firstName";
+	}
+	
+	
+	// Hidden fields to be passed with form submission
+	$sHidden = "<input type=hidden name=iMenuId value='$iMenuId'>
+			<input type=hidden name=iId value='$iId'>";
+	
+	include("../../includes/adminAddHeader.php");
+	
+?>
+<form name=form1 action='<?php echo $PHP_SELF;?>' method=post enctype=multipart/form-data>
+<?php echo $sHidden;?>
+<?php echo $sReloadWindowOpener;?>
+
+<table cellpadding=5 cellspacing=5 bgcolor=c9c9c9 width=95% align=center>
+
+		
+	<tr><td>Request</td>
+		<td colspan=3><input type=text name='sRequest' value="<?php echo $sRequest;?>"></td>
+	</tr>
+	<tr><td>Owner</td>
+		<td colspan=3><select name=sOwner>
+					<?php echo $sOwnerOptions;?>
+					</select></td>
+	</tr>	
+	<tr><td>Request Type</td>
+		<td colspan=3><select name='sRequestType'>
+			<?php echo $sRequestTypeOptions;?>
+			</select></td>
+	</tr>
+	<tr><td>Offer Page</td>
+		<td colspan=3><input type=text name='sOfferPage' value="<?php echo $sOfferPage;?>"></td>
+	</tr>
+	
+	<tr><td>Comments</td>
+		<td colspan=3><textarea name='sComments'  rows=10 cols=50><?php echo $sComments;?></textarea></td>
+	</tr>
+		
+</table>
+
+<table cellpadding=5 cellspacing=5 bgcolor=c9c9c9 width=95% align=center>
+	<tr><TD colspan=2 align=center >
+		<input type=submit name=sSaveContinue value='Save & Continue'> &nbsp; &nbsp; 
+		</td><td></td>
+	</tr>	
+	</table>
+<?php
+	
+	include("../../includes/adminAddFooter.php");
+} else {
+	echo "You are not authorized to access this page...";
+}
+?>

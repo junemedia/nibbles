@@ -1,0 +1,996 @@
+<?php
+
+include( "/home/scripts/includes/cssLogFunctions.php" );
+$iScriptId = cssLogStart( "complianceEmail.php" );
+
+// Recipients:  jr@amperemedia.com,phil@amperemedia.com,carole@amperemedia.com,josh@amperemedia.com,susan@amperemedia.com,nradler@myfree.com,shochwert@amperemedia.com
+/*********
+Script to display Compliance Report
+*********/
+include_once("/home/sites/admin.popularliving.com/html/includes/paths.php");
+
+
+/************************* POP3 Class ****************************/
+
+
+class POP3
+{
+	var $ERROR		= "";		//	Error string.
+
+	var $TIMEOUT	= 180;		//	Default timeout before giving up on a
+	//	network operation.
+
+	var $COUNT		= -1;		//	Mailbox msg count
+
+	var $BUFFER		= 512;		//	Socket buffer for socket fgets() calls.
+	//	Per RFC 1939 the returned line a POP3
+	//	server can send is 512 bytes.
+
+	var $FP			= "";		//	The connection to the server's
+	//	file descriptor
+
+	var $MAILSERVER	= "";		// Set this to hard code the server name
+
+	var $DEBUG		= false;	// set to true to echo pop3
+	// commands and responses to error_log
+	// this WILL log passwords!
+
+	//var $BANNER		= "";		//	Holds the banner returned by the
+	//	pop server - used for apop()
+
+	var $RFC1939	= true;		//	Set by noop(). See rfc1939.txt
+	//
+
+	//var $ALLOWAPOP	= false;	//	Allow or disallow apop()
+	//	This must be set to true
+	//	manually.
+
+	function POP3 ( $server = "", $timeout = "" )
+	{
+		settype($this->BUFFER,"integer");
+		if(!empty($server))
+		{
+			// Do not allow programs to alter MAILSERVER
+			// if it is already specified. They can get around
+			// this if they -really- want to, so don't count on it.
+			if(empty($this->MAILSERVER))
+			{
+				$this->MAILSERVER = $server;
+			}
+		}
+		if(!empty($timeout))
+		{
+			settype($timeout,"integer");
+			$this->TIMEOUT = $timeout;
+			set_time_limit($timeout);
+		}
+		return true;
+	}
+
+	function update_timer ()
+	{
+		set_time_limit($this->TIMEOUT);
+		return true;
+	}
+
+	function connect ($server, $port = 110)
+	{
+		//	Opens a socket to the specified server. Unless overridden,
+		//	port defaults to 110. Returns true on success, false on fail
+
+		if(empty($server))
+		{
+			$this->ERROR = "POP3 connect: No server specified";
+			unset($this->FP);
+			return false;
+		}
+
+		$fp = fsockopen("$server", $port, &$errno, &$errstr);
+
+		if(!$fp)
+		{
+			$this->ERROR = "POP3 connect: Error [$errno] [$errstr]";
+			unset($this->FP);
+			return false;
+		}
+
+		set_socket_blocking($fp,-1);
+		$this->update_timer();
+		$reply = fgets($fp,$this->BUFFER);
+		$reply = $this->strip_clf($reply);
+		if($this->DEBUG) { error_log("POP3 SEND [connect: $server] GOT [$reply]",0); }
+		if(!$this->is_ok($reply))
+		{
+			$this->ERROR = "POP3 connect: Error [$reply]";
+			unset($this->FP);
+			return false;
+		}
+		$this->FP = $fp;
+		//$this->BANNER = $this->parse_banner($reply);
+		
+		$this->RFC1939 = $this->noop();//"+OK done";
+		// changed following ---smita
+		if($this->RFC1939)
+		if(!$this->RFC1939)
+		{
+			$this->ERROR = "POP3: premature NOOP OK, NOT an RFC 1939 Compliant server";
+			$this->quit();
+			return false;
+		}
+		
+		return true;
+	}
+
+	function noop ()
+	{
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 noop: No connection to server";
+			return false;
+		}
+		$cmd = "NOOP";
+		$reply = $this->send_cmd($cmd);
+		if(!$this->is_ok($reply))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	function user ($user = "")
+	{
+		// Sends the USER command, returns true or false
+
+		if(empty($user))
+		{
+			$this->ERROR = "POP3 user: no user id submitted";
+			return false;
+		}
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 user: connection not established";
+			return false;
+		}
+		$reply = $this->send_cmd("USER $user");
+
+		if(!$this->is_ok($reply))
+		{
+			$this->ERROR = "POP3 user: Error [$reply]";
+			return false;
+		}
+		return true;
+	}
+
+	function pass ($pass = "")
+	{
+		// Sends the PASS command, returns # of msgs in mailbox,
+		// returns false (undef) on Auth failure
+
+		if(empty($pass))
+		{
+			$this->ERROR = "POP3 pass: no password submitted";
+			return false;
+		}
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 pass: connection not established";
+			return false;
+		}
+		$reply = $this->send_cmd("PASS $pass");
+		//echo "$reply\n";
+		if(!$this->is_ok($reply))
+		{
+			$this->ERROR = "POP3 pass: authentication failed [$reply]";
+			$this->quit();
+			return false;
+		}
+		//	Auth successful.
+		$count = $this->last("count");
+
+		$this->COUNT = $count;
+		
+		$this->RFC1939 = $this->noop();
+		if(!$this->RFC1939)
+		{
+			$this->ERROR = "POP3 pass: NOOP failed. Server not RFC 1939 compliant";
+			$this->quit();
+			return false;
+		}
+		
+		return $count;
+	}
+
+	function login ($login = "", $pass = "")
+	{
+		// Sends both user and pass. Returns # of msgs in mailbox or
+		// false on failure (or -1, if the error occurs while getting
+		// the number of messages.)
+
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 login: No connection to server";
+			return false;
+		}
+		$fp = $this->FP;
+		if(!$this->user($login))
+		{
+			//	Preserve the error generated by user()
+			return false;
+		}
+		$count = $this->pass($pass);
+
+		if( (!$count) or ($count == -1) )
+		{
+			//	Preserve the error generated by last() and pass()
+			return false;
+		}
+		return $count;
+	}
+
+	function top ($msgNum, $numLines = "0")
+	{
+		//	Gets the header and first $numLines of the msg body
+		//	returns data in an array with each returned line being
+		//	an array element. If $numLines is empty, returns
+		//	only the header information, and none of the body.
+
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 top: No connection to server";
+			return false;
+		}
+		$this->update_timer();
+
+		$fp = $this->FP;
+		$buffer = $this->BUFFER;
+		$cmd = "TOP $msgNum $numLines";
+		fwrite($fp, "TOP $msgNum $numLines\r\n");
+		$reply = fgets($fp, $buffer);
+		$reply = $this->strip_clf($reply);
+		if($this->DEBUG) { @error_log("POP3 SEND [$cmd] GOT [$reply]",0); }
+		if(!$this->is_ok($reply))
+		{
+			$this->ERROR = "POP3 top: Error [$reply]";
+			return false;
+		}
+
+		$count = 0;
+		$MsgArray = array();
+
+		$line = fgets($fp,$buffer);
+		while ( !(ereg("^\.\r\n",$line)))
+		{
+			$MsgArray[$count] = $line;
+			$count++;
+			$line = fgets($fp,$buffer);
+			if(empty($line))	{ break; }
+		}
+
+		return $MsgArray;
+	}
+
+
+	function get ($msgNum)
+	{
+		//	Retrieve the specified msg number. Returns an array
+		//	where each line of the msg is an array element.
+
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 get: No connection to server";
+			return false;
+		}
+
+		$this->update_timer();
+
+		$fp = $this->FP;
+		$buffer = $this->BUFFER;
+		$cmd = "RETR $msgNum";
+		$reply = $this->send_cmd($cmd);
+
+		if(!$this->is_ok($reply))
+		{
+			$this->ERROR = "POP3 get: Error [$reply]";
+			return false;
+		}
+
+		$count = 0;
+		$MsgArray = array();
+
+		$line = fgets($fp,$buffer);
+		while ( !ereg("^\.\r\n",$line))
+		{
+			$MsgArray[$count] = $line;
+			$count++;
+			$line = fgets($fp,$buffer);
+			if(empty($line))	{ break; }
+		}
+		return $MsgArray;
+	}
+
+	function last ( $type = "count" )
+	{
+		//	Returns the highest msg number in the mailbox.
+		//	returns -1 on error, 0+ on success, if type != count
+		//	results in a popstat() call (2 element array returned)
+
+		$last = -1;
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 last: No connection to server";
+			return $last;
+		}
+
+		$reply = $this->send_cmd("STAT");
+
+		if(!$this->is_ok($reply))
+		{
+			$this->ERROR = "POP3 last: error [$reply]";
+			return $last;
+		}
+
+		$Vars = explode(" ",$reply);
+		$count = $Vars[1];
+		$size = $Vars[2];
+		settype($count,"integer");
+		settype($size,"integer");
+		if($type != "count")
+		{
+			return array($count,$size);
+		}
+		return $count;
+	}
+
+	function send_cmd ( $cmd = "" )
+	{
+		//	Sends a user defined command string to the
+		//	POP server and returns the results. Useful for
+		//	non-compliant or custom POP servers.
+		//	Do NOT include the \r\n as part of your command
+		//	string - it will be appended automatically.
+
+		//	The return value is a standard fgets() call, which
+		//	will read up to $this->BUFFER bytes of data, until it
+		//	encounters a new line, or EOF, whichever happens first.
+
+		//	This method works best if $cmd responds with only
+		//	one line of data.
+
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 send_cmd: No connection to server";
+			return false;
+		}
+
+		if(empty($cmd))
+		{
+			$this->ERROR = "POP3 send_cmd: Empty command string";
+			return "";
+		}
+
+		//if(!ereg("^RETR ",$cmd)) {echo "$cmd is command\n";}
+		$fp = $this->FP;
+		$buffer = $this->BUFFER;
+		$this->update_timer();
+		$bytes = fwrite($fp,"$cmd\r\n");
+		$reply = fgets($fp,$buffer);
+		/*
+		if(!ereg("^RETR ",$cmd)) {
+			if($reply){
+				echo "$reply is reply\n";
+			} else {
+				echo "fgets failed\n";
+			}
+		}
+		*/
+		$reply = $this->strip_clf($reply);
+		if($this->DEBUG) { @error_log("POP3 SEND [$cmd] GOT [$reply]",0); }
+		return $reply;
+	}
+
+	function quit ()
+	{
+		//	Closes the connection to the POP3 server, deleting
+		//	any msgs marked as deleted.
+
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 quit: connection does not exist";
+			return false;
+		}
+		$fp = $this->FP;
+		$cmd = "QUIT";
+		fwrite($fp,"$cmd\r\n");
+		$reply = fgets($fp,$this->BUFFER);
+		$reply = $this->strip_clf($reply);
+		if($this->DEBUG) { @error_log("POP3 SEND [$cmd] GOT [$reply]",0); }
+		fclose($fp);
+		unset($this->FP);
+		return true;
+	}
+
+	function delete ($msgNum = "")
+	{
+		//	Flags a specified msg as deleted. The msg will not
+		//	be deleted until a quit() method is called.
+
+		if(!isset($this->FP))
+		{
+			$this->ERROR = "POP3 delete: No connection to server";
+			return false;
+		}
+		if(empty($msgNum))
+		{
+			$this->ERROR = "POP3 delete: No msg number submitted";
+			return false;
+		}
+		$reply = $this->send_cmd("DELE $msgNum");
+		if(!$this->is_ok($reply))
+		{
+			$this->ERROR = "POP3 delete: Command failed [$reply]";
+			return false;
+		}
+		return true;
+	}
+
+	//	*********************************************************
+
+	//	The following methods are internal to the class.
+
+	function is_ok ($cmd = "")
+	{
+		//	Return true or false on +OK or -ERR
+
+		if(empty($cmd))					{ return false; }
+		if ( ereg ("^\+OK", $cmd ) )	{ return true; }
+		return false;
+	}
+
+	function strip_clf ($text = "")
+	{
+		// Strips \r\n from server responses
+
+		if(empty($text)) { return $text; }
+		$stripped = ereg_replace("\r","",$text);
+		$stripped = ereg_replace("\n","",$stripped);
+		return $stripped;
+	}
+
+}	// End class
+
+
+
+
+/************************* End of POP3 Class ****************************/
+
+
+
+//$monthArray = array('Jan','Feb','Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+
+
+//************************ Date Difference function ************************/
+
+Function DateDiff ($interval, $date1,$date2) {
+
+	// get the number of seconds between the two dates
+	$timedifference =  $date2 - $date1;
+
+	switch ($interval) {
+		case "w":
+		$retval  = bcdiv($timedifference ,604800);
+		break;
+		case "d":
+		$retval  = bcdiv( $timedifference,86400);
+		break;
+		case "h":
+		$retval = bcdiv ($timedifference,3600);
+		break;
+		case "n":
+		$retval  = bcdiv( $timedifference,60);
+		break;
+		case "s":
+		$retval  = $timedifference;
+		break;
+
+	}
+	return $retval;
+
+}
+
+//************************ Date Difference function ************************/
+
+
+// Query to get all the Seed Email Accounts info
+
+$accountQuery = "SELECT *
+					 FROM   seedEmailAccounts
+					 WHERE ISPType = 'pop3'";
+// AND ISPCode = 'L'
+$accountResult = mysql_query($accountQuery);
+echo mysql_error();
+$sTempMsg = '';
+while($accountRow = mysql_fetch_object($accountResult)) {
+
+	// Create new pop3 object to access the mail box from the server
+	$pop3 = new POP3();
+
+	$username = $accountRow->userName;
+	$passwd = $accountRow->passwd;
+	$mailServer = $accountRow->mailServer;
+	$ISPName = $accountRow->ISPName;
+	$ISPCode = $accountRow->ISPCode;
+	$ISPType = $accountRow->ISPType;
+	
+	if ($ISPCode == 'Y') {
+		//mail('spatel@amperemedia.com','Yahoo: '.__LINE__);
+	}
+
+	//	echo "$ISPName / $mailServer / $username:$passwd ($ISPType)\n";
+
+	// Check if POP3 Account and username/password/mailserver is filled
+	if($ISPType == "POP3" && $username !='' && $passwd !='' && $mailServer != '') {
+		
+		if ($ISPCode == 'Y') {
+			//mail('spatel@amperemedia.com','Yahoo: '.__LINE__);
+		}
+
+		if (! $pop3->connect($mailServer, 110))	{
+			$sTempMsg .= "Server: '$ISPName' Ooops $pop3->ERROR <BR>\n";
+			if ($ISPCode == 'Y') {
+				//mail('spatel@amperemedia.com','Yahoo: '.__LINE__);
+			}
+		}
+
+		$msgCount = $pop3->login($username, $passwd);
+
+		if ($msgCount == -1) {
+			$sTempMsg .= "<H1>Login Failed: $pop3->ERROR</H1>\n";
+			if ($ISPCode == 'Y') {
+				//mail('spatel@amperemedia.com','error Yahoo: '.__LINE__);
+			}
+		}
+		
+		if (!($pop3->ERROR) && $msgCount < 1) {
+			$sTempMsg .= "Server '$ISPName' Login OK: Inbox EMPTY<BR>\n";
+			if ($ISPCode == 'Y') {
+				//mail('spatel@amperemedia.com','empty Yahoo: '.__LINE__);
+			}
+		} else if (! $pop3->ERROR) {
+			$sTempMsg .= "Server '$ISPName' Login OK: Inbox contains [$msgCount] messages<BR>\n";
+			if ($ISPCode == 'Y') {
+				//mail('spatel@amperemedia.com','login ok Yahoo: '.__LINE__);
+			}
+		}
+		
+		if ($ISPCode == 'Y') {
+			//mail('spatel@amperemedia.com','Yahoo: '.__LINE__,'message count: '.$msgCount."\n\n\n".$pop3->ERROR);
+		}
+		
+		echo "<BR>count $mailServer $sTempMsg $msgCount  ".$pop3->ERROR."<BR>";
+		// Get the messages one by one
+		// Lycos gives messages in reverse order than other mail boxes
+		if($ISPCode == 'L') {
+			$startNum = "1";
+		} else {
+			$startNum = $msgCount;
+		}
+		$i = $startNum;
+		while (($i < $msgCount && $ISPCode == 'L') || ($i > 1 && $ISPCode != 'L')) {
+
+			//echo "<BR>".$i;
+
+			if ($ISPCode == 'L') {
+				$i++;
+			} else {
+				$i--;
+			}
+
+			$currMessageId='';
+			$msgToDisplay = $pop3->get($i);
+
+			if( (!($msgToDisplay)) or (gettype($msgToDisplay) != "array") )
+			{
+				$message = "oops, $pop3->ERROR<BR>\n";
+				$sTempMsg .= "oops, $pop3->ERROR<BR>\n";
+				if ($ISPCode == 'Y') {
+					//mail('spatel@amperemedia.com','Yahoo: '.__LINE__);
+				}
+			}
+			//Reset  newsLetterCode and newsLetterSentDate
+			$newsLetterCode="";
+			$newsLetterSentDate="";
+
+			// Traverse through Message body
+			if (is_array($msgToDisplay)) {
+				while ( list ( $lineNum,$line ) = each ($msgToDisplay) ) {
+					//echo "$line <BR>\n";
+
+					// get the Message's received date in format dd-mon-yyyy from the message body
+					if (substr($line,0,4)=="Date") {
+						$receivedDate = substr($line,11,11);
+						$receivedYear = substr($receivedDate,7,4);
+						$receivedMonth = substr($receivedDate, 3,3);
+						for ($j = 0; $j < count($aGblMonthsArray); $j++) {
+							if ($receivedMonth == $aGblMonthsArray[$j]) {
+								$receivedMonth = $j + 1;
+
+								if ($receivedMonth<10) {
+									$receivedMonth = "0".$receivedMonth;
+								}
+							}
+						}
+
+						$receivedDay = substr($receivedDate,0,2);
+						$receivedDate = $receivedYear ."-".$receivedMonth."-".$receivedDay;
+					}
+					
+					if ($ISPCode == 'Y') {
+						//mail('spatel@amperemedia.com','Yahoo: '.__LINE__);
+					}
+
+					// New Format: get the line containing NewsLetter code and sent date from the message body
+					// New Format: *mf CODE DATE EMAIL mf*
+
+					if (stristr($line, "*mf")) {
+						
+						if ($ISPCode == 'Y') {
+							//mail('spatel@amperemedia.com','Yahoo: '.__LINE__);
+						}
+
+						//						echo "Code Line: $line\n";
+
+						$codeLinePartArray='';
+						$newsLetterCodeArray='';
+						$newsLetterCode='';
+						$tempSentDate='';
+						$newsLetterSentDate='';
+
+						$line = ereg_replace("&nbsp;"," ", $line);
+						$codeLinePartArray = explode("*mf", strip_tags($line));
+
+						$codeLinePartArray = explode("mf*", trim($codeLinePartArray[1]));
+
+						$newsLetterCodeArray = explode(" ", strip_tags(trim($codeLinePartArray[0])));
+
+
+						$newsLetterCode = trim($newsLetterCodeArray[0]);
+						$tempSentDate = trim($newsLetterCodeArray[1]);
+						// Convert date in mysql format(yyyy-mm-dd)
+						if (strlen($tempSentDate) == 6) {
+							// If date is in mmddyy format
+							$newsLetterSentDate = substr($tempSentDate,4,2)."-". substr($tempSentDate,0,2)."-". substr($tempSentDate,2,2);
+						} else {
+							// If  date is in mm-dd-yyyy format
+							$newsLetterSentDate = substr($tempSentDate,6,4)."-".substr($tempSentDate,0,2)."-".substr($tempSentDate,3,2);
+						}
+					}
+
+					//get the message ID of this message
+					if (strtolower(substr($line, 0,10)) == strtolower("Message-ID")) {
+						$messageIdArray = explode("<",$line);
+						$messageIdArray = explode(">",$messageIdArray[1]);
+						$currMessageId = $messageIdArray[0];
+					}
+
+				}// end of while loop to traverse through the message body
+			} else {
+				if ($ISPCode == 'Y') {
+					//mail('spatel@amperemedia.com','Yahoo: '.__LINE__);
+				}
+			}
+			// Check if received date is before 3 days...
+			// If so, then Delete this message from mail box and NewsLetters table
+			// check if message with this messageId already exists in newsLetter table
+			// If doesn't, make an entry for this message in NewsLetters table
+
+			// Compare ISPCode also with messageId because Yahoo and Ameritech gives same messageId
+
+			$selectQuery = "SELECT id, messageId FROM newsLetters WHERE messageId = \"$currMessageId\" AND ISPCode = \"$ISPCode\"";
+			$sTempMsg .= "\n".$selectQuery;
+			$selectResult = mysql_query($selectQuery);
+			echo mysql_error();
+			//echo "\n\n\n".$selectQuery."\n\n\n";
+			
+			if (!($selectResult)) {
+				mysql_close();
+				mysql_pconnect ('64.132.70.20', 'nibbles', "#a!!yu5");
+				mysql_select_db ('nibbles');
+				$selectResult = mysql_query($selectQuery);
+			}
+			
+			if (!($selectResult)) {
+				echo "\n\n\n".$selectQuery."\n\n\n";
+			}
+			
+			if (mysql_num_rows($selectResult) == 0) {
+				// if not exists, insert record into newsLetter table
+				
+				$insertQuery = "INSERT INTO newsLetters(messageId, publicationCode, ISPCode, sentDate, receivedDate)
+     							VALUES(\"$currMessageId\", \"$newsLetterCode\", \"$ISPCode\", \"$newsLetterSentDate\", \"$receivedDate\")";
+
+				//	echo "Insert: $insertQuery\n\n";
+				$sTempMsg .= "\n".$insertQuery;
+				if ($ISPCode == 'Y') {
+					//mail('spatel@amperemedia.com','Yahoo: '.__LINE__,$insertQuery);
+				}
+
+				$result = mysql_query($insertQuery);
+				echo mysql_error();
+				
+			}
+			if ($receivedYear == '007') {
+				$receivedYear = '2007';
+			}
+			$receivedDay = str_replace(' ','',$receivedDay);
+			if (strlen($receivedDay) == 1) {
+				$receivedDay = '0'.$receivedDay;
+			}
+			if ($receivedMonth == 'un ') {
+				$receivedMonth = date('m');
+			}
+			//echo "\n\nm-d-y: $receivedMonth-\t\t$receivedDay-\t\t$receivedYear\n\n";
+			if (DateDiff("d",mktime(0,0,0,$receivedMonth,$receivedDay,$receivedYear), @mktime(0,0,0,date('m'),date('d'),date('Y'))) >= 3 || ($newsLetterCode == '' && $newsLetterSentDate == '' )) {
+				// delete the message with this message no from INBOX
+				$pop3->delete($i);
+			}
+		} // end of for loop for message no.
+	} else {
+		// Continue if not pop3 account or no username/password/mailserver
+		continue;
+	}//
+	// Confirm Delete messages and quit the socket connection
+	$pop3->quit();
+	$sTempMsg .= "\n";
+} // end of account query while loop
+
+
+
+// Delete old Newsletter records
+
+$deleteQuery = "DELETE FROM newsLetters
+				WHERE  DATE_ADD(receivedDate, INTERVAL +14 DAY) <= CURRENT_DATE";
+$deleteResult = mysql_query($deleteQuery);
+echo mysql_error();
+
+// To display date range of last 7 days
+$currYear = date(Y);
+$currMonth = date(m); //01 to 12
+$currDay = date(d); // 01 to 31
+
+// set curr date values to be selected by default
+if (!($save)) {
+	$monthTo = $currMonth;
+	$dayTo = $currDay;
+	$yearTo = $currYear;
+
+}
+// To date in mysql format to find out date before 7 days
+$mySqlDateTo = $yearTo."-".$monthTo."-".$dayTo;
+// to get the date before 7 days for default range of last 7 days
+
+$dateQuery = "SELECT DATE_ADD('".$mySqlDateTo."', INTERVAL -6 DAY) dateFrom";
+
+$dateResult = mysql_query($dateQuery);
+echo mysql_error();
+while ($dateRow = mysql_fetch_object($dateResult)) {
+	$dateFrom = $dateRow->dateFrom;
+}
+// set default date range options for To date
+$yearFrom = substr($dateFrom,0,4);
+$monthFrom = substr($dateFrom, 5,2);
+$dayFrom = substr($dateFrom, 8,2);
+//}
+
+$dateFrom = "$yearFrom-$monthFrom-$dayFrom";
+$dateTo = "$yearTo-$monthTo-$dayTo";
+
+// To display column headings as the dates of specified date range
+
+$dateHeading = $dateTo;
+$newDay = $dayTo;
+//echo $dayTo;
+$d = 0;
+$headingRow = "<TR><TD valign=middle rowspan=2><font face=verdana size=1 width=35%><b>Newsletter Title</b></font></td><TD rowspan=2 width=9%><font face=verdana size=1><b>Release Time</b></font></td>";
+$dateHeadingRow ="<tr>";
+while ($d < 7) {
+
+	//$newDay = $newDay-1;
+	//$dateHeading = date("m-d-Y", mktime(0,0,0,$monthFrom,$newDay,$yearFrom));
+
+	//echo "<BR>".$dateHeading;
+
+	$yearHeading = substr($dateHeading,0,4);
+	$monthHeading = substr($dateHeading, 5,2);
+	$dayHeading = substr($dateHeading, 8,2);
+	// Store column date in array, in mysql format for date comparison in query
+	$dateHeadingArray[$d] = $yearHeading."-".$monthHeading."-".$dayHeading;
+
+	//get the weekday to display
+	$weekDay = date("l", mktime(0,0,0,$monthTo,$newDay,$yearTo));
+	$weekDayHeadingArray[$d] = substr($weekDay,0,3);
+
+	$d++;
+	$dayHeadingRow .= "\n<td valign=top width=9%><font face=verdana size=1><b>$weekDay</b></font></td>";
+	$dateHeadingRow .= "\n<td  valign=top><font face=verdana size=1><b>$monthHeading-$dayHeading</b></font></td>";
+	//$dateHeading = DateAdd("d",-1,$yearTo."-".$monthTo."-".$dayTo);
+	$dateHeading = date("Y-m-d", strtotime("$dateHeading -1 days"));
+	//echo "<BR>$dateHeading";
+	//print "<BR>".date("y-m-d", strtotime($yearTo."-".$monthTo."-".$dayTo." - 1 days"));
+	//$dayTo--;
+	$newDay = $newDay -1;
+
+}
+$headingRow = $headingRow . $dayHeadingRow . "</tr>" .$dateHeadingRow . "</tr>";
+
+// Select Query to display newsletter records
+$soloColor = "#FFFF66";
+$standardColor = "#FFFFFF";
+$noScheduleColor = "#99CCFF";
+$reportData ="<html><body><table width=80% align=center border=1 cellpaddiing=0 cellspacing=0 bordercolorlight=#0066FF>";
+$reportData .= $headingRow;
+$pubQuery = "SELECT *
+				 FROM   publications
+				 ORDER BY releasePrevNight DESC, releaseTime, publicationName";
+$pubResult = mysql_query($pubQuery);
+echo mysql_error();
+while($pubRow = mysql_fetch_object($pubResult)) {
+	// start new row for new publication code
+	$publicationCode = $pubRow->publicationCode;
+	$publicationName = $pubRow->publicationName;
+	$standardSchedule = $pubRow->standardSchedule;
+	$soloSchedule = $pubRow->soloSchedule;
+	// set default bgcolor
+	$tdBgcolor = $noScheduleColor;
+	if (!($standardSchedule))
+	$standardSchedule = "sss";
+	if (!($soloSchedule))
+	$soloSchedule = "ooo";
+	// reset to count <TD> to 0 for new row
+	$c = 0;
+
+	$reportData .= "\n<tr bgcolor=white><font face=verdana size=1><Td><font face=verdana size=1>$pubRow->publicationName</font></td><td><font face=verdana size=1>$pubRow->releaseTime</font></td>";
+	$selectQuery = "SELECT  sentDate, date_format(receivedDate, \"%m-%d\") as receivedDate,
+								ISPCode
+						FROM    newsLetters, publications
+						WHERE   newsLetters.publicationCode = '$publicationCode'
+						AND   publications.publicationCode = newsLetters.publicationCode
+						AND   sentDate between '$dateFrom' and '$dateTo'
+						ORDER BY  releasePrevNight DESC, releaseTime, publications.publicationName,  sentDate DESC, ISPCode, receivedDate";	
+	$result = mysql_query($selectQuery);
+	echo mysql_error();
+
+	if ($result) {
+
+		$numRecords = mysql_num_rows($result);
+
+		$soloEmail = false;
+		//set SoloSchedule color if it's solo email
+		if (stristr($publicationName,"p500"))
+		{
+			$soloEmail = true;
+			$tdBgcolor = $soloColor;
+		}
+
+		if ($numRecords > 0) {
+			if (stristr($standardSchedule, $weekDayHeadingArray[$c]) && $soloEmail != 'true') {
+				$tdBgcolor = $standardColor;
+			}
+
+			if ($c == 0)
+			$reportData .= "\n<td align=center bgcolor=$tdBgcolor bordercolordark=$tdBgcolor bordercolorlight=#0066FF><font face=verdana size=1>&nbsp;";
+			while ($row = mysql_fetch_object($result)) {
+				// Loop through remaining sentDate TD in the row
+				// Start loop from current TD (sentDate)
+				for ($d = $c; $d < count($dateHeadingArray); $d++) {
+					// If sent date is same as current dateHeading, display ISPCode
+					// Otherwise increment TD counter (sentDate counter) and check again through for loop
+					if ($dateHeadingArray[$d] == $row->sentDate) {
+						$reportData .= $row->ISPCode;
+						break;
+					} else {
+
+						$reportData .= "</font></td>";
+						if (++$c < count($dateHeadingArray)) {
+
+							if ($soloEmail == 'true') {
+								$tdBgcolor = $soloColor;
+							} else{
+								$tdBgcolor = $noScheduleColor;
+							}
+
+							if ( stristr($standardSchedule, $weekDayHeadingArray[$c]  ) ||
+							(stristr($soloSchedule, $weekDayHeadingArray[$c] ))) {
+								$tdBgcolor = $standardColor;
+
+							}
+							$reportData .= "\n<td align=center bgcolor=$tdBgcolor bordercolordark=$tdBgcolor bordercolorlight=#0066FF><font face=verdana size=1>&nbsp;";
+						}
+					}
+				}
+			} // End of while loop
+			$c++;
+
+		}
+
+		mysql_free_result($result);
+
+	} else {
+		//echo mysql_error();
+	}
+	// Fill out remaining <TD> in the row if records over for this particular publication code
+
+	for (; $c < count($dateHeadingArray); $c++) {
+		if ($soloEmail == 'true') {
+			$tdBgcolor = $soloColor;
+		} else {
+			$tdBgcolor = $noScheduleColor;
+		}
+
+		if ( stristr($standardSchedule, $weekDayHeadingArray[$c]  ) ||
+		(stristr($soloSchedule, $weekDayHeadingArray[$c] ))) {
+			$tdBgcolor = $standardColor;
+		}
+
+		$reportData .="\n<td align=center bgcolor=$tdBgcolor bordercolordark=$tdBgcolor bordercolorlight=#0066FF><font face=verdana size=1>&nbsp;</font></td>";
+	}
+	$reportData .= "</tr>\n";
+} // end of while pubRow
+$reportData .= "</table></body></html>";
+// put Legends
+if ($codeLegendRow == '') {
+	$accountQuery = "SELECT *
+						 FROM   seedEmailAccounts
+						 WHERE  ISPType = 'pop3'
+						 ORDER BY ISPCode";
+	$accountResult = mysql_query($accountQuery);
+	echo mysql_error();
+
+	while ($accountRow = mysql_fetch_object($accountResult)) {
+		$ISPName = $accountRow->ISPName;
+		$ISPCode = $accountRow->ISPCode;
+
+		$codeLegendRow .= "<b>".$ISPCode . "</b> - ". $ISPName." &nbsp; &nbsp; &nbsp; ";
+	}
+}
+
+$reportData .= "<br><table width=85% align=center border=0 cellpadding=0>
+					<tr><td align=center colspan=2><font face=verdana size=1>$codeLegendRow</font><br><br></td></tr>
+					<tr><td width=32%></td><td><font face=verdana size=1><b>White</b> - Scheduled For The Day</font></td></tr>
+					<tr><td></td><td><font face=verdana size=1><b>Yellow</b> - Solo Newsletter</font></td></tr>
+					<tr><td></td><td><font face=verdana size=1><b>Blue</b> - No Schedule For This Day</font></td></tr>
+					</table>";
+
+
+// Get Compliance email addresses to send the report to them
+$sHeaders  = "MIME-Version: 1.0\r\n";
+$sHeaders .= "Content-type: text/html; charset=iso-8859-1\r\n";
+$sHeaders .= "From:nibbles@amperemedia.com\r\n";
+$sHeaders .= "cc: ";
+$sEmailQuery = "SELECT *
+			   FROM   emailRecipients
+			   WHERE  purpose = 'compliance'";
+$rEmailResult = dbQuery($sEmailQuery);
+echo mysql_error();
+//echo dbError();
+while ($oEmailRow = dbFetchObject($rEmailResult)) {
+	$sRecipients = $oEmailRow->emailRecipients;
+}
+
+if (!($sEmailTo)) {
+	$sEmailTo = substr($sRecipients,0,strlen($sRecipients)-strrpos(strrev($sRecipients),","));
+}
+
+
+$sCcTo = substr($sRecipients,strlen($sEmailTo));
+
+$sHeaders .= ", $sCcTo";
+
+$sHeaders .= "\r\n";
+
+$sSubject = "Compliance Report - ".date(m)."-".date(d)."-".date(Y);
+mail($sEmailTo, $sSubject, $reportData, $sHeaders);
+
+
+cssLogFinish( $iScriptId );
+
+?>

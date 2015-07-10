@@ -1,0 +1,83 @@
+<?php
+
+$start_time = microtime(true);
+include_once("/home/spatel/config.php");
+
+$count = 0;
+$result = mysql_query("SELECT * FROM bounced90DaysAgo ORDER BY email ASC");
+while ($row = mysql_fetch_object($result)) {
+	$id = $row->id;
+	$email = $row->email;
+	$listid = $row->listid;
+	$subcampid = $row->subcampid;
+	$last_bounce_date = $row->last_bounce_date;
+	
+	$subcampid = '2921';
+	
+	$last_bounce_date_plus_90_days = date("Y-m-d",(strtotime($row->last_bounce_date) + 7776000));
+	//echo $last_bounce_date." = ".$last_bounce_date_plus_90_days;
+	//exit;
+	
+	$count++;
+	
+	$get_count_result = mysql_query("SELECT * FROM joinEmailActive WHERE email=\"$email\" AND listid=\"$listid\" LIMIT 1");
+	echo mysql_error();
+	if (mysql_num_rows($get_count_result) > 0) {
+		$delete = "DELETE FROM joinEmailActive WHERE email=\"$email\" AND listid=\"$listid\" LIMIT 1";
+		$delete_result = mysql_query($delete);
+		echo mysql_error();
+		
+		$subsource = "LBD:$last_bounce_date";
+		$unsub = "INSERT IGNORE INTO joinEmailUnsub (dateTime,email,listid,subcampid,source,subsource) VALUES (\"$last_bounce_date_plus_90_days 00:00:01\",\"$email\",\"$listid\",\"$subcampid\",'BounceOut',\"$subsource\")";
+		$unsub_result = mysql_query($unsub);
+		echo mysql_error();
+	}
+	
+	// START = SEND TO ARCAMAX
+	$post_string = "email=$email&unsublists=$listid&subcampid=$subcampid";
+	$sPostingUrl = 'https://www.arcamax.com/esp/bin/espsub';
+	$aUrlArray = explode("//", $sPostingUrl);
+	$sUrlPart = $aUrlArray[1];
+	$sHostPart = substr($sUrlPart,0,strlen($sUrlPart)-strrpos(strrev($sUrlPart),"/"));
+	$sHostPart = ereg_replace("\/","",$sHostPart);
+	$sScriptPath = substr($sUrlPart,strlen($sHostPart));
+	$rSocketConnection = fsockopen("ssl://".$sHostPart, 443, $errno, $errstr, 30);
+	$server_response = '';
+	if ($rSocketConnection) {
+		fputs($rSocketConnection, "POST $sScriptPath HTTP/1.1\r\n");
+		fputs($rSocketConnection, "Host: $sHostPart\r\n");
+		fputs($rSocketConnection, "Content-type: application/x-www-form-urlencoded \r\n");
+		fputs($rSocketConnection, "Content-length: " . strlen($post_string) . "\r\n");
+		fputs($rSocketConnection, "User-Agent: MSIE\r\n");
+		fputs($rSocketConnection, "Authorization: Basic ".base64_encode("sc.datapass:jAyRwBU8")."\r\n");
+		fputs($rSocketConnection, "Connection: close\r\n\r\n");
+		fputs($rSocketConnection, $post_string);
+		while(!feof($rSocketConnection)) {
+			$server_response .= fgets($rSocketConnection, 1024);
+		}
+		fclose($rSocketConnection);
+	}
+	// END = SEND TO ARCAMAX
+	$server_response = addslashes($post_string."\n\n\n".$server_response);
+	
+	$log = "INSERT IGNORE INTO arcamaxNewLog (dateTime,email,listid,subcampid,ipaddr,type,response) VALUES (NOW(),\"$email\",\"$listid\",\"$subcampid\",\"\",\"unsub\",\"$server_response\")";
+	$log_result = mysql_query($log);
+	echo mysql_error();
+	
+	
+	$del_result = mysql_query("DELETE FROM bounced90DaysAgo WHERE id = '$id' LIMIT 1");
+	
+	echo '.';
+	
+	if ($count % 2 == 0) {
+		sleep(1);
+	}
+}
+
+$stop_time = microtime(true);
+$time = $stop_time - $start_time;
+
+echo "Elapsed time was $time seconds.";
+
+
+?>

@@ -1,0 +1,877 @@
+cd /vol0/html/subctr.popularliving.com/subctr/
+ls
+ls -al
+chmod 777 *
+sudo chmod 777 *
+ls -al
+sudo su
+sudo su
+clear
+cd /vol0/
+ls
+cd /vol1/
+ls
+cd
+clear
+cd /vol0/
+ls
+pwd
+sudo su
+sudo su
+clear
+cd /vol0/
+kls
+ls
+pwd
+cd /vol0/html
+cd /home/
+ls
+cd spatel/
+ls
+clear
+ls -al
+ls -al
+ls -al
+ls -al
+ls -al
+ls -al
+ls -al
+cd /home/spatel/
+ls
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+mysql -u root
+mysql -h localhost -u root -p
+cd /home/spatel/
+ls
+vi query.php
+php query.php 
+php query.php 
+mysql -u root
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+df -h
+top
+mysql -h localhost -u root -p
+cd /home/spatel/
+ls
+chmod 777 scripts/
+cd scripts/
+ls
+ls- la
+ls -al
+chmod 777 *
+ls -al
+sudo su
+cd /home/spatel/
+ls
+mv historicalActiveStats/ /vol0/html/admin.popularliving.com/html/admin/subctr/
+ls
+cd /home/spatel/
+ls
+php manual_unsub.php 
+php manual_unsub.php 
+php manual_unsub.php 
+clear
+php manual_unsub.php 
+php manual_unsub.php 
+mysql -h localhost -u root -p
+df -h
+sudo su
+mysql -h localhost -u root -p
+cd /home/spatel/
+ls
+chmod 777 manual_unsub.php
+ls
+php manual_unsub.php
+php manual_unsub.php
+php manual_unsub.php
+php manual_unsub.php
+php manual_unsub.php
+cd /var/www/html/amperemedia.com/
+ls
+cd images/
+ls
+ls -al
+sudo su
+cd /var/www/html/stg.fitandfabliving.com/templates/
+cd /var/www/html/stg.fitandfabliving.com/plugins/
+cd ..
+ls -al
+chmod 755 templates/
+sudo su
+sudo su
+sudo su
+sudo su
+cd /var/www/html/stg.fitandfabliving.com/
+ls
+grep 24-forum-blue.png -nri *
+grep "24-forum-blue.png" -nri *
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+cd /var/www/html/silverinet.com/html/images/
+ls
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+cd /home/spatel/
+ls
+man gunzi
+man gunzip
+ls -al
+gunzip -D pics.recipe4living.com.20110128.log.gz 
+gunzip -d pics.recipe4living.com.20110128.log.gz 
+ls -al
+pwd
+clear
+ls -ax
+ls -al
+cat pics.recipe4living.com.20110125.log pics.recipe4living.com.20110126.log pics.recipe4living.com.20110127.log pics.recipe4living.com.20110128.log pics.recipe4living.com.20110129.log pics.recipe4living.com.20110130.log pics.recipe4living.com.20110131.log | grep -c BU_SC_Ginger_LYN_011311_ac_550x550_60k.jpg
+cat pics.recipe4living.com.20110125.log pics.recipe4living.com.20110126.log pics.recipe4living.com.20110127.log pics.recipe4living.com.20110128.log pics.recipe4living.com.20110129.log pics.recipe4living.com.20110130.log pics.recipe4living.com.20110131.log| grep -c BU_SC_Ginger_0510_550x550_60k.jpg
+cd /var/www/html/fitandfabliving.com/
+sudo su
+ls -al
+cd /vol1/apache_logs
+cp pics.recipe4living.com.20110201.log /home/spatel/
+cp pics.recipe4living.com.20110202.log /home/spatel/
+cd /home/spatel/
+ls -al
+sudo su
+sudo su
+sudo su
+clear
+cd /home/spatel/
+ls
+clear
+ls
+pwd
+rm pics.recipe4living.com.20110125.log 
+rm pics.recipe4living.com.20110126.log 
+rm pics.recipe4living.com.20110126.log 
+ls
+rm pics.recipe4living.com.20110127.log 
+rm pics.recipe4living.com.20110128.log 
+rm pics.recipe4living.com.20110129.log 
+rm pics.recipe4living.com.20110130.log 
+rm pics.recipe4living.com.20110131.log
+ls
+rm pics.recipe4living.com.20110201.log
+rm pics.recipe4living.com.20110202.log
+ls
+pwd
+cat pics.recipe4living.com.20110223.log pics.recipe4living.com.20110224.log pics.recipe4living.com.20110225.log | grep -c BU_SC_Ginger_0510_550x550_60k.jpg
+cat pics.recipe4living.com.20110223.log pics.recipe4living.com.20110224.log pics.recipe4living.com.20110225.log | grep -c BU_SC_Ginger_LYN_011311_ac_550x550_60k.jpg
+cat pics.recipe4living.com.20110228.log pics.recipe4living.com.20110301.log | grep -c BU_SC_Ginger_0510_550x550_60k.jpg
+cat pics.recipe4living.com.20110228.log pics.recipe4living.com.20110301.log | grep -c BU_SC_Ginger_LYN_011311_ac_550x550_60k.jpg
+ls
+rm pics.recipe4living.com.20110223.log 
+rm pics.recipe4living.com.20110224.log 
+rm pics.recipe4living.com.20110224.log 
+rm pics.recipe4living.com.20110225.log 
+rm pics.recipe4living.com.20110228.log 
+rm pics.recipe4living.com.20110301.log 
+pwd
+ls
+ls
+ls -al
+vi .bash_history 
+ls
+gunzip -D pics.recipe4living.com.20110226.log.gz 
+gunzip -d pics.recipe4living.com.20110226.log.gz 
+ls
+gunzip -d pics.recipe4living.com.20110227.log.gz
+ls
+ls -al
+cat pics.recipe4living.com.20110226.log pics.recipe4living.com.20110227.log | grep -c BU_SC_Ginger_0510_550x550_60k.jpg
+cat pics.recipe4living.com.20110226.log pics.recipe4living.com.20110227.log | grep -c BU_SC_Ginger_LYN_011311_ac_550x550_60k.jpg
+ls
+rm pics.recipe4living.com.20110226.log pics.recipe4living.com.20110227.log 
+ls
+du -h -s /home/spatel/
+df -h
+pwd
+clear
+ls
+gunzip -d pics.recipe4living.com.20110203.log.gz
+gunzip -d pics.recipe4living.com.20110204.log.gz
+gunzip -d pics.recipe4living.com.20110205.log.gz
+gunzip -d pics.recipe4living.com.20110206.log.gz
+gunzip -d pics.recipe4living.com.20110207.log.gz
+gunzip -d pics.recipe4living.com.20110208.log.gz
+gunzip -d pics.recipe4living.com.20110209.log.gz
+gunzip -d pics.recipe4living.com.20110210.log.gz
+gunzip -d pics.recipe4living.com.20110211.log.gz
+gunzip -d pics.recipe4living.com.20110212.log.gz
+gunzip -d pics.recipe4living.com.20110213.log.gz
+gunzip -d pics.recipe4living.com.20110214.log.gz
+gunzip -d pics.recipe4living.com.20110215.log.gz
+gunzip -d pics.recipe4living.com.20110216.log.gz
+gunzip -d pics.recipe4living.com.20110217.log.gz
+gunzip -d pics.recipe4living.com.20110218.log.gz
+gunzip -d pics.recipe4living.com.20110219.log.gz
+gunzip -d pics.recipe4living.com.20110220.log.gz
+gunzip -d pics.recipe4living.com.20110221.log.gz
+gunzip -d pics.recipe4living.com.20110222.log.gz
+ls
+cat pics.recipe4living.com.20110203.log pics.recipe4living.com.20110204.log pics.recipe4living.com.20110205.log pics.recipe4living.com.20110206.log pics.recipe4living.com.20110207.log pics.recipe4living.com.20110208.log pics.recipe4living.com.20110209.log pics.recipe4living.com.20110210.log pics.recipe4living.com.20110211.log pics.recipe4living.com.20110212.log pics.recipe4living.com.20110213.log pics.recipe4living.com.20110214.log pics.recipe4living.com.20110215.log pics.recipe4living.com.20110216.log pics.recipe4living.com.20110217.log pics.recipe4living.com.20110218.log pics.recipe4living.com.20110219.log pics.recipe4living.com.20110220.log pics.recipe4living.com.20110221.log pics.recipe4living.com.20110222.log | grep -c BU_SC_Ginger_0510_550x550_60k.jpg
+cat pics.recipe4living.com.20110203.log pics.recipe4living.com.20110204.log pics.recipe4living.com.20110205.log pics.recipe4living.com.20110206.log pics.recipe4living.com.20110207.log pics.recipe4living.com.20110208.log pics.recipe4living.com.20110209.log pics.recipe4living.com.20110210.log pics.recipe4living.com.20110211.log pics.recipe4living.com.20110212.log pics.recipe4living.com.20110213.log pics.recipe4living.com.20110214.log pics.recipe4living.com.20110215.log pics.recipe4living.com.20110216.log pics.recipe4living.com.20110217.log pics.recipe4living.com.20110218.log pics.recipe4living.com.20110219.log pics.recipe4living.com.20110220.log pics.recipe4living.com.20110221.log pics.recipe4living.com.20110222.log | grep -c BU_SC_Ginger_LYN_011311_ac_550x550_60k.jpg
+du -h -s /home/spatel/
+clear
+ls
+df -h
+sudo su
+sudo su
+mysql -h localhost -u root -p 
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+ls
+cd /var/www/html
+ls
+ls -al
+cd /etc/httpd/conf.d/
+vi virtual.conf 
+ifconfig
+vi virtual.conf 
+sudo su
+sudo su
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+cd /var/www/html/stg.fitandfabliving.com/components/com_ccboard/
+ls
+grep "ccbnormaltable" -nri *
+sudo su
+cat /var/www/html/admin.popularliving.com/html/admin/
+cat /var/www/html/admin.popularliving.com/html/admin/.htaccess
+vi /var/www/html/admin.popularliving.com/html/admin/.htaccess
+cd /var/www/html/admin.popularliving.com/html/admin/
+ls
+ls -al
+cat /var/www/html/admin.popularliving.com/html/admin/.htaccess
+cat /var/www/html/admin.popularliving.com/.passwd 
+vi /var/www/html/admin.popularliving.com/.passwd 
+sudo su
+cd /home/spatel/
+sl
+ls
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+sudo su
+cd /etc/exim/vfwd/
+ls
+cat fitandfabliving.com 
+sudo su
+date
+sudo su
+date
+mysql -h localhost -u root -p
+sudo su
+exit
+exit
+exit
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+passwd
+passwd
+sudo su
+top
+cd /var/www/html/stg.fitandfabliving.com/components/com_ccboard/
+ls
+grep "boardusername" -nri *
+ls
+cd /home/spatel/
+ls
+chmod 777 facebook.php 
+ls
+rm -rf pics.recipe4living.com.201102*
+ls
+rm -rf pics.recipe4living.com.201102*
+ls
+clear
+ls
+ls -al
+php facebook.php 
+cd /home/spatel/
+ls
+php test.php 
+php test.php 
+cd /home/spatel/
+ls
+php facebook.php 
+php facebook.php 
+ls
+php facebook.php 
+ls
+cat facebook.php 
+cd /home/spatel/
+ls
+cat facebook.php 
+php facebook.php 
+ls
+php facebook.php 
+php facebook.php 
+ls
+php facebook.php 
+telnet ifdb03.iflipitnetwork.com 1433
+telnet ifdb03.iflipitnetwork.com 1433
+man tsql
+php facebook.php 
+cd /home/spatel/scripts/push_reports/
+ls
+php pointsBookStats.php 
+php pointsBookStats.php 
+php pointsBookStats.php 
+php pointsBookStats.php 
+php pointsBookStats.php 
+php pointsBookStats.php 
+php pointsBookStats.php 
+php pointsBookStats.php 
+php pointsBookStats.php 
+php facebook.php 
+vi facebook.php 
+ls -al
+vi .bash_history 
+sudo su
+clear
+cd /home/spatel/
+ls
+php test.php 
+ls -al
+rm scexport.txt 
+ls
+ls -al
+rm scexport-bounced.txt 
+ls -al
+gunzip SC-04-19-11.txt.gz 
+gzip -d SC-04-19-11.txt.gz 
+tar -zxvf SC-04-19-11.txt.gz 
+clear
+ls -al
+ls -al
+gunzip -d SC-04-19-11.txt.gz 
+tar -zcvf SC-04-19-11.txt.gz /home/spatel/
+ls
+ls -al
+rm SC-04-19-11.txt.gz 
+ls -al
+php test.php 
+ls -al
+gunzip SC-04-19-11.txt.gz 
+tar -zxvf SC-04-19-11.txt.gz 
+gzip -d SC-04-19-11.txt.gz 
+tar xvzf SC-04-19-11.txt.gz 
+gunzip SC-04-19-11.txt.gz 
+unzip SC-04-19-11.txt.gz 
+unzip SC-04-19-11.txt.gz /home/spatel/
+vi .bash_history 
+gunzip -d SC-04-19-11.txt.gz 
+ls -al
+rm SC-04-19-11.txt.gz 
+ls
+ls -al
+php test.php 
+ls -al
+unzip SC-04-19-11.txt.zip 
+gunzip -d SC-04-19-11.txt.zip 
+man unzip
+ls
+unzip SC-04-19-11.txt.zip 
+ls
+rm SC-04-19-11.txt.zip 
+ls -al
+php test.php 
+unzip SC-04-19-11.txt.zip 
+ls -al
+mysql -h localhost -u root -p
+clear
+ls
+cd scripts/
+cd push_reports/
+ls
+php pointsBookStats.php 
+php pointsBookStats.php 
+php pointsBookStats.php 
+php facebook.php
+php facebook.php 
+php -V
+php -v
+php facebook.php 
+php facebook.php 
+sudo su
+sudo su
+sudo us
+sudo su
+php facebook.php 
+php facebook.php 
+php facebook.php 
+php facebook.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+cd /var/www/html/fitandfabliving.com/modules/mod_nicepoll/
+ls
+sudo
+sudo su
+cd /var/www/html/adbundles.com/
+ls
+cat .htaccess 
+cat /vol0/htpasswd/
+cat /vol0/htpasswd/adbundles.com 
+sudo
+sudo su
+sudo su
+top
+ping runningwithmascara.com
+top
+ping runningwithmascara.com
+sudo su
+sudo su
+ls
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+sudo su
+pwd
+ls
+php phil.php 
+php phil.php 
+php phil.php 
+mysql -h localhost -u root -p
+ls
+vi SampleDuplicatesPhileTrish.txt 
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+ls
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+mysql -h localhost -u root -p
+mysql -h localhost -u root -p
+php phil.php 
+php phil.php 
+mysql -h localhost -u root -p
+php phil.php 
+ls
+cat phil.php 
+clear
+ls
+unzip Studio_127.zip 
+ls
+cd Studio 127
+cd "Studio 127"
+ls
+mv "AT_Instant 411.CSV" to instant_411.csv
+mv "AT_Instant 411.CSV" instant_411.csv
+ls
+mv "AT_Mobile 411.CSV" mobile_411.csv
+ls
+cp instant_411.csv ../
+cp mobile_411.csv ../
+ls
+cd ..
+ls
+clear
+ls -al
+rm -rf "Studio 127"
+ls
+rm Studio_127.zip 
+ls
+clear
+ls
+ls -al
+pwd
+mysql -h localhost -u root -p
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+mysql -h localhost -u root -p
+ls
+unzip samir_data.zip 
+ls
+mysql -h localhost -u root -p
+php phil.php 
+php phil.php 
+php phil.php 
+ls
+cat instant_411.csv | more
+cat mobile_411.csv | more
+php phil.php 
+mysql -h localhost -u root -p
+ls
+php phil.php 
+php phil.php 
+mysql -h localhost -u root -p
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+mysql -h localhost -u root -p
+php phil.php 
+php phil.php 
+sudo su
+ls
+php samir.php 
+clear
+php samir.php 
+php samir.php 
+php samir.php 
+php samir.php 
+php samir.php 
+php samir.php 
+php samir.php 
+php samir.php 
+php samir.php 
+ls
+clear
+ls
+php facebook.php 
+php phil.php 
+php phil.php 
+php phil.php 
+cd /var/www/html/admin.popularliving.com/html/admin/
+ls
+cat .htaccess
+clear
+cat .htaccess
+cd /var/www/html/admin.popularliving.com/html/admin/
+ls
+clear
+cat .htaccess
+vi .htaccess
+cat .htaccess
+sudo su
+sudo su
+sudo su
+sudo su
+sudo su
+ls
+php facebook.php 
+php facebook.php 
+ls
+php facebook.php 
+php facebook.php 
+php facebook.php 
+cd /var/www/html/stg.fitandfabliving.com/components/com_ccboard/
+grep "ccbkey" -nri *
+ls
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php arcamax.php 
+php facebook.php 
+php facebook.php 
+php phil.php 
+php phil.php 
+php phil.php 
+php phil.php 
+cd /var/www/html/admin.popularliving.com/html/admin/
+ls
+cat .htaccess
+pwd
+cd ..
+cd ..
+pwd
+vi .passwd 
+sudo su
+php facebook.php 
+cd /var/www/html/indianrecipe4living.com/templates/avignet_dream/
+ls
+vi index.php 
+vi index.php 
+sudo su
+php facebook.php 
+sudo su
+php pjnext.php 
+php pjnext.php 
+php pjnext.php 
+php pjnext.php 
+php facebook.php 
+php facebook.php 
+php facebook.php 
+php facebook.php 
+cat facebook.php 
+php facebook.php 
+sudo su
+cd /home
+ls
+sudo su
+cd /home
+ls
+sudo
+sudo su
+php facebook.php 
+php facebook.php 
+sudo su
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php query.php 
+php facebook
+php facebook.php 
+php facebook.php 
+cd /var/www/html/fitandfabliving.com/
+ls
+cd components/
+cd com_ccboard/
+grep "stg." -nri *
+grep "stg." -nri *
+cd /var/www/html/chewonthatblog.com/
+ls
+grep "previous_post_link" -nri *
+php facebook.php 
+php facebook.php 
+php facebook.php 
+php facebook.php 
+sudo su
+php facebook.php 
+cd /etc/exim/vfwd/
+ls
+vi silverinet.com 
+sudo su
+php facebook.php 
+php facebook.php 
+sudo su
+sudo su
+php facebook
+php facebook.php 
+sudo su
+php facebook.php 
+php facebook.php 
+cd /var/www/html/admin.popularliving.com/html/admin/
+ls
+cat .htaccess
+vi .htaccess
+cat .htaccess
+cd ..
+cd ..
+pwd
+vi .passwd 
+sudo vi .passwd 
+cat .passwd 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log2.php 
+ls
+php arcamax_log2.php 
+php arcamax_log2.php 
+php arcamax_log2.php 
+php arcamax_log2.php 
+php arcamax_log2.php 
+clear
+php arcamax_log2.php 
+php arcamax_log2.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log.php 
+php arcamax_log3.php 
+sudo su
+cd /var/www/html/mydegreenavigator.com/
+grep "s5_h3_first" -nri *
+sudo su
+sudo su
+sudo su
+php iplookup.php 
+php iplookup.php 
+php iplookup.php 
+php iplookup.php 
+cd /var/www/
+ls
+cd html/
+ls
+ls -al
+cd adbundles.com
+ls
+grep "mail(" -nri *
+grep "admin.popularliving.com" -nri *
+cd ../admin.popularliving.com
+grep "mail(" -nri *
+cd ../amperemedia.com
+grep "mail(" -nri *
+cd ../best-home-business-reviews.com
+grep "mail(" -nri *
+cd ../biz-op-comparisons.com
+grep "mail(" -nri *
+cd ../biz-op-for-you.com
+clear
+grep "mail(" -nri *
+cd ../syndication.surveysonus.com
+ls
+grep "mail(" -nri *
+cd ../pic3400.com
+grep "mail(" -nri *
+cd ../demo.iflipitnetwork.com
+grep "mail(" -nri *
+ls -al
+cd ../global.amperemedia.com
+ls -al
+grep "mail(" -nri *
+cd ../review.iflipitnetwork.com
+grep "mail(" -nri *
+cd ../spanishrecipe4living.com/
+grep "mail(" -nri *
+cd /var/www/html/mydegreenavigator.com/
+ls
+cd modules/mod_latestnews/
+ls
+cd tmpl/
+sudo chmod 777 *
+cd /var/www/html/
+ls
+cd silverinet.com/
+s
+ls
+grep "mail" -nri *
+grep "mail(" -nri *
+clear
+grep "mail(" -nri *
+sudo su
+cd /var/www/html/couponliving.com/
+grep "mail(" -nri *
+cd ..
+cd iflipittech.com
+grep "mail(" -nri *
+cd ../iflipittechnologies.com
+grep "mail(" -nri *
+cd ../popularliving.com
+grep "mail(" -nri *
+ls
+cd html/
+ls
+cd ../myfree.com
+cd ..
+cd ../myfree.com
+grep "mail(" -nri *
+cd ../
+cd ..
+ls
+cd html/
+ls
+cd funpages.myfree.com
+ls
+grep "mail(" -nri *
+cd ../handcraftersvillage.com
+grep "mail(" -nri *
+sudo su

@@ -1,0 +1,620 @@
+building file list ... 
+ 0 files... 100 files... 200 files...283 files to consider
+
+Number of files: 283
+Number of files transferred: 0
+Total file size: 1889943 bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 6193
+File list generation time: 0.002 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 6213
+Total bytes received: 20
+
+sent 6213 bytes  received 20 bytes  12466.00 bytes/sec
+total size is 1889943  speedup is 303.22
+building file list ... 
+ 0 files... 100 files... 200 files...283 files to consider
+
+Number of files: 283
+Number of files transferred: 0
+Total file size: 1889943 bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 6193
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 6213
+Total bytes received: 20
+
+sent 6213 bytes  received 20 bytes  12466.00 bytes/sec
+total size is 1889943  speedup is 303.22
+building file list ... 
+ 0 files... 100 files... 200 files...283 files to consider
+
+Number of files: 283
+Number of files transferred: 0
+Total file size: 1889943 bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 6193
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 6213
+Total bytes received: 20
+
+sent 6213 bytes  received 20 bytes  4155.33 bytes/sec
+total size is 1889943  speedup is 303.22
+building file list ... 
+ 0 files... 100 files... 200 files...283 files to consider
+created directory /home/sites/www.myhealthyliving.com
+./
+config.php
+        3253 100%    0.00kB/s    0:00:00        3253 100%    0.00kB/s    0:00:00  (1, 0.7% of 283)
+crons/
+crons/reoccuringOrders.php
+       14283 100%   13.62MB/s    0:00:00       14283 100%   13.62MB/s    0:00:00  (2, 1.4% of 283)
+crons/reoccuringOrders.php.bak.20050908.srp
+       14106 100%    6.73MB/s    0:00:00       14106 100%    6.73MB/s    0:00:00  (3, 1.8% of 283)
+html/
+html/accountInfo.php
+       11860 100%    3.77MB/s    0:00:00       11860 100%    3.77MB/s    0:00:00  (4, 2.5% of 283)
+html/basket.php
+        7740 100%    1.85MB/s    0:00:00        7740 100%    1.85MB/s    0:00:00  (5, 2.8% of 283)
+html/basket_add.php
+        2140 100%  417.97kB/s    0:00:00        2140 100%  417.97kB/s    0:00:00  (6, 3.2% of 283)
+html/basket_process.php
+        2555 100%  415.85kB/s    0:00:00        2555 100%  415.85kB/s    0:00:00  (7, 3.5% of 283)
+html/brands.php
+        1088 100%  151.79kB/s    0:00:00        1088 100%  151.79kB/s    0:00:00  (8, 3.9% of 283)
+html/categories.php
+        1034 100%  144.25kB/s    0:00:00        1034 100%  144.25kB/s    0:00:00  (9, 4.2% of 283)
+html/changePasswd.php
+        2454 100%  299.56kB/s    0:00:00        2454 100%  299.56kB/s    0:00:00  (10, 4.6% of 283)
+html/contactus.php
+        2994 100%  324.87kB/s    0:00:00        2994 100%  324.87kB/s    0:00:00  (11, 4.9% of 283)
+html/contactusthanks.php
+         820 100%   88.98kB/s    0:00:00         820 100%   88.98kB/s    0:00:00  (12, 5.3% of 283)
+html/convPlan.php
+         340 100%   33.20kB/s    0:00:00         340 100%   33.20kB/s    0:00:00  (13, 5.7% of 283)
+html/convenience.php
+         566 100%   55.27kB/s    0:00:00         566 100%   55.27kB/s    0:00:00  (14, 6.0% of 283)
+html/couponReg.php
+        1589 100%  141.07kB/s    0:00:00        1589 100%  141.07kB/s    0:00:00  (15, 6.4% of 283)
+html/cuConvOrders.php
+        2826 100%  250.89kB/s    0:00:00        2826 100%  229.98kB/s    0:00:00  (16, 6.7% of 283)
+html/cuEditConvOrder.php
+        6528 100%  490.38kB/s    0:00:00        6528 100%  490.38kB/s    0:00:00  (17, 7.1% of 283)
+html/cuHome.php
+         747 100%   56.11kB/s    0:00:00         747 100%   56.11kB/s    0:00:00  (18, 7.4% of 283)
+html/cuLogin.php
+        2533 100%  176.69kB/s    0:00:00        2533 100%  176.69kB/s    0:00:00  (19, 7.8% of 283)
+html/cuOrders.php
+        2621 100%  182.83kB/s    0:00:00        2621 100%  170.64kB/s    0:00:00  (20, 8.1% of 283)
+html/dcPopup.php
+        1725 100%  112.30kB/s    0:00:00        1725 100%  112.30kB/s    0:00:00  (21, 8.5% of 283)
+html/detail.php
+        2733 100%  166.81kB/s    0:00:00        2733 100%  166.81kB/s    0:00:00  (22, 8.8% of 283)
+html/inconInfo.php
+         446 100%   27.22kB/s    0:00:00         446 100%   27.22kB/s    0:00:00  (23, 9.2% of 283)
+html/index.php
+        5737 100%  329.56kB/s    0:00:00        5737 100%  329.56kB/s    0:00:00  (24, 9.5% of 283)
+html/index1.php
+        5210 100%  282.66kB/s    0:00:00        5210 100%  282.66kB/s    0:00:00  (25, 9.9% of 283)
+html/logout.php
+         236 100%   12.13kB/s    0:00:00         236 100%   12.13kB/s    0:00:00  (26, 10.2% of 283)
+html/mhlInfo.php
+         504 100%   25.90kB/s    0:00:00         504 100%   25.90kB/s    0:00:00  (27, 10.6% of 283)
+html/prList.php
+        5380 100%  262.70kB/s    0:00:00        5380 100%  262.70kB/s    0:00:00  (28, 11.0% of 283)
+html/privacy.php
+         645 100%   29.99kB/s    0:00:00         645 100%   29.99kB/s    0:00:00  (29, 11.3% of 283)
+html/regToWin.php
+        4616 100%  204.90kB/s    0:00:00        4616 100%  204.90kB/s    0:00:00  (30, 11.7% of 283)
+html/search.php
+        3536 100%  156.96kB/s    0:00:00        3536 100%  156.96kB/s    0:00:00  (31, 12.0% of 283)
+html/style.css
+        2228 100%   94.60kB/s    0:00:00        2228 100%   94.60kB/s    0:00:00  (32, 12.4% of 283)
+html/unsub.php
+        1534 100%   62.42kB/s    0:00:00        1534 100%   62.42kB/s    0:00:00  (33, 12.7% of 283)
+html/admin/
+html/admin/SMITA.txt
+        1386 100%   56.40kB/s    0:00:00        1386 100%   56.40kB/s    0:00:00  (34, 13.4% of 283)
+html/admin/config.php
+        2286 100%   93.02kB/s    0:00:00        2286 100%   93.02kB/s    0:00:00  (35, 13.8% of 283)
+html/admin/import.php
+        1495 100%   58.40kB/s    0:00:00        1495 100%   58.40kB/s    0:00:00  (36, 14.1% of 283)
+html/admin/index.php
+           0 100%    0.00kB/s    0:00:00  (37, 14.5% of 283)
+html/admin/messaging.php
+        5811 100%  226.99kB/s    0:00:00        5811 100%  226.99kB/s    0:00:00  (38, 14.8% of 283)
+html/admin/mhlRealProducts.txt
+       32768  35%    1.12MB/s    0:00:00       92687 100%    2.68MB/s    0:00:00  (39, 15.2% of 283)
+html/admin/mysqlbak.php
+        1066 100%   31.55kB/s    0:00:00        1066 100%   31.55kB/s    0:00:00  (40, 15.5% of 283)
+html/admin/reoccuringOrders.php
+        4058 100%  116.56kB/s    0:00:00        4058 100%  116.56kB/s    0:00:00  (41, 15.9% of 283)
+html/admin/restore.php
+        1089 100%   31.28kB/s    0:00:00        1089 100%   31.28kB/s    0:00:00  (42, 16.3% of 283)
+html/admin/site_vars.php
+        1637 100%   45.68kB/s    0:00:00        1637 100%   45.68kB/s    0:00:00  (43, 16.6% of 283)
+html/admin/sqlCreate.sql
+        8710 100%  236.27kB/s    0:00:00        8710 100%  236.27kB/s    0:00:00  (44, 17.0% of 283)
+html/admin/var.php
+        1985 100%   53.85kB/s    0:00:00        1985 100%   53.85kB/s    0:00:00  (45, 17.3% of 283)
+html/admin/backups/
+html/admin/backups/hl.sql
+       14554 100%  374.02kB/s    0:00:00       14554 100%  374.02kB/s    0:00:00  (46, 18.0% of 283)
+html/admin/docs/
+html/admin/docs/WS_FTP.LOG
+        2748 100%   68.81kB/s    0:00:00        2748 100%   68.81kB/s    0:00:00  (47, 18.7% of 283)
+html/admin/docs/index.php
+         732 100%   18.33kB/s    0:00:00         732 100%   18.33kB/s    0:00:00  (48, 19.1% of 283)
+html/admin/docs/product_search.php
+        2087 100%   50.95kB/s    0:00:00        2087 100%   50.95kB/s    0:00:00  (49, 19.4% of 283)
+html/admin/docs/shipping.php
+        1133 100%   27.66kB/s    0:00:00        1133 100%   27.66kB/s    0:00:00  (50, 19.8% of 283)
+html/admin/products/
+html/admin/products/add.php
+       10473 100%  243.51kB/s    0:00:00       10473 100%  243.51kB/s    0:00:00  (51, 20.5% of 283)
+html/admin/products/add2.php
+        2862 100%   65.00kB/s    0:00:00        2862 100%   65.00kB/s    0:00:00  (52, 20.8% of 283)
+html/admin/products/cat_add.php
+        4760 100%  105.65kB/s    0:00:00        4760 100%  105.65kB/s    0:00:00  (53, 21.2% of 283)
+html/admin/products/cat_delete.php
+        1871 100%   41.53kB/s    0:00:00        1871 100%   41.53kB/s    0:00:00  (54, 21.6% of 283)
+html/admin/products/cat_edit.php
+        5258 100%  114.11kB/s    0:00:00        5258 100%  114.11kB/s    0:00:00  (55, 21.9% of 283)
+html/admin/products/categories.php
+        2514 100%   54.56kB/s    0:00:00        2514 100%   54.56kB/s    0:00:00  (56, 22.3% of 283)
+html/admin/products/delete.php
+        2462 100%   52.27kB/s    0:00:00        2462 100%   52.27kB/s    0:00:00  (57, 22.6% of 283)
+html/admin/products/edit.php
+       16084 100%  334.19kB/s    0:00:00       16084 100%  334.19kB/s    0:00:00  (58, 23.0% of 283)
+html/admin/products/edit2.php
+        2944 100%   61.17kB/s    0:00:00        2944 100%   61.17kB/s    0:00:00  (59, 23.3% of 283)
+html/admin/products/index.php
+        2943 100%   59.88kB/s    0:00:00        2943 100%   59.88kB/s    0:00:00  (60, 23.7% of 283)
+html/admin/products/upsell.php
+        5414 100%  107.90kB/s    0:00:00        5414 100%  107.90kB/s    0:00:00  (61, 24.0% of 283)
+html/admin/products/upsell2.php
+        2603 100%   51.88kB/s    0:00:00        2603 100%   50.84kB/s    0:00:00  (62, 24.4% of 283)
+html/admin/products/upsell_form.php
+        4665 100%   91.11kB/s    0:00:00        4665 100%   91.11kB/s    0:00:00  (63, 24.7% of 283)
+html/admin/sources/
+html/admin/sources/ReportSourceOrderTracking1.php
+        3998 100%   76.55kB/s    0:00:00        3998 100%   76.55kB/s    0:00:00  (64, 25.4% of 283)
+html/admin/sources/ReportSourceOrderTracking2.php
+        3979 100%   76.19kB/s    0:00:00        3979 100%   76.19kB/s    0:00:00  (65, 25.8% of 283)
+html/admin/sources/ReportSourceOrderTrackingDetails.php
+        5818 100%  109.26kB/s    0:00:00        5818 100%  109.26kB/s    0:00:00  (66, 26.1% of 283)
+html/admin/sources/ReportSourceTracking1.php
+        2341 100%   43.96kB/s    0:00:00        2341 100%   43.96kB/s    0:00:00  (67, 26.5% of 283)
+html/admin/sources/ReportSourceTracking2.php
+        3331 100%   61.38kB/s    0:00:00        3331 100%   61.38kB/s    0:00:00  (68, 26.9% of 283)
+html/admin/sources/add.php
+        1508 100%   27.79kB/s    0:00:00        1508 100%   27.79kB/s    0:00:00  (69, 27.2% of 283)
+html/admin/sources/addconf.php
+        2788 100%   50.42kB/s    0:00:00        2788 100%   50.42kB/s    0:00:00  (70, 27.6% of 283)
+html/admin/sources/delete.php
+        1995 100%   35.42kB/s    0:00:00        1995 100%   35.42kB/s    0:00:00  (71, 27.9% of 283)
+html/admin/sources/edit.php
+        3748 100%   66.55kB/s    0:00:00        3748 100%   66.55kB/s    0:00:00  (72, 28.3% of 283)
+html/admin/sources/editconf.php
+        2885 100%   50.31kB/s    0:00:00        2885 100%   50.31kB/s    0:00:00  (73, 28.6% of 283)
+html/admin/sources/index.php
+        2403 100%   41.90kB/s    0:00:00        2403 100%   41.90kB/s    0:00:00  (74, 29.0% of 283)
+html/admin/sources/sub_add.php
+        2209 100%   38.52kB/s    0:00:00        2209 100%   38.52kB/s    0:00:00  (75, 29.3% of 283)
+html/admin/sources/sub_addconf.php
+        3177 100%   53.49kB/s    0:00:00        3177 100%   53.49kB/s    0:00:00  (76, 29.7% of 283)
+html/admin/sources/sub_delete.php
+        1881 100%   31.13kB/s    0:00:00        1881 100%   31.13kB/s    0:00:00  (77, 30.0% of 283)
+html/admin/sources/sub_edit.php
+        2614 100%   43.27kB/s    0:00:00        2614 100%   43.27kB/s    0:00:00  (78, 30.4% of 283)
+html/admin/sources/sub_editconf.php
+        3052 100%   49.67kB/s    0:00:00        3052 100%   49.67kB/s    0:00:00  (79, 30.7% of 283)
+html/checkout/
+html/checkout/checkout.php
+        6034 100%   76.53kB/s    0:00:00        6034 100%   76.53kB/s    0:00:00  (80, 31.4% of 283)
+html/checkout/paymentinfo.php
+       19701 100%  240.49kB/s    0:00:00       19701 100%  240.49kB/s    0:00:00  (81, 31.8% of 283)
+html/checkout/receipt.php
+       15736 100%  187.40kB/s    0:00:00       15736 100%  187.40kB/s    0:00:00  (82, 32.2% of 283)
+html/checkout/shipinfo.php
+       19407 100%  228.34kB/s    0:00:00       19407 100%  228.34kB/s    0:00:00  (83, 32.5% of 283)
+html/images/
+html/images/WS_FTP.LOG
+        2700 100%   31.39kB/s    0:00:00        2700 100%   31.39kB/s    0:00:00  (84, 33.2% of 283)
+html/images/amex.gif
+         865 100%    9.94kB/s    0:00:00         865 100%    9.94kB/s    0:00:00  (85, 33.6% of 283)
+html/images/carteblanche.gif
+         488 100%    5.61kB/s    0:00:00         488 100%    5.61kB/s    0:00:00  (86, 33.9% of 283)
+html/images/collage.gif
+       16602 100%  184.24kB/s    0:00:00       16602 100%  184.24kB/s    0:00:00  (87, 34.3% of 283)
+html/images/contHealth.gif
+        2020 100%   22.16kB/s    0:00:00        2020 100%   22.16kB/s    0:00:00  (88, 34.6% of 283)
+html/images/dinersclub.gif
+        1064 100%   11.55kB/s    0:00:00        1064 100%   11.55kB/s    0:00:00  (89, 35.0% of 283)
+html/images/discover.gif
+         695 100%    7.54kB/s    0:00:00         695 100%    7.54kB/s    0:00:00  (90, 35.3% of 283)
+html/images/genInfo.gif
+        1403 100%   15.06kB/s    0:00:00        1403 100%   15.06kB/s    0:00:00  (91, 35.7% of 283)
+html/images/greatavabg.gif
+         222 100%    2.36kB/s    0:00:00         222 100%    2.36kB/s    0:00:00  (92, 36.0% of 283)
+html/images/home.gif
+        1725 100%   18.31kB/s    0:00:00        1725 100%   18.31kB/s    0:00:00  (93, 36.4% of 283)
+html/images/inconInfo.gif
+        1526 100%   16.02kB/s    0:00:00        1526 100%   16.02kB/s    0:00:00  (94, 36.7% of 283)
+html/images/mastercard.gif
+         975 100%   10.13kB/s    0:00:00         975 100%   10.13kB/s    0:00:00  (95, 37.1% of 283)
+html/images/mhlbg.gif
+         260 100%    2.70kB/s    0:00:00         260 100%    2.70kB/s    0:00:00  (96, 37.5% of 283)
+html/images/mhldivider.gif
+        1415 100%   14.70kB/s    0:00:00        1415 100%   14.70kB/s    0:00:00  (97, 37.8% of 283)
+html/images/myhealthyliving.gif
+       11816 100%  120.20kB/s    0:00:00       11816 100%  120.20kB/s    0:00:00  (98, 38.2% of 283)
+html/images/myhealthyliving_old.gif
+       13793 100%  137.45kB/s    0:00:00       13793 100%  137.45kB/s    0:00:00  (99, 38.5% of 283)
+html/images/myhealthyliving_pict.gif
+       26985 100%  258.36kB/s    0:00:00       26985 100%  258.36kB/s    0:00:00  (100, 38.9% of 283)
+html/images/ppolicy.gif
+        1485 100%   14.08kB/s    0:00:00        1485 100%   14.08kB/s    0:00:00  (101, 39.2% of 283)
+html/images/privacyPolicy.gif
+        1924 100%   18.24kB/s    0:00:00        1924 100%   18.24kB/s    0:00:00  (102, 39.6% of 283)
+html/images/search.gif
+        1579 100%   14.97kB/s    0:00:00        1579 100%   14.97kB/s    0:00:00  (103, 39.9% of 283)
+html/images/shopBy.gif
+        1687 100%   15.84kB/s    0:00:00        1687 100%   15.84kB/s    0:00:00  (104, 40.3% of 283)
+html/images/shopByCat.gif
+        2160 100%   20.28kB/s    0:00:00        2160 100%   20.28kB/s    0:00:00  (105, 40.6% of 283)
+html/images/showOrder.gif
+        1408 100%   13.10kB/s    0:00:00        1408 100%   13.10kB/s    0:00:00  (106, 41.0% of 283)
+html/images/siteadmin.gif
+       21038 100%  190.23kB/s    0:00:00       21038 100%  190.23kB/s    0:00:00  (107, 41.3% of 283)
+html/images/spacer.gif
+          43 100%    0.39kB/s    0:00:00          43 100%    0.39kB/s    0:00:00  (108, 41.7% of 283)
+html/images/thumbFQPPL100C.gif
+        3100 100%   27.77kB/s    0:00:00        3100 100%   27.77kB/s    0:00:00  (109, 42.0% of 283)
+html/images/visa.gif
+         388 100%    3.44kB/s    0:00:00         388 100%    3.44kB/s    0:00:00  (110, 42.4% of 283)
+html/images/brands/
+html/images/brands/br_1.gif
+        2270 100%   19.97kB/s    0:00:00        2270 100%   19.97kB/s    0:00:00  (111, 43.1% of 283)
+html/images/brands/br_10.gif
+        3007 100%   26.22kB/s    0:00:00        3007 100%   26.22kB/s    0:00:00  (112, 43.5% of 283)
+html/images/brands/br_11.gif
+        2271 100%   19.80kB/s    0:00:00        2271 100%   19.63kB/s    0:00:00  (113, 43.8% of 283)
+html/images/brands/br_12.gif
+        2573 100%   22.24kB/s    0:00:00        2573 100%   22.24kB/s    0:00:00  (114, 44.2% of 283)
+html/images/brands/br_13.gif
+        1847 100%   15.82kB/s    0:00:00        1847 100%   15.82kB/s    0:00:00  (115, 44.5% of 283)
+html/images/brands/br_2.gif
+        1686 100%   14.32kB/s    0:00:00        1686 100%   14.32kB/s    0:00:00  (116, 44.9% of 283)
+html/images/brands/br_4.gif
+        1511 100%   12.72kB/s    0:00:00        1511 100%   12.72kB/s    0:00:00  (117, 45.2% of 283)
+html/images/brands/br_5.gif
+        1944 100%   16.37kB/s    0:00:00        1944 100%   16.37kB/s    0:00:00  (118, 45.6% of 283)
+html/images/brands/br_6.gif
+        2070 100%   17.28kB/s    0:00:00        2070 100%   17.28kB/s    0:00:00  (119, 45.9% of 283)
+html/images/brands/br_7.gif
+        2167 100%   17.93kB/s    0:00:00        2167 100%   17.93kB/s    0:00:00  (120, 46.3% of 283)
+html/images/brands/br_8.gif
+        2094 100%   17.18kB/s    0:00:00        2094 100%   17.18kB/s    0:00:00  (121, 46.6% of 283)
+html/images/brands/br_9.gif
+        1654 100%   13.46kB/s    0:00:00        1654 100%   13.46kB/s    0:00:00  (122, 47.0% of 283)
+html/images/category/
+html/images/category/cat_1.gif
+        2425 100%   19.73kB/s    0:00:00        2425 100%   19.73kB/s    0:00:00  (123, 47.7% of 283)
+html/images/category/cat_2.gif
+        2377 100%   19.18kB/s    0:00:00        2377 100%   19.18kB/s    0:00:00  (124, 48.1% of 283)
+html/images/category/cat_23.gif
+        2104 100%   16.84kB/s    0:00:00        2104 100%   16.84kB/s    0:00:00  (125, 48.4% of 283)
+html/images/category/cat_24.gif
+        2071 100%   16.44kB/s    0:00:00        2071 100%   16.44kB/s    0:00:00  (126, 48.8% of 283)
+html/images/category/cat_25.gif
+        2090 100%   16.59kB/s    0:00:00        2090 100%   16.59kB/s    0:00:00  (127, 49.1% of 283)
+html/images/category/cat_27.gif
+        1711 100%   13.47kB/s    0:00:00        1711 100%   13.47kB/s    0:00:00  (128, 49.5% of 283)
+html/images/category/cat_28.gif
+        2097 100%   16.38kB/s    0:00:00        2097 100%   16.38kB/s    0:00:00  (129, 49.8% of 283)
+html/images/category/cat_29.gif
+        2058 100%   15.95kB/s    0:00:00        2058 100%   15.95kB/s    0:00:00  (130, 50.2% of 283)
+html/images/category/cat_3.gif
+        2490 100%   19.30kB/s    0:00:00        2490 100%   19.15kB/s    0:00:00  (131, 50.5% of 283)
+html/images/category/cat_30.gif
+        2078 100%   15.98kB/s    0:00:00        2078 100%   15.98kB/s    0:00:00  (132, 50.9% of 283)
+html/images/category/cat_31.gif
+        2032 100%   15.50kB/s    0:00:00        2032 100%   15.50kB/s    0:00:00  (133, 51.2% of 283)
+html/images/category/cat_4.gif
+        2527 100%   19.13kB/s    0:00:00        2527 100%   19.13kB/s    0:00:00  (134, 51.6% of 283)
+html/images/category/cat_5.gif
+        3490 100%   26.22kB/s    0:00:00        3490 100%   26.22kB/s    0:00:00  (135, 51.9% of 283)
+html/images/category/cat_6.gif
+        2001 100%   15.03kB/s    0:00:00        2001 100%   14.92kB/s    0:00:00  (136, 52.3% of 283)
+html/images/category/cat_7.gif
+        3333 100%   24.66kB/s    0:00:00        3333 100%   24.66kB/s    0:00:00  (137, 52.7% of 283)
+html/images/category/cat_8.gif
+        2976 100%   21.85kB/s    0:00:00        2976 100%   21.85kB/s    0:00:00  (138, 53.0% of 283)
+html/images/category/search.gif
+        1269 100%    9.32kB/s    0:00:00        1269 100%    9.32kB/s    0:00:00  (139, 53.4% of 283)
+html/images/product/
+html/images/product/ATBRIEF1003B.gif
+       16212 100%  116.41kB/s    0:00:00       16212 100%  116.41kB/s    0:00:00  (140, 54.1% of 283)
+html/images/product/ATQUICK1003B.gif
+       14077 100%   99.62kB/s    0:00:00       14077 100%   99.62kB/s    0:00:00  (141, 54.4% of 283)
+html/images/product/ATUNDERBELTEDB.gif
+       18658 100%  129.22kB/s    0:00:00       18658 100%  129.22kB/s    0:00:00  (142, 54.8% of 283)
+html/images/product/DIGNAT1003B.gif
+       22469 100%  151.33kB/s    0:00:00       22469 100%  151.33kB/s    0:00:00  (143, 55.1% of 283)
+html/images/product/DIGREG1003B.gif
+       20459 100%  135.00kB/s    0:00:00       20459 100%  135.00kB/s    0:00:00  (144, 55.5% of 283)
+html/images/product/DRYCOMBRIEF1003B.gif
+       14487 100%   93.69kB/s    0:00:00       14487 100%   93.69kB/s    0:00:00  (145, 55.8% of 283)
+html/images/product/FQPPL100B.gif
+        9407 100%   60.44kB/s    0:00:00        9407 100%   60.04kB/s    0:00:00  (146, 56.2% of 283)
+html/images/product/FQPPL100C.gif
+        9407 100%   59.65kB/s    0:00:00        9407 100%   59.65kB/s    0:00:00  (147, 56.5% of 283)
+html/images/product/FQPWW701B.gif
+       10946 100%   68.96kB/s    0:00:00       10946 100%   68.96kB/s    0:00:00  (148, 56.9% of 283)
+html/images/product/HANDIPADPANT1003B.gif
+       13719 100%   84.79kB/s    0:00:00       13719 100%   84.79kB/s    0:00:00  (149, 57.2% of 283)
+html/images/product/HUM30054B.gif
+       13936 100%   85.59kB/s    0:00:00       13936 100%   85.06kB/s    0:00:00  (150, 57.6% of 283)
+html/images/product/HUM30071B.gif
+       26200 100%  156.97kB/s    0:00:00       26200 100%  156.97kB/s    0:00:00  (151, 58.0% of 283)
+html/images/product/HUM30202B.gif
+       19508 100%  114.76kB/s    0:00:00       19508 100%  114.76kB/s    0:00:00  (152, 58.3% of 283)
+html/images/product/HUM30211B.gif
+       18121 100%  104.71kB/s    0:00:00       18121 100%  104.71kB/s    0:00:00  (153, 58.7% of 283)
+html/images/product/ISG13436FLB.gif
+       22154 100%  125.06kB/s    0:00:00       22154 100%  125.06kB/s    0:00:00  (154, 59.0% of 283)
+html/images/product/KBC19166B.gif
+       21919 100%  121.62kB/s    0:00:00       21919 100%  121.62kB/s    0:00:00  (155, 59.4% of 283)
+html/images/product/KBC19166C.gif
+       16858 100%   91.97kB/s    0:00:00       16858 100%   91.97kB/s    0:00:00  (156, 59.7% of 283)
+html/images/product/KBC19166P.gif
+       16858 100%   90.46kB/s    0:00:00       16858 100%   90.46kB/s    0:00:00  (157, 60.1% of 283)
+html/images/product/KBC19167C.gif
+       17576 100%   93.28kB/s    0:00:00       17576 100%   93.28kB/s    0:00:00  (158, 60.4% of 283)
+html/images/product/KBC19167P.gif
+       17576 100%   91.79kB/s    0:00:00       17576 100%   91.79kB/s    0:00:00  (159, 60.8% of 283)
+html/images/product/KBC19283B.gif
+       20850 100%  106.60kB/s    0:00:00       20850 100%  106.60kB/s    0:00:00  (160, 61.1% of 283)
+html/images/product/KBC19575B.gif
+       20567 100%  103.53kB/s    0:00:00       20567 100%  103.53kB/s    0:00:00  (161, 61.5% of 283)
+html/images/product/KBC19581B.gif
+       25533 100%  125.93kB/s    0:00:00       25533 100%  125.93kB/s    0:00:00  (162, 61.8% of 283)
+html/images/product/KBC19586B.gif
+        9457 100%   46.18kB/s    0:00:00        9457 100%   46.18kB/s    0:00:00  (163, 62.2% of 283)
+html/images/product/KBC19600C.gif
+       17959 100%   86.39kB/s    0:00:00       17959 100%   86.39kB/s    0:00:00  (164, 62.5% of 283)
+html/images/product/KBC19600P.gif
+       17959 100%   85.14kB/s    0:00:00       17959 100%   85.14kB/s    0:00:00  (165, 62.9% of 283)
+html/images/product/KBC19640B.gif
+       11161 100%   52.40kB/s    0:00:00       11161 100%   52.40kB/s    0:00:00  (166, 63.3% of 283)
+html/images/product/KBC19643B.gif
+       11161 100%   52.15kB/s    0:00:00       11161 100%   52.15kB/s    0:00:00  (167, 63.6% of 283)
+html/images/product/KBC19754B.gif
+       18266 100%   84.14kB/s    0:00:00       18266 100%   84.14kB/s    0:00:00  (168, 64.0% of 283)
+html/images/product/KND60043B.gif
+       15029 100%   68.26kB/s    0:00:00       15029 100%   68.26kB/s    0:00:00  (169, 64.3% of 283)
+html/images/product/MDS1100B22B.gif
+       11231 100%   50.54kB/s    0:00:00       11231 100%   50.54kB/s    0:00:00  (170, 64.7% of 283)
+html/images/product/MDS1500B.gif
+       15646 100%   69.77kB/s    0:00:00       15646 100%   69.77kB/s    0:00:00  (171, 65.0% of 283)
+html/images/product/MDS171B10C.gif
+       14920 100%   65.63kB/s    0:00:00       14920 100%   65.63kB/s    0:00:00  (172, 65.4% of 283)
+html/images/product/MDSMD1058B.gif
+       14920 100%   65.05kB/s    0:00:00       14920 100%   65.05kB/s    0:00:00  (173, 65.7% of 283)
+html/images/product/MDSMD995B.gif
+       27572 100%  118.10kB/s    0:00:00       27572 100%  118.10kB/s    0:00:00  (174, 66.1% of 283)
+html/images/product/PGN06707B.gif
+       21809 100%   92.20kB/s    0:00:00       21809 100%   92.20kB/s    0:00:00  (175, 66.4% of 283)
+html/images/product/PNG22574B.gif
+       11259 100%   47.19kB/s    0:00:00       11259 100%   47.19kB/s    0:00:00  (176, 66.8% of 283)
+html/images/product/PREVAILLINER1003B.gif
+       12348 100%   51.53kB/s    0:00:00       12348 100%   51.53kB/s    0:00:00  (177, 67.1% of 283)
+html/images/product/PREVAILPU1003B.gif
+       15417 100%   63.53kB/s    0:00:00       15417 100%   63.53kB/s    0:00:00  (178, 67.5% of 283)
+html/images/product/PREVAILUNDERPAD1003B.gif
+       12065 100%   49.30kB/s    0:00:00       12065 100%   49.30kB/s    0:00:00  (179, 67.8% of 283)
+html/images/product/PREVAILWASH1003B.gif
+        9919 100%   40.36kB/s    0:00:00        9919 100%   40.19kB/s    0:00:00  (180, 68.2% of 283)
+html/images/product/PREVAILWASH1003B.gif.gif
+        9919 100%   40.03kB/s    0:00:00        9919 100%   40.03kB/s    0:00:00  (181, 68.6% of 283)
+html/images/product/SAL1990B.gif
+       15415 100%   61.44kB/s    0:00:00       15415 100%   61.44kB/s    0:00:00  (182, 68.9% of 283)
+html/images/product/SAL800B.gif
+       21923 100%   86.33kB/s    0:00:00       21923 100%   86.33kB/s    0:00:00  (183, 69.3% of 283)
+html/images/product/SCT351B.gif
+       17999 100%   70.03kB/s    0:00:00       17999 100%   70.03kB/s    0:00:00  (184, 69.6% of 283)
+html/images/product/SCT380B.gif
+       16730 100%   64.32kB/s    0:00:00       16730 100%   64.32kB/s    0:00:00  (185, 70.0% of 283)
+html/images/product/SCT61120B.gif
+       15336 100%   58.50kB/s    0:00:00       15336 100%   58.27kB/s    0:00:00  (186, 70.3% of 283)
+html/images/product/SCT61375B.gif
+       14399 100%   54.29kB/s    0:00:00       14399 100%   54.29kB/s    0:00:00  (187, 70.7% of 283)
+html/images/product/SCT62900B.gif
+        8928 100%   33.53kB/s    0:00:00        8928 100%   33.53kB/s    0:00:00  (188, 71.0% of 283)
+html/images/product/SCT64602B.gif
+       21124 100%   78.14kB/s    0:00:00       21124 100%   78.14kB/s    0:00:00  (189, 71.4% of 283)
+html/images/product/SCT67100B.gif
+       14251 100%   52.32kB/s    0:00:00       14251 100%   52.32kB/s    0:00:00  (190, 71.7% of 283)
+html/images/product/SCT67401B.gif
+       18984 100%   68.92kB/s    0:00:00       18984 100%   68.92kB/s    0:00:00  (191, 72.1% of 283)
+html/images/product/SCT67613B.gif
+       13387 100%   48.42kB/s    0:00:00       13387 100%   48.42kB/s    0:00:00  (192, 72.4% of 283)
+html/images/product/SCT72210B.gif
+        8960 100%   32.29kB/s    0:00:00        8960 100%   32.17kB/s    0:00:00  (193, 72.8% of 283)
+html/images/product/SERENTYGUARDS1003B.gif
+       11667 100%   41.73kB/s    0:00:00       11667 100%   41.73kB/s    0:00:00  (194, 73.1% of 283)
+html/images/product/STANDUNDERPAD1003B.gif
+        6252 100%   22.28kB/s    0:00:00        6252 100%   22.28kB/s    0:00:00  (195, 73.5% of 283)
+html/images/product/SURECAREPAD1550B.gif
+       10979 100%   38.85kB/s    0:00:00       10979 100%   38.85kB/s    0:00:00  (196, 73.9% of 283)
+html/images/product/SURECAREWEAR1003B.gif
+       17490 100%   61.22kB/s    0:00:00       17490 100%   61.22kB/s    0:00:00  (197, 74.2% of 283)
+html/images/product/TRA2120B.gif
+       22163 100%   76.48kB/s    0:00:00       22163 100%   76.48kB/s    0:00:00  (198, 74.6% of 283)
+html/images/product/TRA2183B.gif
+       25573 100%   87.02kB/s    0:00:00       25573 100%   87.02kB/s    0:00:00  (199, 74.9% of 283)
+html/images/product/TUCKUNDERPAD1003B.gif
+       16817 100%   56.63kB/s    0:00:00       16817 100%   56.63kB/s    0:00:00  (200, 75.3% of 283)
+html/images/thumb/
+html/images/thumb/ATBRIEF1003TH.gif
+        3793 100%   12.73kB/s    0:00:00        3793 100%   12.73kB/s    0:00:00  (201, 76.0% of 283)
+html/images/thumb/ATQUICK1003TH.gif
+        3856 100%   12.90kB/s    0:00:00        3856 100%   12.90kB/s    0:00:00  (202, 76.3% of 283)
+html/images/thumb/ATUNDERBELTEDTH.gif
+        3826 100%   12.75kB/s    0:00:00        3826 100%   12.75kB/s    0:00:00  (203, 76.7% of 283)
+html/images/thumb/DIGNAT1003TH.gif
+        5198 100%   17.27kB/s    0:00:00        5198 100%   17.27kB/s    0:00:00  (204, 77.0% of 283)
+html/images/thumb/DIGREG1003TH.gif
+        5133 100%   16.99kB/s    0:00:00        5133 100%   16.99kB/s    0:00:00  (205, 77.4% of 283)
+html/images/thumb/DRYCOMBRIEF1003TH.gif
+        3689 100%   12.17kB/s    0:00:00        3689 100%   12.17kB/s    0:00:00  (206, 77.7% of 283)
+html/images/thumb/FQPPL100C.gif
+        3100 100%   10.19kB/s    0:00:00        3100 100%   10.19kB/s    0:00:00  (207, 78.1% of 283)
+html/images/thumb/FQPPL100TH.gif
+        3100 100%   10.16kB/s    0:00:00        3100 100%   10.16kB/s    0:00:00  (208, 78.4% of 283)
+html/images/thumb/FQPWW701TH.gif
+        3549 100%   11.59kB/s    0:00:00        3549 100%   11.59kB/s    0:00:00  (209, 78.8% of 283)
+html/images/thumb/HANDIPADPANT1003TH.gif
+        3000 100%    9.77kB/s    0:00:00        3000 100%    9.77kB/s    0:00:00  (210, 79.2% of 283)
+html/images/thumb/HUM30054TH.gif
+        4130 100%   13.40kB/s    0:00:00        4130 100%   13.40kB/s    0:00:00  (211, 79.5% of 283)
+html/images/thumb/HUM30071TH.gif
+        5455 100%   17.64kB/s    0:00:00        5455 100%   17.64kB/s    0:00:00  (212, 79.9% of 283)
+html/images/thumb/HUM30202TH.gif
+        4472 100%   14.41kB/s    0:00:00        4472 100%   14.41kB/s    0:00:00  (213, 80.2% of 283)
+html/images/thumb/HUM30211TH.gif
+        4011 100%   12.88kB/s    0:00:00        4011 100%   12.88kB/s    0:00:00  (214, 80.6% of 283)
+html/images/thumb/ISG13436FLTH.gif
+        4487 100%   14.37kB/s    0:00:00        4487 100%   14.37kB/s    0:00:00  (215, 80.9% of 283)
+html/images/thumb/KBC19166P.gif
+        3991 100%   12.78kB/s    0:00:00        3991 100%   12.78kB/s    0:00:00  (216, 81.3% of 283)
+html/images/thumb/KBC19166TH.gif
+        4653 100%   14.85kB/s    0:00:00        4653 100%   14.85kB/s    0:00:00  (217, 81.6% of 283)
+html/images/thumb/KBC19167C.gif
+        3898 100%   12.40kB/s    0:00:00        3898 100%   12.40kB/s    0:00:00  (218, 82.0% of 283)
+html/images/thumb/KBC19167P.gif
+        3898 100%   12.36kB/s    0:00:00        3898 100%   12.36kB/s    0:00:00  (219, 82.3% of 283)
+html/images/thumb/KBC19283TH.gif
+        5590 100%   17.72kB/s    0:00:00        5590 100%   17.67kB/s    0:00:00  (220, 82.7% of 283)
+html/images/thumb/KBC19575TH.gif
+        4865 100%   15.38kB/s    0:00:00        4865 100%   15.38kB/s    0:00:00  (221, 83.0% of 283)
+html/images/thumb/KBC19581TH.gif
+        5449 100%   17.17kB/s    0:00:00        5449 100%   17.17kB/s    0:00:00  (222, 83.4% of 283)
+html/images/thumb/KBC19586TH.gif
+        2431 100%    7.63kB/s    0:00:00        2431 100%    7.63kB/s    0:00:00  (223, 83.7% of 283)
+html/images/thumb/KBC19600C.gif
+        4773 100%   14.99kB/s    0:00:00        4773 100%   14.99kB/s    0:00:00  (224, 84.1% of 283)
+html/images/thumb/KBC19600P.gif
+        4773 100%   14.94kB/s    0:00:00        4773 100%   14.94kB/s    0:00:00  (225, 84.5% of 283)
+html/images/thumb/KBC19640TH.gif
+        4371 100%   13.64kB/s    0:00:00        4371 100%   13.64kB/s    0:00:00  (226, 84.8% of 283)
+html/images/thumb/KBC19643TH.gif
+        4371 100%   13.59kB/s    0:00:00        4371 100%   13.59kB/s    0:00:00  (227, 85.2% of 283)
+html/images/thumb/KBC19754TH.gif
+        4280 100%   13.27kB/s    0:00:00        4280 100%   13.27kB/s    0:00:00  (228, 85.5% of 283)
+html/images/thumb/KND60043TH.gif
+        3618 100%   11.22kB/s    0:00:00        3618 100%   11.22kB/s    0:00:00  (229, 85.9% of 283)
+html/images/thumb/MDS1100B22TH.gif
+        4370 100%   13.50kB/s    0:00:00        4370 100%   13.46kB/s    0:00:00  (230, 86.2% of 283)
+html/images/thumb/MDS1500TH.gif
+        5273 100%   16.19kB/s    0:00:00        5273 100%   16.19kB/s    0:00:00  (231, 86.6% of 283)
+html/images/thumb/MDS171B10C.gif
+        3308 100%   10.16kB/s    0:00:00        3308 100%   10.13kB/s    0:00:00  (232, 86.9% of 283)
+html/images/thumb/MDSMD1058TH.gif
+        3308 100%   10.13kB/s    0:00:00        3308 100%   10.13kB/s    0:00:00  (233, 87.3% of 283)
+html/images/thumb/MDSMD995TH.gif
+        5684 100%   17.29kB/s    0:00:00        5684 100%   17.29kB/s    0:00:00  (234, 87.6% of 283)
+html/images/thumb/PGN06707TH.gif
+        4597 100%   13.94kB/s    0:00:00        4597 100%   13.94kB/s    0:00:00  (235, 88.0% of 283)
+html/images/thumb/PNG22574TH.gif
+        3329 100%   10.06kB/s    0:00:00        3329 100%   10.06kB/s    0:00:00  (236, 88.3% of 283)
+html/images/thumb/PREVAILLINER1003TH.gif
+        2847 100%    8.61kB/s    0:00:00        2847 100%    8.58kB/s    0:00:00  (237, 88.7% of 283)
+html/images/thumb/PREVAILPU1003TH.gif
+        3362 100%   10.13kB/s    0:00:00        3362 100%   10.13kB/s    0:00:00  (238, 89.0% of 283)
+html/images/thumb/PREVAILUNDERPAD1003TH.gif
+        4037 100%   12.13kB/s    0:00:00        4037 100%   12.13kB/s    0:00:00  (239, 89.4% of 283)
+html/images/thumb/PREVAILWASH1003TH.gif
+        2433 100%    7.29kB/s    0:00:00        2433 100%    7.29kB/s    0:00:00  (240, 89.8% of 283)
+html/images/thumb/PREVAILWASH1003TH.gif.gif
+        2433 100%    7.27kB/s    0:00:00        2433 100%    7.27kB/s    0:00:00  (241, 90.1% of 283)
+html/images/thumb/SAL1990TH.gif
+        3701 100%   11.02kB/s    0:00:00        3701 100%   11.02kB/s    0:00:00  (242, 90.5% of 283)
+html/images/thumb/SAL800TH.gif
+        4867 100%   14.45kB/s    0:00:00        4867 100%   14.45kB/s    0:00:00  (243, 90.8% of 283)
+html/images/thumb/SCT351TH.gif
+        4111 100%   12.17kB/s    0:00:00        4111 100%   12.17kB/s    0:00:00  (244, 91.2% of 283)
+html/images/thumb/SCT380TH.gif
+        4154 100%   12.26kB/s    0:00:00        4154 100%   12.26kB/s    0:00:00  (245, 91.5% of 283)
+html/images/thumb/SCT61120TH.gif
+        3551 100%   10.45kB/s    0:00:00        3551 100%   10.45kB/s    0:00:00  (246, 91.9% of 283)
+html/images/thumb/SCT61375TH.gif
+        4569 100%   13.40kB/s    0:00:00        4569 100%   13.40kB/s    0:00:00  (247, 92.2% of 283)
+html/images/thumb/SCT62900TH.gif
+        2984 100%    8.72kB/s    0:00:00        2984 100%    8.72kB/s    0:00:00  (248, 92.6% of 283)
+html/images/thumb/SCT64602TH.gif
+        5048 100%   14.72kB/s    0:00:00        5048 100%   14.72kB/s    0:00:00  (249, 92.9% of 283)
+html/images/thumb/SCT67100TH.gif
+        3900 100%   11.34kB/s    0:00:00        3900 100%   11.34kB/s    0:00:00  (250, 93.3% of 283)
+html/images/thumb/SCT67401TH.gif
+        4668 100%   13.53kB/s    0:00:00        4668 100%   13.53kB/s    0:00:00  (251, 93.6% of 283)
+html/images/thumb/SCT67613TH.gif
+        4666 100%   13.48kB/s    0:00:00        4666 100%   13.48kB/s    0:00:00  (252, 94.0% of 283)
+html/images/thumb/SCT72210TH.gif
+        3124 100%    9.00kB/s    0:00:00        3124 100%    9.00kB/s    0:00:00  (253, 94.3% of 283)
+html/images/thumb/SERENTYGUARDS1003TH.gif
+        3454 100%    9.92kB/s    0:00:00        3454 100%    9.92kB/s    0:00:00  (254, 94.7% of 283)
+html/images/thumb/STANDUNDERPAD1003TH.gif
+        1707 100%    4.89kB/s    0:00:00        1707 100%    4.89kB/s    0:00:00  (255, 95.1% of 283)
+html/images/thumb/SURECAREPAD1550TH.gif
+        4279 100%   12.22kB/s    0:00:00        4279 100%   12.22kB/s    0:00:00  (256, 95.4% of 283)
+html/images/thumb/SURECAREWEAR1003TH.gif
+        4219 100%   12.01kB/s    0:00:00        4219 100%   12.01kB/s    0:00:00  (257, 95.8% of 283)
+html/images/thumb/TRA2120TH.gif
+        5078 100%   14.42kB/s    0:00:00        5078 100%   14.42kB/s    0:00:00  (258, 96.1% of 283)
+html/images/thumb/TRA2183TH.gif
+        5079 100%   14.38kB/s    0:00:00        5079 100%   14.38kB/s    0:00:00  (259, 96.5% of 283)
+html/images/thumb/TUCKUNDERPAD1003TH.gif
+        3945 100%   11.17kB/s    0:00:00        3945 100%   11.17kB/s    0:00:00  (260, 96.8% of 283)
+html/includes/
+html/includes/footer.php
+        1053 100%    2.97kB/s    0:00:00        1053 100%    2.97kB/s    0:00:00  (261, 97.5% of 283)
+html/includes/formcheck.php
+        2028 100%    5.72kB/s    0:00:00        2028 100%    5.72kB/s    0:00:00  (262, 97.9% of 283)
+html/includes/header.php
+        3558 100%   10.04kB/s    0:00:00        3558 100%   10.04kB/s    0:00:00  (263, 98.2% of 283)
+html/includes/header_adm.php
+         365 100%    1.03kB/s    0:00:00         365 100%    1.03kB/s    0:00:00  (264, 98.6% of 283)
+html/includes/leftmenu.php
+        2014 100%    5.67kB/s    0:00:00        2014 100%    5.67kB/s    0:00:00  (265, 98.9% of 283)
+html/includes/leftmenu_adm.php
+        1785 100%    5.01kB/s    0:00:00        1785 100%    5.01kB/s    0:00:00  (266, 99.3% of 283)
+html/includes/library.php
+       32768  96%   91.17kB/s    0:00:00       34097 100%   94.60kB/s    0:00:00  (267, 99.6% of 283)
+html/includes/paths.php
+         189 100%    0.52kB/s    0:00:00         189 100%    0.52kB/s    0:00:00  (268, 100.0% of 283)
+
+Number of files: 283
+Number of files transferred: 268
+Total file size: 1889943 bytes
+Total transferred file size: 1889943 bytes
+Literal data: 1889943 bytes
+Matched data: 0 bytes
+File list size: 6193
+File list generation time: 0.002 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 1547178
+Total bytes received: 6006
+
+sent 1547178 bytes  received 6006 bytes  3106368.00 bytes/sec
+total size is 1889943  speedup is 1.22

@@ -1,0 +1,37 @@
+
+<form name=form1 action='{ACTION}'>
+{HIDDEN}
+<table width=95% align=center bgcolor=c9c9c9>
+<tr><td>{SHOWME_ADMIN_LINK}</td></tr>
+	<td>Date From</td><td><select name=monthFrom>{MONTH_FROM_OPTIONS}
+	</select> &nbsp;<select name=dayFrom>{DAY_FROM_OPTIONS}
+	</select> &nbsp;<select name=yearFrom>{YEAR_FROM_OPTIONS}
+	</select></td><td>Date To</td>
+	<td><select name=monthTo>{MONTH_TO_OPTIONS}
+	</select> &nbsp;<select name=dayTo>{DAY_TO_OPTIONS}
+	</select> &nbsp;<select name=yearTo>{YEAR_TO_OPTIONS}
+	</select></td></tr>
+	<tr>
+	<td><input type=submit name=submit value='View Report'></td>
+	<td colspan=3>
+	{EXPAND_SOURCE_LINK} &nbsp; &nbsp; {EXPAND_OFFER_LINK}
+	</td></tr>
+
+</table>
+			
+<table cellpadding=5 cellspacing=0 bgcolor=c9c9c9 width=95% align=center>
+<tr><td colspan=5 align=right class=header>{FIRST_PAGE_LINK} &nbsp; {PREV_PAGE_LINK} &nbsp; {NEXT_PAGE_LINK} &nbsp; {LAST_PAGE_LINK} &nbsp; {CURRENT_PAGE}</td></tr>	
+<tr><TD align=left class=header>Date</TD>
+<TD align=left class=header>Page Shown Count</TD>
+{SOURCE_CODE_COLUMN}
+{OFFER_COLUMN}
+<TD align=left class=header>Offer Display Count</TD>
+<TD align=left class=header>Offer Taken Count</TD>
+</tr>
+{REPORT_DATA}
+<tr><td colspan=5 align=right class=header>{FIRST_PAGE_LINK} &nbsp; {PREV_PAGE_LINK} &nbsp; {NEXT_PAGE_LINK} &nbsp; {LAST_PAGE_LINK} &nbsp; {CURRENT_PAGE}</td></tr>	
+</table>
+</form>			
+</body>
+
+</html>

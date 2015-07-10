@@ -1,0 +1,391 @@
+
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2"> </td>
+  </tr>
+  <tr>
+
+    <td height="30" colspan="2" bgcolor="#5c94c5" style="border-bottom:5px solid #fdb813;">
+
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="12" height="30" align="left" valign="top"><img src="http://www.arcamax.com/partners/r4l/topnav-left.png" /></td>
+
+          <td align="center" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; color:#FFFFFF;">
+          <a href="http://www.recipe4living.com/recipes" style="color:#FFFFFF; text-decoration:none;">Recipes</a>   |   <a href="http://www.recipe4living.com/hints_and_tips/" style="color:#FFFFFF; text-decoration:none;">Hints & Tips</a>   |   <a href="http://www.recipe4living.com/dash_of_fun" style="color:#FFFFFF; text-decoration:none;">A Dash Of Fun</a>   |   <a href="http://www.recipe4living.com/thinking_healthy" style="color:#FFFFFF; text-decoration:none;">Thinking Healthy</a>   |   <a href="http://www.recipe4living.com/contact" style="color:#FFFFFF; text-decoration:none;">Contact Us</a>   |   <a href="http://www.recipe4living.com/" style="color:#FFFFFF; text-decoration:none;">www.Recipe4Living.com</a>          </td>
+
+          <td width="12" align="right" valign="top"><img src="http://www.arcamax.com/partners/r4l/topnav-right.png" /></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="border-bottom:3px solid #fdb813; border-left: solid 1px #9f9f9f; border-right: solid 1px #9f9f9f; ">
+
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+
+          <td width="216"><img src="http://www.recipe4living.com/frontend/recipe4living/images/site/logo.png" height="50" alt="Recipe4Living" width="269" /></td>
+          <td align="right"><img src="http://pics.recipe4living.com/qe-header.jpg" height="70" alt="Recipe4Living's Quick & Easy Recipes Newsletter" width="410" />          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="border-bottom:2px solid #fdb813; border-left: solid 1px #9f9f9f; border-right: solid 1px #9f9f9f; ">
+
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td colspan="2" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000000; padding:6px;">Add <a href="mailto:R4L@recipe4living-recipes.com" style="color:#000000;">R4L@recipe4living-recipes.com</a> to your address book to ensure future delivery of these newsletters! <a href="http://www.recipe4living.com/assets/pdf/Domain_Instructions.pdf" style="color:#000000;"> Click here for instructions</a>.</td>
+        </tr>
+      </table>
+
+    </td>
+
+  </tr><!-- END OF HEADER CONTENT --><!-- START OF BODY CONTENT --><tr>
+	<td width="340" valign="top" style="border-left: solid 1px #9f9f9f; padding:10px;">
+	    <!-- start left column -->
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <!-- START OF SLOT 1 -->
+	      <tr>
+	      	<td>
+	      		<!-- EDITORS INPUT - START OF SLOT 1 --><table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">Today's Recipe: A Classic Omelet</td>
+      </tr>
+
+        <tr>
+          <td width="118" valign="top">
+          <a href="http://www.recipe4living.com/recipes/omelet.htm"><img src="http://pics.recipe4living.com/omelet.jpg" width="118" height="100" border="0" /></a>          </td>
+          <td valign="top" style="padding-left:6px; font-family:Arial, Helvetica, sans-serif; font-size:12px;"><strong>Omelets are a breeze to make, and it's easy to customize the ingredients to everyone's liking.</strong><br />
+
+          <a href="http://www.recipe4living.com/recipes/omelet.htm" style="color:#000000;">Click here to read and rate the full recipe! </a><br /><br />
+          <strong>More like this:</strong><br /><br />
+          <a href="http://www.recipe4living.com/recipes/omelets_with_ramen.htm" style="color:#000000;">Omelets with Ramen</a><br />
+  <a href="http://www.recipe4living.com/recipes/cajun_omelet.htm" style="color:#000000;">Cajun Omelets</a><br />
+          <a href="http://www.recipe4living.com/recipes/herb_omelet.htm" style="color:#000000;">Herb Omelet</a><br />
+          <a href="http://www.recipe4living.com/recipes/mini_omelets.htm" style="color:#000000;">Mini Omelets</a><br><br>
+
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Last newsletter's featured recipe: <a href="http://www.recipe4living.com/articles/11_simple_salsa_recipes.htm" style="color:#000000;">11 Simple Salsa Recipes</a></td>
+        </tr></table>
+
+<table>
+<!-- REMOVED IMG MAP TAG -->
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;">
+<tr>
+<td colspan="2"><strong>Share these recipes:</strong> <a href="http://www.facebook.com/Recipe4Living"><img src="http://pics.recipe4living.com/facebook_small.jpg" border="0"></a> <a href="http://www.twitter.com/Recipe4Living"><img src="http://pics.recipe4living.com/twitter_small.png" border="0"></a>
+</td></tr>
+      </table><!-- EDITORS INPUT - END OF SLOT 1 -->
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 1 -->
+
+	      <!-- START OF R4L_QuickEasy_After_Slot_1 -->
+
+	      <tr>
+	      	<td>
+	      		<!-- START OF ADS --><!-- END OF ADS -->
+	      	</td>
+	      </tr>
+	      <!-- END OF R4L_QuickEasy_After_Slot_1 -->
+
+	      <!-- START OF SLOT 2 -->
+	      <tr>
+	      	<td>
+
+	      		<br><!-- EDITORS INPUT - START OF SLOT 2 --><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">Latest Recipe Collection</td>
+      </tr>
+
+        <tr>
+          <td width="118">
+
+          <a href="http://www.recipe4living.com/articles/18_quick_and_easy_entrees.htm"><img src="http://pics.recipe4living.com/pasta.jpg" width="118" height="100" border="0" /></a>
+          </td>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px;"><a href="http://www.recipe4living.com/articles/18_quick_and_easy_entrees.htm"  style="color:#000000; font-weight:bold;">18 Quick and Easy Entrees</a><br /><br />It has been a long day and you don't have the energy to think up a complex meal. No worries! We have 18 easy entrees that will make everyone happy and keep your night simple. You will have the time to help the kids with homework or sit down and read a book, because these easy entrees are no sweat at all!<br /><br /><a href="http://www.recipe4living.com/articles/18_quick_and_easy_entrees.htm" style="color:#000000; font-weight:bold;">See the whole list!</a></td>
+        </tr>
+      </table><!-- EDITORS INPUT - END OF SLOT 2 -->
+	      	</td>
+	      </tr>
+
+	      <!-- END OF SLOT 2 -->
+
+	      <!-- START OF SLOT 3 -->
+	      <tr>
+	      	<td>
+	      		<br><!-- EDITORS INPUT - START OF SLOT 3 --><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">Recently Submitted Quick & Easy Recipes</td>
+
+      </tr>
+
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+          <a href="http://www.recipe4living.com/recipes/garlic_mint_zucchini.htm" style="color:#000000; font-weight:bold;">Garlic Mint Zucchini</a><br />
+          A fried and flavorful side dish.<br />
+          <a href="http://www.recipe4living.com/recipes/garlic_mint_zucchini.htm" style="color:#000000">Read and rate the full recipe here.</a>
+
+          </td>
+        </tr>
+         <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+          <a href="http://www.recipe4living.com/recipes/cheesy_hot_french_bread.htm" style="color:#000000; font-weight:bold;">Cheesy Hot French Bread</a><br />
+        You might just want to eat this an your entire meal! It's that good! To make the recipe even easier, you can substitute bacon bits for cooking real bacon.<br />
+          <a href="http://www.recipe4living.com/recipes/cheesy_hot_french_bread.htm" style="color:#000000">Read and rate the full recipe here.</a>
+
+          </td>
+        </tr>
+         <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:6px 0px;">
+          <a href="http://www.recipe4living.com/recipes/popovers.htm" style="color:#000000; font-weight:bold;">Popovers</a><br />
+          This recipe will be the best popover you've ever tasted! It's one of the easiest recipe to make!<br />
+          <a href="http://www.recipe4living.com/recipes/popovers.htm" style="color:#000000">Read and rate the full recipe here.</a>
+
+          </td>
+        </tr>
+       </table><!-- EDITORS INPUT - END OF SLOT 3 -->
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 3 -->
+
+	      <!-- START OF R4L_QuickEasy_After_Slot_3 -->
+	      <tr>
+	      	<td>
+
+	      		<!-- START OF ADS --><!-- END OF ADS -->
+	      	</td>
+	      </tr>
+	      <!-- END OF R4L_QuickEasy_After_Slot_3 -->
+
+	      <!-- START OF SLOT 4 -->
+	      <tr>
+	      	<td>
+	      		<br><!-- EDITORS INPUT - START OF SLOT 4 --><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">More Newsletters</td>
+      </tr>
+
+  <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+          <a href="http://www.tellusdaily.com/dispatch2.asp?home=70-28615P-L4" style="color:#000000">Fit&Fab Living Newsletter</a><br />
+    Get the latest fashion, health and beauty tips in this newsletter. Learn how to look and feel your best.
+          </td>
+
+        </tr>
+<tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+          <a href="http://www.awesomeopinions.com/dispatch2.asp?home=70-27507K-L4" style="color:#000000">The Recipe4Living Newsletter</a><br />
+          Subscribe to our original newsletter and get our exclusive 7 Day Meal Planner plus more recipes throughout the week.
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+
+          <a href="http://www.giftsforanswers.com/dispatch2.asp?home=70-28042S-L1" style="color:#000000">Party Recipes & Tips</a><br />
+          For the party planner in you, here is a newsletter with entertaining tips, party decoration ideas and enough themed parties to keep you busy all year long.
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+          <a href="http://www.focusforfree.com/dispatch2.asp?home=70-28368D-L2" style="color:#000000">Budget  Cooking Recipes</a><br />
+          Stretch your dollars further with this money-saving recipe newsletter that will bring you budget-friendly tips, meal planners and more, once a week.
+          </td>
+
+        </tr>
+<tr>
+   <td style="font-family:Arial, Helvetica, sans-serif; font-size:4px; color:#FFFFFF;">*mf qer 092111 someone@somewhere.com mf*</td>
+</tr>
+      </table><!-- EDITORS INPUT - END OF SLOT 4 -->
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 4 -->
+	    </table>
+
+	    <!-- end left column -->
+	</td>
+	<td width="340" valign="top" style="border-right: solid 1px #9f9f9f; padding:10px;">
+	    <!-- start right column -->
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <!-- START OF SLOT 5 -->
+	      <tr>
+	      	<td>
+	      		<!-- EDITORS INPUT - START OF SLOT 5 --><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="4">Food Storage Guidelines</td>
+      </tr>
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+At Recipe4Living, we hate to waste food. But sometimes you're just not sure when enough is enough! Want to know when to throw out those spices? Have an onion laying around that may not be good? Check out these <a href="http://www.recipe4living.com/articles/food_storage_guidelines.htm" style="color:#000000;">nine comprehensive charts</a> to help you decide how long is too long when it comes to storing food in your cabinets, refrigerator and freezer. </strong>You might find out you can keep some things longer!   <br/><br/><strong><a href="http://www.recipe4living.com/articles/food_storage_guidelines.htm" style="color:#000000;">Click here for all our food storage guidelines!</a> </strong>      </td></tr>
+
+      </table>
+<!-- EDITORS INPUT - END OF SLOT 5 -->
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 5 -->
+
+	      <!-- START OF SLOT 6 -->
+	      <tr>
+	      	<td>
+	      		<br><!-- EDITORS INPUT - START OF SLOT 6 --><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">Quickie Corner</td>
+      </tr>
+
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+<strong>Egg Substitute</strong><br /><br />
+
+1 whole egg plus 1 or 2 egg whites for scrambled eggs, French toast, omelets etc.<a href="http://www.recipe4living.com/contact" style="color:#000000;"><br><br>Do you have a tip to share?<a href="http://www.recipe4living.com/contact" style="color:#000000;">  Submit it here</a> and we might publish it in this newsletter!
+          </td>
+
+         </tr>
+      </table><!-- EDITORS INPUT - END OF SLOT 6 -->
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 6 -->
+
+	      <!-- START OF R4L_QuickEasy_After_Slot_6 -->
+	      <tr>
+	      	<td>
+	      		<!-- START OF ADS --><table>
+
+<tr><td> </td></tr>
+<tr><td>
+
+[R4L_NL_Archiving_TOP_300x250]
+
+</td></tr>
+<tr><td> </td></tr>
+</table><!-- END OF ADS -->
+	      	</td>
+	      </tr>
+
+	      <!-- END OF R4L_QuickEasy_After_Slot_6 -->
+
+	      <!-- START OF SLOT 7 -->
+	      <tr>
+	      	<td>
+	      		<br><!-- EDITORS INPUT - START OF SLOT 7 --><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+       <tr> <td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color:#991B1D; font-weight:bold;" colspan="2">Chew On That Blog</td>
+      </tr>
+
+        <tr>
+          <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:7px 0px;">
+       September 20th, 2011<br /><br />
+         <strong>Tip of the Day: Pickles</strong><br /><br />
+     Happy &#8216;Snack a Pickle&#8217; Day! This is a food holiday that celebrates pickles. How do you like yours? I recently went to a festival where they served up pickles on a stick; dill, garlic and even spicy hot! Keep reading for advice on how to make your own pickles, how to use pickles in new and exciting ways and some history on the tangy and tasty pickle!<br /><br />
+         <a href="http://www.chewonthatblog.com/2011/09/13/tuesday-tip-of-the-day-pickles/" style="color:#000000;"><u>Read more and see pictures here!</u></a></p>
+          </td>
+
+         </tr>
+      </table><!-- EDITORS INPUT - END OF SLOT 7 -->
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 7 -->
+
+	      <!-- START OF SLOT 8 -->
+	      <tr>
+	      	<td>
+	      		<br><!-- EDITORS INPUT - START OF SLOT 8 --><!-- EDITORS INPUT - END OF SLOT 8 -->
+
+	      	</td>
+	      </tr>
+	      <!-- END OF SLOT 8 -->
+
+	      <!-- START OF R4L_QuickEasy_After_Slot_8 -->
+	      <tr>
+	      	<td>
+	      		<!-- START OF ADS --><table>
+<tr><td> </td></tr>
+<tr><td>
+
+[R4L_NL_Archiving_BOTTOM_300x250]
+
+</td></tr>
+<tr><td> </td></tr>
+</table><!-- END OF ADS -->
+	      	</td>
+	      </tr>
+	      <!-- END OF R4L_QuickEasy_After_Slot_8 -->
+
+	    </table>
+	    <!-- end right column -->
+
+	</td>
+</tr>
+<tr>
+    <td colspan="2"><img src="http://www.arcamax.com/partners/r4l/content-container-bottom.png" /></td>
+</tr>
+<tr>
+    <td colspan="2"> </td>
+</tr>
+<!-- END OF BODY CONTENT --><!-- START OF FOOTER CONTENT --><tr>
+
+    <td height="30" colspan="2" align="center" bgcolor="#2666a4" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; color:#FFFFFF;">
+    <a href="http://www.awesomeopinions.com/dispatch2.asp?home=70-27507K-L4" style="color:#FFFFFF; text-decoration:none;">Subscribe to Newsletter</a>       |
+    <a href="http://www.recipe4living.com/rss/_all" style="color:#FFFFFF; text-decoration:none;">Newsfeed</a>
+
+       |
+    <a href="http://www.recipe4living.com/share" style="color:#FFFFFF; text-decoration:none;">Submit a Recipe</a>
+       |
+    <a href="http://www.recipe4living.com/about" style="color:#FFFFFF; text-decoration:none;">About Us</a>
+       |
+    <a href="http://www.recipe4living.com/contact" style="color:#FFFFFF; text-decoration:none;">Contact Us</a>
+       |
+    <a href="http://www.recipe4living.com/home/" style="color:#FFFFFF; text-decoration:none;">Recipe4Living.com</a></td>
+
+  </tr>
+
+  <tr>
+    <td colspan="2" style="padding:8px 0px;"> </td>
+  </tr>
+<tr>
+    <td colspan="2" style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+             <P>This e-mail was requested by: <SPAN
+            style="COLOR: blue">someone@somewhere.com</SPAN>.<BR><BR>
+To unsubscribe, <a href="http://r4l.popularliving.com/subctr/unsub/unsub_r4l.php?email=someone@somewhere.com&id=394" style="color:#2E2E2E;">click here</a>.
+
+<br /><br />
+To manage your subscriptions, <a href="http://www.recipe4living.com/index/subctr" style="color:#2E2E2E;">click here</a>.
+<br />
+    </P>
+
+<P>Privacy Policy: <a href="http://www.recipe4living.com/privacy" style="color:#2E2E2E;">http://www.recipe4living.com/privacy</a></P>
+
+    <P align="left">Ampere Media LLC, 3400 Dundee Road, Suite 236, Northbrook, IL 60062,   FAX: (847) 205-9340<BR>
+Copyright &copy; 2011 Ampere Media, LLC. All rights reserved.
+</P>
+
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"> </td>
+  </tr>
+</table>
+
+<!-- start page container -->
+
+<!-- end page container -->
+
+
+
+<!-- END OF FOOTER CONTENT -->
+
+<img src="http://www.arcamax.com/ard/7532595?t=C2000000000L394" width="1" height="1" border="0">
+
+<!-- start page container -->
+
+<!-- end page container -->
+
+
+
