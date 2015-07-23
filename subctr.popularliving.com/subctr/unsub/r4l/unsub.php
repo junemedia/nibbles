@@ -4,6 +4,8 @@ include_once("../../config.php");
 
 $user_ip = trim($_SERVER['REMOTE_ADDR']);
 
+echo $te;
+
 $pixel = "";
 $message = "";
 if ($_POST['submit'] == 'Submit') {
@@ -42,7 +44,8 @@ if ($_POST['submit'] == 'Submit') {
 			$check_query = "SELECT * FROM joinEmailActive WHERE email =\"$email\" AND listid=\"$listid\" LIMIT 1";
 			$check_query_result = mysql_query($check_query);
 			echo mysql_error();
-                        
+                        // We have new method here which will include this 507 case. Let's remove it
+                        /*
                         if($listid == 507 && mysql_num_rows($check_query_result) == 0) {
                             // Cheating by find the subcampId from joinEmailSub table first.
                             $attrs = json_encode(array("IsRecipe4LivingSweeps"=>"False"));
@@ -52,24 +55,37 @@ if ($_POST['submit'] == 'Submit') {
                             //echo mysql_error();exit;
 
                         }
-			if (mysql_num_rows($check_query_result) > 0) {
-				$row = mysql_fetch_array($check_query_result, MYSQL_ASSOC);
-				$subcampid = $row['subcampid'];
-				
-                                $delete_query = "DELETE FROM joinEmailActive WHERE email =\"$email\" AND listid=\"$listid\" LIMIT 1";
-                                $delete_query_result = mysql_query($delete_query);
-                                echo mysql_error();
-                                
-				// get new listid from old listid
-				$new_listid = LookupNewListIdByOldListId($listid);
-							
-				// insert into campaigner
-				$campaigner = "INSERT IGNORE INTO campaigner (dateTime,email,ipaddr,oldListId,newListId,subcampid,source,subsource,type,isProcessed)
-								VALUES (NOW(),\"$email\",\"$user_ip\",\"$listid\",\"$new_listid\",\"$subcampid\",\"R4LUnsubLink\",\"\",'unsub','N')";
-				$campaigner_result = mysql_query($campaigner);
-				echo mysql_error();
-			}
-                        if(!$subcampid) {$subcampid = "Not Found in JoinEmailActive";}
+                        */
+                if(mysql_num_rows($check_query_result) == 0) {
+                        // We didn't find that in the JoinActiveRecords, let's process it by the new method
+                        $subcampid = "Not Found in JoinEmailActive";
+                        
+                        if($attrName = getAttrNameByListId($listid)){
+                            $attrs = json_encode(array($attrName =>"False"));
+                            $updateAttrSql = "INSERT INTO `LeonCampaignPush` (`id`, `email`, `attrs`, `IsProcessed`, `date_add`,`notes`) VALUES "
+                                            . "(NULL, '$email', '$attrs', 'N', NOW(),'')";
+                            mysql_query($updateAttrSql);
+                        }
+                        
+                }
+			    if (mysql_num_rows($check_query_result) > 0) {
+				    $row = mysql_fetch_array($check_query_result, MYSQL_ASSOC);
+				    $subcampid = $row['subcampid'];
+				    
+                                    $delete_query = "DELETE FROM joinEmailActive WHERE email =\"$email\" AND listid=\"$listid\" LIMIT 1";
+                                    $delete_query_result = mysql_query($delete_query);
+                                    echo mysql_error();
+                                    
+				    // get new listid from old listid
+				    $new_listid = LookupNewListIdByOldListId($listid);
+							    
+				    // insert into campaigner
+				    $campaigner = "INSERT IGNORE INTO campaigner (dateTime,email,ipaddr,oldListId,newListId,subcampid,source,subsource,type,isProcessed)
+								    VALUES (NOW(),\"$email\",\"$user_ip\",\"$listid\",\"$new_listid\",\"$subcampid\",\"R4LUnsubLink\",\"\",'unsub','N')";
+				    $campaigner_result = mysql_query($campaigner);
+				    echo mysql_error();
+			    }
+
 				$insert_query = "INSERT IGNORE INTO joinEmailUnsub (dateTime,email,ipaddr,listid,subcampid,source,subsource,errorCode)
 							VALUES (NOW(),\"$email\",\"$user_ip\",\"$listid\",\"$subcampid\",\"R4LUnsubLink\",\"$jobid\",\"per request\")";
 				$insert_query_result = mysql_query($insert_query);
