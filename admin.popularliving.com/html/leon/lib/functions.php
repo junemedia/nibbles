@@ -199,4 +199,42 @@ function convertUTCtime($time){
     date_default_timezone_set('America/Chicago');
     return date("Y-m-d H:i:s",$str);
 }
+
+function getAttrNameByListId($listId){
+    // Also defined in subctr.popularliving.com/subctr/functions.php
+    //$sql = "SELECT lcca.Id,lcca.Name,jl.listid FROM `LeonCampaignContactAttribute` as lcca left join joinLists as jl on lcca.Id=jl.newListId where lcca.DataType='Boolean'";
+
+    $listArray = array(
+        "504" => "IsBetterRecipes Daily",
+        "505" => "IsBetterRecipes SOLO",
+        "506" => "IsBetterRecipesSweeps",
+        "395" => "IsBudgetCooking",
+        "539" => "IsCasseroleCooking",
+        "554" => "IsCopycatClassics",
+        "511" => "IsCrockpotCreations",
+        "411" => "IsDailyInsider",
+        "393" => "IsDailyRecipes",
+        "574" => "IsDiabeticFriendlyDishes",
+        "448" => "IsDietInsider",
+        "501" => "IsEditorsChoice",
+        "410" => "IsFitFabLivingSOLO",
+        //"NULL" => "IsLegacySweeps"
+        "553" => "IsMakingItWork",
+        "503" => "IsMoreWeLove",
+        "394" => "IsQuickEasyRecipes",
+        "502" => "IsR4LSeasonal",
+        "396" => "IsRecipe4LivingSOLO",
+        "507" => "IsRecipe4LivingSweeps",
+        "508" => "IsSavvyforkSOLO",
+        "500" => "IsSecondHelping",
+        "583" => "IsTheFeedBySavvyFork",
+        "558" => "IsWorkItMomSOLO"
+    );
+    if(array_key_exists($listId,$listArray)){
+        return $listArray[$listId];
+    }else{
+        return false;
+    }
+}
+
 ?>
