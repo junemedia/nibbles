@@ -30,7 +30,7 @@
 		<tr>
 			<td colspan="2" align="center" style="color:#F7931E;font-family:verdana;font-weight:bold;padding:0px;">
 				<a href="REDIR:[FEATURED_URL]?utm_source=WIMnewsletter&utm_medium=newsletter&utm_campaign=WIM%2BNewsletter&utm_content=title_link" target="_blank" style="text-decoration: none;">
-					<p style="font-size:28px;color:#F7931E;font-family:verdana;font-weight:bold;text-decoration:none;">[FEATURED_TITLE]</p>
+					<p style="font-size:28px;color:#F7931E;font-family:verdana;font-weight:bold;text-decoration:none;margin-top:0;margin-bottom:0;">[FEATURED_TITLE]</p>
 				</a>
 			</td>
 		</tr>
