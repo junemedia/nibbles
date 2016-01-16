@@ -42,29 +42,7 @@ function saveR4LSOLOContact($tableName){
                                         <operator>EqualTo</operator>
                                         <value>1</value>
                                     </action>
-                                </filter>
-                            </group>
-                            <group>
-                                <filter>
-                                    <relation>And</relation>
-                                    <filtertype>SearchAttributeValue</filtertype>
-                                    <systemattributeid>1</systemattributeid>
-                                    <action>
-                                        <type>Numeric</type>
-                                        <operator>EqualTo</operator>
-                                        <value>2</value>
-                                    </action>
-                                </filter>
-                                <filter>
-                                    <relation>Or</relation>
-                                    <filtertype>SearchAttributeValue</filtertype>
-                                    <systemattributeid>1</systemattributeid>
-                                    <action>
-                                        <type>Numeric</type>
-                                        <operator>EqualTo</operator>
-                                        <value>4</value>
-                                    </action>
-                                </filter>
+                                </filter>' . $filterSub . '
                             </group>
                         </contactssearchcriteria>';
     $result =  $creport->saveReport($xmlQuery, 'rpt_Contact_Details',24000,$tableName,"saveDB");    

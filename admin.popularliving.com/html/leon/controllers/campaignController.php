@@ -2,10 +2,6 @@
 
 require_once(dirname(__FILE__) . '/../config.inc.php');
 
-// Change to another database
-//global $db_link;
-//mysql_select_db("campaigner", $db_link);
-
 require_once(CAMPAIGNER_LEON_ROOT . 'lib/campaign.class.php');
 
 
@@ -50,54 +46,45 @@ function updateCampaignContactResult(){
 
 //updateCampaignContactResult();
 
-function updateCampaignResult($fromDate, $toDate){
-    //$campaignFilter = array('CampaignNames'=>array("FFDiet051714"));
-    $i = 0;
-    $campaignFilter = false;
-    
-    echo "-->Get campaignRunResult from [$fromDate] to [$toDate]\n";
-    
+function updateCampaignResult(){
+        //$campaignFilter = array('CampaignNames'=>array("FFDiet051714"));
+        $campaignFilter = false;
+        $fromDate = '2014-05-17';
+        $toDate = '2014-05-18';
     $creport = new Campaign();
     $reportXMLObj = $creport->getCampaignResult($campaignFilter, $fromDate, $toDate);
     //var_dump( $reportXML->GetCampaignRunsSummaryReportResult->Campaign->Id);
     foreach($reportXMLObj->GetCampaignRunsSummaryReportResult->Campaign as $row){
-        $i++;
         saveCampaign($row);
         saveCampaignRuns($row->CampaignRuns, $row->Id);
     }
-    
-    if(SOAP_RESPONSE_TRACK){
-        print_r($creport->getResponseStacks());
-    }
-    
-    return $i;
    //print_r($creport->getResponseStacks());
    //print_r($reportXMLObj);
 }
 
 function saveCampaign($campaign){
-        $sql = "REPLACE INTO LeonCampaign (`Id` ,`Name` ,`Status` ,`Type` ,`Subject` ,`FromName` ,`FromEmail` , `CreationDate` ,`ProjectId` ,`SentToAllContacts`, `SentToContactGroupIds`) VALUES (
+        $sql = "REPLACE INTO Campaign (`Id` ,`Name` ,`Status` ,`Type` ,`Subject` ,`FromName` ,`FromEmail` , `CreationDate` ,`ProjectId` ,`SentToAllContacts`, `SentToContactGroupIds`) VALUES (
                         '" . $campaign->Id . "','" . addslashes($campaign->Name) . "','" . $campaign->Status . "','" . $campaign->Type . "','" . addslashes($campaign->Subject) . "','" . addslashes($campaign->FromName) . "','". $campaign->FromEmail . "','" . $campaign->CreationDate . "','" . $campaign->ProjectId . "', '" . $campaign->SentToAllContacts . "', '" . json_encode($campaign->SentToContactGroupIds) . "')";        
         if($r = mysql_query($sql)){
-            echo "\t==>Save Campaign: " . $campaign->Id . " - [" . $campaign->Name . "] ... Success\n\r";
+            echo "==>Success: " . $campaign->Id . " \n\r";
         }else{
-            echo "\t====>Save Campaign: " . $campaign->Id . " ... Failed\n\r";
-            echo "\t====>Save Campaign Mysql Error: " . mysql_error() . "\n\r";
+            echo "====>Failed: " . $campaign->Id . " \n\r";
+            echo "====>Mysql Error: " . mysql_error() . "\n\r";
         }
 }
 
 function saveCampaignRuns($campaignRuns,$campaignId){
     foreach($campaignRuns as $row){
-        $sql = "REPLACE INTO LeonCampaignRun (`Id` , `CampaignId` , `ScheduledDate` ,`RunDate` ,`ContactCount` ,`Status` ,`Sent` ,`Delivered` , `HardBounces` ,`SoftBounces` ,`SpamBounces`, `Opens`, `Clicks`, `Replies`, `Unsubscribes`, `SpamComplaints`) VALUES (
+        $sql = "REPLACE INTO CampaignRun (`Id` , `CampaignId` , `ScheduledDate` ,`RunDate` ,`ContactCount` ,`Status` ,`Sent` ,`Delivered` , `HardBounces` ,`SoftBounces` ,`SpamBounces`, `Opens`, `Clicks`, `Replies`, `Unsubscribes`, `SpamComplaints`) VALUES (
                         '" . $row->Id . "','$campaignId','" . $row->ScheduledDate . "','" . $row->RunDate . "','" . $row->ContactCount . "','" . $row->Status . "','" . $row->Domains->Domain->DeliveryResults->Sent . "','". $row->Domains->Domain->DeliveryResults->Delivered . "','" . $row->Domains->Domain->DeliveryResults->HardBounces . "','" . $row->Domains->Domain->DeliveryResults->SoftBounces . "', '" . $row->Domains->Domain->DeliveryResults->SpamBounces . "', '" . $row->Domains->Domain->ActivityResults->Opens . "', '" . $row->Domains->Domain->ActivityResults->Clicks . "', '" . $row->Domains->Domain->ActivityResults->Replies . "', '" . $row->Domains->Domain->ActivityResults->Unsubscribes . "', '" . $row->Domains->Domain->ActivityResults->SpamComplaints . "')";        
         if($r = mysql_query($sql)){
-            echo "\t==>Save CampaignRun: $campaignId Success \n\r";
+            echo "==>Success: " . $row->Id . " \n\r";
         }else{
-            echo "\t====>Save CampaignRun: $campaignId Failed \n\r";
-            echo "\t====>Save CampaignRun Mysql Error: " . mysql_error() . "\n\r";
+            echo "====>Failed: " . $row->Id . " \n\r";
+            echo "====>Mysql Error: " . mysql_error() . "\n\r";
         }
     }    
 }
 
-
+updateCampaignResult();
 ?>

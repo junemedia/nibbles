@@ -117,7 +117,7 @@
 								[FEATURE_TEXT]
 								<br />
 								<br />
-								<a href="[FEATURE_LINK]?utm_source=singleserving&utm_medium=newsletter&utm_content=feature_cta&utm_campaign=Seasonal"><img src="http://media.campaigner.com/media/43/439960/89625read_more.PNG?rand=c32bc261-8e10-44f0-ab11-33495bcc2942" alt="ad" width="89" height="32"  style="display: block;"></a>
+								<a href="[FEATURE_LINK]?utm_source=singleserving&utm_medium=newsletter&utm_content=feature_cta&utm_campaign=Seasonal"><img src="http://pics.recipe4living.com/read_more_button_black_a.png" alt="ad" width="150" height="39"  style="display: block;"></a>
 								</span>	
 								</span>
 							</td>

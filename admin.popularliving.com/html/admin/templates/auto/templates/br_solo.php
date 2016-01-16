@@ -5,7 +5,7 @@
 <body bgcolor="#FFFFFF">
 <table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td align="center"><img src="http://media.campaigner.com/media/43/439960/15be6br-solo.JPG?rand=291f85ba-9178-4a1c-ad14-fe89237621a5"/></td>
+    <td align="center"><img src="http://media.campaigner.com/media/43/439960/90ee2br_special.JPG?rand=6ec54ee7-8370-4730-b16a-5737ff7faf42"/></td>
   </tr>
 <tr><td colspan="3" align="center" valign="middle"> <font size="1" color="#999999">PAID ADVERTISEMENT</font><br />
 			</td></tr>

@@ -4,9 +4,9 @@ require_once('base.class.php');
 
 
 class Contact extends CampaignClientModel{
-    
-    private $_CampaignerAttributeArray;
-    
+
+	private $_CampaignerAttributeArray;
+
     public function __construct(){
         $this->_connectSoap();           
     }
@@ -56,9 +56,9 @@ class Contact extends CampaignClientModel{
                                     'xmlContactQuery' => $xmlQuery
                                 ));
         echo "Done\n";
-        $errorFlag = $this->throwErrorResponse($response);
         echo "\tRunReportTicketId: " . $response->RunReportResult->ReportTicketId . "\n";
         echo "\tRunReportRows: " . $response->RunReportResult->RowCount . "\n";
+        $errorFlag = $this->throwErrorResponse();
         if($errorFlag){
             return false;
         }else{
@@ -87,8 +87,7 @@ class Contact extends CampaignClientModel{
     * rpt_Tracked_Links (25,000)
     */
     protected function _CampaignDownloadReport($reportTicketId, $from, $to, $reportTypes){
-        if(!$this->_client){$this->_connectSoap();}
-        
+        if(!$this->_client){$this->_connectSoap();}   
         $response = $this->_client->DownloadReport(
                                 Array(
                                     'authentication' => $this->_authorization,
@@ -97,33 +96,7 @@ class Contact extends CampaignClientModel{
                                     'toRow' => $to,
                                     'reportType' => $reportTypes
                                 ));
-        $errorFlag = $this->throwErrorResponse($response);
-        
-        //Solve the reset by peer issue, just try again        
-        if(!$response){
-            for($try=0;$try<10; $try++){
-                if(!$this->_client){$this->_connectSoap();}
-                $response = $this->_client->DownloadReport(
-                                        Array(
-                                            'authentication' => $this->_authorization,
-                                            'reportTicketId'=> $reportTicketId,
-                                            'fromRow' =>$from,
-                                            'toRow' => $to,
-                                            'reportType' => $reportTypes
-                                        ));
-                if($response) break;
-                $errorFlag = $this->throwErrorResponse($response);
-                // Sleep 15 seconds to make sure the remote open the connection again.
-                echo "Failed SOAP connection on try [$try], sleep for a bit ...";
-                sleep(15);
-                echo "Done\n";
-            }
-        }
-        
-        
-        
-        
-        
+        $errorFlag = $this->throwErrorResponse();
         unset($response);
         if($errorFlag){
             return false;
@@ -138,8 +111,25 @@ class Contact extends CampaignClientModel{
         }     
     }
     
-    public function getTicketByQuery($xmlQuery,$printInfo = false){
-        return $this->_CampaignRunReport($xmlQuery);
+    public function getGeneralReport($xmlQuery,$printInfo = false){
+        if($printInfo)echo "-->Preparing the Report ... ";
+        $response = $this->_client->RunReport(
+                                Array(
+                                    'authentication' => $this->_authorization,
+                                    'xmlContactQuery' => $xmlQuery
+                                ));
+        if($printInfo){
+            echo "Done\n";
+            echo "\tRunReportTicketId: " . $response->RunReportResult->ReportTicketId . "\n";
+            echo "\tRunReportRows: " . $response->RunReportResult->RowCount . "\n";
+        }
+        $errorFlag = $this->throwErrorResponse();
+        if($errorFlag){
+            return false;
+        }else{
+            //echo $response->RunReportResult->RowCount;exit;
+            return $response; 
+        }
     }
     
 
@@ -218,8 +208,8 @@ class Contact extends CampaignClientModel{
         //echo "-->ReportRowCount: " . $runReport->RunReportResult->RowCount . "\n\r";
         
         if(!$runReport){
-            echo "==>Failed to get Run Report ... \n";
-            return false;
+            echo "Failed to get Run Report ... Exit!\n";
+            exit();
         }
         
         // Truncate table first
@@ -300,11 +290,6 @@ class Contact extends CampaignClientModel{
                     // This is the first page
                     $fromRow = 1;
                     $toRow = $i * $perPage;
-                    if($startRow == $fromRow){
-                        // We have got the ticketID, we just need to process it
-                        $continue = true;
-                    }
-                    
                 }elseif($i == $pages){
                     // This is the last page
                     $fromRow = (($i - 1) * $perPage) + 1;
@@ -321,12 +306,6 @@ class Contact extends CampaignClientModel{
                 }
                 
                 if($continue){
-                    
-                    // Save ticket states
-                    echo "\tSaving ticket state ... ";
-                    $stateQuery = "REPLACE INTO `temp_state` (`ticketid`, `type`, `totalrows`, `startrow`) VALUES ('$ReportTicketId', '$reportType', $rowCount, $fromRow);";
-                    mysql_query($stateQuery); echo "Done\n";
-                    
                     echo "-->Download Rows [$fromRow] - [$toRow] ...";
                     $downloadReport = $this->_CampaignDownloadReport($ReportTicketId, $fromRow, $toRow, $reportType);
                     echo " Done! Total [" . count($downloadReport) . "] ResponseRows in this session. Total Count is [$rowCount]";
@@ -353,13 +332,7 @@ class Contact extends CampaignClientModel{
         }
         echo "Done on [" . date("Y-m-d H:m:s") . "] \n\r";
         //return $downloadReportArray;
-    }
-    
-    public function getClient(){
-        return $this->_client;
-    }   
-
-
+    }  
 
     //  ====================  Push contacts to Campaigner customized functions  START  ====================  //
     /**
@@ -461,6 +434,7 @@ class Contact extends CampaignClientModel{
         return $user;
     }
 
+
     /**
      * 
      * @param string $email
@@ -497,4 +471,8 @@ class Contact extends CampaignClientModel{
     }
 
     //  ====================  Push contacts to Campaigner customized functions END   ====================  //
+ 
 }
+
+
+?>

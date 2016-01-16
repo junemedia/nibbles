@@ -8,18 +8,13 @@ require_once("functions.php");
 */
 class CampaignClientModel{
     protected $_client = false;
-    protected $_authorization = array("Username"=>'api@junemedia.dom',"Password"=>'v$k}^4]zJ8!!');
+    protected $_authorization = array("Username"=>'api@junemedia.dom',"Password"=>'zhijiage209H@0');
     protected $_responseStacks = array();
-    public function throwErrorResponse($SoapFault = false){
+    public function throwErrorResponse(){
         $response = $this->_client->__getLastResponse();
-        $erro = false;
-        if (is_soap_fault($SoapFault)) {
-            $erro = "SOAP Fault: (faultcode: {$SoapFault->faultcode}, faultstring: {$SoapFault->faultstring})";
-        }
         if(SOAP_RESPONSE_TRACK)$this->_responseStacks[] = $response;        
         $errorFlag = "<ErrorFlag>true</ErrorFlag>";
-        $faultFlag = "<faultcode>";
-        if(strpos($response, $errorFlag) !== false || strpos($response, $faultFlag) !== false || $erro){
+        if(strpos($response, $errorFlag) !== false){
             // We found the error
 
             $headers = 'From: leonz@junemedia.com' . "\r\n" . 'Reply-To: leonz@junemedia.com';            
@@ -30,7 +25,6 @@ class CampaignClientModel{
             // we will print it as well
             echo "\n\r-------------------------------------------         Error Found         ----------------------------------------------------\n\r";
             echo $response;
-            if($erro){echo "$erro";}
             echo "\n\r===========================================         Error Found End     ====================================================\n\r";
             return true;
         }else{

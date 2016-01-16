@@ -38,7 +38,7 @@
 						
 							<td width="39" height="50" style="font-size: 0; line-height: 0;">&nbsp;</td>
 							
-							<td width="211" height="50" style="font-size: 0; line-height: 0;"><a href="http://www.betterrecipes.com/"><img src="http://media.campaigner.com/media/43/439960/a75a1br_logo.PNG?rand=403110cc-c988-45e4-9905-2a5068d084a1" alt="ad"  style="display: block;"></a></td>
+							<td width="211" height="50" style="font-size: 0; line-height: 0;"><a href="http://www.betterrecipes.com/"><img src="http://media.campaigner.com/media/43/439960/9d14fbr_logo.PNG?rand=94a4ac36-f6df-4162-98e7-71aab0b62512" alt="ad"  style="display: block;"></a></td>
 							
 							<td width="200" height="50" style="font-size: 0; line-height: 0;">&nbsp;</td>
 														
@@ -86,7 +86,7 @@
 								[FEATURE_TEXT]
 								<br />
 								<br />
-								<a href="[FEATURE_LINK]?utm_source=br_singleserving&utm_medium=newsletter&utm_content=feature_cta&utm_campaign=Seasonal"><img src="http://media.campaigner.com/media/43/439960/89625read_more.PNG?rand=c32bc261-8e10-44f0-ab11-33495bcc2942" alt="ad" width="89" height="32"  style="display: block;"></a>
+								<a href="[FEATURE_LINK]?utm_source=br_singleserving&utm_medium=newsletter&utm_content=feature_cta&utm_campaign=Seasonal"><img src="http://pics.recipe4living.com/read_more_button_black_a.png" alt="ad" width="150" height="39"  style="display: block;"></a>
 								</span>	
 								</span>
 							</td>

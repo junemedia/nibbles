@@ -7,7 +7,7 @@ function CampaignListAttributes(){
                            'compression'=> SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,'soap_version'=> 'SOAP_1_1','trace' => true,'connection_timeout' => 300));
     $response = $client->ListAttributes(
                             Array(
-                                'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'v$k}^4]zJ8!!'),
+                                'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'zhijiage209H@0'),
                                 'filter'=>array(
                                     'IncludeAllDefaultAttributes' => true,
                                     'IncludeAllCustomAttributes' => true,
@@ -110,7 +110,7 @@ function updateCampaignerOpenX ($data_array) {
     $contactId = $data_array['ContactId'];        if ($contactId == '') { $contactId = 0; }
     
     $response = $client->ImmediateUpload(Array(
-        'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'v$k}^4]zJ8!!'),
+        'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'zhijiage209H@0'),
         'UpdateExistingContacts' => true,
         'TriggerWorkflow' => false,
         'contacts' => Array(

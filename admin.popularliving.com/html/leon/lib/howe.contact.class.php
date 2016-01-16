@@ -84,10 +84,10 @@ class HoweContact extends Contact{
     protected function _CampaignDownloadReport($reportTicketId, $from, $to, $reportTypes){
         if(!$this->_client){$this->_connectSoap();}   
 		
-		//echo 'TicketId: '.$reportTicketId."\r\n";
-		//echo 'From: '.$from."\r\n";
-		//echo 'To: '.$to."\r\n";
-		//echo 'reportTypes: '.$reportTypes."\r\n";
+		echo 'TicketId: '.$reportTicketId."\r\n";
+		echo 'From: '.$from."\r\n";
+		echo 'To: '.$to."\r\n";
+		echo 'reportTypes: '.$reportTypes."\r\n";
         $response = $this->_client->DownloadReport(
                                 Array(
                                     'authentication' => $this->_authorization,
@@ -96,6 +96,7 @@ class HoweContact extends Contact{
                                     'toRow' => $to,
                                     'reportType' => $reportTypes
                                 ));
+		echo $response;
         $errorFlag = $this->throwErrorResponse();
         unset($response);
         if($errorFlag){

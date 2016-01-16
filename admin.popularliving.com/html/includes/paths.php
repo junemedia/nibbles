@@ -18,7 +18,7 @@ if ($_SERVER['SERVER_NAME'] == 'admin.popularliving.com') {
 	$sConfigFile = "/val0/html/www_popularliving_com/config.php";
 }*/
 
-$sConfigFile = dirname(__FILE__) . "/../../config.php";
+$sConfigFile = "/var/www/html/admin.popularliving.com/config.php";
 
 // include config file
 include($sConfigFile);

@@ -30,33 +30,33 @@ $host = "64.132.70.150"; //2nd slave
 
 //Legacy host/user/pass
 
-$host = "192.168.51.33";
+$host = "8ec3cdb8845732ea5bbc2a32fa2a87d52453102e.rackspaceclouddb.com";
 $dbase = "nibbles" ;
-$user = "root" ;
-$pass = "5dsa234Y" ;
+$user = "jingshi" ;
+$pass = "kendeji12306!" ;
 
 // only select privileges user:lees passwd:ls!28#di
 
 
 //Legacy reporting host/user/pass
-$reportingHost = "192.168.51.33";
+$reportingHost = "8ec3cdb8845732ea5bbc2a32fa2a87d52453102e.rackspaceclouddb.com";
 $reportingDbase = "nibbles";
-$reportingUser = "root";
-$reportingPass = "5dsa234Y";
+$reportingUser = "jingshi";
+$reportingPass = "kendeji12306!";
 //mysql_connect ($reportingHost, $reportingUser, $reportingPass);
 
 
 //New host/user/pass
-define('newHost', "192.168.51.33");
+define('newHost', "8ec3cdb8845732ea5bbc2a32fa2a87d52453102e.rackspaceclouddb.com");
 define('newdbase', "nibbles");
-define('newUser', "root");
-define('newPass', "5dsa234Y");
+define('newUser', "jingshi");
+define('newPass', "kendeji12306!");
 
 //New reporting host/user/pass
-define('newReportingHost', "192.168.51.33");
+define('newReportingHost', "8ec3cdb8845732ea5bbc2a32fa2a87d52453102e.rackspaceclouddb.com");
 define('newReportingDbase', "nibbles");
-define('newReportingUser', "root");
-define('newReportingPass',"5dsa234Y");
+define('newReportingUser', "jingshi");
+define('newReportingPass',"kendeji12306!");
 
 
 

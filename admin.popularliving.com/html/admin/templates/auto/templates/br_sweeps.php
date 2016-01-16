@@ -281,7 +281,7 @@
 						<em>Copyright &copy; [CURRENT_YEAR] June Media, All rights reserved. June Media, 209 W. Jackson Blvd, Suite 702, Chicago, IL 60606</em>
 					</div>
 					<div style="float:right;font-family:Arial, Helvetica, sans-serif; font-size:10px;">						
-						<a href="http://unsubscribe.betterrecipes.com/?c=unsub&jid={job.jobid}&lid=506" target="_blank">Unsubscribe From This List</a>
+						<a href="http://unsubscribe.betterrecipes.com/?c=unsub&jid={job.jobid}&lid=506" target="_blank" name="UnsubBetterRecipes">Unsubscribe From This List</a>
 					</div>
 				</td>
 			</tr>		

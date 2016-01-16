@@ -62,8 +62,8 @@ if(!empty($items))
             if($item->site_id==1)
             {
                 $fromSite = 'BR';
-                $subcampid = 4347; //Sweeps Registration BR 0615
-                $source = 'SweepsRegistrationBR0615';
+                $subcampid = 4377; //Sweeps Registration BR 0615
+                $source = 'SweepsRegistrationBR0715';
                 $save_subcampid = $subcampid;
                 $old_listid = 506; //506:old list id for br sweeps
 
@@ -74,8 +74,8 @@ if(!empty($items))
             if($item->site_id==2)
             {
                 $fromSite = 'R4L';
-                $subcampid = 4348 ; //Sweeps Registration R4L 0615
-                $source = 'SweepsRegistrationR4L0615';
+                $subcampid = 4378 ; //Sweeps Registration R4L 0615
+                $source = 'SweepsRegistrationR4L0715';
                 $save_subcampid = $subcampid;
                 $old_listid= 507;   //507:old list id for r4l sweeps
                 //$source = getSubcampIdDescriptiveName($subcampid);

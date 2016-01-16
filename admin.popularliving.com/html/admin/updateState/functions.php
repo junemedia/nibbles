@@ -14,13 +14,13 @@ function CreateUpdateCampaign ($data_array) {
 	if ($campaign_id == 0) { $campaign_id = NULL; }
 	
 	$response = $client->CreateUpdateCampaign(Array(
-	    'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'v$k}^4]zJ8!!'),
+	    'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'zhijiage209H@0'),
 	    'campaignData' => Array(
 	        'Id' => $campaign_id,
 			'CampaignName' => $campaign_name,
 			'CampaignSubject' => $subject_line,
 			'CampaignFormat' => 'HTML',
-			'CampaignStatus' => 'Incomplete',
+			'Status' => 'Complete',
 			'CampaignType' => 'None',
 			'HtmlContent' => $html_code,
 			'FromName'=> $from_name,
@@ -44,7 +44,7 @@ function ListMediaFilesCampaigner() {
 	$client = new SoapClient('https://ws.campaigner.com/2013/01/contentmanagement.asmx?WSDL',  array('exceptions' => false,
 						   'compression'=> SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,'soap_version'=> 'SOAP_1_1','trace' => true,'connection_timeout' => 300));
 	$response = $client->ListMediaFiles(Array(
-	    'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'v$k}^4]zJ8!!'),
+	    'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'zhijiage209H@0'),
 	    ));
 	return $client->__getLastResponse();
 }
@@ -65,7 +65,7 @@ function UploadMediaFileCampaigner($image) {
 						   'compression'=> SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,'soap_version'=> 'SOAP_1_1','trace' => true,'connection_timeout' => 300));
 	
 	$response = $client->UploadMediaFile(Array(
-	    'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'v$k}^4]zJ8!!'),
+	    'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'zhijiage209H@0'),
 	    'fileName' => basename($image_file_name),
 	    'fileContentBase64' => base64_encode(file_get_contents($image)),
 	    ));
@@ -122,7 +122,7 @@ function sendToCampaigner ($data_array) {
 	$sub_array = $data_array['sub_array'];		$unsub_array = $data_array['unsub_array'];
 	
 	$response = $client->ImmediateUpload(Array(
-	    'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'v$k}^4]zJ8!!'),
+	    'authentication' => array("Username"=>'api@junemedia.dom',"Password"=>'zhijiage209H@0'),
 	    'UpdateExistingContacts' => true,
 	    'TriggerWorkflow' => false,
 	    'contacts' => Array(

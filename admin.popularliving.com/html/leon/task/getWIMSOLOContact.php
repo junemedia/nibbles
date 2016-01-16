@@ -26,6 +26,26 @@ function saveDB($tableName, $downloadReport){
 function saveR4LSOLOContact($tableName){
     $creport = new Contact();
     // Get the subscribed only and soft bounced
+    $filterSub = "<filter>
+                    <relation>And</relation>
+                    <filtertype>SearchAttributeValue</filtertype>
+                    <systemattributeid>1</systemattributeid>
+                    <action>
+                        <type>Numeric</type>
+                        <operator>EqualTo</operator>
+                        <value>2</value>
+                    </action>
+                </filter>
+                <filter>
+                    <relation>Or</relation>
+                    <filtertype>SearchAttributeValue</filtertype>
+                    <systemattributeid>1</systemattributeid>
+                    <action>
+                        <type>Numeric</type>
+                        <operator>EqualTo</operator>
+                        <value>4</value>
+                    </action>
+                </filter>";
     
     $xmlQuery = '<contactssearchcriteria>
                   <version major="2" minor="0" build="0" revision="0" />
@@ -41,38 +61,7 @@ function saveR4LSOLOContact($tableName){
                                         <operator>EqualTo</operator>
                                         <value>1</value>
                                     </action>
-                                </filter>
-                                <filter>
-                                    <filtertype>SearchAttributeValue</filtertype>
-                                    <contactattributeid>3833693</contactattributeid>
-                                    <action>
-                                        <type>Text</type>
-                                        <operator>NotEmpty</operator>
-                                        <value>1</value>
-                                    </action>
-                                </filter>                                
-                            </group>
-                            <group>
-                                <filter>
-                                    <relation>And</relation>
-                                    <filtertype>SearchAttributeValue</filtertype>
-                                    <systemattributeid>1</systemattributeid>
-                                    <action>
-                                        <type>Numeric</type>
-                                        <operator>EqualTo</operator>
-                                        <value>2</value>
-                                    </action>
-                                </filter>
-                                <filter>
-                                    <relation>Or</relation>
-                                    <filtertype>SearchAttributeValue</filtertype>
-                                    <systemattributeid>1</systemattributeid>
-                                    <action>
-                                        <type>Numeric</type>
-                                        <operator>EqualTo</operator>
-                                        <value>4</value>
-                                    </action>
-                                </filter>
+                                </filter>' . $filterSub . '
                             </group>
                         </contactssearchcriteria>';
     $result =  $creport->saveReport($xmlQuery, 'rpt_Contact_Details',24000,$tableName,"saveDB");    

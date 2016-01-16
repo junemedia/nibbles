@@ -13,7 +13,7 @@ if (!strstr($url,'media.campaigner.com')) {
 		@unlink($outputfile);
 		echo trim(getXmlValueByTag($send_result,'FileURL'));
 	}else{
-		mail('leonz@junemedia.com,williamg@junemedia.com,AndrewB@junemedia.com','MOVE upload image error',$send_result);
+		mail('leonz@junemedia.com,williamg@junemedia.com,AndrewB@junemedia.com,howew@junemedia.com','MOVE upload image error',$send_result);
 		echo $send_result;
 	}
 }
