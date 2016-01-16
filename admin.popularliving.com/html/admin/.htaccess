@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Password Required"
+AuthUserFile /etc/httpd/passwd/admin.popularliving.com
+Require valid-user
+
