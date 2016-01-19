@@ -1,7 +1,0 @@
-AuthUserFile /home/global/.passwd
-AuthGroupFile /dev/null
-AuthName "protected area"
-AuthType Basic
-<Limit GET>
-require user skaplan test_user kblindt ehimy ekuzinits acorrea fzalta bbevis steveb mikes darylc allanl jamesp edk fannyl ccalip spatel nancy jr stuart athomashow josh carole susan phil freda cwright kkousins larryb markn nkonoval pdrazba perryw johnla rosemaryb gaetanoc dmurray srhein anniet stephaneg ian salikhan ashah sgreenwald smallavarapu mglass cwalsh keithd benitab evann gregt matts tedx spotts seanl
-</Limit>
