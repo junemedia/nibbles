@@ -2,19 +2,20 @@
 *.jpg
 *.jpeg
 
-admin.popularliving.com/html/bannerFarm
-admin.popularliving.com/html/c
-admin.popularliving.com/html/cgi-bin
-admin.popularliving.com/html/chaim.txt
-admin.popularliving.com/html/p
-admin.popularliving.com/html/pc
 
-admin.popularliving.com/html/admin/emailmd5/download
-admin.popularliving.com/html/admin/emailmd5/export
-admin.popularliving.com/html/admin/emailmd5/log
-admin.popularliving.com/html/admin/emailmd5/source
-admin.popularliving.com/html/admin/subctr/export/
-admin.popularliving.com/html/admin/templates/auto/upload_imgs/*
+admin/html/bannerFarm
+admin/html/c
+admin/html/cgi-bin
+admin/html/chaim.txt
+admin/html/p
+admin/html/pc
 
-admin.popularliving.com/html/editors/images/
-admin.popularliving.com/html/images/
+admin/html/admin/emailmd5/download
+admin/html/admin/emailmd5/export
+admin/html/admin/emailmd5/log
+admin/html/admin/emailmd5/source
+admin/html/admin/subctr/export/
+admin/html/admin/templates/auto/upload_imgs/*
+
+admin/html/editors/images/
+admin/html/images/
